@@ -245,7 +245,113 @@
     "signup": "Registracija",
     "toggle": "Meni"
   }
+},
+"auth": {
+  "sign_in_title": "Prijavite se na svoj nalog",
+  "email": "Email adresa",
+  "password": "Lozinka",
+  "forgot": "Zaboravljena lozinka?",
+  "sign_in_button": "Prijava",
+  "no_account": "Nemate nalog?",
+  "sign_up": "Registrujte se",
+  "or": "ili",
+  "continue_twitter": "Nastavi putem Twitter-a",
+  "continue_github": "Nastavi putem GitHub-a"
+},
+"register": {
+  "title": "Kreirajte besplatan nalog",
+  "company": "Naziv firme",
+  "fullname": "Ime i prezime",
+  "email": "Email adresa",
+  "password": "Lozinka",
+  "referrer": "Gde ste čuli za nas?",
+  "referrer_options": {
+    "google": "Google",
+    "medium": "Medium",
+    "github": "GitHub"
+  },
+  "button": "Registracija",
+  "already": "Već imate nalog?",
+  "signin": "Prijavite se",
+  "or": "ili",
+  "continue_twitter": "Nastavi putem Twitter-a",
+  "continue_github": "Nastavi putem GitHub-a",
+  "name_business": "GBS Platforma DOO",
+  "name_manager": "Marko Marković"
+},
+"reset": {
+  "title": "Resetuj lozinku",
+  "email": "Email adresa",
+  "email_placeholder": "Unesite vašu email adresu",
+  "button": "Pošalji zahtev"
+},
+"pricing_hero": {
+  "hero": {
+    "label": "Platforma sa akcentom na bezbednost",
+    "title": "Jednostavni paketi za svakoga",
+    "description": "Smanjite operativne troškove i zaboravite na spore i aplikacije teške za održavanje. Dobijate odlične alate dizajnirane za izvrsno korisničko iskustvo."
+  }
+},
+"gbs_services": {
+  "section_label": "Naša ponuda",
+  "section_title": "Digitalna rešenja za savremeno poslovanje",
+  "section_description": "GBS (Global Business Systems) nudi modularnu platformu prilagođenu malim i srednjim biznisima, sa ciljem da digitalizuje, automatizuje i unapredi vaše poslovanje.",
+
+  "items": 
+    {
+      "title1": "Jednim klikom do sajta",
+      "description1": "Brzo kreiranje poslovnih sajtova koristeći šablone (Laravel + Livewire + Bootstrap). Uključuje kontakt forme, galerije, mape i često postavljana pitanja (FAQ).",
+    
+      "title2": "ERP moduli i poslovne aplikacije",
+      "description2": "Upravljanje firmama, klijentima, fakturama i proizvodima uz personalizovan dashboard. Moguća integracija sa fiskalnim sistemima i eksternim API-jevima.",
+    
+      "title3": "Online prodavnice & Multi-vendor platforme",
+      "description3": "Funkcionalni e-commerce sistemi sa modulima za dobavljače, proizvođače i partnere. SEO optimizacija, podrška za Stripe, PayPal i plaćanje pouzećem.",
+  
+      "title4": "CMS i blog rešenja",
+      "description4": "Napredni CMS za objave, kategorije i komentare. Integracija sa Mailchimp-om i mogućnost prikaza najnovijih tema i tagova.",
+
+      "title5": "AI kao servis",
+      "description5": "Automatizovano kreiranje sadržaja, slika i email kampanja pomoću veštačke inteligencije. Uključuje i chatbotove, SEO analize i prevod sadržaja.",
+   
+      "title6": "Edukacija i podrška",
+      "description6": "Obuka korisnika kroz video tutorijale i PDF uputstva. Tehnička podrška i pomoć pri hostovanju i podešavanjima.",
+
+      "learn_more": "Saznaj više"
+    }
+},
+"story": {
+  "title": "Naša priča (do sada)",
+  "paragraph1": "Sve je krenulo sa jednim laptopom i velikom idejom. Jedan polovni laptop, stara tastatura i velika želja da se napravi nešto vredno – to je bio naš početak. Investicija u znanje bila je najveći rizik, ali i najbolja odluka koju smo mogli doneti.",
+  "paragraph2": "Učili smo iz svakog izazova. Nije bilo lakih koraka, ali svaki problem nas je naučio kako da bolje razumemo tehnologiju, tržište i – ljude. Verujemo da se najbolja rešenja rađaju kroz proces, ne preko noći.",
+  "paragraph3": "Od koncepta do realizacije – sve radimo in-house. Svi sistemi, dizajn i backend funkcionalnosti razvijaju se pod jednim krovom. Na taj način zadržavamo kontrolu nad kvalitetom i brže odgovaramo na potrebe klijenata.",
+  "paragraph4": "Gledamo širu sliku, ali brinemo o svakom detalju. Od UX dizajna do sistemske arhitekture, pristupamo svakom zadatku s pažnjom. Fokusirani smo na korisničko iskustvo, sigurnost i održivost rešenja.",
+  "paragraph5": "GBS nije samo tim, već partner za rast. Više od rešenja, nudimo posvećenost. Ako rastete – rastemo zajedno. Naša vizija je jasna: da sa svakim projektom gradimo poverenje koje traje."
+},
+
+"hero_about": {
+  "subtitle": "Samo nebo je granica",
+  "title": "Dobrodošli u svet pozitivnih promena"
+},
+"support_cta": {
+  "heading": "Potrebna vam je dodatna pomoć?",
+  "button": "Kontaktiraj centar za podršku"
+},
+"support": {
+  "title": "Centar za podršku",
+  "subtitle": "Imate pitanje? Tu smo za vas — brzo pretražite odgovore ili nas kontaktirajte.",
+  "faq_title": "Često postavljana pitanja",
+  "faq": [
+    { "q": "Kako da se registrujem?", "a": "Kliknite na 'Registracija' i popunite osnovne podatke." },
+    { "q": "Kako da izmenim podatke firme?", "a": "Ulogujte se i u profilu firme kliknite na 'Izmeni'." },
+    { "q": "Kako kontaktirati podršku?", "a": "Putem forme na stranici Kontakt ili direktno preko e-maila." }
+  ],
+  "cta_title": "Još uvek imate pitanja?",
+  "cta_subtitle": "Naš tim podrške vam stoji na raspolaganju.",
+  "cta_button": "Kontaktiraj nas"
 }
+
+
 
   
 }

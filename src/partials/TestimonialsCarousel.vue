@@ -6,10 +6,10 @@
         <!-- Section header -->
         <div class="max-w-3xl mx-auto text-center pb-12 md:pb-20">
           <div>
-            <div class="inline-flex font-medium bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-purple-200 pb-3">The security first platform</div>
+            <div class="inline-flex font-medium bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-purple-200 pb-3">{{ $t('gbs_services.section_label') }}</div>
           </div>
-          <h2 class="h2 bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">Spot issues faster</h2>
-          <p class="text-lg text-slate-400">All the lorem ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
+          <h2 class="h2 bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">{{ $t('gbs_services.section_title') }}</h2>
+          <p class="text-lg text-slate-400">{{ $t('gbs_services.section_description') }}</p>
         </div>
 
         <!-- Carousel built with Swiper.js [https://swiperjs.com/] -->
@@ -29,11 +29,11 @@
                   <div class="flex flex-col p-6 h-full">
                     <img class="mb-3" src="../images/carousel-icon-01.svg" width="56" height="56" alt="Icon 01">
                     <div class="grow">
-                      <div class="font-bold text-lg mb-1">Anonymous User</div>
-                      <div class="text-slate-400 mb-3">Incorporate rich user profiling, and facilitate more transactions.</div>
+                      <div class="font-bold text-lg mb-1">{{ $t('gbs_services.items.title1') }}</div>
+                      <div class="text-slate-400 mb-3">{{ $t('gbs_services.items.description1') }}</div>
                     </div>
                     <div class="text-right">
-                      <a class="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group" href="#0">Learn More <span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span></a>
+                      <a class="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group" href="#0">{{ $t('gbs_services.items.learn_more') }}<span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span></a>
                     </div>
                   </div>
                 </div>
@@ -49,11 +49,11 @@
                   <div class="flex flex-col p-6 h-full">
                     <img class="mb-3" src="../images/carousel-icon-02.svg" width="56" height="56" alt="Icon 01">
                     <div class="grow">
-                      <div class="font-bold text-lg mb-1">Bot Detection</div>
-                      <div class="text-slate-400 mb-3">Incorporate rich user profiling, and facilitate more transactions.</div>
+                      <div class="font-bold text-lg mb-1">{{ $t('gbs_services.items.title2') }}</div>
+                      <div class="text-slate-400 mb-3">{{ $t('gbs_services.items.description2') }}</div>
                     </div>
                     <div class="text-right">
-                      <a class="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group" href="#0">Learn More <span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span></a>
+                      <a class="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group" href="#0">{{ $t('gbs_services.items.learn_more') }} <span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span></a>
                     </div>
                   </div>
                 </div>
@@ -69,11 +69,11 @@
                   <div class="flex flex-col p-6 h-full">
                     <img class="mb-3" src="../images/carousel-icon-03.svg" width="56" height="56" alt="Icon 01">
                     <div class="grow">
-                      <div class="font-bold text-lg mb-1">Social integrations</div>
-                      <div class="text-slate-400 mb-3">Incorporate rich user profiling, and facilitate more transactions.</div>
+                      <div class="font-bold text-lg mb-1">{{ $t('gbs_services.items.title3') }}</div>
+                      <div class="text-slate-400 mb-3">{{ $t('gbs_services.items.description3') }}</div>
                     </div>
                     <div class="text-right">
-                      <a class="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group" href="#0">Learn More <span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span></a>
+                      <a class="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group" href="#0">{{ $t('gbs_services.items.learn_more') }} <span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span></a>
                     </div>
                   </div>
                 </div>
@@ -89,11 +89,11 @@
                   <div class="flex flex-col p-6 h-full">
                     <img class="mb-3" src="../images/carousel-icon-04.svg" width="56" height="56" alt="Icon 01">
                     <div class="grow">
-                      <div class="font-bold text-lg mb-1">Progressive Profiling</div>
-                      <div class="text-slate-400 mb-3">Incorporate rich user profiling, and facilitate more transactions.</div>
+                      <div class="font-bold text-lg mb-1">{{ $t('gbs_services.items.title4') }}</div>
+                      <div class="text-slate-400 mb-3">{{ $t('gbs_services.items.description4') }}</div>
                     </div>
                     <div class="text-right">
-                      <a class="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group" href="#0">Learn More <span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span></a>
+                      <a class="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group" href="#0">{{ $t('gbs_services.items.learn_more') }} <span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span></a>
                     </div>
                   </div>
                 </div>
@@ -109,15 +109,16 @@
                   <div class="flex flex-col p-6 h-full">
                     <img class="mb-3" src="../images/carousel-icon-05.svg" width="56" height="56" alt="Icon 05">
                     <div class="grow">
-                      <div class="font-bold text-lg mb-1">Secure Access</div>
-                      <div class="text-slate-400 mb-3">Incorporate rich user profiling, and facilitate more transactions.</div>
+                      <div class="font-bold text-lg mb-1">{{ $t('gbs_services.items.title5') }}</div>
+                      <div class="text-slate-400 mb-3">{{ $t('gbs_services.items.description5') }}</div>
                     </div>
                     <div class="text-right">
-                      <a class="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group" href="#0">Learn More <span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span></a>
+                      <a class="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group" href="#0">{{ $t('gbs_services.items.learn_more') }}<span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span></a>
                     </div>
                   </div>
                 </div>
               </HighlighterItem>
+              
             </Highlighter>
           </div>
         </div>

@@ -9,9 +9,9 @@
 
       <Hero />
       <Features />
-      <Customers />
+      <!-- <Customers /> -->
       <Faqs />
-      <Cta />
+      <!-- <Cta /> -->
 
     </main>
 

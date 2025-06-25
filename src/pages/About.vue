@@ -1,23 +1,29 @@
 <template>
-  <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
+  <div class="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
 
-    <!-- Site header -->
+    <!-- ✅ Gornja navigacija (header sajta) -->
     <Header />
 
-    <!-- Page content -->
+    <!-- ✅ Glavni sadržaj stranice -->
     <main class="grow">
+      <Hero />        <!-- Hero sekcija za About stranicu -->
+      <Story />       <!-- Priča o timu, firmi itd. -->
 
-      <Hero />
-      <Story />
-      <Team />
-      <Recruitment />
-      <Testimonials />
-      <Cta />      
+      <!-- 🔽 Sledeće sekcije su planirane, ali privremeno isključene -->
+      <!-- <Team /> -->          <!-- Sekcija o članovima tima -->
+      <!-- <Recruitment /> -->   <!-- Sekcija za zapošljavanje -->
+      <!-- <Testimonials /> -->  <!-- Sekcija sa izjavama korisnika -->
+      <!-- <Cta /> -->           <!-- Poziv na akciju -->
 
+      <!-- ✅ Dodato: Support centar -->
+
+      <SupportHero />       <!-- 🆕 Uvodna sekcija za centar podrške -->
+      <SupportAccordion />  <!-- 🆕 Često postavljana pitanja (FAQ) -->
+      <SupportCTA />        <!-- 🆕 Poziv korisnicima da kontaktiraju ili pretraže bazu pomoći -->
     </main>
-    
-    <!-- Site footer -->
-    <Footer />    
+
+    <!-- ✅ Donji deo sajta (footer) -->
+    <Footer />
 
   </div>
 </template>
@@ -32,17 +38,28 @@ import Testimonials from '../partials/Testimonials02.vue'
 import Cta from '../partials/Cta02.vue'
 import Footer from '../partials/Footer.vue'
 
+// 🆕 Dodato: Komponente za podršku (Support center)
+import SupportHero from '../partials/SupportHero.vue'         // Hero sekcija: naslov, ilustracija
+import SupportAccordion from '../partials/SupportAccordion.vue' // Accordion sa FAQ pitanjima
+import SupportCTA from '../partials/SupportCTA.vue'           // Call to action dugme za kontakt
+
 export default {
   name: 'About',
   components: {
     Header,
     Hero,
     Story,
+    // Sledeće komponente su zakomentarisane dok ne budu potrebne
     Team,
     Recruitment,
     Testimonials,
     Cta,
     Footer,
-  },
+
+    // ✅ Aktivirane nove komponente centra za podršku
+    SupportHero,
+    SupportAccordion,
+    SupportCTA,
+  }
 }
 </script>

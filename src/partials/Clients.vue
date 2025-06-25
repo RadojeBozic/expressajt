@@ -14,62 +14,62 @@
             <ul
               class="flex animate-infinite-scroll items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8">
               <li>
-                <img src="../images/html.svg" alt="Client 1">
+                <img src="../images/html.svg" alt="html">
               </li>
               <li>
-                <img src="../images/css3.svg" alt="Client 2">
+                <img src="../images/css3.svg" alt="css3">
               </li>
               <li>
-                <img src="../images/chatgpt.svg" alt="Client 3">
+                <img src="../images/chatgpt.svg" alt="chatgpt">
               </li>
               <li>
-                <img src="../images/github.svg" alt="Client 4">
+                <img src="../images/github.svg" alt="github">
               </li>
               <li>
-                <img src="../images/bootstrap.svg" alt="Client 5">
+                <img src="../images/bootstrap.svg" alt="bootstrap">
               </li>
               <li>
-                <img src="../images/javascript.svg" alt="Client 6">
+                <img src="../images/javascript.svg" alt="javascript">
               </li>
               <li>
-                <img src="../images/mysql.svg" alt="Client 7">
+                <img src="../images/mysql.svg" alt="mysql">
               </li>
               <li>
-                <img src="../images/php.svg" alt="Client 8">
+                <img src="../images/php.svg" alt="php">
               </li>
               <li>
-                <img src="../images/react.svg" alt="Client 9">
+                <img src="../images/react.svg" alt="react">
               </li>
             </ul>
             <ul
               class="flex animate-infinite-scroll items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8"
               aria-hidden="true">
               <li>
-                <img src="../images/html.svg" alt="Client 1">
+                <img src="../images/html.svg" alt="html">
               </li>
               <li>
-                <img src="../images/css3.svg" alt="Client 2">
+                <img src="../images/css3.svg" alt="css3">
               </li>
               <li>
-                <img src="../images/chatgpt.svg" alt="Client 3">
+                <img src="../images/chatgpt.svg" alt="chatgpt">
               </li>
               <li>
-                <img src="../images/github.svg" alt="Client 4">
+                <img src="../images/github.svg" alt="github">
               </li>
               <li>
-                <img src="../images/bootstrap.svg" alt="Client 5">
+                <img src="../images/bootstrap.svg" alt="bootstrap">
               </li>
               <li>
-                <img src="../images/javascript.svg" alt="Client 6">
+                <img src="../images/javascript.svg" alt="javascript">
               </li>
               <li>
-                <img src="../images/mysql.svg" alt="Client 7">
+                <img src="../images/mysql.svg" alt="mysql">
               </li>
               <li>
-                <img src="../images/php.svg" alt="Client 8">
+                <img src="../images/php.svg" alt="php">
               </li>
               <li>
-                <img src="../images/react.svg" alt="Client 9">
+                <img src="../images/react.svg" alt="react">
               </li>
             </ul>
           </div>
