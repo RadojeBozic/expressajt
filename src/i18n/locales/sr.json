@@ -1,0 +1,251 @@
+{
+  "welcome": "Dobrodošli",
+  "tagline": "Samo nebo je granica. Dobrodošli u svet pozitivnih promena.",
+  "cta": {
+    "label": "gbsplatform.com",
+    "title": "Kako unaprediti svoj biznis?",
+    "description": "Mi u GBS smo svesni činjenice da profesionalizam nema alternativu. Doslednost, upornost i istrajnost su ključni faktori uspeha. Pažljivo budžetiranje će Vaše ulaganje u naše projekte učiniti najboljom investicijom za Vaš uspeh.",
+    "button": "Predlozi projekata"
+  },
+  "cta02": {
+    "label": "Platforma zasnovana na bezbednosti",
+    "title": "Ojačajte bezbednost svog poslovanja",
+    "description": "Naša tehnologija je temeljna, skalabilna i prilagođena savremenim pretnjama. Verujemo da sigurnost ne sme biti luksuz – već standard.",
+    "button": "Započnite"
+  },
+  "hero": {
+    "label": "Najnoviji projekti",
+    "title": "Global Business Systems",
+    "description": "Snažna rešenja za digitalno poslovanje — web, ERP, prodaja, AI.",
+    "primary_button": "Krenimo",
+    "secondary_button": "GBS & AI ChatGPT"
+  },
+  "features": {
+    "label": "Šta Vam nudimo?",
+    "title": "Izrada najnaprednijih web rešenja",
+    "description": "Izrada sajtova, web aplikacija, savremenih online šop rešenja i specifičnih softverskih rešenja.",
+    "tabs": {
+      "1": "Web aplikacije",
+      "2": "Internet prodavnice",
+      "3": "ERP - softverska rešenja"
+    }
+  },
+  "features02": {
+    "title": "Poslovna rešenja",
+    "description": "Unapredite svoje poslovanje originalnim poslovnim rešenjima. Bitno je ko ste i kakvi ste, ali je još bitnije i kako Vas drugi vide i doživljavaju.",
+    "box1": {
+      "title": "Pokazni primer - online prodavnica",
+      "text": "Agro Shop je mnogo više od obične online prodavnice – To je kompletna digitalna platforma za plasman agro proizvoda, sa poslovnim modulima i logikom dostojnom ozbiljne firme ili eko-bio kooperative. Na ovome se gradi poverenje kod proizvođača, distributera i kupaca. Ova aplikacija je bogata funkcionalnostima i lako prilagodiva za bilo koju vrstu roba.",
+      "button": "Idi na Agro shop"
+    },
+    "box2": {
+      "title": "Digitalna kontrola",
+      "text": "Naša softverska rešenja omogućavaju jednostavno praćenje klijenata, faktura, proizvoda i prodaje – sve sa jedne platforme."
+    },
+    "box3": {
+      "title": "Bezbednost i sklabilnost",
+      "text": "Implementiramo najnovije prakse zaštite, arhitekture i performansi kako bi vaš sistem bio otporan, brz i spreman za rast."
+    },
+    "list": {
+      "filters": {
+        "title": "Izrada web sajtova",
+        "text": "Profesionalne, moderne i brze web prezentacije optimizovane za sve uređaje."
+      },
+      "configurable": {
+        "title": "E-commerce rešenja",
+        "text": "Kompletna online prodavnica sa podrškom za više jezika, valuta i načina plaćanja."
+      },
+      "adaptable": {
+        "title": "ERP moduli za poslovanje",
+        "text": "Centralizovano upravljanje klijentima, proizvodima, fakturama i procesima rada."
+      },
+      "authorization": {
+        "title": "Konsalting i digitalna strategija",
+        "text": "Pomažemo firmama da izgrade efikasnu digitalnu strategiju i optimizuju procese."
+      },
+      "management": {
+        "title": "Bezbednost i održavanje sistema",
+        "text": "Implementacija sigurnosnih protokola, backup sistema i tehnička podrška 24/7."
+      },
+      "building": {
+        "title": "Prilagođena rešenja",
+        "text": "Razvijamo aplikaciju po meri klijenta, prilagođen specifičnim potrebama i zahtevima."
+      }
+    }
+
+  },
+  "features03": {
+  "title": "Responzivnost",
+  "description": "Naše aplikacije su 100% responzivne i optimizovane za mobilne telefone, tablete i desktop računare. Korisnicima pružamo besprekorno iskustvo bez obzira na veličinu ekrana."
+},
+"features04": {
+  "title": "Kako uspostaviti saradnju?",
+  "description": "Najbolje rezultate ćemo postići ako pažljivo i dosledno utvrdimo prioritete. A, ako sve to uspemo i da zapišemo - pola posla smo obavili.",
+  "groups": [
+    {
+      "title": "Početni korak – Ideja i planiranje",
+      "features": [
+        {
+          "title": "Ideja",
+          "description": "Započinjemo od vaše ideje i zamisli."
+        },
+        {
+          "title": "Ciljevi",
+          "description": "Definišemo ciljeve i zajedno pravimo detaljan plan razvoja."
+        },
+        {
+          "title": "Funkcionalnosti",
+          "description": "U ovoj fazi se dogovaramo o ključnim funkcionalnostima i oblikujemo viziju projekta."
+        }
+      ]
+    },
+    {
+      "title": "Izrada i implementacija",
+      "features": [
+        {
+          "title": "Kreiranje",
+          "description": "Kreiramo vizuelni i funkcionalni nacrt."
+        },
+        {
+          "title": "Strukturiranje",
+          "description": "Razvijamo komponente i postavljamo strukturu sistema."
+        },
+        {
+          "title": "Finalizacija",
+          "description": "U ovoj fazi se dogovaramo o ključnim funkcionalnostima i oblikujemo viziju projekta."
+        }
+      ]
+    },
+    {
+      "title": "Završni koraci",
+      "features": [
+        {
+          "title": "Testiranje",
+          "description": "Projekat prolazi završna testiranja."
+        },
+        {
+          "title": "Hosting i lansiranje",
+          "description": "Projekat se postavlja na server."
+        },
+        {
+          "title": "Monitoring i podrška",
+          "description": "Absolutno besplatno pratimo projekat i sve funkcionalnosti prvih 30 dana."
+        }
+      ]
+    }
+  ]
+},
+"pricing": {
+  "label": "Paketi i cene",
+  "title": "Fleksibilni planovi i funkcionalnosti",
+  "description": "Naš pristup omogućava prilagođavanje potrebama svakog klijenta. Birajte plan koji vam odgovara i razvijajte svoj biznis uz GBS podršku.",
+  "toggle": {
+    "monthly": "Mesečno",
+    "yearly": "Godišnje",
+    "pay yearly": "God. pl."
+  },
+  "plans": {
+    "pro": {
+      "title": "Plus",
+      "description": "Sve na dohvat ruke.",
+      "mo": "msč",
+      "label": "Sve na dohvat ruke.",
+      "get_started": "Počni odmah",
+      "unlimited": "Neograničeno"
+    },
+     "team": {
+      "title": "Pro",
+      "description": "Sve na dohvat ruke.",
+      "mo": "msč",
+      "label": "Sve na dohvat ruke.",
+      "get_started": "Počni odmah",
+      "unlimited": "Neograničeno"
+    },
+    "enterprise": {
+      "title": "Napredni",
+      "description": "Sve na dohvat ruke.",
+      "mo": "msč",
+      "label": "Sve na dohvat ruke.",
+      "get_started": "Počni odmah",
+      "unlimited": "Neograničeno"
+    },
+    "usage": "Korišćenje",
+    "social": "HTML stranice",
+    "custom": "CSS stilovi",
+    "unlimited": "Neograničeno",
+    "limited": "Ograničeno",
+    "use_role": "Bootstrap-napredna stilizacija",
+    "external": "JavaScript",
+    "features": "Napredno",
+    "customs": "React/Vue/Angular",
+    "advance": "Efekti/Animacije",
+    "extra": "Izrada logotipa",
+    "ad_roles": "Obrada fotografija",
+    "deploy": "Responzivnost",
+    "enterprises": "Hosting&Domen",
+    "spec": "Uz nadoknadu",
+    "support": "Dodatno",
+    "premium_supp": "Održavanje"
+    
+  }
+},
+"testimonials": {
+  "items": [
+    {
+      "quote": "Mogućnost čuvanja odgovora je prava prekretnica. Ako korisnik odustane od prijave, podaci se i dalje čuvaju. Sjajno je i što možete birati između različitih formata.",
+      "name": "Džesi J",
+      "role": "Rukovodilac proizvoda, Ltd"
+    },
+    {
+      "quote": "Koristim ovaj proizvod već nekoliko nedelja i oduševljen/a sam rezultatima. Koža mi izgleda svetlije i glatkije, a dobio/la sam mnogo komplimenata.",
+      "name": "Mark Luk",
+      "role": "Osnivač i direktor kompanije Spark"
+    },
+    {
+      "quote": "Kao zauzeti profesionalac, nemam mnogo vremena za vežbanje. Ovaj fitnes program mi je doneo neverovatne rezultate za samo nekoliko nedelja. Treninzi su efikasni i efektivni.",
+      "name": "Džef Kal",
+      "role": "Produkt menadžer u Appy"
+    }
+  ]
+},
+"footer": {
+  "copyright": "Sva prava zadržana.",
+  "products": "Proizvodi",
+  "company": "Kompanija",
+  "resources": "Resursi",
+  "legals": "Pravna dokumenta",
+  "links": {
+    "features": "Funkcionalnosti",
+    "integrations": "Integracije",
+    "pricing": "Cene i paketi",
+    "changelog": "Izmene",
+    "method": "Naš metod",
+    "about": "O nama",
+    "diversity": "Raznolikost i inkluzija",
+    "blog": "Blog",
+    "careers": "Karijere",
+    "finance": "Finansijski izveštaji",
+    "community": "Zajednica",
+    "terms": "Uslovi korišćenja",
+    "vulnerability": "Prijavi ranjivost",
+    "refund": "Politika refundacije",
+    "terms_conditions": "Uslovi korišćenja",
+    "privacy": "Politika privatnosti",
+    "brandkit": "Brend komplet"
+  }
+},
+"header": {
+  "menu": {
+    "about": "O nama",
+    "integrations": "Integracije",
+    "pricing": "Cene",
+    "customers": "Klijenti",
+    "changelog": "Izmene",
+    "signin": "Prijava",
+    "signup": "Registracija",
+    "toggle": "Meni"
+  }
+}
+
+  
+}
