@@ -18,7 +18,8 @@
       <!-- ✅ Dodato: Support centar -->
 
       <SupportHero />       <!-- 🆕 Uvodna sekcija za centar podrške -->
-      <SupportAccordion />  <!-- 🆕 Često postavljana pitanja (FAQ) -->
+      <Faqs />          <!-- 🆕 Često postavljana pitanja (FAQ) -->
+      <!-- <SupportAccordion /> -->  <!-- 🆕 Često postavljana pitanja (FAQ) -->
       <SupportCTA />        <!-- 🆕 Poziv korisnicima da kontaktiraju ili pretraže bazu pomoći -->
     </main>
 
@@ -38,10 +39,12 @@ import Testimonials from '../partials/Testimonials02.vue'
 import Cta from '../partials/Cta02.vue'
 import Footer from '../partials/Footer.vue'
 
+
 // 🆕 Dodato: Komponente za podršku (Support center)
 import SupportHero from '../partials/SupportHero.vue'         // Hero sekcija: naslov, ilustracija
 import SupportAccordion from '../partials/SupportAccordion.vue' // Accordion sa FAQ pitanjima
 import SupportCTA from '../partials/SupportCTA.vue'           // Call to action dugme za kontakt
+import Faqs from '../partials/Faqs.vue'
 
 export default {
   name: 'About',
@@ -58,6 +61,7 @@ export default {
 
     // ✅ Aktivirane nove komponente centra za podršku
     SupportHero,
+    Faqs,
     SupportAccordion,
     SupportCTA,
   }
