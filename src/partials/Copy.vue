@@ -231,3 +231,29 @@ export default {
   name: 'Faqs',
 }
 </script>
+
+
+<!-- Novi linkovi -->
+<li>
+  <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" to="/contact">{{ $t('header.menu.contact') }}</router-link>
+</li>
+<li>
+  <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" to="/about#faq">{{ $t('header.menu.faq') }}</router-link>
+</li>
+<li>
+  <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" to="/projects">{{ $t('header.menu.projects') }}</router-link>
+</li>
+
+<!-- Privremeno zakomentarisani -->
+<!--
+<li>
+  <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5" to="/integrations">{{ $t('header.menu.integrations') }}</router-link>
+</li>
+<li>
+  <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5" to="/customers">{{ $t('header.menu.customers') }}</router-link>
+</li>
+<li>
+  <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5" to="/changelog">{{ $t('header.menu.changelog') }}</router-link>
+</li>
+-->
+

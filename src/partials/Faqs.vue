@@ -1,5 +1,5 @@
 <template>
-  <section class="relative">
+  <section id="faq" class="relative">
 
     <!-- Blurred shape -->
     <div class="absolute top-0 -translate-y-1/3 left-1/2 -translate-x-1/2 ml-24 blur-2xl opacity-50 pointer-events-none -z-10" aria-hidden="true">

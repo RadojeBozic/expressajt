@@ -237,8 +237,11 @@
 "header": {
   "menu": {
     "about": "O nama",
-    "integrations": "Integracije",
+    "contact": "Kontakt",
+    "faq": "FAQ",
+    "projects": "Projekti",
     "pricing": "Cene",
+    "integrations": "Integracije",
     "customers": "Klijenti",
     "changelog": "Izmene",
     "signin": "Prijava",

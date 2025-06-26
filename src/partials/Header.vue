@@ -21,17 +21,26 @@
               <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" to="/about">{{ $t('header.menu.about') }}</router-link>
             </li>
             <li>
-              <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" to="/integrations">{{ $t('header.menu.integrations') }}</router-link>
+              <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" to="/about#faq">{{ $t('header.menu.faq') }}</router-link>
+            </li>
+            <li>
+              <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" to="/projects">{{ $t('header.menu.projects') }}</router-link>
             </li>
             <li>
               <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" to="/pricing">{{ $t('header.menu.pricing') }}</router-link>
             </li>
             <li>
+              <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" to="/contact">{{ $t('header.menu.contact') }}</router-link>
+            </li>
+            <!-- <li>
               <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" to="/customers">{{ $t('header.menu.customers') }}</router-link>
             </li>
             <li>
               <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" to="/changelog">{{ $t('header.menu.changelog') }}</router-link>
             </li>
+            <li>
+              <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" to="/integrations">{{ $t('header.menu.integrations') }}</router-link>
+            </li> -->
           </ul>
 
         </nav>
@@ -76,17 +85,26 @@
                 <router-link class="flex font-medium text-sm text-slate-300 hover:text-white py-1.5" to="/about">{{ $t('header.menu.about') }}</router-link>
               </li>
               <li>
-                <router-link class="flex font-medium text-sm text-slate-300 hover:text-white py-1.5" to="/integrations">{{ $t('header.menu.integrations') }}</router-link>
+                <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" to="/about#faq">{{ $t('header.menu.faq') }}</router-link>
+              </li>
+              <li>
+                <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" to="/projects">{{ $t('header.menu.projects') }}</router-link>
               </li>
               <li>
                 <router-link class="flex font-medium text-sm text-slate-300 hover:text-white py-1.5" to="/pricing">{{ $t('header.menu.pricing') }}</router-link>
               </li>
               <li>
+                <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" to="/contact">{{ $t('header.menu.contact') }}</router-link>
+              </li>
+              <!-- <li>
                 <router-link class="flex font-medium text-sm text-slate-300 hover:text-white py-1.5" to="/customers">{{ $t('header.menu.customers') }}</router-link>
               </li>
               <li>
                 <router-link class="flex font-medium text-sm text-slate-300 hover:text-white py-1.5" to="/changelog">{{ $t('header.menu.changelog') }}</router-link>
               </li>
+              <li>
+                <router-link class="flex font-medium text-sm text-slate-300 hover:text-white py-1.5" to="/integrations">{{ $t('header.menu.integrations') }}</router-link>
+              </li> -->
             </ul>
           </nav>
 
