@@ -349,7 +349,78 @@
   "cta_title": "Još uvek imate pitanja?",
   "cta_subtitle": "Naš tim podrške vam stoji na raspolaganju.",
   "cta_button": "Kontaktiraj nas"
+},
+"faqs": {
+  "label": "Najčešća pitanja",
+  "title": "Sve što treba da znate",
+  "questions": {
+    "q1": {
+      "title": "Šta je GBS platforma?",
+      "text": "GBS je modularna poslovna platforma koja omogućava izradu sajtova, online prodavnica i ERP aplikacija."
+    },
+    "q2": {
+      "title": "Koje su cene i planovi korišćenja?",
+      "text": "Imamo fleksibilne pakete, uključujući i besplatne opcije za male firme i preduzetnike."
+    },
+    "q3": {
+      "title": "Da li mogu da uklonim GBS brendiranje sa sajta?",
+      "text": "Da. U okviru premium paketa moguće je ukloniti oznake platforme i dodati svoj brend."
+    },
+    "q4": {
+      "title": "Koje podatke mogu da prikupljam od korisnika?",
+      "text": "Možete prikupljati osnovne informacije kao što su ime, email, porudžbine, analitiku itd."
+    },
+    "q5": {
+      "title": "Da li postoji besplatna verzija?",
+      "text": "Da, početni plan je besplatan i sadrži osnovne funkcionalnosti."
+    },
+    "q6": {
+      "title": "Da li je GBS pristupačan za mala i srednja preduzeća?",
+      "text": "Upravo to nam je cilj – da digitalizacija bude dostupna svakome."
+    }
+  }
+},
+
+
+"contact": {
+  "title": "Kontaktirajte nas",
+  "description": "Imate pitanje, sugestiju ili želite saradnju? Pišite nam putem ove forme ili nas kontaktirajte direktno putem navedenih informacija.",
+  "form": {
+    "name": "Vaše ime",
+    "email": "Email adresa",
+    "message": "Vaša poruka",
+    "submit": "Pošalji poruku",
+    "newsletter": "Želim da se prijavim na newsletter"
+  },
+  "info": {
+    "address_title": "Naša adresa",
+    "address_line1": "GBS Platforma DOO",
+    "address_line2": "Bulevar Vojvode Mišića 17, 11000 Beograd",
+    "email_title": "Kontakt email",
+    "email_value": "kontakt@gbsplatforma.com",
+    "phone_title": "Telefon",
+    "phone_value": "+381 64 123 4567"
+  },
+  "social": {
+    "title": "Pratite nas",
+    "facebook": "Facebook stranica",
+    "instagram": "Instagram profil"
+  },
+  "links": {
+    "title": "Korisni linkovi",
+    "regulations": "Zakonska regulativa",
+    "advertising_law": "Zakon o oglašavanju",
+    "ecommerce_law": "Zakon o elektronskoj trgovini",
+    "tax_policy": "Poreska politika",
+    "education": "Edukacija",
+    "web_history": "Istorijat interneta",
+    "ai_history": "Razvoj veštačke inteligencije"
+  },
+  "success": "Vaša poruka je uspešno poslata!",
+  "error": "Došlo je do greške. Pokušajte ponovo."
 }
+
+
 
 
 

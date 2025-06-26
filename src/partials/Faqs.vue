@@ -20,9 +20,10 @@
         <!-- Section header -->
         <div class="max-w-3xl mx-auto text-center pb-12 md:pb-20">
           <div>
-            <div class="inline-flex font-medium bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-purple-200 pb-3">Getting started with Stellar</div>
+            <div class="inline-flex font-medium bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-purple-200 pb-3">{{ $t('faqs.label') }}
+            </div>
           </div>
-          <h2 class="h2 bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">Everything you need to know</h2>
+          <h2 class="h2 bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">{{ $t('faqs.title') }}</h2>
         </div>
 
         <!-- Columns -->
@@ -33,22 +34,21 @@
 
             <!-- Item -->
             <div class="space-y-2">
-              <h4 class="font-semibold">What is Stellar?</h4>
-              <p class="text-slate-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis enim lobortis scelerisque fermentum.</p>
+              <h4 class="font-semibold">{{ $t('faqs.questions.q1.title') }}</h4>
+              <p class="text-slate-400">{{ $t('faqs.questions.q1.text') }}</p>
             </div>
 
             <!-- Item -->
             <div class="space-y-2">
-              <h4 class="font-semibold">What's an affordable alternative to Stellar?</h4>
-              <p class="text-slate-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis enim lobortis scelerisque fermentum.</p>
+              <h4 class="font-semibold">{{ $t('faqs.questions.q2.title') }}</h4>
+              <p class="text-slate-400">{{ $t('faqs.questions.q2.text') }}</p>
             </div>
 
             <!-- Item -->
             <div class="space-y-2">
-              <h4 class="font-semibold">Can I remove the 'Powered by Stellar' branding?</h4>
-              <p class="text-slate-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis enim lobortis scelerisque fermentum.</p>
+              <h4 class="font-semibold">{{ $t('faqs.questions.q3.title') }}</h4>
+              <p class="text-slate-400">{{ $t('faqs.questions.q3.text') }}</p>
             </div>
-
           </div>
 
           <!-- Column -->
@@ -56,20 +56,20 @@
 
             <!-- Item -->
             <div class="space-y-2">
-              <h4 class="font-semibold">What kind of data can I collect from my customers?</h4>
-              <p class="text-slate-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis enim lobortis scelerisque fermentum.</p>
+              <h4 class="font-semibold">{{ $t('faqs.questions.q4.title') }}</h4>
+              <p class="text-slate-400">{{ $t('faqs.questions.q4.text') }}</p>
             </div>
 
             <!-- Item -->
             <div class="space-y-2">
-              <h4 class="font-semibold">Can I use Stellar for free?</h4>
-              <p class="text-slate-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis enim lobortis scelerisque fermentum.</p>
+              <h4 class="font-semibold">{{ $t('faqs.questions.q5.title') }}</h4>
+              <p class="text-slate-400">{{ $t('faqs.questions.q5.text') }}</p>
             </div>
 
             <!-- Item -->
             <div class="space-y-2">
-              <h4 class="font-semibold">Is Stellar affordable for small businesses?</h4>
-              <p class="text-slate-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis enim lobortis scelerisque fermentum.</p>
+              <h4 class="font-semibold">{{ $t('faqs.questions.q6.title') }}</h4>
+              <p class="text-slate-400">{{ $t('faqs.questions.q6.text') }}</p>
             </div>
 
           </div>
@@ -86,3 +86,5 @@ export default {
   name: 'Faqs',
 }
 </script>
+
+             
