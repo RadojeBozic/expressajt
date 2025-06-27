@@ -268,6 +268,8 @@
   "email": "Email adresa",
   "password": "Lozinka",
   "referrer": "Gde ste čuli za nas?",
+  "message": "Unesite tekst poruke",
+  "message_placeholder": "Moja poruka glasi...",
   "referrer_options": {
     "google": "Google",
     "medium": "Medium",
@@ -400,7 +402,7 @@
     "address_line1": "GBS Platforma DOO",
     "address_line2": "Bulevar Vojvode Mišića 17, 11000 Beograd",
     "email_title": "Kontakt email",
-    "email_value": "kontakt@gbsplatforma.com",
+    "email_value": "kontakt [at] gbsplatforma.com",
     "phone_title": "Telefon",
     "phone_value": "+381 64 123 4567"
   },

@@ -1,71 +1,90 @@
 <template>
   <main class="grow">
-
     <section class="relative">
-
-      <!-- Illustration -->
-      <div class="md:block absolute left-1/2 -translate-x-1/2 -mt-36 blur-2xl opacity-70 pointer-events-none -z-10" aria-hidden="true">
-        <img src="../images/auth-illustration.svg" class="max-w-none" width="1440" height="450" alt="Page Illustration">
+      <!-- Ilustracija -->
+      <div
+        class="md:block absolute left-1/2 -translate-x-1/2 -mt-36 blur-2xl opacity-70 pointer-events-none -z-10"
+        aria-hidden="true"
+      >
+        <img src="../images/auth-illustration.svg" class="max-w-none" width="1440" height="450" alt="Page Illustration" />
       </div>
 
       <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
         <div class="pt-32 pb-12 md:pt-40 md:pb-20">
-
-          <!-- Page header -->
+          <!-- Header -->
           <div class="max-w-3xl mx-auto text-center pb-12">
-            <!-- Logo -->
             <div class="mb-5">
               <router-link class="inline-flex" to="/">
-                <div class="relative flex items-center justify-center w-16 h-16 border border-transparent rounded-2xl shadow-2xl [background:linear-gradient(var(--color-slate-900),var(--color-slate-900))_padding-box,conic-gradient(var(--color-slate-400),var(--color-slate-700)_25%,var(--color-slate-700)_75%,var(--color-slate-400)_100%)_border-box] before:absolute before:inset-0 before:bg-slate-800/30 before:rounded-2xl">
-                  <img class="relative" src="../images/logog.png" width="42" height="42" alt="Stellar">
+                <div class="relative flex items-center justify-center w-16 h-16 border border-transparent rounded-2xl shadow-2xl bg-slate-900">
+                  <img class="relative" src="../images/logog.png" width="42" height="42" alt="Stellar" />
                 </div>
               </router-link>
             </div>
-            <!-- Page title -->
-            <h1 class="h2 bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60">{{ $t('register.title') }}</h1>
+            <h1 class="h2 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60">
+              {{ $t('register.title') }}
+            </h1>
           </div>
 
-          <!-- Form -->
+          <!-- Forma -->
           <div class="max-w-sm mx-auto">
-
-            <form>
-              <div class="space-y-4">
-                <div>
-                  <label class="block text-sm text-slate-300 font-medium mb-1" for="company">{{ $t('register.company') }} <span class="text-rose-500">*</span></label>
-                  <input id="company" class="form-input w-full" type="text" :placeholder="$t('register.name_business')" required />
-                </div>
-                <div>
-                  <label class="block text-sm text-slate-300 font-medium mb-1" for="full-name">{{ $t('register.fullname') }}<span class="text-rose-500">*</span></label>
-                  <input id="full-name" class="form-input w-full" type="text" :placeholder="$t('register.name_manager')" required />
-                </div>
-                <div>
-                  <label class="block text-sm text-slate-300 font-medium mb-1" for="email">{{ $t('register.email') }}<span class="text-rose-500">*</span></label>
-                  <input id="email" class="form-input w-full" type="email" placeholder="markrossi@company.com" required />
-                </div>
-                <div>
-                  <label class="block text-sm text-slate-300 font-medium mb-1" for="password">{{ $t('register.password') }}<span class="text-rose-500">*</span></label>
-                  <input id="password" class="form-input w-full" type="password" autocomplete="on" required />
-                </div>
-                <div>
-                  <label class="block text-sm text-slate-300 font-medium mb-1" for="referrer">{{ $t('register.referrer') }}<span class="text-rose-500">*</span></label>
-                  <select id="referrer" class="form-select text-sm py-2 w-full" required>
-                    <option>{{ $t('register.referrer_options.google') }}</option>
-                    <option>{{ $t('register.referrer_options.medium') }}</option>
-                    <option>{{ $t('register.referrer_options.github') }}</option>
-                  </select>
-                </div>
+            <form @submit.prevent="submitForm" class="space-y-4">
+              <div>
+                <label class="block text-sm text-slate-300 font-medium mb-1" for="name">
+                  {{ $t('register.fullname') }} <span class="text-rose-500">*</span>
+                </label>
+                <input v-model="form.name" id="name" type="text" class="form-input w-full" :placeholder="$t('register.name_manager')" required />
               </div>
+
+              <div>
+                <label class="block text-sm text-slate-300 font-medium mb-1" for="email">
+                  {{ $t('register.email') }} <span class="text-rose-500">*</span>
+                </label>
+                <input v-model="form.email" id="email" type="email" class="form-input w-full" placeholder="you@example.com" required />
+              </div>
+
+              <div>
+                <label class="block text-sm text-slate-300 font-medium mb-1" for="password">
+                  {{ $t('register.password') }} <span class="text-rose-500">*</span>
+                </label>
+                <input v-model="form.password" id="password" type="password" class="form-input w-full" autocomplete="on" required />
+              </div>
+
+              <div>
+                <label class="block text-sm text-slate-300 font-medium mb-1" for="message">
+                  {{ $t('register.message') }}
+                </label>
+                <textarea v-model="form.message" id="message" class="form-textarea w-full h-24" :placeholder="$t('register.message_placeholder')"></textarea>
+              </div>
+
+              <!-- Referrer -->
+              <div>
+                <label class="block text-sm text-slate-300 font-medium mb-1" for="referrer">
+                  {{ $t('register.referrer') }} <span class="text-rose-500">*</span>
+                </label>
+                <select v-model="form.referrer" id="referrer" class="form-select text-sm py-2 w-full" required>
+                  <option value="google">{{ $t('register.referrer_options.google') }}</option>
+                  <option value="medium">{{ $t('register.referrer_options.medium') }}</option>
+                  <option value="github">{{ $t('register.referrer_options.github') }}</option>
+                </select>
+              </div>
+
+              <!-- Poruke -->
+              <div v-if="success" class="text-green-500 text-sm">{{ success }}</div>
+              <div v-if="error" class="text-red-500 text-sm">{{ error }}</div>
+
               <div class="mt-6">
-                <button class="btn text-sm text-white bg-purple-500 hover:bg-purple-600 w-full shadow-xs group">
-                  {{ $t('register.button') }}<span class="tracking-normal text-purple-300 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span>
+                <button type="submit" class="btn text-sm text-white bg-purple-500 hover:bg-purple-600 w-full shadow-xs group">
+                  {{ $t('register.button') }}
+                  <span class="tracking-normal text-purple-300 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">→</span>
                 </button>
               </div>
             </form>
 
-            <div class="text-center mt-4">
-              <div class="text-sm text-slate-400">
-                {{ $t('register.already') }}<router-link class="font-medium text-purple-500 hover:text-purple-400 transition duration-150 ease-in-out" to="/signin">{{ $t('register.signin') }}</router-link>
-              </div>
+            <div class="text-center mt-4 text-sm text-slate-400">
+              {{ $t('register.already') }}
+              <router-link class="font-medium text-purple-500 hover:text-purple-400" to="/signin">
+                {{ $t('register.signin') }}
+              </router-link>
             </div>
 
             <!-- Divider -->
@@ -77,7 +96,7 @@
 
             <!-- Social login -->
             <div class="flex space-x-3">
-              <button class="btn text-slate-300 hover:text-white transition duration-150 ease-in-out w-full group [background:linear-gradient(var(--color-slate-900),var(--color-slate-900))_padding-box,conic-gradient(var(--color-slate-400),var(--color-slate-700)_25%,var(--color-slate-700)_75%,var(--color-slate-400)_100%)_border-box] relative before:absolute before:inset-0 before:bg-slate-800/30 before:rounded-full before:pointer-events-none h-9">
+              <button class="btn text-slate-300 hover:text-white transition duration-150 ease-in-out w-full group relative h-9">
                 <span class="relative">
                   <span class="sr-only">{{ $t('register.continue_twitter') }}</span>
                   <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="14" height="12">
@@ -85,7 +104,7 @@
                   </svg>
                 </span>
               </button>
-              <button class="btn text-slate-300 hover:text-white transition duration-150 ease-in-out w-full group [background:linear-gradient(var(--color-slate-900),var(--color-slate-900))_padding-box,conic-gradient(var(--color-slate-400),var(--color-slate-700)_25%,var(--color-slate-700)_75%,var(--color-slate-400)_100%)_border-box] relative before:absolute before:inset-0 before:bg-slate-800/30 before:rounded-full before:pointer-events-none h-9">
+              <button class="btn text-slate-300 hover:text-white transition duration-150 ease-in-out w-full group relative h-9">
                 <span class="relative">
                   <span class="sr-only">{{ $t('register.continue_github') }}</span>
                   <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="16" height="15">
@@ -96,17 +115,57 @@
             </div>
 
           </div>
-
         </div>
       </div>
-
     </section>
-
   </main>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
-  name: 'SignIn',
+  name: 'SignUp',
+  data() {
+    return {
+      form: {
+        name: '',
+        email: '',
+        password: '',
+        message: '',
+        referrer: 'google',
+      },
+      success: '',
+      error: '',
+    }
+  },
+  methods: {
+    async submitForm() {
+      try {
+        const response = await axios.post('http://localhost:8000/api/register', this.form)
+        this.success = this.$t('register.success') || 'Registracija uspešna!'
+        this.error = ''
+        console.log('✅ Odgovor:', response.data)
+
+        this.form = {
+          name: '',
+          email: '',
+          password: '',
+          message: '',
+          referrer: 'google',
+        }
+
+      } catch (err) {
+        if (err.response?.status === 422) {
+          this.error = this.$t('register.validation_error') || 'Greška u validaciji.'
+          console.error('❌ Validacija:', err.response.data.errors)
+        } else {
+          this.error = this.$t('register.error') || 'Greška prilikom slanja.'
+          console.error('❌ Backend greška:', err)
+        }
+        this.success = ''
+      }
+    }
+  }
 }
 </script>
