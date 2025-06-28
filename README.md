@@ -54,9 +54,7 @@
 ├── index.html
 └── vite.config.js
 
-yaml
-Copy
-Edit
+
 
 ---
 
@@ -67,9 +65,7 @@ Edit
 ```bash
 npm install
 🚀 Razvoj:
-bash
-Copy
-Edit
+
 npm run dev
 Frontend aplikacija će biti dostupna na:
 
