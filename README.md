@@ -62,16 +62,13 @@
 
 ### 📦 Instalacija:
 
-```bash
 npm install
+
 🚀 Razvoj:
 
 npm run dev
 Frontend aplikacija će biti dostupna na:
 
-arduino
-Copy
-Edit
 http://localhost:5173
 🔗 Backend API (Laravel)
 Podrazumeva se da backend radi na http://localhost:8000 i rute idu ka:
