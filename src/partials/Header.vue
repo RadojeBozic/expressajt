@@ -8,7 +8,7 @@
         <div class="flex-1">
           <!-- Logo -->
           <router-link class="inline-flex" to="/" aria-label="Cruip">
-            <img class="max-w-none" src="../images/logog.png" width="38" height="38" alt="Stellar">
+            <img class="max-w-none" src="../images/logog.png" width="38" height="38" alt="Logo">
           </router-link>
         </div>
 
@@ -108,19 +108,34 @@
             </ul>
           </nav>
 
+     
+
         </div>
 
-
+         <!-- Ako je korisnik ulogovan -->
+      <div v-if="user" class="flex items-center gap-3 ml-auto">
+        <span class="text-slate-300 text-sm">👋 {{ user.name }}</span>
+        <button
+          @click="logout"
+          class="px-3 py-1 bg-slate-700 hover:bg-slate-600 text-white rounded text-sm transition"
+        >
+          Odjavi se
+        </button>
+      </div>
       </div>
     </div>
+
+      
   </header>
 </template>
 
 <script>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { getCurrentUser, logout as doLogout } from '../utils/auth'
 
 export default {
   name: 'Header',
+  
   setup() {
 
     const mobileNavOpen = ref(false)
@@ -153,6 +168,17 @@ export default {
       mobileNavOpen,
       mobileNav,
       hamburger,
+    }
+  },
+   data() {
+    return {
+      user: getCurrentUser()
+    }
+  },
+  methods: {
+    logout() {
+      doLogout()
+      this.$router.push('/signin')
     }
   }
 }
