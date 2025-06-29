@@ -259,10 +259,15 @@
   "sign_up": "Registrujte se",
   "or": "ili",
   "continue_twitter": "Nastavi putem Twitter-a",
-  "continue_github": "Nastavi putem GitHub-a"
+  "continue_github": "Nastavi putem GitHub-a",
+  "error": "Neispravni podaci!",
+  "success": "Uspešno ste prijavljeni!",
+  "invalid_credentials": "Neispravna email adresa ili lozinka.",
+  "validation_error": "Greška u validaciji podataka."
+  
 },
 "register": {
-  "title": "Kreirajte besplatan nalog",
+  "title_register": "Kreirajte besplatan nalog",
   "company": "Naziv firme",
   "fullname": "Ime i prezime",
   "email": "Email adresa",
@@ -275,20 +280,25 @@
     "medium": "Medium",
     "github": "GitHub"
   },
-  "button": "Registracija",
+  "title": "Registracija",
+  "button": "Registruj se",
   "already": "Već imate nalog?",
   "signin": "Prijavite se",
   "or": "ili",
   "continue_twitter": "Nastavi putem Twitter-a",
   "continue_github": "Nastavi putem GitHub-a",
   "name_business": "GBS Platforma DOO",
-  "name_manager": "Marko Marković"
+  "name_manager": "Marko Marković",
+  "error": "Greška u validaciji podataka.",
+  "success": "Uspešno ste registrovani! Molimo vas da se prijavite."
 },
 "reset": {
   "title": "Resetuj lozinku",
   "email": "Email adresa",
   "email_placeholder": "Unesite vašu email adresu",
-  "button": "Pošalji zahtev"
+  "button": "Pošalji zahtev",
+   
+  "error": "Greška u validaciji podataka."
 },
 "pricing_hero": {
   "hero": {
@@ -424,7 +434,6 @@
   "success": "Vaša poruka je uspešno poslata!",
   "error": "Došlo je do greške. Pokušajte ponovo."
 }
-
 
 
 

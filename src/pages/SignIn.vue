@@ -28,18 +28,18 @@
           <!-- Form -->
           <div class="max-w-sm mx-auto">
 
-            <form>
+            <form @submit.prevent="submitForm">
               <div class="space-y-4">
                 <div>
                   <label class="block text-sm text-slate-300 font-medium mb-1" for="email">{{ $t('auth.email') }}</label>
-                  <input id="email" class="form-input w-full" type="email" required />
+                  <input id="email" v-model="email" class="form-input w-full" type="email" required />
                 </div>
                 <div>
                   <div class="flex justify-between">
                     <label class="block text-sm text-slate-300 font-medium mb-1" for="password">{{ $t('auth.password') }}</label>
                     <router-link class="text-sm font-medium text-purple-500 hover:text-purple-400 transition duration-150 ease-in-out ml-2" to="/reset-password">{{ $t('auth.forgot') }}</router-link>
                   </div>
-                  <input id="password" class="form-input w-full" type="password" autocomplete="on" required />
+                  <input id="password" v-model="password" class="form-input w-full" type="password" required />
                 </div>
               </div>
               <div class="mt-6">
@@ -48,6 +48,10 @@
                 </button>
               </div>
             </form>
+
+            <!-- Success/Error messages -->
+            <div v-if="success" class="text-green-500 text-sm mt-4 text-center">{{ $t('auth.success') }}</div>
+            <div v-if="error" class="text-red-500 text-sm mt-4 text-center">{{ $t('auth.error') }}</div>
 
             <div class="text-center mt-4">
               <div class="text-sm text-slate-400">
@@ -93,7 +97,55 @@
 </template>
 
 <script>
+
+import axios from 'axios';
+
 export default {
   name: 'SignIn',
+  data() {
+  return {
+    email: '',
+    password: '',
+    success: '',
+    error: '',
+  };
+},
+   methods: {
+  async submitForm() {
+    try {
+      const response = await axios.post('http://localhost:8000/api/login', {
+        email: this.email,
+        password: this.password,
+      });
+
+      const { token, user } = response.data;
+
+      localStorage.setItem('token', token);
+      localStorage.setItem('user', JSON.stringify(user));
+
+      this.success = this.$t('auth.success') || 'Uspešno ste prijavljeni!';
+      this.error = '';
+      this.$router.push('/dashboard');
+
+    } catch (error) {
+      this.success = '';
+      if (error.response) {
+        if (error.response.status === 422) {
+          this.error = this.$t('auth.validation_error') || 'Nedostaju obavezna polja.';
+        } else if (error.response.status === 401) {
+          this.error = this.$t('auth.invalid_credentials') || 'Neispravan email ili lozinka.';
+        } else {
+          this.error = this.$t('auth.error') || 'Greška na serveru.';
+        }
+      } else {
+        this.error = 'Došlo je do greške u mreži.';
+      }
+
+      console.error('❌ Auth greška:', error.response?.data || error);
+    }
+  }
+}
+
+
 }
 </script>

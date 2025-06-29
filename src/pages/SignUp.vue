@@ -21,7 +21,7 @@
               </router-link>
             </div>
             <h1 class="h2 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60">
-              {{ $t('register.title') }}
+              {{ $t('register.title_register') }}
             </h1>
           </div>
 
@@ -141,31 +141,28 @@ export default {
   },
   methods: {
     async submitForm() {
-      try {
-        const response = await axios.post('http://localhost:8000/api/register', this.form)
-        this.success = this.$t('register.success') || 'Registracija uspešna!'
-        this.error = ''
-        console.log('✅ Odgovor:', response.data)
+  try {
+    const response = await axios.post('http://localhost:8000/api/register', this.form);
 
-        this.form = {
-          name: '',
-          email: '',
-          password: '',
-          message: '',
-          referrer: 'google',
-        }
+    const { token, user } = response.data;
+    localStorage.setItem('token', token);
+    localStorage.setItem('user', JSON.stringify(user));
 
-      } catch (err) {
-        if (err.response?.status === 422) {
-          this.error = this.$t('register.validation_error') || 'Greška u validaciji.'
-          console.error('❌ Validacija:', err.response.data.errors)
-        } else {
-          this.error = this.$t('register.error') || 'Greška prilikom slanja.'
-          console.error('❌ Backend greška:', err)
-        }
-        this.success = ''
-      }
+    this.success = this.$t('register.success') || 'Registracija uspešna!';
+    this.error = '';
+
+    this.$router.push('/dashboard');
+  } catch (error) {
+    this.success = '';
+    if (error.response?.status === 422) {
+      this.error = this.$t('register.validation_error') || 'Greška u validaciji.';
+      console.error('Validacija:', error.response.data.errors);
+    } else {
+      this.error = this.$t('register.error') || 'Greška prilikom registracije.';
+      console.error('Backend greška:', error);
     }
+  }
+}
   }
 }
 </script>

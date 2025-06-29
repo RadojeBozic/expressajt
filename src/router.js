@@ -12,10 +12,12 @@ import SignUp from './pages/SignUp.vue'
 import ResetPassword from './pages/ResetPassword.vue'
 import Contact from './pages/Contact.vue'
 import Projects from './pages/Projects.vue'
+import Dashboard from './pages/Dashboard.vue'
 
-const routerHistory = createWebHistory()
+import { isAuthenticated } from './utils/auth'
 
 const router = createRouter({
+  history: createWebHistory(),
   scrollBehavior(to) {
     if (to.hash) {
       window.scroll({ top: 0 })
@@ -24,63 +26,52 @@ const router = createRouter({
       window.scroll({ top: 0 })
       document.querySelector('html').style.scrollBehavior = ''
     }
-  },  
-  history: routerHistory,
+  },
   routes: [
-    {
-      path: '/',
-      component: Home
-    },
-    {
-      path: '/about',
-      component: About
-    },
-    {
-      path: '/integrations',
-      component: Integrations
-    },
+    { path: '/', component: Home },
+    { path: '/about', component: About },
+    { path: '/integrations', component: Integrations },
     {
       path: '/integrations-single',
-      component: IntegrationsSingle
-    },    
-    {
-      path: '/pricing',
-      component: Pricing
+      component: IntegrationsSingle,
+      meta: { requiresAuth: true },
     },
+    { path: '/pricing', component: Pricing },
     {
       path: '/customers',
-      component: Customers
+      component: Customers,
+      meta: { requiresAuth: true },
     },
     {
       path: '/customer',
-      component: Customer
+      component: Customer,
+      meta: { requiresAuth: true },
     },
-    {
-      path: '/changelog',
-      component: Changelog
-    },
-    {
-      path: '/signin',
-      component: SignIn
-    },
-    {
-      path: '/signup',
-      component: SignUp
-    },    
-    {
-      path: '/reset-password',
-      component: ResetPassword
-    },
-    {
-      path: '/contact',
-      name: 'contact',
-      component: Contact
-    },
+    { path: '/changelog', component: Changelog },
+    { path: '/signin', component: SignIn },
+    { path: '/signup', component: SignUp },
+    { path: '/reset-password', component: ResetPassword },
+    { path: '/contact', name: 'contact', component: Contact },
     {
       path: '/projects',
-      component: Projects
-    }
-  ]
+      component: Projects,
+      meta: { requiresAuth: true },
+    },
+    {
+      path: '/dashboard',
+      component: Dashboard,
+      meta: { requiresAuth: true },
+    },
+  ],
+})
+
+// 🔐 Globalni guard za provere prijave
+router.beforeEach((to, from, next) => {
+  if (to.meta.requiresAuth && !isAuthenticated()) {
+    next('/signin')
+  } else {
+    next()
+  }
 })
 
 export default router
