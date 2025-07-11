@@ -49,12 +49,12 @@
                 <input v-model="form.password" id="password" type="password" class="form-input w-full" autocomplete="on" required />
               </div>
 
-              <div>
+             <!--  <div>
                 <label class="block text-sm text-slate-300 font-medium mb-1" for="message">
                   {{ $t('register.message') }}
                 </label>
                 <textarea v-model="form.message" id="message" class="form-textarea w-full h-24" :placeholder="$t('register.message_placeholder')"></textarea>
-              </div>
+              </div> -->
 
               <!-- Referrer -->
               <div>
@@ -132,7 +132,7 @@ export default {
         name: '',
         email: '',
         password: '',
-        message: '',
+        // message: '',
         referrer: 'google',
       },
       success: '',
@@ -142,7 +142,7 @@ export default {
   methods: {
     async submitForm() {
   try {
-    const response = await axios.post('http://localhost:8000/api/register', this.form);
+const response = await axios.post('http://localhost:8090/api/register', this.form);
 
     const { token, user } = response.data;
     localStorage.setItem('token', token);

@@ -123,13 +123,18 @@ export default {
       this.$router.push('/signin')
     },
     async fetchMessages() {
-      try {
-        const response = await axios.get('http://localhost:8000/api/messages')
-        this.messages = response.data
-      } catch (error) {
-        console.error('❌ Greška pri preuzimanju poruka:', error)
-      }
-    },
+  try {
+    const token = localStorage.getItem('token')
+    const response = await axios.get('http://localhost:8090/api/my-messages', {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`
+        }
+      });
+    this.messages = response.data;
+    } catch (error) {
+      console.error('❌ Greška pri preuzimanju poruka:', error);
+    }
+  },
     interested(serviceTitle) {
       alert(`Zabeleženo interesovanje za: ${serviceTitle}`)
       // TODO: slanje u backend kad bude spremno

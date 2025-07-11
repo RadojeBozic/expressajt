@@ -50,18 +50,40 @@ export default {
   methods: {
     async submitForm() {
       try {
-        const response = await axios.post('http://localhost:8000/api/contact', this.form)
-        this.success = this.$t('contact.success')
-        this.error = ''
-        this.form = { name: '', email: '', message: '', newsletter: false }
-        console.log('✅ Backend odgovor:', response.data)
+        const response = await axios.post('http://localhost:8090/api/contact', this.form);
+
+        console.log('✅ Backend odgovor:', response.data);
+        this.success = this.$t('contact.success') || 'Poruka uspešno poslata!';
+        this.error = '';
+
+        // Reset forme sa sigurnim Object.assign
+        this.form = Object.assign({}, {
+          name: '',
+          email: '',
+          message: '',
+          newsletter: false
+        });
       } catch (err) {
-        this.error = this.$t('contact.error')
-        this.success = ''
-        console.error('❌ Greška pri slanju:', err.response?.data || err)
-        console.log(JSON.stringify(err.response?.data.errors, null, 2))
+        this.success = '';
+        this.error = this.$t('contact.error') || 'Došlo je do greške pri slanju.';
+
+        console.error('❌ Greška pri slanju:', err.response?.data || err);
+        if (err.response?.data?.errors) {
+          console.log(JSON.stringify(err.response.data.errors, null, 2));
+        }
       }
     }
+  },
+      mounted() {
+      this.success = '';
+      this.error = '';
+      this.form = Object.assign({}, {
+        name: '',
+        email: '',
+        message: '',
+        newsletter: false
+      });
+    }
   }
-}
+
 </script>

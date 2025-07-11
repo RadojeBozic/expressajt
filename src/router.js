@@ -13,6 +13,9 @@ import ResetPassword from './pages/ResetPassword.vue'
 import Contact from './pages/Contact.vue'
 import Projects from './pages/Projects.vue'
 import Dashboard from './pages/Dashboard.vue'
+import AdminUsers from './partials/admin/AdminUsers.vue' // Importuj AdminUsers komponent
+import AdminDashboard from './pages/AdminDashboard.vue' // Importuj AdminDashboard komponent
+
 
 import { isAuthenticated } from './utils/auth'
 
@@ -62,6 +65,20 @@ const router = createRouter({
       component: Dashboard,
       meta: { requiresAuth: true },
     },
+    {
+    path: '/admin/users',
+    name: 'AdminUsers',
+    component: AdminUsers, // Komponent za administraciju korisnika
+    meta: { requiresAuth: true, role: 'admin' } // ako želiš zaštitu
+   },
+   {
+    path: '/admin/dashboard',
+    name: 'AdminDashboard',
+    component:  AdminDashboard,
+    meta: { requiresAuth: true, role: 'admin' }
+  }
+
+  
   ],
 })
 
