@@ -39,7 +39,7 @@
           @click="interested(item.title)"
           class="px-3 py-1 bg-purple-600 hover:bg-purple-700 rounded text-sm"
         >
-          Zainteresovan sam
+          Zainteresovan/a sam
         </button>
       </div>
     </div>
@@ -87,17 +87,30 @@ export default {
       messages: [],
       services: [
         {
+          title: 'MyMaXico – besplatna online prodavnica',
+          description: 'Besplatno i bez obaveze plaćanja hostinga i domena. Pokreni svoju e-commerce prodavnicu sa do 100 proizvoda i svim neophodnim funkcijama – korpa, checkout, mobilna verzija, SEO, povezivanje sa društvenim mrežama i više.'
+        },
+        {
           title: 'Jednim klikom do sajta',
-          description: 'Brzo kreiranje poslovnih sajtova koristeći Laravel + Bootstrap.'
+          description: 'besplatne mini prezentacije. Brzo kreiranje poslovnih sajtova koristeći Laravel + Bootstrap.'
+        },
+         {
+          title: 'Online prodavnice & Multi-vendor',
+          description: 'E-commerce sistem sa podrškom za Stripe i SEO.'
+        },
+        {
+          title: 'Web aplikacije i SaaS rešenja',
+          description: 'Kreiramo prilagođene web aplikacije i SaaS platforme koje su skalabilne i sigurne.'
+        },
+        {
+          title: 'Mobilne aplikacije',
+          description: 'Razvoj mobilnih aplikacija za Android i iOS platforme.'
         },
         {
           title: 'ERP moduli i poslovne aplikacije',
           description: 'Upravljanje klijentima, fakturama, dashboard i više.'
         },
-        {
-          title: 'Online prodavnice & Multi-vendor',
-          description: 'E-commerce sistem sa podrškom za Stripe i SEO.'
-        },
+       
         {
           title: 'CMS i blog sistem',
           description: 'Objave, kategorije, komentari i integracija sa Mailchimp.'
@@ -135,9 +148,34 @@ export default {
       console.error('❌ Greška pri preuzimanju poruka:', error);
     }
   },
+     /*  interested(serviceTitle) {
+    const slug = this.slugify(serviceTitle)
+    this.$router.push(`/services/${slug}`)
+  }, */
     interested(serviceTitle) {
+    if (serviceTitle.includes('MyMaXico')) {
+      this.$router.push('/services/mymaxico')
+    } else if (serviceTitle.includes('Jednim klikom do sajta')) {
+      this.$router.push('/services/freesite')
+    } else if (serviceTitle.includes('Online prodavnice & Multi-vendor')) {
+      this.$router.push('/services/onlineshop')
+    } else if (serviceTitle.includes('SaaS') || serviceTitle.includes('web aplikacije')) {
+    this.$router.push('/services/saas')
+  } else if (serviceTitle.includes('Mobilne aplikacije')) {
+      this.$router.push('/services/mobile-apps')
+    } else if (serviceTitle.includes('ERP moduli i poslovne aplikacije')) {
+      this.$router.push('/services/erp')
+    } else if (serviceTitle.includes('CMS i blog sistem')) {
+      this.$router.push('/services/cms-blog')
+    } else if (serviceTitle.includes('AI kao servis')) {
+      this.$router.push('/services/ai-as-a-service')
+    } else {
       alert(`Zabeleženo interesovanje za: ${serviceTitle}`)
-      // TODO: slanje u backend kad bude spremno
+    }
+  },
+    // Slugify funkcija za kreiranje URL-friendly stringa
+  slugify(title) {
+      return title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '')
     }
   }
 }
