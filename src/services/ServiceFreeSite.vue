@@ -181,15 +181,15 @@
 <div class="w-full bg-purple-900 text-white text-center py-6 px-4 mt-10 rounded shadow-lg">
   <h3 class="text-xl font-semibold mb-2">Bez programera. Bez plaćanja. Bez problema.</h3>
   <p class="mb-4">Klikni ispod i započni besplatnu prezentaciju svog posla ili hobija.</p>
-  <a
-    href="https://mymaxico.com/seller/login"
-    target="_blank"
-    class="inline-block bg-white text-purple-700 font-bold px-6 py-2 rounded hover:bg-slate-100 transition"
-  >
-  <button type="submit" class="btn text-sm text-white bg-purple-500 hover:bg-purple-600 w-full shadow-xs group">
-    Pokreni svoj sajt odmah – bez čekanja!<span class="tracking-normal text-purple-300 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">→</span>
+ <router-link
+  to="/free-site-form"
+  class="inline-block bg-white text-purple-700 font-bold px-6 py-2 rounded hover:bg-slate-100 transition"
+>
+  <button type="button" class="btn text-sm text-white bg-purple-500 hover:bg-purple-600 w-full shadow-xs group">
+    Pokreni svoj sajt odmah – bez čekanja!
+    <span class="tracking-normal text-purple-300 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">→</span>
   </button>
-</a>
+</router-link>
 </div>
 
        <SupportCTA />        <!-- 🆕 Poziv korisnicima da kontaktiraju ili pretraže bazu pomoći -->

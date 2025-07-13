@@ -16,6 +16,10 @@ import Contact from './pages/Contact.vue'
 import Projects from './pages/Projects.vue'
 import Dashboard from './pages/Dashboard.vue'
 import AdminDashboard from './pages/AdminDashboard.vue'
+import FreeSiteForm from './pages/FreeSiteForm.vue'
+import Preview from './pages/Preview.vue'
+import SelectTemplate from './pages/SelectTemplate.vue'
+
 
 // 🔹 Admin komponente (organizovane u partials)
 import AdminUsers from './partials/admin/AdminUsers.vue'
@@ -124,6 +128,24 @@ const router = createRouter({
     component: ServiceAiAsAService,
     props: { slug: 'ai-as-a-service' },
   },
+  {
+  path: '/free-site-form',
+  name: 'FreeSiteForm',
+  component: FreeSiteForm,
+  },
+  {
+  path: '/prezentacije/:slug',
+  name: 'Preview',
+  component: Preview,
+  props: true
+  },
+  {
+  path: '/select-template',
+  name: 'SelectTemplate',
+  component: SelectTemplate
+},
+
+
   ]
 })
 
