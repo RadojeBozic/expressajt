@@ -9,7 +9,6 @@
       </p>
 
       <form @submit.prevent="submitForm" class="bg-slate-800 p-6 rounded-lg shadow max-w-3xl w-full space-y-6">
-
         <!-- 📇 OPŠTI PODACI -->
         <fieldset>
           <legend class="text-xl font-semibold text-purple-400 mb-4">📇 Opšti podaci</legend>
@@ -81,8 +80,12 @@
         </div>
 
         <!-- CTA -->
-        <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 py-3 px-4 rounded text-white font-semibold">
-          ✅ Pošalji zahtev
+        <button
+          type="submit"
+          :disabled="loading"
+          class="w-full bg-purple-600 hover:bg-purple-700 py-3 px-4 rounded text-white font-semibold"
+        >
+          {{ loading ? '⏳ Slanje...' : '✅ Pošalji zahtev' }}
         </button>
 
         <p v-if="successMessage" class="text-green-400 text-sm mt-4">{{ successMessage }}</p>
@@ -108,12 +111,10 @@ import Footer from '../partials/Footer.vue'
 
 export default {
   name: 'FreeSiteForm',
-  components: {
-    Header,
-    Footer
-  },
+  components: { Header, Footer },
   data() {
     return {
+      loading: false,
       form: {
         name: '',
         description: '',
@@ -122,20 +123,14 @@ export default {
         facebook: '',
         instagram: '',
         logo: null,
-
         heroImage: null,
         heroTitle: '',
         heroSubtitle: '',
-
         aboutImage: null,
         aboutTitle: '',
         aboutText: '',
-
         offerTitle: '',
-        offerItems: [
-          { title: '', image: null }
-        ],
-
+        offerItems: [{ title: '', image: null }],
         template: localStorage.getItem('selectedTemplate') || 'klasicni'
       },
       successMessage: '',
@@ -153,8 +148,8 @@ export default {
     },
     handleImageFile(e, field) {
       const file = e.target.files[0]
-      if (file && file.size > 4 * 1024 * 1024) {
-        this.errorMessage = '⚠️ Slika je veća od 4MB. Molimo pokušajte ponovo.'
+      if (file && (!file.type.startsWith('image/') || file.size > 4 * 1024 * 1024)) {
+        this.errorMessage = '⚠️ Slika mora biti manja od 4MB i validan format.'
         this.form[field] = null
         return
       }
@@ -163,8 +158,8 @@ export default {
     },
     handleOfferImageUpload(e, index) {
       const file = e.target.files[0]
-      if (file && file.size > 4 * 1024 * 1024) {
-        this.errorMessage = `⚠️ Slika u stavci ${index + 1} je prevelika (max 4MB).`
+      if (file && (!file.type.startsWith('image/') || file.size > 4 * 1024 * 1024)) {
+        this.errorMessage = `⚠️ Slika u stavci ${index + 1} nije validna ili je prevelika.`
         this.form.offerItems[index].image = null
         return
       }
@@ -174,6 +169,7 @@ export default {
     async submitForm() {
       this.successMessage = ''
       this.errorMessage = ''
+      this.loading = true
 
       try {
         const formData = new FormData()
@@ -195,12 +191,15 @@ export default {
         this.successMessage = '✅ Zahtev uspešno poslat!'
         this.$router.push(`/prezentacije/${res.data.slug}`)
       } catch (err) {
-        if (err.response && err.response.data && err.response.data.errors) {
+        console.error('❌ Detaljna greška:', err.response || err)
+        if (err.response?.data?.errors) {
           const errors = Object.values(err.response.data.errors).flat()
           this.errorMessage = errors[0] || '⚠️ Došlo je do greške u unosu.'
         } else {
           this.errorMessage = '⚠️ Nešto je pošlo po zlu. Pokušajte ponovo.'
         }
+      } finally {
+        this.loading = false
       }
     }
   }
