@@ -9,6 +9,7 @@
     <div class="flex gap-4 mb-6">
       <button @click="view = 'users'" class="btn bg-blue-600 hover:bg-blue-700">👤 Korisnici</button>
       <button @click="view = 'messages'" class="btn bg-green-600 hover:bg-green-700">✉️ Poruke</button>
+      <button @click="view = 'sites'" class="btn bg-orange-600 hover:bg-orange-700">🌐 Prezentacije</button>
       <button @click="view = 'stats'" class="btn bg-purple-600 hover:bg-purple-700">📈 Statistika</button>
     </div>
 
@@ -22,6 +23,7 @@ import AdminUsers from '../partials/admin/AdminUsers.vue'
 import AdminMessages from '../partials/admin/AdminMessages.vue'
 import AdminStats from '../partials/admin/AdminStats.vue'
 import Header from '../partials/Header.vue'
+import AdminSites from '../partials/admin/AdminSites.vue'
 
 export default {
   name: 'AdminDashboard',
@@ -29,7 +31,9 @@ export default {
     AdminUsers,
     AdminMessages,
     AdminStats,
+    AdminSites,
     Header
+    
   },
   data() {
     return {
@@ -42,6 +46,7 @@ export default {
       return {
         users: 'AdminUsers',
         messages: 'AdminMessages',
+        sites: 'AdminSites',
         stats: 'AdminStats'
       }[this.view]
     }

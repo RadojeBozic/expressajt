@@ -197,24 +197,16 @@ export default {
         fd.append(k, this.form[k])
       }
     }
-        for (const k in this.form) {
-          if (k === 'offerItems') {
-            this.form.offerItems.forEach((item, i) => {
-              fd.append(`offerItems[${i}][title]`, item.title)
-              fd.append(`offerItems[${i}][image]`, item.image)
-            })
-          } else {
-            fd.append(k, this.form[k])
-          }
-        }
-        const res = await axios.post('http://localhost:8090/api/free-site-request', fd)
-        this.successMessage = '✅ Zahtev uspešno poslat!'
-      } catch (err) {
-        console.error('❌', err.response || err)
-        this.errorMessage = err.response?.data?.message || '⚠️ Nešto je pošlo po zlu. Pokušajte ponovo.'
-      } finally {
-        this.loading = false
-      }
+
+    const res = await axios.post('http://localhost:8090/api/free-site-request', fd)
+    this.successMessage = '✅ Zahtev uspešno poslat!'
+    this.resData = res.data   // ✅ pomereno ovde gde je `res` poznat
+  } catch (err) {
+    console.error('❌', err.response || err)
+    this.errorMessage = err.response?.data?.message || '⚠️ Nešto je pošlo po zlu. Pokušajte ponovo.'
+  } finally {
+    this.loading = false
+  }
     }
   }
 }

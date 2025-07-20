@@ -152,7 +152,7 @@ export default {
     const user = getCurrentUser()
     return {
       user,
-      isAdmin: user && ['admin@gbsplatform.com', 'superadmin@gbsplatform.com'].includes(user.email)
+      isAdmin: user && ['admin@example.com', 'radoje@example.com'].includes(user.email)
     }
   },
   methods: {
