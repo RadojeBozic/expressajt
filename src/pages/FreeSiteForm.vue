@@ -92,12 +92,12 @@
         <p v-if="errorMessage" class="text-red-400 text-sm mt-4">{{ errorMessage }}</p>
       </form>
 
-      <router-link
+      <!-- <router-link
         to="/select-template"
         class="mt-8 inline-block bg-white text-purple-700 font-semibold px-4 py-2 rounded hover:bg-slate-100 transition"
       >
         🎨 Vidi šablone
-      </router-link>
+      </router-link> -->
     </div>
 
     <Footer />

@@ -94,6 +94,10 @@ export default {
           title: 'Jednim klikom do sajta',
           description: 'besplatne mini prezentacije. Brzo kreiranje poslovnih sajtova koristeći Laravel + Bootstrap.'
         },
+        {
+          title: 'Pro verzija sajta',
+          description: 'Automatski generisan sajt sa dodatnim sekcijama, PDF-om, kontaktima i video prezentacijom.'
+        },
          {
           title: 'Online prodavnice & Multi-vendor',
           description: 'E-commerce sistem sa podrškom za Stripe i SEO.'
@@ -157,11 +161,13 @@ export default {
       this.$router.push('/services/mymaxico')
     } else if (serviceTitle.includes('Jednim klikom do sajta')) {
       this.$router.push('/services/freesite')
+    } else if (serviceTitle.includes('Pro verzija sajta')) {
+      this.$router.push('/services/prosite')
     } else if (serviceTitle.includes('Online prodavnice & Multi-vendor')) {
       this.$router.push('/services/onlineshop')
     } else if (serviceTitle.includes('SaaS') || serviceTitle.includes('web aplikacije')) {
-    this.$router.push('/services/saas')
-  } else if (serviceTitle.includes('Mobilne aplikacije')) {
+      this.$router.push('/services/saas')
+    } else if (serviceTitle.includes('Mobilne aplikacije')) {
       this.$router.push('/services/mobile-apps')
     } else if (serviceTitle.includes('ERP moduli i poslovne aplikacije')) {
       this.$router.push('/services/erp')

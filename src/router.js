@@ -20,11 +20,10 @@ import FreeSiteForm from './pages/FreeSiteForm.vue'
 import Preview from './pages/Preview.vue'
 import SelectTemplate from './pages/SelectTemplate.vue'
 
-
-// 🔹 Admin komponente (organizovane u partials)
+// 🔹 Admin komponente
 import AdminUsers from './partials/admin/AdminUsers.vue'
 
-// 🔹 Servisi (dinamički prikaz)
+// 🔹 Servisi
 import ServiceMymaxico from './services/ServiceMymaxico.vue'
 import ServiceFreeSite from './services/ServiceFreeSite.vue'
 import ServiceOnlineshop from './services/ServiceOnlineshop.vue'
@@ -33,21 +32,18 @@ import ServiceMobileApps from './services/ServiceMobile.vue'
 import ServiceErp from './services/ServiceErp.vue'
 import ServiceCmsBlog from './services/ServiceCmsBlog.vue'
 import ServiceAiAsAService from './services/ServiceAiAsAService.vue'
+import ProSiteForm from './services/ProSiteForm.vue'
+import ServiceProSite from './services/ServiceProSite.vue'
+import DemoFree from './services/DemoFree.vue'
+//import DemoPro from './services/DemoPro.vue'
 
-// 🔐 Provera autentifikacije
+// 🔐 Autentifikacija
 import { isAuthenticated } from './utils/auth'
 
 const router = createRouter({
   history: createWebHistory(),
   scrollBehavior(to) {
-    // automatski scroll na vrh
-    if (to.hash) {
-      window.scroll({ top: 0 })
-    } else {
-      document.querySelector('html').style.scrollBehavior = 'auto'
-      window.scroll({ top: 0 })
-      document.querySelector('html').style.scrollBehavior = ''
-    }
+    window.scrollTo({ top: 0 })
   },
   routes: [
     { path: '/', component: Home },
@@ -66,98 +62,37 @@ const router = createRouter({
     { path: '/dashboard', component: Dashboard, meta: { requiresAuth: true } },
 
     // 🔹 Admin rute
-    {
-      path: '/admin/dashboard',
-      name: 'AdminDashboard',
-      component: AdminDashboard,
-      meta: { requiresAuth: true, role: 'admin' },
-    },
-    {
-      path: '/admin/users',
-      name: 'AdminUsers',
-      component: AdminUsers,
-      meta: { requiresAuth: true, role: 'admin' },
-    },
+    { path: '/admin/dashboard', name: 'AdminDashboard', component: AdminDashboard, meta: { requiresAuth: true, role: 'admin' } },
+    { path: '/admin/users', name: 'AdminUsers', component: AdminUsers, meta: { requiresAuth: true, role: 'admin' } },
 
-    // 🔹 Dinamička ruta za servise
-    {
-      path: '/services/:slug',
-      name: 'Service',
-      component: ServiceMymaxico,
-      props: true, // automatski prosleđuje `slug` kao prop
-    },
-        {
-      path: '/services/freesite',
-      name: 'FreeSite',
-      component: ServiceFreeSite,
-      props: { slug: 'freesite' },
-    },
-    {
-    path: '/services/onlineshop',
-    name: 'OnlineShop',
-    component: ServiceOnlineshop,
-    props: { slug: 'onlineshop' }
-  },
-  {
-    path: '/services/saas',
-    name: 'ServiceSaaS',
-    component: ServiceSaaS,
-    props: { slug: 'saas' },
-  },
-  {
-    path: '/services/mobile-apps',
-    name: 'ServiceMobileApps',
-    component: ServiceMobileApps,
-    props: { slug: 'mobile-apps' },
-  },
-  {
-    path: '/services/erp',
-    name: 'ServiceErp',
-    component: ServiceErp,
-    props: { slug: 'erp' },
-  },
-  {
-    path: '/services/cms-blog',
-    name: 'ServiceCmsBlog',
-    component: ServiceCmsBlog,
-    props: { slug: 'cms-blog' },
-  },
-  {
-    path: '/services/ai-as-a-service',
-    name: 'ServiceAiAsAService',
-    component: ServiceAiAsAService,
-    props: { slug: 'ai-as-a-service' },
-  },
-  {
-  path: '/free-site-form',
-  name: 'FreeSiteForm',
-  component: FreeSiteForm,
-  },
-  {
-  path: '/prezentacije/:slug',
-  name: 'Preview',
-  component: Preview,
-  props: true
-  },
-  {
-  path: '/select-template',
-  name: 'SelectTemplate',
-  component: SelectTemplate
-},
+    // 🔹 Servisi
+    { path: '/services/:slug', name: 'Service', component: ServiceMymaxico, props: true },
+    { path: '/services/freesite', name: 'FreeSite', component: ServiceFreeSite, props: { slug: 'freesite' } },
+    { path: '/services/prosite', name: 'ServiceProSite', component: ServiceProSite, props: { slug: 'prosite' } },
+    { path: '/services/onlineshop', name: 'OnlineShop', component: ServiceOnlineshop, props: { slug: 'onlineshop' } },
+    { path: '/services/saas', name: 'ServiceSaaS', component: ServiceSaaS, props: { slug: 'saas' } },
+    { path: '/services/mobile-apps', name: 'ServiceMobileApps', component: ServiceMobileApps, props: { slug: 'mobile-apps' } },
+    { path: '/services/erp', name: 'ServiceErp', component: ServiceErp, props: { slug: 'erp' } },
+    { path: '/services/cms-blog', name: 'ServiceCmsBlog', component: ServiceCmsBlog, props: { slug: 'cms-blog' } },
+    { path: '/services/ai-as-a-service', name: 'ServiceAiAsAService', component: ServiceAiAsAService, props: { slug: 'ai-as-a-service' } },
 
-
+    // 🔹 Forme i pregledi
+    { path: '/free-site-form', name: 'FreeSiteForm', component: FreeSiteForm },
+    { path: '/pro-site-form', name: 'ProSiteForm', component: ProSiteForm },
+    //{ path: '/demo-site-form', name: 'DemoSiteForm', component: DemoSiteForm },
+    { path: '/prezentacije/demo-free', name: 'DemoFree', component: DemoFree, props: { slug: 'demo-free' } },
+    //{ path: '/prezentacije/demo-pro', name: 'DemoPro', component: DemoPro, props: { slug: 'demo-pro' } },
+    { path: '/prezentacije/:slug', name: 'Preview', component: Preview, props: true },
+    { path: '/select-template', name: 'SelectTemplate', component: SelectTemplate }
   ]
 })
 
-// 🔐 Globalna zaštita pristupa
+// 🔐 Middleware zaštita
 router.beforeEach((to, from, next) => {
-  const isAuthRequired = to.meta.requiresAuth
-
-  if (isAuthRequired && !isAuthenticated()) {
+  if (to.meta.requiresAuth && !isAuthenticated()) {
     return next('/signin')
   }
-
   next()
 })
 
-export default router
+export default router;

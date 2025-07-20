@@ -190,6 +190,13 @@
     <span class="tracking-normal text-purple-300 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">→</span>
   </button>
 </router-link>
+<!-- Dugme za pregled demo verzije -->
+  <router-link
+    to="/prezentacije/demo-pro"
+    class="inline-block bg-transparent text-white font-medium px-6 py-2 rounded border border-white hover:bg-white hover:text-purple-700 transition"
+  >
+    Pogledaj demo verziju
+  </router-link>
 </div>
 
        <SupportCTA />        <!-- 🆕 Poziv korisnicima da kontaktiraju ili pretraže bazu pomoći -->
