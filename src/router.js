@@ -37,11 +37,13 @@ import ServiceOnlineshop from './services/ServiceOnlineshop.vue'
 import ServiceProSite from './services/ServiceProSite.vue'
 import ServiceSaaS from './services/ServiceSaaS.vue'
 
+
 // 🔹 Forme i pregledi
 import FreeSiteForm from './pages/FreeSiteForm.vue'
 import ProSiteForm from './services/ProSiteForm.vue'
 import DemoFree from './services/DemoFree.vue'
 import Preview from './pages/PresentationView.vue'
+
 
 const router = createRouter({
   history: createWebHistory(),
@@ -118,6 +120,35 @@ const router = createRouter({
     },
     // 🛠️ Ostale stranice
     { path: '/admin', redirect: '/admin/dashboard' },
+    {
+      path: '/demo',
+      name: 'DemoPreviews',
+      component: () => import('./pages/DemoPreviews.vue')
+    },
+    {
+      path: '/prezentacije/demo-klasicni-free',
+      name: 'DemoFreeClassic',
+      component: Preview,
+      props: { slug: 'demo-klasicni-free' }
+    },
+    {
+      path: '/prezentacije/demo-klasicni-pro',
+      name: 'DemoProClassic',
+      component: Preview,
+      props: { slug: 'demo-klasicni-pro' }
+    },
+    {
+      path: '/prezentacije/demo-klasicni-active',
+      name: 'DemoActiveClassic',
+      component: Preview,
+      props: { slug: 'demo-klasicni-active' }
+    },
+    {
+      path: '/demo',
+      name: 'DemoPreviews',
+      component: () => import('./pages/DemoPreviews.vue')
+    }
+
   ]
 })
 

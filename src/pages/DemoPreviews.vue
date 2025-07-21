@@ -1,0 +1,95 @@
+<template>
+
+        <div class="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
+
+    <!-- ✅ Gornja navigacija (header sajta) -->
+    <Header />
+  <section class="min-h-screen bg-slate-900 text-white py-16 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-3xl font-bold text-center mb-6 mt-[100px]">🌍 Demo sajtovi – Realne prezentacije</h1>
+      <p class="text-slate-400 text-center mb-12 max-w-2xl mx-auto">
+        Pogledajte gotove primere sajtova izrađenih kroz naš sistem. Kliknite i uverite se kako izgleda profesionalna online prezentacija – bez potrebe za tehničkim znanjem!
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <DemoBox
+          title="🥖 Pekara Jovanović"
+          description="Tradicionalna pekara sa kontakt sekcijom i lokacijom."
+          link="http://localhost:5173/prezentacije/agro-bim-687c01b9c33bd"
+        />
+        <DemoBox
+          title="📊 Knjigovodstvo Bonus"
+          description="Usluge knjigovodstva sa PDF dokumentacijom i sekcijom 'O nama'."
+          link="http://localhost:5173/prezentacije/agro-bim-687cf97d8b8af"
+        />
+        <DemoBox
+          title="🏡 Etno selo Naša Mera"
+          description="Galerija, ponuda, kontakt i video prezentacija – kompletna turistička prezentacija."
+          link="http://localhost:5173/prezentacije/agro-bim-687bdd11bf2d0"
+        />
+        <DemoBox
+          title="🧼 Auto perionica Speed Wash"
+          description="Jednostavan i moderan sajt za lokalnu perionicu – kontakt forma, lokacija i radno vreme."
+          link="http://localhost:5173/prezentacije/agro-bim-687d6e121769d"
+        />
+        <DemoBox
+          title="🥖 Pekara Jovanović"
+          description="Tradicionalna pekara sa kontakt sekcijom i lokacijom."
+          link="http://localhost:5173/prezentacije/agro-bim-687c01b9c33bd"
+        />
+        <DemoBox
+          title="📊 Knjigovodstvo Bonus"
+          description="Usluge knjigovodstva sa PDF dokumentacijom i sekcijom 'O nama'."
+          link="http://localhost:5173/prezentacije/agro-bim-687cf97d8b8af"
+        />
+        <DemoBox
+          title="🏡 Etno selo Naša Mera"
+          description="Galerija, ponuda, kontakt i video prezentacija – kompletna turistička prezentacija."
+          link="http://localhost:5173/prezentacije/agro-bim-687bdd11bf2d0"
+        />
+        <DemoBox
+          title="🧼 Auto perionica Speed Wash"
+          description="Jednostavan i moderan sajt za lokalnu perionicu – kontakt forma, lokacija i radno vreme."
+          link="http://localhost:5173/prezentacije/agro-bim-687d6e121769d"
+        />
+      </div>
+
+      <div class="text-center mt-12">
+        <router-link
+          :to="isAuthenticated ? '/dashboard' : '/signup'"
+          class="inline-block bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded text-lg font-semibold transition"
+        >
+          {{ isAuthenticated ? '🛠 Idi na Dashboard' : '🚀 Registruj se i napravi svoj sajt' }}
+        </router-link>
+      </div>
+    </div>
+  </section>
+
+     <Footer />
+
+ </div>
+
+
+</template>
+
+<script>
+import DemoBox from '../components/DemoBox.vue'
+import { isAuthenticated } from '../utils/auth'
+import Header from '../partials/Header.vue'
+import Footer from '../partials/Footer.vue'
+
+export default {
+  name: 'DemoPreviews',
+  components:
+   { 
+    DemoBox,
+    Header, 
+    Footer 
+    },
+  computed: {
+    isAuthenticated() {
+      return isAuthenticated()
+    }
+  }
+}
+</script>

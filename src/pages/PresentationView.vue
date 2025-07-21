@@ -3,6 +3,7 @@
 
     <!-- ✅ Gornja navigacija (header sajta) -->
     <Header />
+
   <div v-if="siteData">
     <!-- INFO o paketu -->
     <div class="text-center mb-6">
@@ -40,6 +41,15 @@
       </button>
     </div>
 
+    <div class="text-center mb-6">
+  <router-link
+    to="/demo"
+    class="inline-block bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded text-sm transition"
+  >
+    ← Povratak na demo sajtove
+  </router-link>
+</div>
+
     <!-- PRIKAZ ŠABLONA -->
     <component :is="templateComponent" :data="siteData" />
 
@@ -47,7 +57,11 @@
 
   <div v-else class="text-white text-center py-20">Učitavanje...</div>
 
+   
+
   <Footer />
+
+  
   </div>
 </template>
 
