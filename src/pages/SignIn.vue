@@ -1,4 +1,11 @@
 <template>
+
+    <div class="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
+
+  <!-- Gornja navigacija (header sajta) -->
+  <Header />
+
+
   <main class="grow">
 
     <section class="relative">
@@ -94,11 +101,13 @@
     </section>
 
   </main>
+</div>
 </template>
 
 <script>
 
 import axios from 'axios';
+import Header from '../partials/Header.vue';
 
 export default {
   name: 'SignIn',
@@ -110,6 +119,9 @@ export default {
     error: '',
   };
 },
+  components: {
+    Header,
+  },
    methods: {
   async submitForm() {
     try {

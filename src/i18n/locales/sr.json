@@ -5,7 +5,7 @@
     "label": "gbsplatform.com",
     "title": "Kako unaprediti svoj biznis?",
     "description": "Mi u GBS smo svesni činjenice da profesionalizam nema alternativu. Doslednost, upornost i istrajnost su ključni faktori uspeha. Pažljivo budžetiranje će Vaše ulaganje u naše projekte učiniti najboljom investicijom za Vaš uspeh.",
-    "button": "Predlozi projekata"
+    "button": "Potraži podršku"
   },
   "cta02": {
     "label": "Platforma zasnovana na bezbednosti",
@@ -14,11 +14,12 @@
     "button": "Započnite"
   },
   "hero": {
-    "label": "Najnoviji projekti",
+    "label": "Najnoviji projekti koje donosimo",
     "title": "Global Business Systems",
-    "description": "Snažna rešenja za digitalno poslovanje — web, ERP, prodaja, AI.",
-    "primary_button": "Krenimo",
-    "secondary_button": "GBS & AI ChatGPT"
+    "description": "Snažna rešenja za digitalno poslovanje — web, ERP, prodaja, SaaS, AI",
+    "description01": "Ojačajte svoje poslovanje uz naša rešenja. Od web sajtova do ERP sistema, nudimo sve što vam je potrebno za uspeh.",
+    "primary_button": "Besplatne prezentacije",
+    "secondary_button": "Plaćena rešenja od 1999 RSD godišnje"
   },
   "features": {
     "label": "Šta Vam nudimo?",

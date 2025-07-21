@@ -1,8 +1,12 @@
 <template>
+    <div class="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
+
+    <!-- ✅ Gornja navigacija (header sajta) -->
+    <Header />
   <div v-if="siteData">
     <!-- INFO o paketu -->
     <div class="text-center mb-6">
-      <h2 class="text-lg text-white font-semibold mb-1 flex items-center justify-center gap-2">
+      <h2 class="text-lg text-white font-semibold mb-1 flex items-center justify-center gap-2 mt-[150px]">
         📢 Pregled sajta:
         <span
           class="text-xs font-bold px-2 py-1 rounded uppercase"
@@ -42,11 +46,16 @@
   </div>
 
   <div v-else class="text-white text-center py-20">Učitavanje...</div>
+
+  <Footer />
+  </div>
 </template>
 
 <script>
 import axios from 'axios'
 import { getCurrentUser } from '../utils/auth'
+import Header from '../partials/Header.vue'
+import Footer from '../partials/Footer.vue'
 
 // Import svih šablona
 import ClassicPreview from '../templates/ClassicPreview.vue'
@@ -73,7 +82,9 @@ export default {
     BusinessPreview,
     BusinessPreviewPro,
     DarkPreview,
-    DarkPreviewPro
+    DarkPreviewPro,
+    Header,
+    Footer
   },
   data() {
     return {
