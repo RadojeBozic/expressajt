@@ -13,24 +13,24 @@
 
       <div class="grid md:grid-cols-2 gap-6">
         <DemoBox
-          title="🥖 Pekara Jovanović"
+          title="🥖 Zdravo da ste - Free"
           description="Tradicionalna pekara sa kontakt sekcijom i lokacijom."
-          link="http://localhost:5173/prezentacije/agro-bim-687c01b9c33bd"
+          link="http://localhost:5173/prezentacije/zdrava-hrana-zdravo-da-ste-687e896c0e19e"
         />
         <DemoBox
-          title="📊 Knjigovodstvo Bonus"
+          title="📊 Zdravo da ste - Pro"
           description="Usluge knjigovodstva sa PDF dokumentacijom i sekcijom 'O nama'."
-          link="http://localhost:5173/prezentacije/agro-bim-687cf97d8b8af"
+          link="http://localhost:5173/prezentacije/httplocalhost5173-687e89f24047c"
         />
         <DemoBox
-          title="🏡 Etno selo Naša Mera"
+          title="🏡 Zdravo da ste - Pro"
           description="Galerija, ponuda, kontakt i video prezentacija – kompletna turistička prezentacija."
-          link="http://localhost:5173/prezentacije/agro-bim-687bdd11bf2d0"
+          link="http://localhost:5173/prezentacije/zdravo-da-ste-687e8d00eb94b"
         />
         <DemoBox
-          title="🧼 Auto perionica Speed Wash"
+          title="🧼 Zdravo da ste - Pro"
           description="Jednostavan i moderan sajt za lokalnu perionicu – kontakt forma, lokacija i radno vreme."
-          link="http://localhost:5173/prezentacije/agro-bim-687d6e121769d"
+          link="http://localhost:5173/prezentacije/httplocalhost5173-687e89f24047c#hero"
         />
         <DemoBox
           title="🥖 Pekara Jovanović"
