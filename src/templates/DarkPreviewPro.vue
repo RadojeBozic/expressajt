@@ -1,7 +1,7 @@
 <template>
   <div id="hero" class="bg-slate-900 text-white font-sans px-6 py-8 max-w-5xl mx-auto rounded shadow scroll-smooth">
 
-    <!-- Header sa navigacijom -->
+    <!-- Header -->
     <header class="flex items-center justify-between mb-8 border-b border-slate-700 pb-4">
       <div class="flex items-center space-x-2">
         <img v-if="data.logo_path" :src="getImageUrl(data.logo_path)" alt="Logo"
@@ -21,6 +21,14 @@
            class="w-full object-cover h-64 rounded mb-6 hover:scale-105 transition" />
       <h1 class="text-3xl font-bold mb-2 text-center">{{ data.hero_title }}</h1>
       <p class="text-center text-slate-400 mb-4 whitespace-pre-line break-words">{{ data.hero_subtitle }}</p>
+    </section>
+
+    <!-- Opis delatnosti -->
+    <section v-if="data.description" class="mb-10">
+      <h2 class="text-xl font-semibold mb-2 text-purple-300">📋 Opis delatnosti</h2>
+      <p class="text-slate-300 text-sm whitespace-pre-line break-words">
+        {{ data.description }}
+      </p>
     </section>
 
     <!-- Napomena -->
@@ -53,22 +61,28 @@
     </section>
 
     <!-- Video -->
-    <section v-if="data.video_url" class="my-10">
-      <h2 class="text-2xl font-semibold mb-4 text-purple-400">🎥 Video prezentacija</h2>
+    <section v-if="embedVideoUrl" class="my-10">
+      <h2 class="text-2xl font-semibold mb-4 text-purple-300">🎥 Video prezentacija</h2>
       <div class="aspect-w-16 aspect-h-9">
-        <iframe :src="data.video_url" frameborder="0" allowfullscreen class="w-full h-80 rounded"></iframe>
+        <iframe :src="embedVideoUrl" frameborder="0" allowfullscreen class="w-full h-80 rounded"></iframe>
       </div>
     </section>
 
     <!-- PDF -->
     <section v-if="data.pdf_file" class="my-10">
-      <h2 class="text-2xl font-semibold mb-4 text-purple-400">📄 Priložni dokument</h2>
-      <a :href="getImageUrl(data.pdf_file)" target="_blank" class="text-purple-400 hover:underline">Preuzmi PDF</a>
+      <h2 class="text-2xl font-semibold mb-4 text-purple-300">📄 Priloženi dokument</h2>
+      <iframe
+        :src="getImageUrl(data.pdf_file)"
+        width="100%"
+        height="600"
+        style="border: 1px solid #666;"
+        class="rounded shadow"
+      ></iframe>
     </section>
 
     <!-- Kontakt -->
     <section id="kontakt" class="my-10">
-      <h2 class="text-2xl font-semibold mb-4 text-purple-400">📞 Kontakt</h2>
+      <h2 class="text-2xl font-semibold mb-4 text-purple-300">📞 Kontakt</h2>
       <div class="text-sm space-y-2 text-slate-300">
         <p><strong>Adresa:</strong> {{ data.address || 'Nije uneta' }}</p>
         <p><strong>Telefon:</strong> {{ data.phone }}</p>
@@ -96,9 +110,10 @@
 
     <!-- Footer -->
     <footer class="text-center text-sm text-slate-500 pt-4 border-t border-slate-700 mt-10">
-      © {{ new Date().getFullYear() }} {{ data.name || 'Vaša firma' }} —
+      © {{ new Date().getFullYear() }} {{ data.name || 'Vaša firma' }} — 
       <a href="#hero" class="text-purple-400 hover:underline">Nazad na vrh ↑</a>
     </footer>
+
   </div>
 </template>
 
@@ -118,6 +133,16 @@ export default {
     googleMapUrl() {
       const query = encodeURIComponent(this.data.address || '')
       return `https://maps.google.com/maps?q=${query}&output=embed`
+    },
+    embedVideoUrl() {
+      if (!this.data.video_url) return null
+      try {
+        const url = new URL(this.data.video_url)
+        const videoId = url.searchParams.get("v")
+        return `https://www.youtube.com/embed/${videoId}`
+      } catch {
+        return null
+      }
     }
   },
   methods: {

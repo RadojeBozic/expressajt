@@ -29,6 +29,14 @@
       />
     </section>
 
+    <!-- Opis delatnosti -->
+    <section v-if="data.description" class="mb-10">
+      <h2 class="text-xl font-semibold mb-2 text-blue-800">📋 Opis delatnosti</h2>
+      <p class="text-gray-700 text-sm whitespace-pre-line break-words">
+        {{ data.description }}
+      </p>
+    </section>
+
     <!-- Napomena -->
     <div class="bg-purple-100 border border-purple-300 rounded p-4 text-sm text-purple-800 mb-10">
       * Ova prezentacija je deo PRO paketa i može se dodatno uređivati nakon uplate (1.999 RSD / godišnje).
@@ -69,11 +77,11 @@
     </section>
 
     <!-- Video -->
-    <section v-if="data.video_url" class="my-10">
+    <section v-if="embedVideoUrl" class="my-10">
       <h2 class="text-2xl font-semibold mb-4 text-blue-800">🎥 Video prezentacija</h2>
       <div class="aspect-w-16 aspect-h-9">
         <iframe
-          :src="data.video_url"
+          :src="embedVideoUrl"
           frameborder="0"
           allowfullscreen
           class="w-full h-80 rounded"
@@ -84,10 +92,15 @@
     <!-- PDF prikaz -->
     <section v-if="data.pdf_file" class="my-10">
       <h2 class="text-2xl font-semibold mb-4 text-blue-800">📄 Priloženi dokument</h2>
-      <a :href="getImageUrl(data.pdf_file)" target="_blank" class="text-purple-600 hover:underline">Preuzmi PDF dokument</a>
+      <iframe
+        :src="getImageUrl(data.pdf_file)"
+        width="100%"
+        height="600"
+        style="border: 1px solid #ccc;"
+      ></iframe>
     </section>
 
-    <!-- Kontakt sekcija -->
+    <!-- Kontakt -->
     <section id="kontakt" class="my-10">
       <h2 class="text-2xl font-semibold mb-4 text-blue-800">📞 Kontakt</h2>
       <div class="text-sm space-y-2 text-gray-700">
@@ -99,33 +112,35 @@
         <p v-if="data.email2"><strong>Email 2:</strong> {{ data.email2 }}</p>
         <p v-if="data.email3"><strong>Email 3:</strong> {{ data.email3 }}</p>
       </div>
-    <div v-if="data.address" class="mt-4 w-full h-64 rounded overflow-hidden shadow">
+      <div v-if="data.address" class="mt-4 w-full h-64 rounded overflow-hidden shadow">
         <iframe
-            :src="googleMapUrl"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+          :src="googleMapUrl"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
-    </div>
+      </div>
     </section>
 
     <!-- Društvene mreže -->
     <section class="mb-6 text-center">
       <p class="text-sm mb-2 text-gray-700">Pratite nas:</p>
       <div class="flex justify-center gap-6 text-2xl text-gray-600">
-        <a :href="isValidUrl(data.facebook) ? data.facebook : fallbackFacebook" target="_blank"
-           class="hover:text-blue-600 transition"><i class="fab fa-facebook-square"></i></a>
-        <a :href="isValidUrl(data.instagram) ? data.instagram : fallbackInstagram" target="_blank"
-           class="hover:text-pink-600 transition"><i class="fab fa-instagram"></i></a>
+        <a :href="isValidUrl(data.facebook) ? data.facebook : fallbackFacebook" target="_blank" class="hover:text-blue-600 transition">
+          <i class="fab fa-facebook-square"></i>
+        </a>
+        <a :href="isValidUrl(data.instagram) ? data.instagram : fallbackInstagram" target="_blank" class="hover:text-pink-600 transition">
+          <i class="fab fa-instagram"></i>
+        </a>
       </div>
     </section>
 
     <!-- Footer -->
     <footer class="text-center text-sm text-gray-500 pt-4 border-t border-gray-300 mt-10">
-      © {{ new Date().getFullYear() }} {{ data.name || 'Vaša firma' }} —
+      © {{ new Date().getFullYear() }} {{ data.name || 'Vaša firma' }} — 
       <a href="#hero" class="text-purple-600 hover:underline">Nazad na vrh ↑</a>
     </footer>
   </div>
@@ -148,8 +163,18 @@ export default {
       return 'https://instagram.com/gbsplatform'
     },
     googleMapUrl() {
-    const query = encodeURIComponent(this.data.address || '')
-    return `https://maps.google.com/maps?q=${query}&output=embed`
+      const query = encodeURIComponent(this.data.address || '')
+      return `https://maps.google.com/maps?q=${query}&output=embed`
+    },
+    embedVideoUrl() {
+      if (!this.data.video_url) return null;
+      try {
+        const url = new URL(this.data.video_url);
+        const videoId = url.searchParams.get("v");
+        return `https://www.youtube.com/embed/${videoId}`;
+      } catch {
+        return null;
+      }
     }
   },
   methods: {

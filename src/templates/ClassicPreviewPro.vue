@@ -1,14 +1,14 @@
 <template>
   <div id="hero" class="bg-white text-gray-800 font-serif px-6 py-8 max-w-4xl mx-auto shadow rounded-lg scroll-smooth">
 
-    <!-- Header + Navbar -->
+    <!-- Header -->
     <header class="flex items-center justify-between mb-8 border-b border-slate-200 pb-4">
       <div class="flex items-center space-x-2">
         <img
           v-if="data.logo_path"
           :src="getImageUrl(data.logo_path)"
           alt="Logo"
-          class="h-12 w-12 object-contain rounded-full hover:scale-105 transition-transform duration-300"
+          class="h-12 w-12 object-contain rounded-full hover:scale-105 transition duration-300"
         />
         <h1 v-else class="text-xl font-bold">{{ data.name }}</h1>
       </div>
@@ -28,6 +28,14 @@
         :src="getImageUrl(data.hero_image)"
         class="w-full h-[300px] object-cover rounded-lg hover:scale-105 transition duration-300"
       />
+    </section>
+
+    <!-- Opis delatnosti -->
+    <section v-if="data.description" class="mb-10">
+      <h2 class="text-xl font-semibold mb-2 text-purple-700">📋 Opis delatnosti</h2>
+      <p class="text-gray-700 text-sm whitespace-pre-line break-words">
+        {{ data.description }}
+      </p>
     </section>
 
     <!-- Napomena -->
@@ -62,17 +70,17 @@
             :src="getImageUrl(item.image)"
             class="w-full h-48 object-cover rounded shadow hover:scale-105 transition duration-300"
           />
-          <p class="mt-2 text-sm font-medium break-words">{{ item.title }}</p>
+          <p class="mt-2 text-sm font-medium break-words whitespace-pre-line">{{ item.title }}</p>
         </div>
       </div>
     </section>
 
     <!-- Video -->
-    <section v-if="data.video_url" class="my-10">
+    <section v-if="embedVideoUrl" class="my-10">
       <h2 class="text-xl font-semibold mb-4 text-purple-700">🎥 Video</h2>
       <div class="aspect-w-16 aspect-h-9">
         <iframe
-          :src="data.video_url"
+          :src="embedVideoUrl"
           frameborder="0"
           allowfullscreen
           class="w-full h-80 rounded"
@@ -82,8 +90,14 @@
 
     <!-- PDF -->
     <section v-if="data.pdf_file" class="my-10">
-      <h2 class="text-xl font-semibold mb-4 text-purple-700">📄 Dokument</h2>
-      <a :href="getImageUrl(data.pdf_file)" target="_blank" class="text-purple-600 hover:underline">Preuzmi PDF</a>
+      <h2 class="text-xl font-semibold mb-4 text-purple-700">📄 Priloženi dokument</h2>
+      <iframe
+        :src="getImageUrl(data.pdf_file)"
+        width="100%"
+        height="600"
+        style="border: 1px solid #ccc;"
+        class="rounded shadow"
+      ></iframe>
     </section>
 
     <!-- Kontakt -->
@@ -106,7 +120,6 @@
           style="border:0;"
           allowfullscreen
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
     </section>
@@ -124,7 +137,7 @@
 
     <!-- Footer -->
     <footer class="text-center text-sm text-gray-500 pt-4 border-t border-slate-200 mt-10">
-      © {{ new Date().getFullYear() }} {{ data.name || 'Vaša firma' }} —
+      © {{ new Date().getFullYear() }} {{ data.name || 'Vaša firma' }} — 
       <a href="#hero" class="text-purple-600 hover:underline">Nazad na vrh ↑</a>
     </footer>
   </div>
@@ -149,6 +162,16 @@ export default {
     googleMapUrl() {
       const query = encodeURIComponent(this.data.address || '')
       return `https://maps.google.com/maps?q=${query}&output=embed`
+    },
+    embedVideoUrl() {
+      if (!this.data.video_url) return null
+      try {
+        const url = new URL(this.data.video_url)
+        const videoId = url.searchParams.get("v")
+        return `https://www.youtube.com/embed/${videoId}`
+      } catch {
+        return null
+      }
     }
   },
   methods: {

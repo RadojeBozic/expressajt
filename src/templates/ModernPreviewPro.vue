@@ -1,7 +1,7 @@
 <template>
   <div id="hero" class="bg-gray-100 text-gray-800 font-sans px-6 py-8 max-w-5xl mx-auto rounded shadow scroll-smooth">
-    
-    <!-- Header sa navigacijom -->
+
+    <!-- Header -->
     <header class="flex items-center justify-between mb-8 border-b border-gray-300 pb-4">
       <div class="flex items-center space-x-2">
         <img
@@ -19,7 +19,7 @@
       </nav>
     </header>
 
-    <!-- Hero sekcija -->
+    <!-- Hero -->
     <section class="grid md:grid-cols-2 gap-6 items-center mb-12 min-h-[70vh]" id="hero">
       <div>
         <h2 class="text-3xl font-bold mb-2">{{ data.hero_title }}</h2>
@@ -30,6 +30,14 @@
         :src="getImageUrl(data.hero_image)"
         class="w-full h-56 object-cover rounded-lg hover:scale-105 transition duration-300"
       />
+    </section>
+
+    <!-- Opis delatnosti -->
+    <section v-if="data.description" class="mb-10">
+      <h2 class="text-xl font-semibold mb-2 text-blue-700">📋 Opis delatnosti</h2>
+      <p class="text-gray-700 text-sm whitespace-pre-line break-words">
+        {{ data.description }}
+      </p>
     </section>
 
     <!-- Napomena -->
@@ -72,11 +80,11 @@
     </section>
 
     <!-- Video -->
-    <section v-if="data.video_url" class="my-10">
+    <section v-if="embedVideoUrl" class="my-10">
       <h2 class="text-2xl font-semibold mb-4 text-blue-700">🎥 Video prezentacija</h2>
       <div class="aspect-w-16 aspect-h-9">
         <iframe
-          :src="data.video_url"
+          :src="embedVideoUrl"
           frameborder="0"
           allowfullscreen
           class="w-full h-80 rounded"
@@ -87,7 +95,12 @@
     <!-- PDF -->
     <section v-if="data.pdf_file" class="my-10">
       <h2 class="text-2xl font-semibold mb-4 text-blue-700">📄 Priloženi dokument</h2>
-      <a :href="getImageUrl(data.pdf_file)" target="_blank" class="text-purple-600 hover:underline">Preuzmi PDF</a>
+      <iframe
+        :src="getImageUrl(data.pdf_file)"
+        width="100%"
+        height="600"
+        style="border: 1px solid #ccc;"
+      ></iframe>
     </section>
 
     <!-- Kontakt -->
@@ -128,7 +141,7 @@
 
     <!-- Footer -->
     <footer class="text-center text-sm text-gray-500 pt-4 border-t border-gray-300 mt-10">
-      © {{ new Date().getFullYear() }} {{ data.name || 'Vaša firma' }} —
+      © {{ new Date().getFullYear() }} {{ data.name || 'Vaša firma' }} — 
       <a href="#hero" class="text-blue-600 hover:underline">Nazad na vrh ↑</a>
     </footer>
   </div>
@@ -153,6 +166,16 @@ export default {
     googleMapUrl() {
       const query = encodeURIComponent(this.data.address || '')
       return `https://maps.google.com/maps?q=${query}&output=embed`
+    },
+    embedVideoUrl() {
+      if (!this.data.video_url) return null
+      try {
+        const url = new URL(this.data.video_url)
+        const videoId = url.searchParams.get("v")
+        return `https://www.youtube.com/embed/${videoId}`
+      } catch {
+        return null
+      }
     }
   },
   methods: {

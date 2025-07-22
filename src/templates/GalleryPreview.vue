@@ -29,6 +29,16 @@
 
     <hr class="my-10 border-dashed border-gray-300" />
 
+      <!-- Opis delatnosti -->
+    <section v-if="data.description" class="mb-10">
+      <h2 class="text-xl font-semibold mb-2 text-purple-300">📋 Opis delatnosti</h2>
+      <p class="text-slate-300 text-sm whitespace-pre-line break-words">
+        {{ data.description }}
+      </p>
+    </section>
+
+     <hr class="my-10 border-t border-dashed border-gray-300" />
+
     <!-- O nama -->
     <section class="mb-10">
       <h2 class="text-xl font-semibold text-indigo-600 mb-4">{{ data.about_title }}</h2>
