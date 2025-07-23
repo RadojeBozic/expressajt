@@ -49,19 +49,44 @@
           <h6 class="text-sm text-slate-50 font-medium mb-2">{{ $t('footer.products') }}</h6>
           <ul class="text-sm space-y-2">
             <li>
-              <a class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">{{ $t('footer.links.features') }}</a>
+              <router-link
+                to="/footer/products/features"
+                class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out"
+              >
+                {{ $t('footer.links.features') }}
+              </router-link>
             </li>
             <li>
-              <a class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">{{ $t('footer.links.integrations') }}</a>
+              <router-link
+                to="/footer/products/integrations"
+                class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out"
+              >
+                {{ $t('footer.links.integrations') }}
+              </router-link>
             </li>
             <li>
-              <a class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">{{ $t('footer.links.pricing') }}</a>
+              <router-link
+                to="/pricing"
+                class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out"
+              >
+                {{ $t('footer.links.pricing') }}
+              </router-link>
             </li>
             <li>
-              <a class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">{{ $t('footer.links.changelog') }}</a>
+              <router-link
+                to="/footer/products/changelog"
+                class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out"
+              >
+                {{ $t('footer.links.changelog') }}
+              </router-link>
             </li>
             <li>
-              <a class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">{{ $t('footer.links.method') }}</a>
+              <router-link
+                to="/footer/products/method"
+                class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out"
+              >
+                {{ $t('footer.links.method') }}
+              </router-link>
             </li>
           </ul>
         </div>
@@ -71,16 +96,36 @@
           <h6 class="text-sm text-slate-50 font-medium mb-2">{{ $t('footer.company') }}</h6>
           <ul class="text-sm space-y-2">
             <li>
-              <a class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">{{ $t('footer.links.about') }}</a>
+              <router-link
+                to="/footer/company/about"
+                class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out"
+              >
+                {{ $t('footer.links.about') }}
+              </router-link>
             </li>
             <li>
-              <a class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">{{ $t('footer.links.diversity') }}</a>
+              <router-link
+                to="/footer/company/diversity"
+                class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out"
+              >
+                {{ $t('footer.links.diversity') }}
+              </router-link>
             </li>
             <li>
-              <a class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">{{ $t('footer.links.blog') }}</a>
+              <router-link
+                to="/footer/company/blog"
+                class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out"
+              >
+                {{ $t('footer.links.blog') }}
+              </router-link>
             </li>
             <li>
-              <a class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">{{ $t('footer.links.careers') }}</a>
+              <router-link
+                to="/footer/company/careers"
+                class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out"
+              >
+                {{ $t('footer.links.careers') }}
+              </router-link>
             </li>
             <li>
               <a class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">{{ $t('footer.links.finance') }}</a>

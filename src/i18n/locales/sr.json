@@ -16,8 +16,7 @@
   "hero": {
     "label": "Najnoviji projekti koje donosimo",
     "title": "Global Business Systems",
-    "description": "Snažna rešenja za digitalno poslovanje — web, ERP, prodaja, SaaS, AI",
-    "description01": "Ojačajte svoje poslovanje uz naša rešenja. Od web sajtova do ERP sistema, nudimo sve što vam je potrebno za uspeh.",
+    "description": "Ojačajte svoje poslovanje uz naša rešenja. Od web sajtova do ERP sistema, nudimo sve što vam je potrebno za uspeh.",
     "primary_button": "Besplatne prezentacije",
     "secondary_button": "Plaćena rešenja od 1999 RSD godišnje"
   },
@@ -136,6 +135,18 @@
     }
   ]
 },
+"features05": {
+    "title": "Šta nas to razlikuje od konkurencije?",
+    "description": "Koristimo najnovije tehnologije i alate za razvoj aplikacija. Naša platforma je bazirana na Laravelu, Livewire-u i Bootstrapu, što omogućava brzu i efikasnu izradu web rešenja.",
+    "description01": " Moderni šabloni prilagođeni tvojoj delatnosti. Koristimo Cruip dizajn, ali svaki projekat dodatno prilagođavamo tvom biznisu.",
+    "description02": "Modularna arhitektura – širiš kad poželiš. Dodaj ili ukloni funkcionalnosti bez potrebe za novim sistemom.",
+    "description03": "U potpunosti lokalizovano rešenje. Podrška za srpski jezik, dinarski sistem i lokalne poslovne propise.",
+    "description04": "Transparentne cene – bez skrivenih troškova. Plaćaš samo ono što koristiš, bez dodatnih iznenađenja i ograničenja.",
+    "description05": "Pristup backend kodu i integracije. Korisnici koji koriste napredne pakete, mogu povezati sopstvene ERP, CRM i druge sisteme.",
+    "description06": "Podrška stručnjaka iz Srbije. Na raspolaganju ti je lokalni tim koji razume tržište i tvoje potrebe."
+  },
+
+
 "pricing": {
   "label": "Paketi i cene",
   "title": "Fleksibilni planovi i funkcionalnosti",
@@ -148,25 +159,25 @@
   "plans": {
     "pro": {
       "title": "Plus",
-      "description": "Sve na dohvat ruke.",
+      "description": "Web prezentacije.",
       "mo": "msč",
-      "label": "Sve na dohvat ruke.",
+      "label": "Web prezentacije.",
       "get_started": "Počni odmah",
       "unlimited": "Neograničeno"
     },
      "team": {
-      "title": "Pro",
-      "description": "Sve na dohvat ruke.",
+          "title": "Pro",
+          "description": "Online prodavnica-osnovno.",
       "mo": "msč",
-      "label": "Sve na dohvat ruke.",
+      "label": "Online prodavnica-osnovno.",
       "get_started": "Počni odmah",
       "unlimited": "Neograničeno"
     },
     "enterprise": {
       "title": "Napredni",
-      "description": "Sve na dohvat ruke.",
+      "description": "Online prodavnica-napredno.",
       "mo": "msč",
-      "label": "Sve na dohvat ruke.",
+      "label": "Online prodavnica-napredno.",
       "get_started": "Počni odmah",
       "unlimited": "Neograničeno"
     },
@@ -318,14 +329,14 @@
       "title1": "Jednim klikom do sajta",
       "description1": "Brzo kreiranje poslovnih sajtova koristeći šablone (Laravel + Livewire + Bootstrap). Uključuje kontakt forme, galerije, mape i često postavljana pitanja (FAQ).",
     
-      "title2": "ERP moduli i poslovne aplikacije",
-      "description2": "Upravljanje firmama, klijentima, fakturama i proizvodima uz personalizovan dashboard. Moguća integracija sa fiskalnim sistemima i eksternim API-jevima.",
+      "title2": "MyMaXico – besplatna online prodavnica",
+      "description2": "Potpuno besplatno za 20 do 100 proizvoda, ne plaćaš ni domen, ni hosting – sve je uključeno! Idealno za male proizvođače, zanatlije, umetnike i lokalne prodavce.",
     
       "title3": "Online prodavnice & Multi-vendor platforme",
       "description3": "Funkcionalni e-commerce sistemi sa modulima za dobavljače, proizvođače i partnere. SEO optimizacija, podrška za Stripe, PayPal i plaćanje pouzećem.",
   
-      "title4": "CMS i blog rešenja",
-      "description4": "Napredni CMS za objave, kategorije i komentare. Integracija sa Mailchimp-om i mogućnost prikaza najnovijih tema i tagova.",
+      "title4": "Napredne Web aplikacije",
+      "description4": "Naša platforma je primer kako se moderne web tehnologije mogu koristiti za izgradnju skalabilnih i efikasnih SaaS rešenja. Uključuje ERP, CRM i druge poslovne aplikacije.",
 
       "title5": "AI kao servis",
       "description5": "Automatizovano kreiranje sadržaja, slika i email kampanja pomoću veštačke inteligencije. Uključuje i chatbotove, SEO analize i prevod sadržaja.",
@@ -435,9 +446,5 @@
   "success": "Vaša poruka je uspešno poslata!",
   "error": "Došlo je do greške. Pokušajte ponovo."
 }
-
-
-
-
   
 }

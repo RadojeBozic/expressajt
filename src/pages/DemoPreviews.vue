@@ -54,14 +54,35 @@
         />
       </div>
 
-      <div class="text-center mt-12">
-        <router-link
-          :to="isAuthenticated ? '/dashboard' : '/signup'"
-          class="inline-block bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded text-lg font-semibold transition"
-        >
-          {{ isAuthenticated ? '🛠 Idi na Dashboard' : '🚀 Registruj se i napravi svoj sajt' }}
-        </router-link>
-      </div>
+      <div class="text-center mt-12 space-y-4">
+  <router-link
+    :to="isAuthenticated ? '/dashboard' : '/signup'"
+    class="inline-block bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded text-lg font-semibold transition"
+  >
+    {{ isAuthenticated ? '🛠 Idi na svoj nalog' : '🚀 Registruj se i napravi svoj sajt' }}
+  </router-link>
+
+  <!-- Objašnjenje -->
+  <p class="text-bold text-slate-400 mt-4">Ne moraš da se registruješ da bi isprobao formu:</p>
+
+  <!-- Dugmad za testiranje -->
+  <div class="flex flex-col sm:flex-row gap-4 justify-center mt-2">
+    <router-link
+      to="/free-site-form"
+      class="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded font-medium text-sm shadow transition"
+    >
+      📝 Kreiraj svoju BESPLATNU prezentaciju
+    </router-link>
+
+    <router-link
+      to="/pro-site-form"
+      class="bg-yellow-500 hover:bg-yellow-600 text-slate-900 px-5 py-3 rounded font-medium text-sm shadow transition"
+    >
+      🚀 Kreiraj svoju PRO prezentaciju
+    </router-link>
+  </div>
+</div>
+
     </div>
   </section>
 

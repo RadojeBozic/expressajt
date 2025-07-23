@@ -16,6 +16,10 @@
         <!-- * Custom styles in src/css/additional-styles/theme.scss -->
         <div class="relative before:absolute before:inset-0 before:-translate-x-full before:z-20 before:bg-linear-to-l before:from-transparent before:to-slate-900 before:to-20% after:absolute after:inset-0 after:translate-x-full after:z-20 after:bg-linear-to-r after:from-transparent after:to-slate-900 after:to-20%">
           <div class="stellar-carousel swiper-container group">
+
+             
+
+               <!-- freesite-->
             <Highlighter class="swiper-wrapper w-fit" :refresh="swiperInitialized">
               <!-- Carousel items -->
               <HighlighterItem class="swiper-slide h-auto group/slide">
@@ -33,11 +37,22 @@
                       <div class="text-slate-400 mb-3">{{ $t('gbs_services.items.description1') }}</div>
                     </div>
                     <div class="text-right">
-                      <a class="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group" href="#0">{{ $t('gbs_services.items.learn_more') }}<span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span></a>
+                      <router-link
+                        to="/services/freesite"
+                        class="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group"
+                      >
+                        {{ $t('gbs_services.items.learn_more') }}
+                        <span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
+                          -&gt;
+                        </span>
+                      </router-link>
                     </div>
                   </div>
                 </div>
               </HighlighterItem>
+
+
+              <!-- mymaxico -->
               <HighlighterItem class="swiper-slide h-auto group/slide">
                 <div class="relative h-full bg-slate-900 rounded-[inherit] z-20 overflow-hidden">
                   <!-- Particles animation -->
@@ -53,11 +68,21 @@
                       <div class="text-slate-400 mb-3">{{ $t('gbs_services.items.description2') }}</div>
                     </div>
                     <div class="text-right">
-                      <a class="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group" href="#0">{{ $t('gbs_services.items.learn_more') }} <span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span></a>
+                    <router-link
+                    to="/services/mymaxico"
+                    class="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group"
+                  >
+                    {{ $t('gbs_services.items.learn_more') }}
+                    <span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
+                      -&gt;
+                    </span>
+                  </router-link>
                     </div>
                   </div>
                 </div>
               </HighlighterItem>
+
+              <!-- onlineshop -->
               <HighlighterItem class="swiper-slide h-auto group/slide">
                 <div class="relative h-full bg-slate-900 rounded-[inherit] z-20 overflow-hidden">
                   <!-- Particles animation -->
@@ -73,11 +98,21 @@
                       <div class="text-slate-400 mb-3">{{ $t('gbs_services.items.description3') }}</div>
                     </div>
                     <div class="text-right">
-                      <a class="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group" href="#0">{{ $t('gbs_services.items.learn_more') }} <span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span></a>
-                    </div>
+                  <router-link
+                    to="/services/onlineshop"
+                    class="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group"
+                  >
+                    {{ $t('gbs_services.items.learn_more') }}
+                    <span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
+                      -&gt;
+                    </span>
+                  </router-link> 
+                   </div>
                   </div>
                 </div>
               </HighlighterItem>
+
+               <!-- services/saas -->
               <HighlighterItem class="swiper-slide h-auto group/slide">
                 <div class="relative h-full bg-slate-900 rounded-[inherit] z-20 overflow-hidden">
                   <!-- Particles animation -->
@@ -93,11 +128,21 @@
                       <div class="text-slate-400 mb-3">{{ $t('gbs_services.items.description4') }}</div>
                     </div>
                     <div class="text-right">
-                      <a class="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group" href="#0">{{ $t('gbs_services.items.learn_more') }} <span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span></a>
+                      <router-link
+                        to="/services/saas"
+                        class="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group"
+                      >
+                        {{ $t('gbs_services.items.learn_more') }}
+                        <span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
+                          -&gt;
+                        </span>
+                      </router-link>                    
                     </div>
                   </div>
                 </div>
               </HighlighterItem>
+
+              <!-- ai-as-a-service -->
               <HighlighterItem class="swiper-slide h-auto group/slide">
                 <div class="relative h-full bg-slate-900 rounded-[inherit] z-20 overflow-hidden">
                   <!-- Particles animation -->
@@ -113,8 +158,16 @@
                       <div class="text-slate-400 mb-3">{{ $t('gbs_services.items.description5') }}</div>
                     </div>
                     <div class="text-right">
-                      <a class="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group" href="#0">{{ $t('gbs_services.items.learn_more') }}<span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span></a>
-                    </div>
+                    <router-link
+                      to="/services/ai-as-a-service"
+                      class="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group"
+                    >
+                      {{ $t('gbs_services.items.learn_more') }}
+                      <span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
+                        -&gt;
+                      </span>
+                    </router-link>                    
+                  </div>
                   </div>
                 </div>
               </HighlighterItem>

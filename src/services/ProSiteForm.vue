@@ -122,6 +122,7 @@
 import axios from 'axios'
 import Header from '../partials/Header.vue'
 import Footer from '../partials/Footer.vue'
+import { useRoute } from 'vue-router'
 
 export default {
   name: 'ProSiteForm',
@@ -130,6 +131,7 @@ export default {
     return {
       loading: false,
       resData: null,
+      route: useRoute(),
       form: {
         name: '', description: '', email: '', phone: '',
         facebook: '', instagram: '', logo: null,
@@ -144,9 +146,14 @@ export default {
       successMessage: '', errorMessage: ''
     }
   },
+  mounted() {
+    const slug = this.route.query.fromSlug
+    if (slug) this.fetchFromSlug(slug)
+  },
   methods: {
     addItem() {
-      if (this.form.offerItems.length < 12) this.form.offerItems.push({ title: '', image: null })
+      if (this.form.offerItems.length < 12)
+        this.form.offerItems.push({ title: '', image: null })
     },
     removeItem(i) {
       this.form.offerItems.splice(i, 1)
@@ -154,16 +161,19 @@ export default {
     handleFile(e, field) {
       const file = e.target.files[0]
       if (!file) return
+
       if (field !== 'pdfDocument' && (!file.type.startsWith('image/') || file.size > 4 * 1024 * 1024)) {
         this.errorMessage = '⚠️ Slika mora biti manja od 4MB i validnog formata.'
         this.form[field] = null
         return
       }
+
       if (field === 'pdfDocument' && file.type !== 'application/pdf') {
         this.errorMessage = '⚠️ Dozvoljen je samo PDF dokument.'
         this.form[field] = null
         return
       }
+
       this.form[field] = file
       this.errorMessage = ''
     },
@@ -177,73 +187,88 @@ export default {
       this.form.offerItems[i].image = file
       this.errorMessage = ''
     },
-  async submitForm() {
-  this.successMessage = ''
-  this.errorMessage = ''
-  this.loading = true
-  this.resData = null
+    async submitForm() {
+      this.successMessage = ''
+      this.errorMessage = ''
+      this.loading = true
+      this.resData = null
 
-  try {
-    const fd = new FormData()
+      try {
+        const fd = new FormData()
+        fd.append('type', 'pro')
 
-    // Tip paketa (free/pro)
-    fd.append('type', 'pro')
+        // Tekstualni podaci
+        const textFields = [
+          'name', 'description', 'email', 'phone', 'facebook', 'instagram',
+          'heroTitle', 'heroSubtitle', 'aboutTitle', 'aboutText', 'offerTitle',
+          'youtubeLink', 'google_map_link', 'address_city', 'address_street',
+          'phone2', 'phone3', 'email2', 'email3', 'template'
+        ]
+        textFields.forEach(field => {
+          const key = field === 'youtubeLink' ? 'video_url' : field
+          fd.append(key, this.form[field] || '')
+        })
 
-    // ✔ Opšti podaci
-    fd.append('name', this.form.name)
-    fd.append('description', this.form.description)
-    fd.append('email', this.form.email)
-    fd.append('phone', this.form.phone)
-    fd.append('facebook', this.form.facebook)
-    fd.append('instagram', this.form.instagram)
-    fd.append('template', this.form.template)
+        // Fajlovi
+        if (this.form.logo) fd.append('logo', this.form.logo)
+        if (this.form.heroImage) fd.append('heroImage', this.form.heroImage)
+        if (this.form.aboutImage) fd.append('aboutImage', this.form.aboutImage)
+        if (this.form.pdfDocument) fd.append('pdf_file', this.form.pdfDocument)
 
-    // ✔ Fajlovi (logotip, hero, about)
-    if (this.form.logo) fd.append('logo', this.form.logo)
-    if (this.form.heroImage) fd.append('heroImage', this.form.heroImage)
-    if (this.form.aboutImage) fd.append('aboutImage', this.form.aboutImage)
+        // Ponuda
+        this.form.offerItems.forEach((item, i) => {
+          fd.append(`offerItems[${i}][title]`, item.title)
+          fd.append(`offerItems[${i}][image]`, item.image)
+        })
 
-    // ✔ Hero sekcija
-    fd.append('heroTitle', this.form.heroTitle)
-    fd.append('heroSubtitle', this.form.heroSubtitle)
+        const res = await axios.post('http://localhost:8090/api/free-site-request', fd, {
+          headers: { 'Content-Type': 'multipart/form-data' }
+        })
 
-    // ✔ O nama
-    fd.append('aboutTitle', this.form.aboutTitle)
-    fd.append('aboutText', this.form.aboutText)
+        this.successMessage = '✅ Zahtev uspešno poslat!'
+        this.resData = res.data
+      } catch (err) {
+        console.error('❌', err.response || err)
+        this.errorMessage = err.response?.data?.message || '⚠️ Nešto je pošlo po zlu. Pokušajte ponovo.'
+      } finally {
+        this.loading = false
+      }
+    },
+    async fetchFromSlug(slug) {
+      try {
+        const res = await axios.get(`http://localhost:8090/api/free-site-request/${slug}`)
+        const source = res.data
 
-    // ✔ Ponuda
-    fd.append('offerTitle', this.form.offerTitle)
-    this.form.offerItems.forEach((item, i) => {
-      fd.append(`offerItems[${i}][title]`, item.title)
-      fd.append(`offerItems[${i}][image]`, item.image)
-    })
+        this.form.name = source.name + ' (kopija)'
+        this.form.description = source.description
+        this.form.email = source.email
+        this.form.phone = source.phone
+        this.form.facebook = source.facebook
+        this.form.instagram = source.instagram
+        this.form.heroTitle = source.hero_title
+        this.form.heroSubtitle = source.hero_subtitle
+        this.form.aboutTitle = source.about_title
+        this.form.aboutText = source.about_text
+        this.form.offerTitle = source.offer_title
+        this.form.offerItems = source.offer_items.map(item => ({
+          title: item.title,
+          image: null // ručno
+        }))
+        this.form.youtubeLink = source.video_url || ''
+        this.form.address_city = (source.address || '').split(',')[1]?.trim() || ''
+        this.form.address_street = (source.address || '').split(',')[0]?.trim() || ''
+        this.form.google_map_link = source.google_map_link || ''
+        this.form.phone2 = source.phone2 || ''
+        this.form.phone3 = source.phone3 || ''
+        this.form.email2 = source.email2 || ''
+        this.form.email3 = source.email3 || ''
+        this.form.template = source.template
 
-    // ✔ PRO dodatni sadržaj
-    if (this.form.pdfDocument) fd.append('pdf_file', this.form.pdfDocument)
-    fd.append('video_url', this.form.youtubeLink || '')
-    fd.append('google_map_link', this.form.google_map_link || '')
-    fd.append('address_city', this.form.address_city || '')
-    fd.append('address_street', this.form.address_street || '')
-    fd.append('phone2', this.form.phone2 || '')
-    fd.append('phone3', this.form.phone3 || '')
-    fd.append('email2', this.form.email2 || '')
-    fd.append('email3', this.form.email3 || '')
-
-    // 📤 Slanje
-    const res = await axios.post('http://localhost:8090/api/free-site-request', fd, {
-      headers: { 'Content-Type': 'multipart/form-data' }
-    })
-
-    this.successMessage = '✅ Zahtev uspešno poslat!'
-    this.resData = res.data
-  } catch (err) {
-    console.error('❌', err.response || err)
-    this.errorMessage = err.response?.data?.message || '⚠️ Nešto je pošlo po zlu. Pokušajte ponovo.'
-  } finally {
-    this.loading = false
-  }
-}
-
+      } catch (err) {
+        console.error('❌ Greška pri učitavanju podataka iz šablona:', err)
+        this.errorMessage = '⚠️ Nije moguće učitati podatke iz šablona.'
+      }
+    }
   }
 }
 </script>

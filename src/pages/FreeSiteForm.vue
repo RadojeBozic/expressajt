@@ -108,6 +108,7 @@
 import axios from 'axios'
 import Header from '../partials/Header.vue'
 import Footer from '../partials/Footer.vue'
+import { useRoute } from 'vue-router'
 
 export default {
   name: 'FreeSiteForm',
@@ -115,6 +116,7 @@ export default {
   data() {
     return {
       loading: false,
+      route: useRoute(),
       form: {
         name: '',
         description: '',
@@ -137,6 +139,11 @@ export default {
       errorMessage: ''
     }
   },
+    mounted() {
+      if (this.route.query.fromSlug) {
+    this.fetchFromSlug(this.route.query.fromSlug)
+  }
+    },
   methods: {
     addItem() {
       if (this.form.offerItems.length < 10) {
@@ -202,6 +209,35 @@ export default {
         this.loading = false
       }
     }
+  },
+  async fetchFromSlug(slug) {
+  try {
+    const res = await axios.get(`http://localhost:8090/api/free-site-request/${slug}`)
+    const source = res.data
+
+    // Kopiraj vrednosti iz postojeće prezentacije u formu
+    this.form.name = source.name + ' (kopija)'
+    this.form.description = source.description
+    this.form.email = source.email
+    this.form.phone = source.phone
+    this.form.facebook = source.facebook
+    this.form.instagram = source.instagram
+    this.form.heroTitle = source.hero_title
+    this.form.heroSubtitle = source.hero_subtitle
+    this.form.aboutTitle = source.about_title
+    this.form.aboutText = source.about_text
+    this.form.offerTitle = source.offer_title
+    this.form.offerItems = source.offer_items.map(item => ({
+      title: item.title,
+      image: null // korisnik treba da doda svoju sliku
+    }))
+    this.form.template = source.template
+
+  } catch (err) {
+    console.error('❌ Greška pri preuzimanju šablona:', err)
+    this.errorMessage = '⚠️ Nije moguće učitati šablon.'
   }
+}
+
 }
 </script>

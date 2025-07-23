@@ -32,10 +32,7 @@
           <p class="text-lg text-slate-300 mb-8" data-aos="fade-down" data-aos-delay="200">
             {{ $t('hero.description') }}
           </p>
-           <p class="text-lg text-slate-300 mb-8" data-aos="fade-down" data-aos-delay="200">
-            {{ $t('hero.description01') }}
-          </p>
-
+           
           <!-- CTA Buttons -->
           <div class="max-w-xs mx-auto sm:max-w-none sm:inline-flex sm:justify-center space-y-4 sm:space-y-0 sm:space-x-4" data-aos="fade-down" data-aos-delay="400">
             <div>

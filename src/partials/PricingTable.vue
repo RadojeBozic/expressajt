@@ -37,14 +37,15 @@
         <div class="grow pb-4 mb-4 border-b border-slate-800">
           <div class="text-base font-medium bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-purple-200 pb-0.5">{{ $t('pricing.plans.pro.title') }}</div>
           <div class="mb-1">
-            <span class="text-lg font-medium text-slate-500">€</span><span class="text-3xl font-bold text-slate-50">{{ annual ? '24' : '29' }}</span><span class="text-sm text-slate-600 font-medium">/{{ $t('pricing.plans.pro.mo') }}</span>
+            <span class="text-lg font-medium text-slate-500">€</span><span class="text-3xl font-bold text-slate-50">{{ annual ? '34' : '41' }}</span><span class="text-sm text-slate-600 font-medium">/{{ $t('pricing.plans.pro.mo') }}</span>
           </div>
           <div class="text-slate-500">{{ $t('pricing.plans.pro.label') }}</div>
         </div>
         <div class="pb-4 border-b border-slate-800">
-          <a class="btn-sm text-slate-900 bg-linear-to-r from-white/80 via-white to-white/80 hover:bg-white w-full transition duration-150 ease-in-out group" href="#0">
+           <router-link
+                    to="/services/saas" class="btn-sm text-slate-900 bg-linear-to-r from-white/80 via-white to-white/80 hover:bg-white w-full transition duration-150 ease-in-out group" href="#0">
             {{ $t('pricing.plans.pro.get_started') }}<span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span>
-          </a>
+           </router-link>
         </div>
       </div>
       <!-- Team price -->
@@ -57,9 +58,10 @@
           <div class="text-slate-500">{{ $t('pricing.plans.team.label') }}</div>
         </div>
         <div class="pb-4 border-b border-slate-800">
-          <a class="btn-sm text-white bg-purple-500 hover:bg-purple-600 w-full transition duration-150 ease-in-out group" href="#0">
+          <router-link
+                    to="/services/onlineshop" class="btn-sm text-white bg-purple-500 hover:bg-purple-600 w-full transition duration-150 ease-in-out group" href="#0">
             {{ $t('pricing.plans.team.get_started') }}<span class="tracking-normal text-purple-300 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span>
-          </a>
+          </router-link>
         </div>
       </div>
       <!-- Enterprise price -->
@@ -72,9 +74,10 @@
           <div class="text-slate-500">{{ $t('pricing.plans.enterprise.label') }}</div>
         </div>
         <div class="pb-4 border-b border-slate-800">
-          <a class="btn-sm text-slate-900 bg-linear-to-r from-white/80 via-white to-white/80 hover:bg-white w-full transition duration-150 ease-in-out group" href="#0">
+          <router-link
+                    to="/services/onlineshop" class="btn-sm text-slate-900 bg-linear-to-r from-white/80 via-white to-white/80 hover:bg-white w-full transition duration-150 ease-in-out group" href="#0">
             {{ $t('pricing.plans.enterprise.get_started') }}<span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span>
-          </a>
+          </router-link>
         </div>
       </div>
       <!-- # Usage -->

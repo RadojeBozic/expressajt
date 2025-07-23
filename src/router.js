@@ -147,7 +147,35 @@ const router = createRouter({
       path: '/demo',
       name: 'DemoPreviews',
       component: () => import('./pages/DemoPreviews.vue')
-    }
+    },
+
+    // Footer links
+    {
+  path: '/footer/products/features',
+  name: 'FooterFeatures',
+  component: () => import('./pages/footer/products/Features.vue')
+},
+    {
+      path: '/footer/products/integrations',
+      name: 'FooterIntegrations',
+      component: () => import('./pages/footer/products/Integrations.vue')
+    }, 
+    {
+      path: '/footer/products/changelog',
+      name: 'ChangelogPage',
+      component: () => import('./pages/footer/products/Changelog.vue')
+    },
+    {
+      path: '/footer/products/method',
+      name: 'MethodPage',
+      component: () => import('./pages/footer/products/Method.vue')
+    },
+    {
+      path: '/footer/company/about',
+      name: 'AboutPage',
+      component: () => import('./pages/footer/company/About.vue')
+    },
+
 
   ]
 })
