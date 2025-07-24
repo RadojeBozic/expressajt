@@ -11,6 +11,7 @@
       <button @click="view = 'messages'" class="btn bg-green-600 hover:bg-green-700">✉️ Poruke</button>
       <button @click="view = 'sites'" class="btn bg-orange-600 hover:bg-orange-700">🌐 Prezentacije</button>
       <button @click="view = 'stats'" class="btn bg-purple-600 hover:bg-purple-700">📈 Statistika</button>
+       <button @click="view = 'vulnerabilities'" class="btn bg-red-600 hover:bg-red-700">🛡️ Ranjivosti</button>
     </div>
 
     <!-- Dinamička komponenta -->
@@ -24,6 +25,7 @@ import AdminMessages from '../partials/admin/AdminMessages.vue'
 import AdminStats from '../partials/admin/AdminStats.vue'
 import Header from '../partials/Header.vue'
 import AdminSites from '../partials/admin/AdminSites.vue'
+import AdminVulnerabilities from '../partials/admin/AdminVulnerabilities.vue'
 
 export default {
   name: 'AdminDashboard',
@@ -32,8 +34,8 @@ export default {
     AdminMessages,
     AdminStats,
     AdminSites,
-    Header
-    
+    Header,
+    AdminVulnerabilities
   },
   data() {
     return {
@@ -47,7 +49,8 @@ export default {
         users: 'AdminUsers',
         messages: 'AdminMessages',
         sites: 'AdminSites',
-        stats: 'AdminStats'
+        stats: 'AdminStats',
+        vulnerabilities: 'AdminVulnerabilities'
       }[this.view]
     }
   }
