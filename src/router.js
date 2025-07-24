@@ -210,6 +210,26 @@ const router = createRouter({
       name: 'VulnerabilityPage',
       component: () => import('./pages/footer/resources/Vulnerability.vue')
     },
+    {
+      path: '/footer/legals/refund',
+      name: 'RefundPage',
+      component: () => import('./pages/footer/legals/Refund.vue')
+    },
+    {
+      path: '/footer/legals/terms_conditions',
+      name: 'TermsConditionsPage',
+      component: () => import('./pages/footer/legals/Terms.vue')
+    },
+    {
+      path: '/footer/legals/privacy',
+      name: 'PrivacyPage',
+      component: () => import('./pages/footer/legals/Privacy.vue')
+    },
+    {
+      path: '/footer/legals/brandkit',
+      name: 'BrandkitPage',
+      component: () => import('./pages/footer/legals/Brandkit.vue')
+    },
 
 
   ]

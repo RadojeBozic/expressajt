@@ -19,24 +19,32 @@
             </div>
             <!-- Social links -->
             <ul class="flex">
+              <!-- Facebook -->
               <li>
-                <a class="flex justify-center items-center text-purple-500 hover:text-purple-400 transition duration-150 ease-in-out" href="#0" aria-label="Twitter">
-                  <svg class="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                    <path d="m13.063 9 3.495 4.475L20.601 9h2.454l-5.359 5.931L24 23h-4.938l-3.866-4.893L10.771 23H8.316l5.735-6.342L8 9h5.063Zm-.74 1.347h-1.457l8.875 11.232h1.36l-8.778-11.232Z" />
+                <a href="https://facebook.com/gbsplatform" target="_blank" aria-label="Facebook"
+                  class="flex justify-center items-center text-purple-500 hover:text-purple-400 transition duration-150 ease-in-out">
+                  <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 12.07C22 6.49 17.52 2 12 2S2 6.49 2 12.07c0 4.88 3.66 8.93 8.44 9.83v-6.96H8.08v-2.87h2.36V9.41c0-2.33 1.38-3.62 3.5-3.62.7 0 1.42.12 1.42.12v2.6h-1.03c-1.01 0-1.32.63-1.32 1.28v1.53h2.25l-.36 2.87h-1.89v6.96C18.34 21 22 16.95 22 12.07z"/>
                   </svg>
                 </a>
               </li>
+
+              <!-- Instagram -->
               <li class="ml-2">
-                <a class="flex justify-center items-center text-purple-500 hover:text-purple-400 transition duration-150 ease-in-out" href="#0" aria-label="Dev.to">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
-                    <path class="w-8 h-8 fill-current" d="M12.29 14.3a.69.69 0 0 0-.416-.155h-.623v3.727h.623a.689.689 0 0 0 .416-.156.543.543 0 0 0 .21-.466v-2.488a.547.547 0 0 0-.21-.462ZM22.432 8H9.568C8.704 8 8.002 8.7 8 9.564v12.872A1.568 1.568 0 0 0 9.568 24h12.864c.864 0 1.566-.7 1.568-1.564V9.564A1.568 1.568 0 0 0 22.432 8Zm-8.925 9.257a1.631 1.631 0 0 1-1.727 1.687h-1.657v-5.909h1.692a1.631 1.631 0 0 1 1.692 1.689v2.533ZM17.1 14.09h-1.9v1.372h1.163v1.057H15.2v1.371h1.9v1.056h-2.217a.72.72 0 0 1-.74-.7v-4.471a.721.721 0 0 1 .7-.739H17.1v1.054Zm3.7 4.118c-.471 1.1-1.316.88-1.694 0l-1.372-5.172H18.9l1.058 4.064 1.056-4.062h1.164l-1.378 5.17Z" />
+                <a href="https://instagram.com/gbsplatform" target="_blank" aria-label="Instagram"
+                  class="flex justify-center items-center text-purple-500 hover:text-purple-400 transition duration-150 ease-in-out">
+                  <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5A4.25 4.25 0 0020.5 16.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.75 2.25a.75.75 0 11.001 1.501A.75.75 0 0116.5 5.75zM12 7.25a4.75 4.75 0 110 9.5 4.75 4.75 0 010-9.5zm0 1.5a3.25 3.25 0 100 6.5 3.25 3.25 0 000-6.5z"/>
                   </svg>
                 </a>
               </li>
+
+              <!-- GitHub -->
               <li class="ml-2">
-                <a class="flex justify-center items-center text-purple-500 hover:text-purple-400 transition duration-150 ease-in-out" href="#0" aria-label="Github">
-                  <svg class="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16 8.2c-4.4 0-8 3.6-8 8 0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4V22c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.3 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6-.2 1.3-.3 2-.3s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.4.6.9.6 1.6v2.2c0 .2.1.5.6.4 3.2-1.1 5.5-4.1 5.5-7.6-.1-4.4-3.7-8-8.1-8z" />
+                <a href="https://github.com/RadojeBozic/gbs-platform" target="_blank" aria-label="GitHub"
+                  class="flex justify-center items-center text-purple-500 hover:text-purple-400 transition duration-150 ease-in-out">
+                  <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 .5C5.8.5.5 5.8.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.6 1.2 1.6 1.2 1 .1 2.3-.7 2.3-.7.2-.8.5-1.3.9-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2 0-.3-.5-1.4.1-3 0 0 1-.3 3.3 1.3a11.2 11.2 0 016 0C17 5.1 18 5.4 18 5.4c.6 1.6.1 2.7.1 3 .7.8 1.2 1.9 1.2 3.2 0 4.5-2.8 5.5-5.5 5.8.4.3.8 1 .8 2v2.9c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.8 18.2.5 12 .5z"/>
                   </svg>
                 </a>
               </li>
@@ -174,16 +182,36 @@
           <h6 class="text-sm text-slate-50 font-medium mb-2">{{ $t('footer.legals') }}</h6>
           <ul class="text-sm space-y-2">
             <li>
-              <a class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">{{ $t('footer.links.refund') }}</a>
+              <router-link
+                to="/footer/legals/refund"
+                class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out"
+              >
+                {{ $t('footer.links.refund') }}
+              </router-link>
             </li>
             <li>
-              <a class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">{{ $t('footer.links.terms_conditions') }}</a>
+              <router-link
+                to="/footer/legals/terms_conditions"
+                class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out"
+              >
+                {{ $t('footer.links.terms_conditions') }}
+              </router-link>
             </li>
             <li>
-              <a class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">{{ $t('footer.links.privacy') }}</a>
+              <router-link
+                to="/footer/legals/privacy"
+                class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out"
+              >
+                {{ $t('footer.links.privacy') }}
+              </router-link>
             </li>
             <li>
-              <a class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">{{ $t('footer.links.brandkit') }}</a>
+              <router-link
+                to="/footer/legals/brandkit"
+                class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out"
+              >
+                {{ $t('footer.links.brandkit') }}
+              </router-link>
             </li>
           </ul>
         </div>
