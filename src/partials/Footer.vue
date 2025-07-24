@@ -128,7 +128,12 @@
               </router-link>
             </li>
             <li>
-              <a class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">{{ $t('footer.links.finance') }}</a>
+              <router-link
+                to="/footer/company/financials"
+                class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out"
+              >
+                {{ $t('footer.links.finance') }}
+              </router-link>
             </li>
           </ul>
         </div>
@@ -138,13 +143,28 @@
           <h6 class="text-sm text-slate-50 font-medium mb-2">{{ $t('footer.resources') }}</h6>
           <ul class="text-sm space-y-2">
             <li>
-              <a class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">{{ $t('footer.links.community') }}</a>
+              <router-link
+                to="/footer/resources/community"
+                class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out"
+              >
+                {{ $t('footer.links.community') }}
+              </router-link>
             </li>
             <li>
-              <a class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">{{ $t('footer.links.terms') }}</a>
+              <router-link
+                to="/footer/resources/terms"
+                class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out"
+              >
+                {{ $t('footer.links.terms') }}
+              </router-link>
             </li>
             <li>
-              <a class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">{{ $t('footer.links.vulnerability') }}</a>
+              <router-link
+                to="/footer/resources/vulnerability"
+                class="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out"
+              >
+                {{ $t('footer.links.vulnerability') }}
+              </router-link>
             </li>
           </ul>
         </div>

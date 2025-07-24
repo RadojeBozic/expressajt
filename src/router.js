@@ -175,6 +175,41 @@ const router = createRouter({
       name: 'AboutPage',
       component: () => import('./pages/footer/company/About.vue')
     },
+    {
+      path: '/footer/company/diversity',
+      name: 'DiversityPage',
+      component: () => import('./pages/footer/company/Diversity.vue')
+    },
+    {
+      path: '/footer/company/blog',
+      name: 'BlogPage',
+      component: () => import('./pages/footer/company/Blog.vue')
+    },
+    {
+      path: '/footer/company/careers',
+      name: 'CareersPage',
+      component: () => import('./pages/footer/company/Careers.vue')
+    },
+    {
+      path: '/footer/company/financials',
+      name: 'FinancePage',
+      component: () => import('./pages/footer/company/Finance.vue')
+    },
+    {
+      path: '/footer/resources/community',
+      name: 'CommunityPage',
+      component: () => import('./pages/footer/resources/Community.vue')
+    },
+    {
+      path: '/footer/resources/terms',
+      name: 'TermsPage',
+      component: () => import('./pages/footer/resources/Terms.vue')
+    },
+    {
+      path: '/footer/resources/vulnerability',
+      name: 'VulnerabilityPage',
+      component: () => import('./pages/footer/resources/Vulnerability.vue')
+    },
 
 
   ]
