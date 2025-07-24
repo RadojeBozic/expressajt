@@ -7,7 +7,7 @@
 
     <!-- Main content -->
     <main class="grow">
-      <Hero />
+      <!-- <Hero /> -->
       <ContactHero />
       <ContactForm />
       <ContactInfo />
@@ -21,7 +21,7 @@
 
 <script>
 import Header from '../partials/Header.vue'
-import Hero from '../partials/Hero.vue'
+//import Hero from '../partials/Hero.vue'
 import Footer from '../partials/Footer.vue'
 
 // 🆕 Kontakt sekcije
@@ -35,7 +35,7 @@ export default {
   components: {
     Header,
     Footer,
-    Hero,
+    //Hero,
     ContactHero,
     ContactForm,
     ContactInfo,
