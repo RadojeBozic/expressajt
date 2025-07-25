@@ -134,6 +134,7 @@ export default {
         offerTitle: '',
         offerItems: [{ title: '', image: null }],
         template: localStorage.getItem('selectedTemplate') || 'klasicni'
+        
       },
       successMessage: '',
       errorMessage: ''
@@ -174,41 +175,47 @@ export default {
       this.errorMessage = ''
     },
     async submitForm() {
-      this.successMessage = ''
-      this.errorMessage = ''
-      this.loading = true
+  this.successMessage = ''
+  this.errorMessage = ''
+  this.loading = true
 
-      try {
-        const formData = new FormData()
-        for (const key in this.form) {
-          if (key === 'offerItems') {
-            this.form.offerItems.forEach((item, i) => {
-              formData.append(`offerItems[${i}][title]`, item.title)
-              formData.append(`offerItems[${i}][image]`, item.image)
-            })
-          } else {
-            formData.append(key, this.form[key])
+  try {
+    const formData = new FormData()
+
+    // Iteriraj kroz formu
+    for (const key in this.form) {
+      if (key === 'offerItems') {
+        this.form.offerItems.forEach((item, i) => {
+          formData.append(`offerItems[${i}][title]`, item.title)
+          if (item.image instanceof File) {
+            formData.append(`offerItems[${i}][image]`, item.image)
           }
-        }
-
-        const res = await axios.post('http://localhost:8090/api/free-site-request', formData, {
-          headers: { 'Content-Type': 'multipart/form-data' }
         })
-
-        this.successMessage = '✅ Zahtev uspešno poslat!'
-        this.$router.push(`/prezentacije/${res.data.slug}`)
-      } catch (err) {
-        console.error('❌ Detaljna greška:', err.response || err)
-        if (err.response?.data?.errors) {
-          const errors = Object.values(err.response.data.errors).flat()
-          this.errorMessage = errors[0] || '⚠️ Došlo je do greške u unosu.'
-        } else {
-          this.errorMessage = '⚠️ Nešto je pošlo po zlu. Pokušajte ponovo.'
-        }
-      } finally {
-        this.loading = false
+      } else if (this.form[key] instanceof File) {
+        formData.append(key, this.form[key])
+      } else if (this.form[key] !== null && this.form[key] !== '') {
+        formData.append(key, this.form[key])
       }
     }
+
+    const res = await axios.post('http://localhost:8090/api/free-site-request', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' }
+    })
+
+    this.successMessage = '✅ Zahtev uspešno poslat!'
+    this.$router.push(`/prezentacije/${res.data.slug}`)
+  } catch (err) {
+    console.error('❌ Detaljna greška:', err.response || err)
+    if (err.response?.data?.errors) {
+      const errors = Object.values(err.response.data.errors).flat()
+      this.errorMessage = errors[0] || '⚠️ Došlo je do greške u unosu.'
+    } else {
+      this.errorMessage = '⚠️ Nešto je pošlo po zlu. Pokušajte ponovo.'
+    }
+  } finally {
+    this.loading = false
+  }
+}
   },
   async fetchFromSlug(slug) {
   try {

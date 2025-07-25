@@ -1,25 +1,23 @@
 <template>
   <Header />
-  <Hero />
-
-  <main class="grow p-8 text-center min-h-[50vh] flex flex-col items-center justify-center">
+  <main class="grow p-8 min-h-[60vh]">
     <!-- Dobrodošlica -->
-    <h1 class="text-3xl font-bold text-slate-300 dark:text-white mb-2">
-      Dobrodošli, {{ user?.name || 'korisniče' }}!
-    </h1>
-    <p class="text-slate-300 dark:text-slate-300 mb-6">
-      Uspešno ste registrovani na platformu.
-    </p>
+    <div class="text-center mb-8">
+      <h1 class="text-3xl font-bold text-slate-300 dark:text-white pt-8 mt-4">
+        Dobrodošli, {{ user?.name || 'korisniče' }}!
+      </h1>
+      <p class="text-slate-400">Uspešno ste registrovani na platformu.</p>
+    </div>
 
-    <!-- Profil podaci -->
-    <div class="bg-slate-800 p-6 rounded-lg text-left max-w-xl w-full mb-8 text-white shadow-lg">
+    <!-- Profil -->
+    <div class="bg-slate-800 p-6 rounded-lg max-w-5xl w-full mx-auto text-white mb-8 shadow-lg">
       <h2 class="text-xl font-semibold mb-4">🧑‍💼 Moj profil</h2>
       <p><strong>Ime:</strong> {{ user?.name }}</p>
       <p><strong>Email:</strong> {{ user?.email }}</p>
     </div>
 
     <!-- Poruke korisnika -->
-    <div class="bg-slate-800 p-6 rounded-lg text-left max-w-xl w-full mb-8 text-white shadow-lg">
+    <div class="bg-slate-800 p-6 rounded-lg max-w-5xl w-full mx-auto text-white mb-8 shadow-lg">
       <h2 class="text-xl font-semibold mb-4">📩 Moje poruke</h2>
       <ul>
         <li v-for="(msg, index) in messages" :key="index" class="border-b border-slate-700 pb-2 mb-2">
@@ -29,56 +27,39 @@
       </ul>
     </div>
 
-    <!-- Usluge / Paketi -->
-    <div class="bg-slate-800 p-6 rounded-lg text-left max-w-xl w-full mb-8 text-white shadow-lg">
-      <h2 class="text-xl font-semibold mb-4">🎯 Naše usluge</h2>
-      <div v-for="(item, index) in services" :key="index" class="mb-4">
-        <h3 class="text-lg font-bold">{{ item.title }}</h3>
-        <p class="text-sm mb-2">{{ item.description }}</p>
-        <button
-          @click="interested(item.title)"
-          class="px-3 py-1 bg-purple-600 hover:bg-purple-700 rounded text-sm"
-        >
-          Zainteresovan/a sam
-        </button>
+    <!-- Naše usluge -->
+    <div class="bg-slate-800 p-6 rounded-lg max-w-7xl w-full mx-auto text-white mb-12 shadow-lg">
+      <h2 class="text-xl font-semibold mb-6 text-center">🎯 Naše usluge</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div v-for="(item, index) in services" :key="index" class="bg-slate-900 p-4 rounded-lg border border-slate-700 flex flex-col justify-between">
+          <div>
+            <h3 class="text-lg font-bold mb-2">{{ item.title }}</h3>
+            <p class="text-sm text-slate-300">{{ item.description }}</p>
+          </div>
+          <button
+            @click="interested(item.title)"
+            class="mt-4 px-3 py-1 bg-purple-600 hover:bg-purple-700 rounded text-sm text-white self-start"
+          >
+            Zainteresovan/a sam
+          </button>
+        </div>
       </div>
     </div>
-
-    <!-- Akcije -->
-    <router-link
-      to="/"
-      class="inline-flex items-center px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium rounded shadow transition duration-150"
-    >
-      ← Nazad na početnu stranicu
-    </router-link>
-
-    <button
-      @click="handleLogout"
-      class="mt-4 inline-flex items-center px-4 py-2 bg-slate-500 hover:bg-slate-600 text-red-700 text-sm font-medium rounded shadow transition duration-150"
-    >
-      Odjavi se
-    </button>
-
-    <Cta />
   </main>
-
   <Footer />
 </template>
+
 
 <script>
 import axios from 'axios'
 import { getCurrentUser } from '../utils/auth'
 import Header from '../partials/Header.vue'
-import Hero from '../partials/Hero.vue'
-import Cta from '../partials/Cta.vue'
 import Footer from '../partials/Footer.vue'
 
 export default {
   name: 'Dashboard',
   components: {
     Header,
-    Hero,
-    Cta,
     Footer
   },
   data() {

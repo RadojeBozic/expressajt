@@ -3,7 +3,7 @@
      <!-- Header -->
     <Header />
   <div class="p-8 max-w-6xl mx-auto text-white">
-    <h1 class="text-3xl font-bold mb-6 mt-[30px]" >📊 Admin kontrolna tabla</h1>
+    <h1 class="text-3xl font-bold mb-6 mt-[100px]" >📊 Admin kontrolna tabla</h1>
 
     <!-- Navigacija -->
     <div class="flex gap-4 mb-6">

@@ -7,7 +7,7 @@
       
   <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-32 pb-8 md:pt-12 md:pb-16">
 
-    <h2 class=" text-4xl font-bold text-white mb-4 -z-11">{{ $t('contact.title') }}</h2>
+    <h2 class=" text-4xl font-bold text-white mb-4 -z-10">{{ $t('contact.title') }}</h2>
     <p class="text-slate-400 text-lg max-w-2xl mx-auto">{{ $t('contact.description') }}</p>
                   </div>
   </section>

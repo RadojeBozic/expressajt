@@ -11,7 +11,7 @@
       <ContactHero />
       <ContactForm />
       <ContactInfo />
-      <ContactLinks />
+      <!-- <ContactLinks /> -->
     </main>
 
     <!-- Footer -->
@@ -28,7 +28,7 @@ import Footer from '../partials/Footer.vue'
 import ContactHero from '../partials/ContactHero.vue'         // Uvod sa naslovom i opisom
 import ContactForm from '../partials/ContactForm.vue'         // Kontakt forma sa newsletter checkboxom
 import ContactInfo from '../partials/ContactInfo.vue'         // Prikaz fizičke adrese i društvenih mreža
-import ContactLinks from '../partials/ContactLinks.vue'       // Korisni linkovi i regulativa
+//import ContactLinks from '../partials/ContactLinks.vue'       // Korisni linkovi i regulativa
 
 export default {
   name: 'Contact',
@@ -39,7 +39,7 @@ export default {
     ContactHero,
     ContactForm,
     ContactInfo,
-    ContactLinks,
+    /* ContactLinks, */
   }
 }
 </script>
