@@ -45,7 +45,7 @@ export default {
   async mounted() {
     const token = localStorage.getItem('token')
     try {
-      const res = await axios.get('http://localhost:8090/api/vulnerabilities', {
+      const res = await axios.get('http://localhost:8080/api/vulnerabilities', {
         headers: { Authorization: `Bearer ${token}` }
       })
       this.reports = res.data
@@ -62,7 +62,7 @@ export default {
       if (!confirm('Obrisati ovu prijavu?')) return
 
       try {
-        await axios.delete(`http://localhost:8090/api/vulnerabilities/${id}`, {
+        await axios.delete(`http://localhost:8080/api/vulnerabilities/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         })
         this.reports = this.reports.filter(r => r.id !== id)

@@ -112,7 +112,7 @@ export default {
   },
   async created() {
     try {
-      const res = await axios.get(`http://localhost:8090/api/free-site-request/${this.slug}`)
+      const res = await axios.get(`http://localhost:8080/api/free-site-request/${this.slug}`)
       const site = res.data
 
       if (!this.user || (this.user.id !== site.user_id && !['admin', 'superadmin'].includes(this.user.role))) {
@@ -189,7 +189,7 @@ export default {
           }
         })
 
-        const response = await axios.post(`http://localhost:8090/api/free-site-request/${this.slug}?_method=PUT`, fd, {
+        const response = await axios.post(`http://localhost:8080/api/free-site-request/${this.slug}?_method=PUT`, fd, {
   headers: {
     Authorization: `Bearer ${token}`,
     'Content-Type': 'multipart/form-data'

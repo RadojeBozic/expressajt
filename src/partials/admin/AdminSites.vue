@@ -79,7 +79,7 @@ export default {
   async mounted() {
     const token = localStorage.getItem('token')
     try {
-      const res = await axios.get('http://localhost:8090/api/all-site-requests', {
+      const res = await axios.get('http://localhost:8080/api/all-site-requests', {
         headers: { Authorization: `Bearer ${token}` }
       })
       this.sites = res.data
@@ -90,7 +90,7 @@ export default {
   async approveSite(slug) {
   const token = localStorage.getItem('token')
   try {
-    await axios.patch(`http://localhost:8090/api/free-site-request/${slug}/status`, {
+    await axios.patch(`http://localhost:8080/api/free-site-request/${slug}/status`, {
       status: 'active'
     }, {
       headers: { Authorization: `Bearer ${token}` }
@@ -112,7 +112,7 @@ export default {
 
       const token = localStorage.getItem('token')
       try {
-        await axios.delete(`http://localhost:8090/api/free-site-request/${slug}`, {
+        await axios.delete(`http://localhost:8080/api/free-site-request/${slug}`, {
           headers: { Authorization: `Bearer ${token}` }
         })
         this.sites = this.sites.filter(s => s.slug !== slug)

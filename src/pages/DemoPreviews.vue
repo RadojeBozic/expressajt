@@ -13,9 +13,9 @@
 
       <div class="grid md:grid-cols-2 gap-6">
         <DemoBox
-          title="🥖 Zdravo da ste - Free"
-          description="Tradicionalna pekara sa kontakt sekcijom i lokacijom."
-          link="http://localhost:5173/prezentacije/zdrava-hrana-zdravo-da-ste-687e896c0e19e"
+          title="🥖 Autos - Free"
+          description="Auto's je porodična firma za prodaju i servis polovnih automobila"
+          link="http://localhost:5173/prezentacije/autos-6884e5a9758b0"
         />
         <DemoBox
           title="📊 Zdravo da ste - Pro"

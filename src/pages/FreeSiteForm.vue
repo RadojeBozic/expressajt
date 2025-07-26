@@ -198,7 +198,7 @@ export default {
       }
     }
 
-    const res = await axios.post('http://localhost:8090/api/free-site-request', formData, {
+    const res = await axios.post('http://localhost:8080/api/free-site-request', formData, {
       headers: { 'Content-Type': 'multipart/form-data' }
     })
 
@@ -219,7 +219,7 @@ export default {
   },
   async fetchFromSlug(slug) {
   try {
-    const res = await axios.get(`http://localhost:8090/api/free-site-request/${slug}`)
+    const res = await axios.get(`http://localhost:8080/api/free-site-request/${slug}`)
     const source = res.data
 
     // Kopiraj vrednosti iz postojeće prezentacije u formu

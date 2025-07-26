@@ -79,10 +79,10 @@ export default {
     const token = localStorage.getItem('token')
     try {
       const [msgRes, vulnRes] = await Promise.all([
-        axios.get('http://localhost:8090/api/messages', {
+        axios.get('http://localhost:8080/api/messages', {
           headers: { Authorization: `Bearer ${token}` }
         }),
-        axios.get('http://localhost:8090/api/vulnerabilities', {
+        axios.get('http://localhost:8080/api/vulnerabilities', {
           headers: { Authorization: `Bearer ${token}` }
         })
       ])
@@ -103,7 +103,7 @@ export default {
       if (!confirm('Obrisati ovu poruku?')) return
 
       try {
-        await axios.delete(`http://localhost:8090/api/${endpoint}/${id}`, {
+        await axios.delete(`http://localhost:8080/api/${endpoint}/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         })
 

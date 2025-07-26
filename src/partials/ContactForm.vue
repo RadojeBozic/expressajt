@@ -86,7 +86,7 @@ export default {
   methods: {
     async submitForm() {
       try {
-        const response = await axios.post('http://localhost:8090/api/contact', this.form);
+        const response = await axios.post('http://localhost:8080/api/contact', this.form);
         this.success = this.$t('contact.success') || 'Poruka uspešno poslata!';
         this.error = '';
         this.form = { name: '', email: '', message: '', newsletter: false };

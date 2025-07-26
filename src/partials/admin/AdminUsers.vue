@@ -65,7 +65,7 @@ export default {
   async mounted() {
     const token = localStorage.getItem('token')
     try {
-      const response = await axios.get('http://localhost:8090/api/users', {
+      const response = await axios.get('http://localhost:8080/api/users', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -85,7 +85,7 @@ export default {
       if (!confirm(`Promeniti ulogu korisniku ${user.email} na "${novaUloga}"?`)) return
 
       try {
-        await axios.patch(`http://localhost:8090/api/users/${user.id}/role`, {
+        await axios.patch(`http://localhost:8080/api/users/${user.id}/role`, {
           role: novaUloga
         }, {
           headers: { Authorization: `Bearer ${token}` }
@@ -102,7 +102,7 @@ export default {
       if (!confirm('Da li ste sigurni da želite da obrišete korisnika?')) return
 
       try {
-        await axios.delete(`http://localhost:8090/api/users/${id}`, {
+        await axios.delete(`http://localhost:8080/api/users/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         })
         this.users = this.users.filter(u => u.id !== id)

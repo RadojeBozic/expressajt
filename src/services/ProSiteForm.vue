@@ -221,7 +221,7 @@ export default {
           fd.append(`offerItems[${i}][image]`, item.image)
         })
 
-        const res = await axios.post('http://localhost:8090/api/free-site-request', fd, {
+        const res = await axios.post('http://localhost:8080/api/free-site-request', fd, {
           headers: { 'Content-Type': 'multipart/form-data' }
         })
 
@@ -236,7 +236,7 @@ export default {
     },
     async fetchFromSlug(slug) {
       try {
-        const res = await axios.get(`http://localhost:8090/api/free-site-request/${slug}`)
+        const res = await axios.get(`http://localhost:8080/api/free-site-request/${slug}`)
         const source = res.data
 
         this.form.name = source.name + ' (kopija)'

@@ -154,7 +154,7 @@ export default {
   methods: {
     async submitForm() {
   try {
-const response = await axios.post('http://localhost:8090/api/register', this.form);
+const response = await axios.post('http://localhost:8080/api/register', this.form);
 
     const { token, user } = response.data;
     localStorage.setItem('token', token);

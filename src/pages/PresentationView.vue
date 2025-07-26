@@ -1,6 +1,5 @@
 <template>
   <div class="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
-    <!-- ✅ Header -->
     <Header />
 
     <div v-if="siteData">
@@ -16,7 +15,7 @@
           </span>
         </h2>
 
-        <!-- 🟡 Poruka za PRO -->
+        <!-- 🟡 PRO poruka -->
         <div
           v-if="siteData.type === 'pro'"
           class="bg-yellow-100 text-yellow-800 text-sm p-4 rounded mb-4 max-w-xl mx-auto border border-yellow-300"
@@ -25,6 +24,35 @@
           Uređivanje će biti omogućeno nakon aktivacije.<br />
           Imate pitanje?
           <router-link to="/contact" class="text-blue-600 underline hover:text-blue-800">Kontaktirajte podršku</router-link>.
+        </div>
+
+        <!-- ✅ FREE poruka -->
+        <div
+          v-if="siteData.type === 'free'"
+          class="bg-green-100 text-green-900 text-sm p-4 rounded mb-4 max-w-xl mx-auto border border-green-300"
+        >
+          <strong>🎉 Besplatan sajt je generisan!</strong><br />
+          Ovo je vaš link za deljenje:
+          <br />
+          <div class="mt-2 flex items-center justify-center gap-2">
+            <input
+              type="text"
+              :value="fullLink"
+              readonly
+              class="w-full max-w-md px-3 py-1 rounded border border-slate-300 bg-white text-black text-sm"
+            />
+            <button
+              @click="copyLink"
+              class="bg-green-600 hover:bg-green-700 text-white text-sm px-3 py-1 rounded shadow"
+            >
+              📋 Kopiraj
+            </button>
+          </div>
+          <p v-if="copySuccess" class="text-green-600 text-xs mt-1">Link je kopiran u klipbord ✅</p>
+
+          <div class="mt-3 text-sm">
+            Niste zadovoljni? <router-link to="/free-site-form" class="text-blue-600 underline hover:text-blue-800">Popunite ponovo formu</router-link>.
+          </div>
         </div>
       </div>
 
@@ -42,26 +70,6 @@
         >
           🗑 Obriši
         </button>
-      </div>
-
-      <!-- 🛠 Demo opcija: Iskoristi šablon -->
-      <div v-if="siteData.slug?.startsWith('demo-')" class="text-center mb-6">
-        <router-link
-          :to="`/free-site-form?fromSlug=${siteData.slug}`"
-          class="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm transition"
-        >
-          🛠 Iskoristi ovaj šablon
-        </router-link>
-      </div>
-
-      <!-- ← Povratak na demo -->
-      <div class="text-center mb-6">
-        <router-link
-          to="/demo"
-          class="inline-block bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded text-sm transition"
-        >
-          ← Povratak na demo sajtove
-        </router-link>
       </div>
 
       <!-- Prikaz šablona -->
@@ -112,7 +120,8 @@ export default {
   data() {
     return {
       siteData: null,
-      user: getCurrentUser()
+      user: getCurrentUser(),
+      copySuccess: false
     }
   },
   computed: {
@@ -136,12 +145,15 @@ export default {
         'dark-pro': 'DarkPreviewPro'
       }
       return map[this.siteData?.template] || 'ClassicPreview'
+    },
+    fullLink() {
+      return `${window.location.origin}/prezentacije/${this.slug}`
     }
   },
   methods: {
     async fetchSite() {
       try {
-        const res = await axios.get(`http://localhost:8090/api/site-request/${this.slug}`)
+        const res = await axios.get(`http://localhost:8080/api/site-request/${this.slug}`)
         this.siteData = res.data
       } catch (err) {
         console.error('❌ Greška pri preuzimanju sajta:', err)
@@ -151,7 +163,7 @@ export default {
       if (!confirm('Da li ste sigurni da želite da obrišete ovu prezentaciju?')) return
       try {
         const token = localStorage.getItem('token')
-        await axios.delete(`http://localhost:8090/api/site-request/${this.slug}`, {
+        await axios.delete(`http://localhost:8080/api/site-request/${this.slug}`, {
           headers: { Authorization: `Bearer ${token}` }
         })
         alert('🗑 Prezentacija je uspešno obrisana.')
@@ -164,6 +176,12 @@ export default {
         console.error('❌ Greška pri brisanju:', err)
         alert('⚠️ Nije moguće obrisati. Pokušajte ponovo.')
       }
+    },
+    copyLink() {
+      navigator.clipboard.writeText(this.fullLink).then(() => {
+        this.copySuccess = true
+        setTimeout(() => (this.copySuccess = false), 3000)
+      })
     }
   },
   created() {

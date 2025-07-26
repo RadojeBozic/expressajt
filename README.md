@@ -1,120 +1,83 @@
-# GBS Platform – Frontend
+# Agencija Express Sajt – Frontend (Vue 3 + Tailwind + Vite)
 
-🎨 **gbs-platform** je frontend aplikacija za GBS (Global Business Systems) – digitalni poslovni ekosistem koji povezuje male i srednje biznise sa alatima za izradu sajtova, online prodavnice, ERP, CMS i AI podršku.
+Dobrodošli u frontend repozitorijum projekta **Agencija Express Sajt**, moderne platforme za brzu izradu poslovnih sajtova i online prodavnica.
 
----
-
-## 🚀 Tehnologije i alati
-
-- [Vue 3](https://vuejs.org/) + [Vite](https://vitejs.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Vue Router](https://router.vuejs.org/)
-- [axios](https://axios-http.com/) – komunikacija sa backendom
-- [vue-i18n](https://vue-i18n.intlify.dev/) – internacionalizacija (sr / en)
-- Stellar UI template by [Cruip](https://cruip.com/)
-- Priprema za Mosaic admin dashboard
+Ovaj repozitorijum sadrži sve UI/UX komponente, Vue stranice, integracije i logiku za korisničku interakciju. Backend je dostupan u posebnom repozitorijumu [`expressajt-backend`](https://github.com/tvoj-username/expressajt-backend) koji koristi Laravel.
 
 ---
 
-## 🧩 Funkcionalnosti
+## 🎯 Šta je Express Sajt?
 
-### 🎯 Javni deo
+**Express Sajt** je agencijska usluga koja nudi klijentima brzu i povoljnu izradu prezentacionih sajtova i online prodavnica, po sistemu:
 
-- Hero sekcija + prezentacija usluga
-- Kontakt forma (`ContactForm.vue`)
-- Višejezična podrška (🇷🇸 / 🇬🇧)
-- Komponente za prijavu, registraciju i reset lozinke
-- Priprema za korisničke uloge i dashboard-e
-
-### 👥 Korisnici
-
-- **Registracija:** Ime, Email, Lozinka, Poruka, Referrer
-- **Kontakt:** Ime, Email, Poruka, Newsletter
-- Backend odgovara validacijom i status porukama
+- **Jednim klikom do sajta** – besplatan sajt u 5 minuta
+- **Express Pro** – napredni sajt sa dodatnim sekcijama
+- **Online Shop** – e-commerce rešenja
+- **Custom sajtovi** – unikatni dizajni, brzo izrađeni
 
 ---
 
-## 🗂️ Struktura projekta
+## 📦 Tehnologije
 
-├── src/
-│ ├── assets/
-│ ├── components/
-│ │ └── ContactForm.vue
-│ ├── pages/
-│ │ ├── SignUp.vue
-│ │ ├── SignIn.vue
-│ │ └── ResetPassword.vue
-│ ├── locales/
-│ │ ├── sr.json
-│ │ └── en.json
-│ ├── router/
-│ ├── App.vue
-│ └── main.js
-├── public/
-├── index.html
-└── vite.config.js
-
-
+- **Vue 3**
+- **Vite**
+- **TailwindCSS**
+- **Vue Router**
+- **i18n** (višejezičnost)
+- **Axios** (za povezivanje sa Laravel backendom)
 
 ---
 
-## 🔧 Pokretanje lokalno
+## 🚀 Kako pokrenuti
 
-### 📦 Instalacija:
+> Pre pokretanja, proveri da backend (`expressajt-backend`) radi na http://localhost:8080
 
 npm install
-
-🚀 Razvoj:
-
 npm run dev
-Frontend aplikacija će biti dostupna na:
+Frontend će biti dostupan na: http://localhost:5173
 
-http://localhost:5173
-🔗 Backend API (Laravel)
-Podrazumeva se da backend radi na http://localhost:8000 i rute idu ka:
+📁 Struktura projekta
+├── public/              # Staticki fajlovi (favicon, slike, itd.)
+├── index.html           # Glavni HTML fajl
+├── src/
+│   ├── assets/            # Slike, ikone, ilustracije
+│   ├── components/        # Reusable Vue komponente
+│   ├── pages/             # Vue stranice (Home, Dashboard, Login, itd.)
+│   ├── partials/          # Header, Footer, Particles itd.
+│   ├── services/          # Sve usluge (ServiceFreeSite, ServiceProSite itd.)
+│   ├── templates/         # Prikazi sajtova po šablonu
+│   ├── utils/             # Autentikacija, helperi
+│   └── router.js          # Vue Router konfiguracija
+├── i18n.js              # Konfiguracija višejezičnosti
+🧩 Aktivne funkcionalnosti
+✅ Registracija i prijava korisnika
 
-POST /api/contact
+✅ Popunjavanje forme za besplatan sajt
 
-POST /api/register
+✅ Prikaz sajta po šablonu
 
-🌐 Internacionalizacija (i18n)
-Svi tekstovi se prevode preko $t() i lokalizovani su
+✅ Admin panel za upravljanje korisnicima i prezentacijama
 
-Fajlovi se nalaze u src/locales/sr.json i en.json
+✅ Sistem poruka i prijava ranjivosti
 
-Planirana integracija sa Google Translate API za automatske prevode
+📅 Planirane funkcionalnosti
+ Sistem za Pro šablone sa aktivacijom
 
-🧠 Planirane nadogradnje
-🎛️ Admin dashboard (Mosaic UI)
+ Integracija sa domen/hosting providerom
 
-🧾 Prikaz statusa registracije
+ Online plaćanje i izdavanje faktura
 
-🧠 Vuex ili Pinia za globalni state
+ Napredni dashboard za korisnike
 
-✉️ Toast/flash notifikacije
+ Mobilna verzija i PWA podrška
 
-🔐 Autentifikacija + autorizacija
+🧠 Vizija
+Naša agencija želi da omogući svakom korisniku da brzo, povoljno i jednostavno dođe do profesionalnog web sajta – bez potrebe za programerom, kao i uz podršku profesionalaca u izradi i održavanju naprednijih i složenijih rešenja.
 
-🌍 SEO podrška za sajt (meta tagovi, sitemap)
+📌 Kontakt
+Agencija Express Sajt
+📧 info@expresssajt.rs
+🌐 https://expresssajt.rs (u pripremi)
 
-⚙️ CMS builder – "Jednim klikom do sajta"
-
-🔁 Integracija sa Stripe, PayPal
-
-📜 Licenca i pravo korišćenja
-Ova aplikacija koristi legalno kupljene premium UI šablone sa sajta Cruip, uključujući:
-
-Stellar (javni deo)
-
-Mosaic (admin dashboard – u pripremi)
-
-🙌 Autori i vizija
-GBS je inicijativa za digitalizaciju i automatizaciju poslovanja u regionu i svetu. Platforma omogućava firmama svih veličina da pokrenu sajt, prodavnicu ili ceo ERP sistem na jednom mestu – brzo, kvalitetno i pošteno.
-
-📢 Dokumentaciju redovno dopunjavamo. Za pitanja, podršku i razvoj – kontaktirajte nas putem forme na gbs-platform.com.
-
-
-👤 Autor
-Radoje Božić – Full Stack Developer
-📧 admin@gbsplatform.com
-GitHub: @RadojeBozic
+🤝 Licence
+Ovaj projekat je vlasništvo tima Express Sajt. Slobodno koristite ideje za edukaciju, ali distribucija bez dozvole nije dozvoljena.

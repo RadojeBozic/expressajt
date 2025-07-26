@@ -130,7 +130,7 @@ export default {
   },
   methods: {
     getImageUrl(path) {
-      return path ? `http://localhost:8090/storage/${path}` : ''
+      return path ? `http://localhost:8080/storage/${path}` : ''
     },
     isValidUrl(url) {
       try {

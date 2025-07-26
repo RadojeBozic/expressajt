@@ -279,3 +279,30 @@ export default {
               </button>
             </div>
 
+
+
+
+interested(serviceTitle) {
+    if (serviceTitle.includes('MyMaXico')) {
+      this.$router.push('/services/mymaxico')
+    } else if (serviceTitle.includes('Jednim klikom do sajta')) {
+      this.$router.push('/services/freesite')
+    } else if (serviceTitle.includes('Pro verzija sajta')) {
+      this.$router.push('/services/prosite')
+    } else if (serviceTitle.includes('Online prodavnice & Multi-vendor')) {
+      this.$router.push('/services/onlineshop')
+    } else if (serviceTitle.includes('SaaS') || serviceTitle.includes('web aplikacije')) {
+      this.$router.push('/services/saas')
+    } else if (serviceTitle.includes('Mobilne aplikacije')) {
+      this.$router.push('/services/mobile-apps')
+    } else if (serviceTitle.includes('ERP moduli i poslovne aplikacije')) {
+      this.$router.push('/services/erp')
+    } else if (serviceTitle.includes('CMS i blog sistem')) {
+      this.$router.push('/services/cms-blog')
+    } else if (serviceTitle.includes('AI kao servis')) {
+      this.$router.push('/services/ai-as-a-service')
+    } else {
+      alert(`Zabeleženo interesovanje za: ${serviceTitle}`)
+    }
+  }
+
