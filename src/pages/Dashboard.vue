@@ -40,12 +40,12 @@
             <h3 class="text-lg font-bold mb-2">{{ item.title }}</h3>
             <p class="text-sm text-slate-300">{{ item.description }}</p>
           </div>
-          <button
-            @click="interested(item.route)"
-            class="mt-4 px-3 py-1 bg-purple-600 hover:bg-purple-700 rounded text-sm text-white self-start"
-          >
-            Zainteresovan/a sam
-          </button>
+         <router-link
+          :to="item.route"
+          class="mt-4 px-3 py-1 bg-purple-600 hover:bg-purple-700 rounded text-sm text-white self-start text-center"
+        >
+          Zainteresovan/a sam
+        </router-link>
         </div>
       </div>
     </div>
@@ -134,9 +134,15 @@ export default {
         console.error('❌ Greška pri preuzimanju poruka:', error)
       }
     },
-    interested(route) {
-      this.$router.push(route)
-    }
+   interested(serviceTitle) {
+      const selected = this.services.find(item => item.title === serviceTitle)
+      if (selected) {
+        this.$router.push(selected.route)
+      } else {
+        alert(`Zabeleženo interesovanje za: ${serviceTitle}`)
+      }
+    }, 
+    
   }
 }
 </script>

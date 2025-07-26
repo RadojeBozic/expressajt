@@ -27,15 +27,18 @@ import Integrations from './pages/Integrations.vue'
 import IntegrationsSingle from './pages/IntegrationsSingle.vue'
 
 // 🔹 Servisi
-import ServiceAiAsAService from './services/ServiceAiAsAService.vue'
-import ServiceCmsBlog from './services/ServiceCmsBlog.vue'
-import ServiceErp from './services/ServiceErp.vue'
+
 import ServiceFreeSite from './services/ServiceFreeSite.vue'
-import ServiceMobileApps from './services/ServiceMobile.vue'
-import ServiceMymaxico from './services/ServiceMymaxico.vue'
-import ServiceOnlineshop from './services/ServiceOnlineshop.vue'
 import ServiceProSite from './services/ServiceProSite.vue'
-import ServiceSaaS from './services/ServiceSaaS.vue'
+import ServiceW3Site from './services/ServiceW3Site.vue'
+import ServiceCruipSite from './services/ServiceCruipSite.vue'
+import ServiceOriginalSite from './services/ServiceOriginalSite.vue'
+import ServiceOnlineshop from './services/ServiceOnlineshop.vue'
+import ServiceUniShop from './services/ServiceUniShop.vue'
+import ServiceDomainHosting from './services/ServiceDomainHosting.vue'
+import ServiceMaintenance from './services/ServiceMaintenance.vue'
+
+
 
 
 // 🔹 Forme i pregledi
@@ -90,15 +93,16 @@ const router = createRouter({
     },
 
     // 🧰 Servisi
-    { path: '/services/:slug', name: 'Service', component: ServiceMymaxico, props: true },
     { path: '/services/freesite', name: 'FreeSite', component: ServiceFreeSite, props: { slug: 'freesite' } },
     { path: '/services/prosite', name: 'ServiceProSite', component: ServiceProSite, props: { slug: 'prosite' } },
-    { path: '/services/onlineshop', name: 'OnlineShop', component: ServiceOnlineshop, props: { slug: 'onlineshop' } },
-    { path: '/services/saas', name: 'ServiceSaaS', component: ServiceSaaS, props: { slug: 'saas' } },
-    { path: '/services/mobile-apps', name: 'ServiceMobileApps', component: ServiceMobileApps, props: { slug: 'mobile-apps' } },
-    { path: '/services/erp', name: 'ServiceErp', component: ServiceErp, props: { slug: 'erp' } },
-    { path: '/services/cms-blog', name: 'ServiceCmsBlog', component: ServiceCmsBlog, props: { slug: 'cms-blog' } },
-    { path: '/services/ai-as-a-service', name: 'ServiceAiAsAService', component: ServiceAiAsAService, props: { slug: 'ai-as-a-service' } },
+    { path: '/services/w3site', name: 'ServiceW3Site', component: ServiceW3Site, props: { slug: 'w3site' } },
+    { path: '/services/cruipsite', name: 'ServiceCruipSite', component: ServiceCruipSite, props: { slug: 'cruipsite' } },
+    { path: '/services/originalsite', name: 'ServiceOriginalSite', component: ServiceOriginalSite, props: { slug: 'originalsite' } },
+    { path: '/services/basicshop', name: 'ServiceOnlineshop', component: ServiceOnlineshop, props: { slug: 'basicshop' } },
+    { path: '/services/unishop', name: 'ServiceUniShop', component: ServiceUniShop, props: { slug: 'unishop' } },
+    { path: '/services/domain-hosting', name: 'ServiceDomainHosting', component: ServiceDomainHosting, props: { slug: 'domain-hosting' } },
+    { path: '/services/maintenance', name: 'ServiceMaintenance', component: ServiceMaintenance, props: { slug: 'maintenance' } },
+
 
     // 📝 Forme za sajtove
     { path: '/free-site-form', name: 'FreeSiteForm', component: FreeSiteForm },
