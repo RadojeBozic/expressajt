@@ -15,7 +15,7 @@
         <div class="max-w-4xl mx-auto">
           <h1 class="text-3xl font-bold mb-6 text-center">🎨 Brend komplet (Brand kit)</h1>
           <p class="text-slate-400 text-center mb-12">
-            Na ovoj stranici možete pronaći osnovne smernice za korišćenje GBS logotipa, boja i fontova u skladu sa našim vizuelnim identitetom.
+            Na ovoj stranici možete pronaći osnovne smernice za korišćenje Express Sajt logotipa, boja i fontova u skladu sa našim vizuelnim identitetom.
           </p>
 
           <div class="space-y-6 bg-slate-800 p-6 rounded-lg shadow text-slate-300 text-sm leading-relaxed">
@@ -23,9 +23,9 @@
             <div>
               <h2 class="text-lg font-semibold text-purple-400 mb-2">📌 Dozvoljeno korišćenje</h2>
               <ul class="list-disc list-inside space-y-2">
-                <li>Upotreba GBS logotipa u kontekstu partnerstava i preporuka.</li>
+                <li>Upotreba Express Sajt logotipa u kontekstu partnerstava i preporuka.</li>
                 <li>Korišćenje boja i fontova za integraciju sa vašim rešenjem.</li>
-                <li>Navođenje GBS platforme kao tehnološkog rešenja (uz napomenu).</li>
+                <li>Navođenje Express Sajt  platforme kao tehnološkog rešenja (uz napomenu).</li>
               </ul>
             </div>
 
@@ -33,7 +33,7 @@
               <h2 class="text-lg font-semibold text-purple-400 mb-2">🚫 Zabranjeno korišćenje</h2>
               <ul class="list-disc list-inside space-y-2">
                 <li>Izmena logotipa ili kombinacija boja van propisanih pravila.</li>
-                <li>Lažno predstavljanje kao deo GBS tima.</li>
+                <li>Lažno predstavljanje kao deo Express Sajt tima.</li>
                 <li>Korišćenje elemenata u kontekstu koji bi mogao narušiti reputaciju platforme.</li>
               </ul>
             </div>
@@ -59,6 +59,13 @@
 
           </div>
         </div>
+        <!-- ✨ Pozadina sa particles efektom -->
+          <div class="absolute inset-0 -z-10">
+            <Particles class="absolute inset-0" />
+            <div class="absolute left-1/2 -translate-x-1/2 bottom-0">
+              <img src="../../../images/glow-bottom.svg" class="max-w-none" width="546" height="274" alt="Pozadina" />
+            </div>
+          </div>
       </div>
 
       <Footer />

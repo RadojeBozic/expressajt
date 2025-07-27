@@ -14,7 +14,7 @@
 
       <div class="pt-32 pb-16 md:pt-52 md:pb-32">
         <div class="max-w-4xl mx-auto">
-          <h1 class="text-3xl font-bold mb-6 text-center">💼 Karijere u GBS platformi</h1>
+          <h1 class="text-3xl font-bold mb-6 text-center">💼 Karijere u GBS platformi i Express Sajt agenciji</h1>
           <p class="text-slate-400 text-center mb-12">
             Pozivamo te da se priključiš timu koji razvija savremena poslovna rešenja. Prvih 6 meseci angažman je kroz honorarnu saradnju (spoljni saradnici), 100% remote (rad od kuće).
           </p>
@@ -84,7 +84,7 @@
     <div class="absolute inset-0 -z-10">
       <Particles class="absolute inset-0" />
       <div class="absolute left-1/2 -translate-x-1/2 bottom-0">
-        <img src="../../../images/glow-bottom.svg" class="max-w-none" width="2146" height="774" alt="Pozadina" />
+        <img src="../../../images/glow-bottom.svg" class="max-w-none" width="546" height="274" alt="Pozadina" />
       </div>
     </div>
       </div>

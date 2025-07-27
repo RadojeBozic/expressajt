@@ -1,5 +1,5 @@
 <template>
-  <section class="relative min-h-screen bg-slate-900 text-white py-20 px-4 sm:px-6 overflow-hidden">
+  <section>
     <!-- 🌌 Pozadina sa particles animacijom -->
     <div class="absolute inset-0 -z-10">
       <Particles class="absolute inset-0" />
@@ -14,39 +14,48 @@
 
       <div class="pt-32 pb-16 md:pt-52 md:pb-32">
         <div class="max-w-4xl mx-auto">
-          <h1 class="text-3xl font-bold mb-6 text-center">📝 Naš blog</h1>
+          <h1 class="text-3xl font-bold mb-6 text-center">📚 Express Blog</h1>
           <p class="text-slate-400 text-center mb-12">
-            Ovde delimo znanje, uvide iz razvoja, novosti sa platforme i inspirativne priče korisnika.
+            Saveti, inspiracija i prakse iz sveta izrade sajtova, digitalizacije i malih biznisa u Srbiji.
           </p>
 
-          <!-- Staticki pregled dok ne bude CMS-a -->
+          <!-- Statički blog postovi -->
           <div class="space-y-8">
             <div class="bg-slate-800 p-5 rounded border border-slate-700 shadow hover:shadow-lg transition">
-              <h2 class="text-xl font-semibold text-purple-400 mb-2">Kako nastaje GBS platforma?</h2>
+              <h2 class="text-xl font-semibold text-purple-400 mb-2">Kako do sajta za 10 minuta bez programera?</h2>
               <p class="text-slate-300 text-sm leading-relaxed">
-                Pogled iza kulisa razvoja naše modularne platforme. Od arhitekture i tehnologija do korisničkog iskustva i UI detalja.
+                Objašnjavamo kako funkcioniše Express FREE sajt – korak po korak. I šta mali preduzetnik dobija potpuno besplatno.
               </p>
             </div>
 
             <div class="bg-slate-800 p-5 rounded border border-slate-700 shadow hover:shadow-lg transition">
-              <h2 class="text-xl font-semibold text-purple-400 mb-2">Laravel + Tailwind + AI = Brzina i fleksibilnost</h2>
+              <h2 class="text-xl font-semibold text-purple-400 mb-2">PRO paket – da li vredi uložiti?</h2>
               <p class="text-slate-300 text-sm leading-relaxed">
-                Zašto smo se odlučili za kombinaciju ovih alata? Šta to znači za tebe kao korisnika, i kako doprinosi razvoju prilagođenih rešenja?
+                Poređenje besplatne i PRO verzije sajta. Koliko košta, šta se sve dobija, i da li je to prava investicija za vaš biznis?
               </p>
             </div>
 
             <div class="bg-slate-800 p-5 rounded border border-slate-700 shadow hover:shadow-lg transition">
-              <h2 class="text-xl font-semibold text-purple-400 mb-2">Prezentacije bez programera – stvarnost u Srbiji</h2>
+              <h2 class="text-xl font-semibold text-purple-400 mb-2">Kako izgleda saradnja sa Express timom?</h2>
               <p class="text-slate-300 text-sm leading-relaxed">
-                Analiza primera iz prakse: kako su mala preduzeća uz pomoć GBS sistema došla do modernog sajta za manje od jednog dana.
+                Od prvog klika do gotovog sajta. Šta sve možete da očekujete u toku izrade, koliko to traje i ko vam pomaže?
               </p>
             </div>
 
             <div class="text-center mt-10">
-              <p class="text-slate-500 text-sm italic">Više članaka i CMS sekcija za blog biće uskoro dostupni.</p>
+              <p class="text-slate-500 text-sm italic">
+                Uskoro otvaramo CMS za korisničke priče, tutorijale i analize – pratite nas.
+              </p>
             </div>
           </div>
         </div>
+            <!-- ✨ Pozadina sa particles efektom -->
+    <div class="absolute inset-0 -z-10">
+      <Particles class="absolute inset-0" />
+      <div class="absolute left-1/2 -translate-x-1/2 bottom-0">
+        <img src="../../../images/glow-bottom.svg" class="max-w-none" width="546" height="274" alt="Pozadina" />
+      </div>
+    </div>
       </div>
 
       <Footer />

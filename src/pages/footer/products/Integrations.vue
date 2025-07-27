@@ -1,5 +1,5 @@
 <template>
-  <section class="relative min-h-screen bg-slate-900 text-white py-20 px-4 sm:px-6 overflow-hidden">
+  <section>
     <!-- 🎇 Pozadina sa particles i glow -->
     <div class="absolute inset-0 -z-10">
       <Particles class="absolute inset-0" />
@@ -14,43 +14,52 @@
 
       <div class="pt-32 pb-16 md:pt-52 md:pb-32">
         <div class="max-w-5xl mx-auto">
-          <h1 class="text-3xl font-bold mb-6 text-center">🔗 Integracije</h1>
+          <h1 class="text-3xl font-bold mb-6 text-center">🔗 Integracije sistema</h1>
           <p class="text-slate-400 text-center mb-12">
-            GBS platforma omogućava integraciju sa vodećim alatima i servisima kako biste proširili funkcionalnosti svog sajta ili aplikacije.
+            Naša platforma omogućava povezivanje sa najvažnijim servisima kako bi tvoje poslovanje bilo funkcionalnije, brže i sigurnije.
           </p>
 
           <ul class="space-y-6">
+
             <li class="border border-slate-700 rounded p-4 bg-slate-800 shadow hover:shadow-lg transition">
               <h2 class="text-xl font-semibold text-purple-400">Stripe</h2>
-              <p class="text-slate-300 text-sm mt-1">Pouzdana integracija za online plaćanja – naplata proizvoda i usluga putem kartica.</p>
+              <p class="text-slate-300 text-sm mt-1">Online naplata direktno sa sajta – sigurno plaćanje karticama sa integrisanim sigurnosnim mehanizmima (3D Secure, PCI-DSS).</p>
             </li>
 
             <li class="border border-slate-700 rounded p-4 bg-slate-800 shadow hover:shadow-lg transition">
               <h2 class="text-xl font-semibold text-purple-400">Mailchimp</h2>
-              <p class="text-slate-300 text-sm mt-1">Automatska prijava korisnika na newsletter listu, slanje kampanja i praćenje statistike.</p>
+              <p class="text-slate-300 text-sm mt-1">Prikupljanje email adresa i slanje newsletter kampanja. Savršeno za promociju i informisanje korisnika.</p>
             </li>
 
             <li class="border border-slate-700 rounded p-4 bg-slate-800 shadow hover:shadow-lg transition">
               <h2 class="text-xl font-semibold text-purple-400">Google Maps</h2>
-              <p class="text-slate-300 text-sm mt-1">Prikaz lokacije firme direktno na sajtu sa mogućnošću navigacije do adrese.</p>
+              <p class="text-slate-300 text-sm mt-1">Lokacija firme direktno na sajtu – sa prikazom u okviru kontakt forme ili zasebne sekcije.</p>
             </li>
 
             <li class="border border-slate-700 rounded p-4 bg-slate-800 shadow hover:shadow-lg transition">
               <h2 class="text-xl font-semibold text-purple-400">YouTube</h2>
-              <p class="text-slate-300 text-sm mt-1">Ugradnja video prezentacija ili reklama u sekciji o firmi, proizvodu ili usluzi.</p>
+              <p class="text-slate-300 text-sm mt-1">Ugrađivanje video sadržaja – prezentacije, tutorijali ili reklame. Video se prikazuje direktno u sekciji sajta.</p>
             </li>
 
             <li class="border border-slate-700 rounded p-4 bg-slate-800 shadow hover:shadow-lg transition">
               <h2 class="text-xl font-semibold text-purple-400">Facebook & Instagram</h2>
-              <p class="text-slate-300 text-sm mt-1">Povezivanje sa društvenim mrežama radi veće vidljivosti i direktne komunikacije sa korisnicima.</p>
+              <p class="text-slate-300 text-sm mt-1">Integracija sa društvenim mrežama, prikaz objava, automatsko deljenje i povezivanje sa poslovnom stranicom.</p>
             </li>
 
             <li class="border border-slate-700 rounded p-4 bg-slate-800 shadow hover:shadow-lg transition">
-              <h2 class="text-xl font-semibold text-purple-400">Google Analytics</h2>
-              <p class="text-slate-300 text-sm mt-1">Praćenje poseta, ponašanja korisnika i analitika konverzija.</p>
+              <h2 class="text-xl font-semibold text-purple-400">Google Analytics & Tag Manager</h2>
+              <p class="text-slate-300 text-sm mt-1">Detaljna analitika poseta, praćenje konverzija, A/B testiranja i optimizacija marketinških kampanja.</p>
             </li>
+
           </ul>
         </div>
+            <!-- ✨ Pozadina sa particles efektom -->
+          <div class="absolute inset-0 -z-10">
+            <Particles class="absolute inset-0" />
+            <div class="absolute left-1/2 -translate-x-1/2 bottom-0">
+              <img src="../../../images/glow-bottom.svg" class="max-w-none" width="546" height="274" alt="Pozadina" />
+            </div>
+          </div>
       </div>
 
       <Footer />

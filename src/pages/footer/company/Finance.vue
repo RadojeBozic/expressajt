@@ -15,7 +15,7 @@
         <div class="max-w-4xl mx-auto">
           <h1 class="text-3xl font-bold mb-6 text-center">📊 Finansijski izveštaji</h1>
           <p class="text-slate-400 text-center mb-12">
-            Pregled osnovnih finansijskih podataka u skladu sa principima transparentnosti poslovanja. Ovi izveštaji se odnose na razvoj GBS platforme, prihod od usluga i ulaganja u infrastrukturu.
+            Pregled osnovnih finansijskih podataka u skladu sa principima transparentnosti poslovanja. Ovi izveštaji se odnose na razvoj GBS platforme i Express Sajta, prihod od usluga i ulaganja u infrastrukturu.
           </p>
 
           <div class="space-y-6">
@@ -38,6 +38,13 @@
             </div>
           </div>
         </div>
+        <!-- ✨ Pozadina sa particles efektom -->
+          <div class="absolute inset-0 -z-10">
+            <Particles class="absolute inset-0" />
+            <div class="absolute left-1/2 -translate-x-1/2 bottom-0">
+              <img src="../../../images/glow-bottom.svg" class="max-w-none" width="546" height="274" alt="Pozadina" />
+            </div>
+          </div>
       </div>
 
       <Footer />

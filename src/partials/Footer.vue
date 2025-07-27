@@ -41,7 +41,7 @@
 
               <!-- GitHub -->
               <li class="ml-2">
-                <a href="https://github.com/RadojeBozic/gbs-platform" target="_blank" aria-label="GitHub"
+                <a href="https://github.com/RadojeBozic/expressajt" target="_blank" aria-label="GitHub"
                   class="flex justify-center items-center text-purple-500 hover:text-purple-400 transition duration-150 ease-in-out">
                   <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
                     <path d="M12 .5C5.8.5.5 5.8.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.6 1.2 1.6 1.2 1 .1 2.3-.7 2.3-.7.2-.8.5-1.3.9-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2 0-.3-.5-1.4.1-3 0 0 1-.3 3.3 1.3a11.2 11.2 0 016 0C17 5.1 18 5.4 18 5.4c.6 1.6.1 2.7.1 3 .7.8 1.2 1.9 1.2 3.2 0 4.5-2.8 5.5-5.5 5.8.4.3.8 1 .8 2v2.9c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.8 18.2.5 12 .5z"/>
@@ -217,7 +217,7 @@
         </div>
 
       </div>
-
+       
     </div>
   </footer>
 </template>

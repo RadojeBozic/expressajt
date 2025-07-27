@@ -30,6 +30,13 @@
             <p><strong>5. Kontakt:</strong> Sve zahteve šaljite putem <router-link to="/contact" class="text-purple-400 underline hover:text-purple-300">kontakt stranice</router-link>.</p>
           </div>
         </div>
+        <!-- ✨ Pozadina sa particles efektom -->
+          <div class="absolute inset-0 -z-10">
+            <Particles class="absolute inset-0" />
+            <div class="absolute left-1/2 -translate-x-1/2 bottom-0">
+              <img src="../../../images/glow-bottom.svg" class="max-w-none" width="546" height="274" alt="Pozadina" />
+            </div>
+          </div>
       </div>
 
       <Footer />

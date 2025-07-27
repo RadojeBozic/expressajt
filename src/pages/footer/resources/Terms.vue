@@ -15,14 +15,14 @@
         <div class="max-w-4xl mx-auto">
           <h1 class="text-3xl font-bold mb-6 text-center">📜 Uslovi korišćenja</h1>
           <p class="text-slate-400 text-center mb-12">
-            Molimo vas da pažljivo pročitate sledeće uslove pre korišćenja GBS platforme. Korišćenjem naših usluga prihvatate sve navedene odredbe.
+            Molimo vas da pažljivo pročitate sledeće uslove pre korišćenja Agencije Express Sajt. Korišćenjem naših usluga prihvatate sve navedene odredbe.
           </p>
 
           <div class="space-y-8 text-slate-300 text-sm leading-relaxed">
             <div>
               <h2 class="text-lg font-semibold text-purple-400 mb-2">1. Opšti uslovi</h2>
               <p>
-                GBS platforma omogućava izradu sajtova, online prodavnica i poslovnih alata. Usluge mogu koristiti fizička i pravna lica koja su prihvatila naše uslove korišćenja.
+                 Agencija Express Sajt omogućava izradu sajtova, online prodavnica i poslovnih alata. Usluge mogu koristiti fizička i pravna lica koja su prihvatila naše uslove korišćenja.
               </p>
             </div>
 
@@ -36,7 +36,7 @@
             <div>
               <h2 class="text-lg font-semibold text-purple-400 mb-2">3. Intelektualna svojina</h2>
               <p>
-                Svi sadržaji, uključujući softver, dizajn i tekstove su vlasništvo GBS tima, osim ako nije drugačije naznačeno. Zabranjena je neovlašćena upotreba bez pismene dozvole.
+                Svi sadržaji, uključujući softver, dizajn i tekstove su vlasništvo  Agencije Express Sajt, osim ako nije drugačije naznačeno. Zabranjena je neovlašćena upotreba bez pismene dozvole.
               </p>
             </div>
 
@@ -68,13 +68,13 @@
             </div>
           </div>
         </div>
-         <!-- ✨ Pozadinska animacija -->
-    <div class="absolute inset-0 -z-10">
-      <Particles class="absolute inset-0" />
-      <div class="absolute left-1/2 -translate-x-1/2 bottom-0">
-        <img src="../../../images/glow-bottom.svg" class="max-w-none" width="2146" height="774" alt="Glow background" />
-      </div>
-    </div>
+     <!-- ✨ Pozadina sa particles efektom -->
+          <div class="absolute inset-0 -z-10">
+            <Particles class="absolute inset-0" />
+            <div class="absolute left-1/2 -translate-x-1/2 bottom-0">
+              <img src="../../../images/glow-bottom.svg" class="max-w-none" width="546" height="274" alt="Pozadina" />
+            </div>
+          </div>
       </div>
 
       <Footer />

@@ -16,7 +16,7 @@
         <div class="max-w-4xl mx-auto">
           <h1 class="text-3xl font-bold mb-6 text-center">🌍 Raznolikost i inkluzija</h1>
           <p class="text-slate-400 text-center mb-12">
-            U GBS platformi verujemo da različitost timova vodi ka boljim rešenjima. Naš pristup je otvoren, inkluzivan i orijentisan ka vrednostima.
+            Mi, u Express Sajtu verujemo da različitost timova vodi ka boljim rešenjima. Naš pristup je otvoren, inkluzivan i orijentisan ka vrednostima.
           </p>
 
           <div class="space-y-6 text-slate-300 text-sm leading-relaxed">
@@ -34,6 +34,13 @@
             </p>
           </div>
         </div>
+        <!-- ✨ Pozadina sa particles efektom -->
+          <div class="absolute inset-0 -z-10">
+            <Particles class="absolute inset-0" />
+            <div class="absolute left-1/2 -translate-x-1/2 bottom-0">
+              <img src="../../../images/glow-bottom.svg" class="max-w-none" width="546" height="274" alt="Pozadina" />
+            </div>
+          </div>
       </div>
 
       <Footer />
