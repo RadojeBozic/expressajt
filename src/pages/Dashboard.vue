@@ -14,6 +14,14 @@
       <h2 class="text-xl font-semibold mb-4">🧑‍💼 Moj profil</h2>
       <p><strong>Ime:</strong> {{ user?.name }}</p>
       <p><strong>Email:</strong> {{ user?.email }}</p>
+
+      <!-- Dugme za brisanje naloga -->
+      <button
+        @click="confirmDeleteAccount"
+        class="mt-6 bg-red-600 hover:bg-red-700 text-white text-sm px-4 py-2 rounded shadow"
+      >
+        🗑 Obriši moj nalog
+      </button>
     </div>
 
     <!-- Poruke korisnika -->
@@ -40,12 +48,12 @@
             <h3 class="text-lg font-bold mb-2">{{ item.title }}</h3>
             <p class="text-sm text-slate-300">{{ item.description }}</p>
           </div>
-         <router-link
-          :to="item.route"
-          class="mt-4 px-3 py-1 bg-purple-600 hover:bg-purple-700 rounded text-sm text-white self-start text-center"
-        >
-          Zainteresovan/a sam
-        </router-link>
+          <router-link
+            :to="item.route"
+            class="mt-4 px-3 py-1 bg-purple-600 hover:bg-purple-700 rounded text-sm text-white self-start text-center"
+          >
+            Zainteresovan/a sam
+          </router-link>
         </div>
       </div>
     </div>
@@ -134,15 +142,25 @@ export default {
         console.error('❌ Greška pri preuzimanju poruka:', error)
       }
     },
-   interested(serviceTitle) {
-      const selected = this.services.find(item => item.title === serviceTitle)
-      if (selected) {
-        this.$router.push(selected.route)
-      } else {
-        alert(`Zabeleženo interesovanje za: ${serviceTitle}`)
+    async confirmDeleteAccount() {
+      if (!confirm('Da li ste sigurni da želite da obrišete svoj nalog? Ova akcija je nepovratna.')) return
+
+      try {
+        const token = localStorage.getItem('token')
+        await axios.delete('http://localhost:8080/api/user', {
+          headers: { Authorization: `Bearer ${token}` }
+        })
+
+        // Očisti lokalni storage i preusmeri na početnu stranicu
+        localStorage.removeItem('token')
+        localStorage.removeItem('user')
+        alert('Vaš nalog je uspešno obrisan.')
+        this.$router.push('/')
+      } catch (error) {
+        console.error('❌ Greška pri brisanju naloga:', error)
+        alert('Greška pri brisanju naloga. Pokušajte ponovo.')
       }
-    }, 
-    
+    }
   }
 }
 </script>

@@ -76,52 +76,68 @@ export default {
       sites: []
     }
   },
-  async mounted() {
-    const token = localStorage.getItem('token')
-    try {
-      const res = await axios.get('http://localhost:8080/api/all-site-requests', {
-        headers: { Authorization: `Bearer ${token}` }
-      })
-      this.sites = res.data
-    } catch (error) {
-      console.error('❌ Greška pri učitavanju sajtova:', error)
-    }
+  mounted() {
+    this.fetchSites()
   },
-  async approveSite(slug) {
-  const token = localStorage.getItem('token')
-  try {
-    await axios.patch(`http://localhost:8080/api/free-site-request/${slug}/status`, {
-      status: 'active'
-    }, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-    const site = this.sites.find(s => s.slug === slug)
-    if (site) site.status = 'active'
-    alert('✅ Prezentacija je aktivirana.')
-  } catch (err) {
-    console.error('❌ Greška pri aktivaciji:', err)
-  }
-},
-
   methods: {
-    formatDate(date) {
-      return new Date(date).toLocaleString('sr-RS')
+    // 📥 Učitavanje svih prezentacija
+    async fetchSites() {
+      try {
+        const token = localStorage.getItem('token')
+        const res = await axios.get('http://localhost:8080/api/free-site-request/all-site-requests', {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        this.sites = res.data
+      } catch (error) {
+        console.error('❌ Greška pri učitavanju sajtova:', error.response?.data || error.message)
+      }
     },
+
+    // ✅ Aktiviranje sajta
+    async approveSite(slug) {
+      try {
+        const token = localStorage.getItem('token')
+        await axios.patch(
+          `http://localhost:8080/api/free-site-request/${slug}/status`,
+          { status: 'active' },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          }
+        )
+        const site = this.sites.find(s => s.slug === slug)
+        if (site) site.status = 'active'
+        alert('✅ Prezentacija je aktivirana.')
+      } catch (err) {
+        console.error('❌ Greška pri aktivaciji:', err.response?.data || err.message)
+      }
+    },
+
+    // 🗑 Brisanje sajta
     async deleteSite(slug) {
       if (!confirm('Da li sigurno želite da obrišete ovu prezentaciju?')) return
 
-      const token = localStorage.getItem('token')
       try {
+        const token = localStorage.getItem('token')
         await axios.delete(`http://localhost:8080/api/free-site-request/${slug}`, {
-          headers: { Authorization: `Bearer ${token}` }
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
         })
         this.sites = this.sites.filter(s => s.slug !== slug)
         alert('🗑 Prezentacija je obrisana.')
       } catch (error) {
-        console.error('❌ Greška pri brisanju:', error)
+        console.error('❌ Greška pri brisanju:', error.response?.data || error.message)
       }
+    },
+
+    // 📅 Formatiranje datuma
+    formatDate(date) {
+      return new Date(date).toLocaleString('sr-RS')
     }
-    
   }
 }
 </script>
