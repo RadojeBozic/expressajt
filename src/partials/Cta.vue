@@ -33,7 +33,7 @@
             {{ $t('cta.description') }}
           </p>
           <div>
-            <a @click.prevent="goContactForm" class="btn text-slate-900 bg-linear-to-r from-white/80 via-white to-white/80 hover:bg-white transition duration-150 ease-in-out group" to="/contact">
+            <a @click.prevent="goServiceDesign" class="btn text-slate-900 bg-linear-to-r from-white/80 via-white to-white/80 hover:bg-white transition duration-150 ease-in-out group" to="/contact">
               {{ $t('cta.button') }} <span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span>
             </a>
           </div>
@@ -47,8 +47,8 @@
 export default {
   name: 'Cta',
   methods: {
-    goContactForm() {
-      this.$router.push('/contact');
+    goServiceDesign() {
+      this.$router.push('/services/design');
     }
   }
 }

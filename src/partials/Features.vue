@@ -44,7 +44,7 @@
                   <span>{{ $t('features.tabs.2') }}</span>
                 </router-link>
                 <router-link
-                    to="/projects" 
+                    to="/services/design" 
                     class="flex items-center text-sm font-medium text-slate-50 rounded-sm border bg-slate-800/25 w-full px-3 py-2 transition duration-150 ease-in-out hover:opacity-100" :class="tab !== '3' ? 'border-slate-700 opacity-50' : 'border-purple-700 shadow-sm shadow-purple-500/25'" @click.prevent="tab = '3'">
                   <svg class="shrink-0 fill-slate-300 mr-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
                     <path d="M14.3.3c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-8 8c-.2.2-.4.3-.7.3-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l8-8ZM15 7c.6 0 1 .4 1 1 0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8c.6 0 1 .4 1 1s-.4 1-1 1C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6c0-.6.4-1 1-1Z" />

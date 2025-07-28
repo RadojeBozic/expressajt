@@ -37,6 +37,7 @@ import ServiceOnlineshop from './services/ServiceOnlineshop.vue'
 import ServiceUniShop from './services/ServiceUniShop.vue'
 import ServiceDomainHosting from './services/ServiceDomainHosting.vue'
 import ServiceMaintenance from './services/ServiceMaintenance.vue'
+import ServiceDesign from './services/ServiceDesign.vue'
 
 
 import PublicPresentation from './pages/PublicPresentation.vue'
@@ -105,7 +106,8 @@ const router = createRouter({
     { path: '/services/unishop', name: 'ServiceUniShop', component: ServiceUniShop, props: { slug: 'unishop' } },
     { path: '/services/domain-hosting', name: 'ServiceDomainHosting', component: ServiceDomainHosting, props: { slug: 'domain-hosting' } },
     { path: '/services/maintenance', name: 'ServiceMaintenance', component: ServiceMaintenance, props: { slug: 'maintenance' } },
-
+    { path: '/services/design', name: 'ServiceDesign', component: ServiceDesign, props: { slug: 'design' } },
+    
     // 📄 Javne prezentacije
     { 
       path: '/print/:slug', 

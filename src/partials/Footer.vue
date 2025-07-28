@@ -12,10 +12,10 @@
               <div class="mb-4">
                 <!-- Logo -->
                 <router-link class="inline-flex" to="/" aria-label="Cruip">
-                  <img src="../images/logog.png" width="38" height="38" alt="Stellar">
+                  <img src="../images/logo_express02.png" width="138" height="138" alt="Logo Express" class="max-w-none" />
                 </router-link>
               </div>
-              <div class="text-sm text-slate-300">&copy;GBS<span class="text-slate-500">-</span>{{ $t('footer.copyright') }}</div>
+              <div class="text-sm text-slate-300">&copy;Express Sajt<span class="text-slate-500">-</span>{{ $t('footer.copyright') }}</div>
             </div>
             <!-- Social links -->
             <ul class="flex">

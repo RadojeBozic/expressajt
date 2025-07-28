@@ -2,10 +2,10 @@
   "welcome": "Dobrodošli",
   "tagline": "Samo nebo je granica. Dobrodošli u svet pozitivnih promena.",
   "cta": {
-    "label": "gbsplatform.com",
-    "title": "Kako unaprediti svoj biznis?",
-    "description": "Mi u GBS smo svesni činjenice da profesionalizam nema alternativu. Doslednost, upornost i istrajnost su ključni faktori uspeha. Pažljivo budžetiranje će Vaše ulaganje u naše projekte učiniti najboljom investicijom za Vaš uspeh.",
-    "button": "Potraži podršku"
+    "label": "Izdvajamo iz ponude",
+    "title": "Express dizajn - AI + Canva Pro, brzo i lako - već od 999 RSD",
+    "description": "Za naše klijente nudimo brza i efikasna rešenja uz podršku veštačke inteligencije, ali i kreativni dizajn po meri. Uz Express dizajn, dobijate logo, banere i grafike za društvene mreže u rekordnom roku.",
+    "button": "Potraži dizajn"
   },
   "cta02": {
     "label": "Platforma zasnovana na bezbednosti",
@@ -16,7 +16,7 @@
   "hero": {
     "label": "Najnoviji projekti koje donosimo",
     "title": "Express sajtovi i online prodavnice",
-    "description": "Ojačajte svoje poslovanje uz naša rešenja. Od web sajtova do ERP sistema, nudimo sve što vam je potrebno za uspeh.",
+    "description": "Pokrenite svoj biznis online za samo 1 dan – bez programiranja, bez komplikacija.",
     "primary_button": "Besplatne prezentacije",
     "secondary_button": "Plaćena rešenja od 1999 RSD godišnje"
   },
@@ -27,7 +27,7 @@
     "tabs": {
       "1": "Web aplikacije",
       "2": "Internet prodavnice",
-      "3": "ERP - softverska rešenja"
+      "3": "Express dizajn - AI + Canva Pro"
     }
   },
   "features02": {
@@ -79,57 +79,57 @@
   "description": "Naše aplikacije su 100% responzivne i optimizovane za mobilne telefone, tablete i desktop računare. Korisnicima pružamo besprekorno iskustvo bez obzira na veličinu ekrana."
 },
 "features04": {
-  "title": "Kako uspostaviti saradnju?",
-  "description": "Najbolje rezultate ćemo postići ako pažljivo i dosledno utvrdimo prioritete. A, ako sve to uspemo i da zapišemo - pola posla smo obavili.",
+  "title": "Dinamika i fleksibilnost",
+  "description": "Za različita rešenja donosimo različitu dinamiku, od 10 min do par sedmica. Naša platforma omogućava brzo prilagođavanje i implementaciju novih funkcionalnosti, što znači da se vaša aplikacija može razvijati zajedno sa vašim poslovanjem.",
   "groups": [
     {
-      "title": "Početni korak – Ideja i planiranje",
+      "title": "Najbrža rešenja - od 10 minuta do jednog dana",
       "features": [
         {
-          "title": "Ideja",
-          "description": "Započinjemo od vaše ideje i zamisli."
+          "title": "Express FREE sajt",
+          "description": "Besplatan sajt za 5–10 minuta – jednostavno, brzo, bez programiranja. Ovo su mini prezentacije koje se mogu koristiti za lične projekte, prezentacije malog biznisa i slično."
         },
         {
-          "title": "Ciljevi",
-          "description": "Definišemo ciljeve i zajedno pravimo detaljan plan razvoja."
+          "title": "Express PRO sajt (od 1.999 RSD godišnje)",
+          "description": "Napredna prezentacija sa dodatnim sekcijama, PDF, mapom i kontakt formom."
         },
         {
-          "title": "Funkcionalnosti",
-          "description": "U ovoj fazi se dogovaramo o ključnim funkcionalnostima i oblikujemo viziju projekta."
+          "title": "Express W3 sajt (od 24.999 RSD godišnje)",
+          "description": "Unikatna poslovna prezentacija za jedan dan - hosting i domen uključeni."
         }
       ]
     },
     {
-      "title": "Izrada i implementacija",
+      "title": "Express rešenja do sedam dana",
       "features": [
         {
-          "title": "Kreiranje",
-          "description": "Kreiramo vizuelni i funkcionalni nacrt."
+          "title": "Express CRUIP sajt",
+          "description": "Moderne prezentacije sa Cruip UI dizajnom i efektima. Vreme izrade: 4–5 dana."
         },
         {
-          "title": "Strukturiranje",
-          "description": "Razvijamo komponente i postavljamo strukturu sistema."
+          "title": "Express Original sajt",
+          "description": "Sajt po posebnom zahtevu – kreiranje od nule, unikatno i ekskluzivno. Vreme izrade: 5–7 dana."
         },
         {
-          "title": "Finalizacija",
-          "description": "U ovoj fazi se dogovaramo o ključnim funkcionalnostima i oblikujemo viziju projekta."
+          "title": "Express Basic Shop",
+          "description": "Online prodavnica sa osnovnim funkcijama – checkout, korpa, SEO. Vreme izrade: 5–7 dana."
         }
       ]
     },
     {
-      "title": "Završni koraci",
+      "title": "Mega rešenja - do dve sedmice",
       "features": [
         {
-          "title": "Testiranje",
-          "description": "Projekat prolazi završna testiranja."
+          "title": "Express UNI Shop",
+          "description": "Višenamenska online prodavnica sa filterima, partnerima, dashboard-om. Vreme izrade: 10–14 dana."
         },
         {
-          "title": "Hosting i lansiranje",
-          "description": "Projekat se postavlja na server."
+          "title": "Domen & hosting usluga",
+          "description": "Pomoć u izboru i kupovini hostinga/domena – sa podrškom i provizijom. Vreme implementacije: 1–2 dana."
         },
         {
-          "title": "Monitoring i podrška",
-          "description": "Absolutno besplatno pratimo projekat i sve funkcionalnosti prvih 30 dana."
+          "title": "Održavanje sajta",
+          "description": "Pomoć u izmenama, SEO, sigurnosti i backup-u. Mesečno ili po intervenciji. Vreme implementacije: dogovor."
         }
       ]
     }
@@ -149,8 +149,8 @@
 
 "pricing": {
   "label": "Paketi i cene",
-  "title": "Fleksibilni planovi i funkcionalnosti",
-  "description": "Naš pristup omogućava prilagođavanje potrebama svakog klijenta. Birajte plan koji vam odgovara i razvijajte svoj biznis uz GBS podršku.",
+  "title": "Cene su okvirne i mogu se korigovati.",
+  "description": "Naš pristup omogućava prilagođavanje potrebama svakog klijenta. Birajte plan koji vam odgovara i razvijajte svoj biznis uz našu podršku.",
   "toggle": {
     "monthly": "Mesečno",
     "yearly": "Godišnje",
@@ -204,19 +204,19 @@
 "testimonials": {
   "items": [
     {
-      "quote": "Mogućnost čuvanja odgovora je prava prekretnica. Ako korisnik odustane od prijave, podaci se i dalje čuvaju. Sjajno je i što možete birati između različitih formata.",
-      "name": "Džesi J",
-      "role": "Rukovodilac proizvoda, Ltd"
+      "quote": "U početnoj fazi rada ove platforme, bio sam skeptičan, ali rezultati su brzo došli. Ovaj sistem je promenio način na koji poslujem. Sada mogu da se fokusiram na rast, a ne na administraciju.",
+      "name": "Miroslav Božić",
+      "role": "Osnivač Agro-BiM"
     },
     {
-      "quote": "Koristim ovaj proizvod već nekoliko nedelja i oduševljen/a sam rezultatima. Koža mi izgleda svetlije i glatkije, a dobio/la sam mnogo komplimenata.",
-      "name": "Mark Luk",
-      "role": "Osnivač i direktor kompanije Spark"
+      "quote": "Ovaj sistem mi je pomogao da bolje organizujem svoje vreme i resurse. Sada mogu da se fokusiram na ono što je zaista važno. Agencija Express Sajtovi je profesionalna i efikasna.",
+      "name": "Bojana Popić",
+      "role": "Osnivač Agro-BiM"
     },
     {
-      "quote": "Kao zauzeti profesionalac, nemam mnogo vremena za vežbanje. Ovaj fitnes program mi je doneo neverovatne rezultate za samo nekoliko nedelja. Treninzi su efikasni i efektivni.",
-      "name": "Džef Kal",
-      "role": "Produkt menadžer u Appy"
+      "quote": "Agencija Express Sajtovi je transformisala naše online prisustvo. Njihov tim je izuzetno profesionalan i posvećen. Svi naši zahtevi su ispunjeni na vreme i sa visokim kvalitetom.",
+      "name": "Zoran Stojanović",
+      "role": "Metox DOO"
     }
   ]
 },
@@ -248,6 +248,7 @@
 },
 "header": {
   "menu": {
+    "home": "Početna",
     "about": "O nama",
     "contact": "Kontakt",
     "faq": "FAQ",
@@ -320,22 +321,22 @@
   }
 },
 "gbs_services": {
-  "section_label": "Naša ponuda",
-  "section_title": "Digitalna rešenja za savremeno poslovanje",
+  "section_label": "Uskoro u ponudi",
+  "section_title": "GBS (Global Business Systems) i Express Sajtovi",
   "section_description": "GBS (Global Business Systems) nudi modularnu platformu prilagođenu malim i srednjim biznisima, sa ciljem da digitalizuje, automatizuje i unapredi vaše poslovanje.",
 
   "items": 
     {
-      "title1": "Jednim klikom do sajta",
+      "title1": "Jednim klikom do sajta - unapređeni Express sajtovi",
       "description1": "Brzo kreiranje poslovnih sajtova koristeći šablone (Laravel + Livewire + Bootstrap). Uključuje kontakt forme, galerije, mape i često postavljana pitanja (FAQ).",
     
       "title2": "MyMaXico – besplatna online prodavnica",
       "description2": "Potpuno besplatno za 20 do 100 proizvoda, ne plaćaš ni domen, ni hosting – sve je uključeno! Idealno za male proizvođače, zanatlije, umetnike i lokalne prodavce.",
     
-      "title3": "Online prodavnice & Multi-vendor platforme",
+      "title3": "Online prodavnice & Multi-vendor platforme - unapređeni Express Shop",
       "description3": "Funkcionalni e-commerce sistemi sa modulima za dobavljače, proizvođače i partnere. SEO optimizacija, podrška za Stripe, PayPal i plaćanje pouzećem.",
   
-      "title4": "Napredne Web aplikacije",
+      "title4": "Napredne Web aplikacije, ERP i CRM rešenja",
       "description4": "Naša platforma je primer kako se moderne web tehnologije mogu koristiti za izgradnju skalabilnih i efikasnih SaaS rešenja. Uključuje ERP, CRM i druge poslovne aplikacije.",
 
       "title5": "AI kao servis",
@@ -353,11 +354,11 @@
   "paragraph2": "Učili smo iz svakog izazova. Nije bilo lakih koraka, ali svaki problem nas je naučio kako da bolje razumemo tehnologiju, tržište i – ljude. Verujemo da se najbolja rešenja rađaju kroz proces, ne preko noći.",
   "paragraph3": "Od koncepta do realizacije – sve radimo in-house. Svi sistemi, dizajn i backend funkcionalnosti razvijaju se pod jednim krovom. Na taj način zadržavamo kontrolu nad kvalitetom i brže odgovaramo na potrebe klijenata.",
   "paragraph4": "Gledamo širu sliku, ali brinemo o svakom detalju. Od UX dizajna do sistemske arhitekture, pristupamo svakom zadatku s pažnjom. Fokusirani smo na korisničko iskustvo, sigurnost i održivost rešenja.",
-  "paragraph5": "GBS nije samo tim, već partner za rast. Više od rešenja, nudimo posvećenost. Ako rastete – rastemo zajedno. Naša vizija je jasna: da sa svakim projektom gradimo poverenje koje traje."
+  "paragraph5": "Agencija Express Sajtovi nije samo tim, već partner za rast. Više od rešenja, nudimo posvećenost. Ako rastete – rastemo zajedno. Naša vizija je jasna: da sa svakim projektom gradimo poverenje koje traje."
 },
 
 "hero_about": {
-  "subtitle": "Samo nebo je granica",
+  "subtitle": "Napredna rešenja za digitalizaciju",
   "title": "Dobrodošli u svet pozitivnih promena"
 },
 "support_cta": {
@@ -367,6 +368,7 @@
 "support": {
   "title": "Centar za podršku",
   "subtitle": "Imate pitanje? Tu smo za vas — brzo pretražite odgovore ili nas kontaktirajte.",
+  "description": "Naš tim je ovde da vam pomogne. Bilo da imate pitanje o našim uslugama ili vam je potrebna tehnička podrška, slobodno nas kontaktirajte.",
   "faq_title": "Često postavljana pitanja",
   "faq": [
     { "q": "Kako da se registrujem?", "a": "Kliknite na 'Registracija' i popunite osnovne podatke." },
@@ -382,15 +384,15 @@
   "title": "Sve što treba da znate",
   "questions": {
     "q1": {
-      "title": "Šta je GBS platforma?",
-      "text": "GBS je modularna poslovna platforma koja omogućava izradu sajtova, online prodavnica i ERP aplikacija."
+      "title": "Šta je platforma Express Sajtovi?",
+      "text": "Express Sajtovi je modularna poslovna platforma koja omogućava izradu sajtova, online prodavnica i naprednih dizajnerskih rešenja."
     },
     "q2": {
       "title": "Koje su cene i planovi korišćenja?",
       "text": "Imamo fleksibilne pakete, uključujući i besplatne opcije za male firme i preduzetnike."
     },
     "q3": {
-      "title": "Da li mogu da uklonim GBS brendiranje sa sajta?",
+      "title": "Da li mogu da uklonim Express Sajtovi brendiranje sa sajta?",
       "text": "Da. U okviru premium paketa moguće je ukloniti oznake platforme i dodati svoj brend."
     },
     "q4": {
@@ -402,7 +404,7 @@
       "text": "Da, početni plan je besplatan i sadrži osnovne funkcionalnosti."
     },
     "q6": {
-      "title": "Da li je GBS pristupačan za mala i srednja preduzeća?",
+      "title": "Da li je platforma Express Sajtovi pristupačna za mala i srednja preduzeća?",
       "text": "Upravo to nam je cilj – da digitalizacija bude dostupna svakome."
     }
   }

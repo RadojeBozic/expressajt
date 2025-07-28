@@ -6,11 +6,12 @@
 
     <div class="absolute inset-0 rounded-b-[3rem] pointer-events-none overflow-hidden" aria-hidden="true">
       <div class="absolute left-1/2 -translate-x-1/2 bottom-0 -z-10">
-        <img src="../images/glow-bottom.svg" class="max-w-none" width="2146" height="774" alt="Hero Illustration">
+        <img src="../images/glow-bottom.svg" class="max-w-none" width="546" height="23" alt="Hero Illustration">
       </div>
     </div>
 
     <p class="text-slate-400 text-lg max-w-2xl mx-auto">{{ $t('support.subtitle') }}</p>
+    <p class="text-slate-400 text-lg max-w-2xl mx-auto">{{ $t('support.description') }}</p>
   </section>
 </template>
 

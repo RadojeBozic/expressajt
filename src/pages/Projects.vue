@@ -1,8 +1,17 @@
 <template>
+
+    <!-- ✨ Pozadinska animacija -->
+    <div class="absolute inset-0 -z-10">
+      <Particles class="absolute inset-0" />
+      <div class="absolute left-1/2 -translate-x-1/2 bottom-0">
+        <img src="../images/glow-top.svg" class="max-w-none" width="2146" height="774" alt="Pozadinska animacija" />
+      </div>
+    </div>
+
   <div class="flex flex-col min-h-screen bg-slate-900 text-white">
     <Header />
     <main class="grow pt-32 pb-20 px-4 sm:px-6 max-w-6xl mx-auto relative">
-      <Particles class="absolute inset-0 -z-10" />
+      
       <div class="text-center mb-12">
         <h1 class="text-3xl font-bold">📁 Naši Express projekti</h1>
         <p class="text-slate-400 max-w-2xl mx-auto mt-4">
@@ -25,10 +34,19 @@
             </div>
           </details>
         </div>
+        <!-- ✨ Pozadina sa particles efektom -->
+          <div class="absolute inset-0 -z-10">
+            <Particles class="absolute inset-0" />
+            <div class="absolute left-1/2 -translate-x-1/2 bottom-0">
+              <img src="../images/glow-bottom.svg" class="max-w-none" width="546" height="274" alt="Pozadina" />
+            </div>
+          </div>
       </div>
+      
     </main>
     <Footer />
   </div>
+
 </template>
 
 <script>
@@ -99,6 +117,12 @@ export default {
           title: 'Održavanje sajta',
           subtitle: 'Tehnička podrška, SEO, backup i izmene.',
           description: 'Mesečne ili jednokratne usluge održavanja, sigurnosti i ažuriranja.'
+        },
+        {
+          id: 10,
+          title: 'Express Dizajn',
+          subtitle: 'Logo, baneri, društvene mreže – AI + Canva Pro dizajn.',
+          description: 'Brzo i kreativno rešenje za brendiranje uz podršku veštačke inteligencije.'
         }
       ]
     }

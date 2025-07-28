@@ -119,6 +119,11 @@ export default {
           title: 'Održavanje sajta',
           description: 'Pomoć u izmenama, SEO, sigurnosti i backup-u. Mesečno ili po intervenciji.',
           route: '/services/maintenance'
+        },
+        {
+          title: 'Express Dizajn',
+          description: 'Logo, baneri, društvene mreže – AI + Canva Pro dizajn po tvojoj meri.',
+          route: '/services/design'
         }
       ]
     }

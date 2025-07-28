@@ -6,7 +6,7 @@
         <!-- Site branding -->
         <div class="flex-1">
           <router-link class="inline-flex" to="/" aria-label="Logo">
-            <img class="max-w-none" src="../images/logog.png" width="38" height="38" alt="Logo" />
+            <img class="max-w-none" src="../images/logo_express02.png" width="138" height="138" alt="Logo" />
           </router-link>
         </div>
 
@@ -14,10 +14,10 @@
         <nav class="hidden md:flex md:grow">
           <ul class="flex grow justify-center flex-wrap items-center">
             <li>
-              <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5" to="/about">{{ $t('header.menu.about') }}</router-link>
+              <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5" to="/">{{ $t('header.menu.home') }}</router-link>
             </li>
             <li>
-              <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5" to="/about#faq">{{ $t('header.menu.faq') }}</router-link>
+              <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5" to="/about">{{ $t('header.menu.about') }}</router-link>
             </li>
             <li>
               <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5" to="/projects">{{ $t('header.menu.projects') }}</router-link>
@@ -87,6 +87,7 @@
             @keydown.escape.window="expanded = false"
           >
             <ul class="border rounded-lg px-4 py-1.5 bg-slate-900">
+              <li><router-link class="flex text-slate-300 hover:text-white py-1.5" to="/">{{ $t('header.menu.home') }}</router-link></li>
               <li><router-link class="flex text-slate-300 hover:text-white py-1.5" to="/about">{{ $t('header.menu.about') }}</router-link></li>
               <li><router-link class="flex text-slate-300 hover:text-white py-1.5" to="/projects">{{ $t('header.menu.projects') }}</router-link></li>
               <li><router-link class="flex text-slate-300 hover:text-white py-1.5" to="/pricing">{{ $t('header.menu.pricing') }}</router-link></li>
