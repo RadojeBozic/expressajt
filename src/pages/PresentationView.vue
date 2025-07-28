@@ -33,7 +33,6 @@
         >
           <strong>🎉 Besplatan sajt je generisan!</strong><br />
           Ovo je vaš link za deljenje:
-          <br />
           <div class="mt-2 flex items-center justify-center gap-2">
             <input
               type="text"
@@ -53,6 +52,33 @@
           <div class="mt-3 text-sm">
             Niste zadovoljni? <router-link to="/free-site-form" class="text-blue-600 underline hover:text-blue-800">Popunite ponovo formu</router-link>.
           </div>
+
+          <!-- 📥 PDF dugme & Preview link – samo ako je FREE -->
+            <div class="mt-4 text-center" v-if="siteData.type === 'free'">
+              <!-- Zakomentarisano PDF dugme -->
+              <!--
+              <button
+                @click="downloadPDF"
+                class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-1 rounded text-sm"
+              >
+                📥 Preuzmi prezentaciju kao PDF
+              </button>
+              -->
+
+              <!-- Dugme za otvaranje samo prezentacije -->
+              <router-link
+                :to="`/preview/${slug}`"
+                target="_blank"
+                class="bg-slate-500 hover:bg-slate-600 text-white px-4 py-1 rounded text-sm"
+              >
+                🌐 Otvori samo prezentaciju
+              </router-link>
+
+              <p class="text-xs text-slate-400 mt-2">
+                Ako želite da sačuvate ovu prezentaciju kao PDF, otvorite je u posebnom prozoru i koristite <strong>CTRL+P → Save as PDF</strong>.
+              </p>
+            </div>
+
         </div>
       </div>
 
@@ -72,8 +98,10 @@
         </button>
       </div>
 
-      <!-- Prikaz šablona -->
-      <component :is="templateComponent" :data="siteData" />
+      <!-- 👁 Prikaz samo prezentacije (ref za PDF) -->
+      <div ref="printArea">
+        <component :is="templateComponent" :data="siteData" />
+      </div>
     </div>
 
     <div v-else class="text-white text-center py-20">Učitavanje...</div>
@@ -84,6 +112,7 @@
 
 <script>
 import axios from 'axios'
+import html2pdf from 'html2pdf.js'
 import { getCurrentUser } from '../utils/auth'
 import Header from '../partials/Header.vue'
 import Footer from '../partials/Footer.vue'
@@ -182,6 +211,17 @@ export default {
         this.copySuccess = true
         setTimeout(() => (this.copySuccess = false), 3000)
       })
+    },
+    downloadPDF() {
+      const element = this.$refs.printArea
+      const opt = {
+        margin: 0.5,
+        filename: `${this.slug}.pdf`,
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+      }
+      html2pdf().set(opt).from(element).save()
     }
   },
   created() {

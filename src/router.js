@@ -39,6 +39,9 @@ import ServiceDomainHosting from './services/ServiceDomainHosting.vue'
 import ServiceMaintenance from './services/ServiceMaintenance.vue'
 
 
+import PublicPresentation from './pages/PublicPresentation.vue'
+
+
 
 
 // 🔹 Forme i pregledi
@@ -103,7 +106,19 @@ const router = createRouter({
     { path: '/services/domain-hosting', name: 'ServiceDomainHosting', component: ServiceDomainHosting, props: { slug: 'domain-hosting' } },
     { path: '/services/maintenance', name: 'ServiceMaintenance', component: ServiceMaintenance, props: { slug: 'maintenance' } },
 
-
+    // 📄 Javne prezentacije
+    { 
+      path: '/print/:slug', 
+      name: 'PublicPresentation', 
+      component: PublicPresentation, 
+      props: true 
+    },
+    {
+      path: '/preview/:slug',
+      name: 'PublicPresentation',
+      component: () => import('./pages/PublicPresentation.vue'),
+      props: true
+    },
     // 📝 Forme za sajtove
     { path: '/free-site-form', name: 'FreeSiteForm', component: FreeSiteForm },
     { path: '/pro-site-form', name: 'ProSiteForm', component: ProSiteForm },
