@@ -3,120 +3,125 @@
     <Header />
 
     <div class="min-h-screen bg-slate-900 text-white py-10 px-4 flex flex-col items-center">
-      <h1 class="text-3xl font-bold mb-6 text-center mt-8">🚀 Napredna PRO prezentacija</h1>
+      <h1 class="text-3xl font-bold mb-6 text-center mt-8">🚀 {{ $t('proform.title') }}</h1>
       <p class="text-slate-400 mb-8 text-center max-w-2xl text-sm">
-        Polja označena zvezdicom (<span class="text-red-400">*</span>) su obavezna. Unesite tačne informacije, uključujući slike i linkove.
+        {{ $t('proform.note') }} <span class="text-red-400">*</span>
       </p>
 
       <form @submit.prevent="submitForm" class="bg-slate-800 p-6 rounded-lg shadow max-w-3xl w-full space-y-6">
+        
         <!-- 📇 OPŠTI PODACI -->
         <fieldset>
-          <legend class="text-xl font-semibold text-purple-400 mb-4">📇 Opšti podaci</legend>
+          <legend class="text-xl font-semibold text-purple-400 mb-4">📇 {{ $t('proform.sections.general') }}</legend>
           <div class="space-y-4">
-            <input v-model="form.name" required maxlength="255" placeholder="Naziv firme *" class="w-full p-2 rounded bg-slate-700 border border-slate-600" />
-            <textarea v-model="form.description" required maxlength="1000" placeholder="Opis delatnosti *" rows="3" class="w-full p-2 rounded bg-slate-700 border border-slate-600"></textarea>
-            <input type="email" v-model="form.email" required placeholder="Email adresa *" class="w-full p-2 rounded bg-slate-700 border border-slate-600" />
-            <input v-model="form.phone" required maxlength="50" placeholder="Telefon *" class="w-full p-2 rounded bg-slate-700 border border-slate-600" />
-            <input v-model="form.facebook" maxlength="255" placeholder="Facebook link" class="w-full p-2 rounded bg-slate-700 border border-slate-600" />
-            <input v-model="form.instagram" maxlength="255" placeholder="Instagram link" class="w-full p-2 rounded bg-slate-700 border border-slate-600" />
-            <label class="block text-sm mb-1">Logotip (opciono)</label>
+            <input v-model="form.name" required maxlength="255" :placeholder="$t('proform.fields.name')" class="input" />
+            <textarea v-model="form.description" required maxlength="1000" :placeholder="$t('proform.fields.description')" rows="3" class="input" />
+            <input type="email" v-model="form.email" required :placeholder="$t('proform.fields.email')" class="input" />
+            <input v-model="form.phone" required maxlength="50" :placeholder="$t('proform.fields.phone')" class="input" />
+            <input v-model="form.facebook" maxlength="255" :placeholder="$t('proform.fields.facebook')" class="input" />
+            <input v-model="form.instagram" maxlength="255" :placeholder="$t('proform.fields.instagram')" class="input" />
+            <label class="block text-sm mb-1">{{ $t('proform.fields.logo') }}</label>
             <input type="file" accept="image/*" @change="e => handleFile(e, 'logo')" />
           </div>
         </fieldset>
 
         <!-- 🎯 HERO -->
         <fieldset>
-          <legend class="text-xl font-semibold text-purple-400 mb-4">🎯 Hero sekcija</legend>
+          <legend class="text-xl font-semibold text-purple-400 mb-4">🎯 {{ $t('proform.sections.hero') }}</legend>
           <div class="space-y-4">
-            <label>Glavna slika (pozadina) <span class="text-red-400">*</span></label>
+            <label>{{ $t('proform.fields.heroImage') }} <span class="text-red-400">*</span></label>
             <input type="file" required accept="image/*" @change="e => handleFile(e, 'heroImage')" />
-            <input v-model="form.heroTitle" required maxlength="255" placeholder="Naslov *" class="w-full p-2 rounded bg-slate-700 border border-slate-600" />
-            <textarea v-model="form.heroSubtitle" required maxlength="250" placeholder="Podnaslov *" rows="3" class="w-full p-2 rounded bg-slate-700 border border-slate-600"></textarea>
+            <input v-model="form.heroTitle" required maxlength="255" :placeholder="$t('proform.fields.heroTitle')" class="input" />
+            <textarea v-model="form.heroSubtitle" required maxlength="250" :placeholder="$t('proform.fields.heroSubtitle')" rows="3" class="input" />
           </div>
         </fieldset>
 
         <!-- 👥 O NAMA -->
         <fieldset>
-          <legend class="text-xl font-semibold text-purple-400 mb-4">👥 O nama</legend>
+          <legend class="text-xl font-semibold text-purple-400 mb-4">👥 {{ $t('proform.sections.about') }}</legend>
           <div class="space-y-4">
-            <label>Slika firme/tima <span class="text-red-400">*</span></label>
+            <label>{{ $t('proform.fields.aboutImage') }} <span class="text-red-400">*</span></label>
             <input type="file" required accept="image/*" @change="e => handleFile(e, 'aboutImage')" />
-            <input v-model="form.aboutTitle" required maxlength="255" placeholder="Naslov sekcije *" class="w-full p-2 rounded bg-slate-700 border border-slate-600" />
-            <textarea v-model="form.aboutText" required maxlength="1000" placeholder="Opis firme *" rows="4" class="w-full p-2 rounded bg-slate-700 border border-slate-600"></textarea>
+            <input v-model="form.aboutTitle" required maxlength="255" :placeholder="$t('proform.fields.aboutTitle')" class="input" />
+            <textarea v-model="form.aboutText" required maxlength="1000" :placeholder="$t('proform.fields.aboutText')" rows="4" class="input" />
           </div>
         </fieldset>
 
         <!-- 🛍️ NAŠA PONUDA -->
         <fieldset>
-          <legend class="text-xl font-semibold text-purple-400 mb-4">🛍️ Naša ponuda</legend>
+          <legend class="text-xl font-semibold text-purple-400 mb-4">🛍️ {{ $t('proform.sections.offer') }}</legend>
           <div class="space-y-4">
-            <input v-model="form.offerTitle" required maxlength="255" placeholder="Naslov sekcije *" class="w-full p-2 rounded bg-slate-700 border border-slate-600" />
+            <input v-model="form.offerTitle" required maxlength="255" :placeholder="$t('proform.fields.offerTitle')" class="input" />
             <div class="space-y-2">
               <div v-for="(item, index) in form.offerItems" :key="index" class="space-y-2 border border-slate-600 p-3 rounded">
-                <input v-model="item.title" required maxlength="255" placeholder="Naziv usluge/proizvoda *" class="w-full p-2 rounded bg-slate-700 border border-slate-600" />
+                <input v-model="item.title" required maxlength="255" :placeholder="$t('proform.fields.offerItemTitle')" class="input" />
                 <input type="file" required accept="image/*" @change="e => handleOfferImageUpload(e, index)" />
-                <button v-if="form.offerItems.length > 1" type="button" @click="removeItem(index)" class="text-red-400 text-sm hover:text-red-600">✖ Ukloni</button>
+                <button v-if="form.offerItems.length > 1" type="button" @click="removeItem(index)" class="text-red-400 text-sm hover:text-red-600">
+                  {{ $t('proform.fields.remove') }}
+                </button>
               </div>
-              <button type="button" @click="addItem" class="text-sm text-purple-300 hover:text-purple-500">➕ Dodaj stavku</button>
+              <button type="button" @click="addItem" class="text-sm text-purple-300 hover:text-purple-500">
+                {{ $t('proform.fields.addOffer') }}
+              </button>
             </div>
           </div>
         </fieldset>
 
         <!-- 📎 DODATNI SADRŽAJ -->
         <fieldset>
-          <legend class="text-xl font-semibold text-purple-400 mb-4">📎 Dodatni sadržaj</legend>
+          <legend class="text-xl font-semibold text-purple-400 mb-4">📎 {{ $t('proform.sections.extra') }}</legend>
           <div class="space-y-4">
-            <label>PDF dokument (cenovnik, ponuda)</label>
+            <label>{{ $t('proform.fields.pdfDocument') }}</label>
             <input type="file" accept="application/pdf" @change="e => handleFile(e, 'pdfDocument')" />
-            <input v-model="form.youtubeLink" maxlength="255" placeholder="YouTube link (opciono)" class="w-full p-2 rounded bg-slate-700 border border-slate-600" />
+            <input v-model="form.youtubeLink" maxlength="255" :placeholder="$t('proform.fields.youtube')" class="input" />
           </div>
         </fieldset>
 
         <!-- 📬 KONTAKT PODACI -->
         <fieldset>
-          <legend class="text-xl font-semibold text-purple-400 mb-4">📬 Kontakt podaci</legend>
+          <legend class="text-xl font-semibold text-purple-400 mb-4">📬 {{ $t('proform.sections.contact') }}</legend>
           <div class="space-y-4">
-            <input v-model="form.address_city" required maxlength="255" placeholder="Mesto *" class="w-full p-2 rounded bg-slate-700 border border-slate-600" />
-            <input v-model="form.address_street" required maxlength="255" placeholder="Ulica i broj *" class="w-full p-2 rounded bg-slate-700 border border-slate-600" />
-            <input v-model="form.google_map_link" maxlength="255" placeholder="Google Maps link (opciono)" class="w-full p-2 rounded bg-slate-700 border border-slate-600" />
-            <input v-model="form.phone2" maxlength="50" placeholder="Dodatni telefon" class="w-full p-2 rounded bg-slate-700 border border-slate-600" />
-            <input v-model="form.phone3" maxlength="50" placeholder="Još jedan telefon" class="w-full p-2 rounded bg-slate-700 border border-slate-600" />
-            <input v-model="form.email2" maxlength="255" placeholder="Dodatni email" class="w-full p-2 rounded bg-slate-700 border border-slate-600" />
-            <input v-model="form.email3" maxlength="255" placeholder="Još jedan email" class="w-full p-2 rounded bg-slate-700 border border-slate-600" />
+            <input v-model="form.address_city" required maxlength="255" :placeholder="$t('proform.fields.city')" class="input" />
+            <input v-model="form.address_street" required maxlength="255" :placeholder="$t('proform.fields.street')" class="input" />
+            <input v-model="form.google_map_link" maxlength="255" :placeholder="$t('proform.fields.map')" class="input" />
+            <input v-model="form.phone2" maxlength="50" :placeholder="$t('proform.fields.phone2')" class="input" />
+            <input v-model="form.phone3" maxlength="50" :placeholder="$t('proform.fields.phone3')" class="input" />
+            <input v-model="form.email2" maxlength="255" :placeholder="$t('proform.fields.email2')" class="input" />
+            <input v-model="form.email3" maxlength="255" :placeholder="$t('proform.fields.email3')" class="input" />
           </div>
         </fieldset>
 
         <!-- ŠABLON -->
         <div>
-          <label class="block mb-1">Izaberi šablon *</label>
-          <select v-model="form.template" required class="w-full p-2 rounded bg-slate-700 border border-slate-600">
-            <option value="klasicni-pro">🧾 Klasični</option>
-            <option value="moderni-pro">✨ Moderni</option>
-            <option value="galerija-pro">🖼️ Galerija</option>
-            <option value="biznis-pro">🏢 Biznis</option>
-            <option value="dark-pro">🌙 Dark mode</option>
+          <label class="block mb-1">{{ $t('proform.sections.template') }} *</label>
+          <select v-model="form.template" required class="input">
+            <option value="klasicni-pro">{{ $t('proform.templates.classic') }}</option>
+            <option value="moderni-pro">{{ $t('proform.templates.modern') }}</option>
+            <option value="galerija-pro">{{ $t('proform.templates.gallery') }}</option>
+            <option value="biznis-pro">{{ $t('proform.templates.biznis') }}</option>
+            <option value="dark-pro">{{ $t('proform.templates.dark') }}</option>
           </select>
         </div>
 
         <!-- CTA -->
         <button type="submit" :disabled="loading" class="w-full bg-purple-600 hover:bg-purple-700 py-3 px-4 rounded text-white font-semibold">
-          {{ loading ? '⏳ Slanje...' : '✅ Pošalji zahtev' }}
+          {{ loading ? $t('proform.loading') : $t('proform.submit') }}
         </button>
 
-        <p v-if="successMessage" class="text-green-400 text-sm mt-4">{{ successMessage }}</p>
-        <p v-if="errorMessage" class="text-red-400 text-sm mt-4">{{ errorMessage }}</p>
+        <p v-if="successMessage" class="text-green-400 text-sm mt-4">{{ $t('proform.success') }}</p>
+        <p v-if="errorMessage" class="text-red-400 text-sm mt-4">{{ $t('proform.error') }}</p>
 
-         <p v-if="resData?.slug" class="text-blue-400 text-sm mt-2">
-            📎 Otvori prezentaciju: 
-            <a :href="`/prezentacije/${resData.slug}`" class="underline" target="_blank">{{ resData.slug }}</a>
+        <p v-if="resData?.slug" class="text-blue-400 text-sm mt-2">
+          {{ $t('proform.preview') }}
+          <a :href="`/prezentacije/${resData.slug}`" class="underline" target="_blank">{{ resData.slug }}</a>
         </p>
       </form>
-       
     </div>
 
     <Footer />
   </div>
 </template>
+
 
 <script>
 import axios from 'axios'
@@ -151,6 +156,7 @@ export default {
     if (slug) this.fetchFromSlug(slug)
   },
   methods: {
+    
     addItem() {
       if (this.form.offerItems.length < 12)
         this.form.offerItems.push({ title: '', image: null })
@@ -163,13 +169,13 @@ export default {
       if (!file) return
 
       if (field !== 'pdfDocument' && (!file.type.startsWith('image/') || file.size > 4 * 1024 * 1024)) {
-        this.errorMessage = '⚠️ Slika mora biti manja od 4MB i validnog formata.'
+        this.errorMessage = this.$t('proform.errors.image')
         this.form[field] = null
         return
       }
 
       if (field === 'pdfDocument' && file.type !== 'application/pdf') {
-        this.errorMessage = '⚠️ Dozvoljen je samo PDF dokument.'
+        this.errorMessage = this.$t('proform.errors.pdf')
         this.form[field] = null
         return
       }
@@ -180,7 +186,7 @@ export default {
     handleOfferImageUpload(e, i) {
       const file = e.target.files[0]
       if (!file || !file.type.startsWith('image/') || file.size > 4 * 1024 * 1024) {
-        this.errorMessage = `⚠️ Slika u stavci ${i + 1} nije validna ili je prevelika.`
+        this.errorMessage = this.$t('proform.errors.offerImage', { index: i + 1 })
         this.form.offerItems[i].image = null
         return
       }
@@ -197,25 +203,23 @@ export default {
         const fd = new FormData()
         fd.append('type', 'pro')
 
-        // Tekstualni podaci
         const textFields = [
           'name', 'description', 'email', 'phone', 'facebook', 'instagram',
           'heroTitle', 'heroSubtitle', 'aboutTitle', 'aboutText', 'offerTitle',
           'youtubeLink', 'google_map_link', 'address_city', 'address_street',
           'phone2', 'phone3', 'email2', 'email3', 'template'
         ]
+
         textFields.forEach(field => {
           const key = field === 'youtubeLink' ? 'video_url' : field
           fd.append(key, this.form[field] || '')
         })
 
-        // Fajlovi
         if (this.form.logo) fd.append('logo', this.form.logo)
         if (this.form.heroImage) fd.append('heroImage', this.form.heroImage)
         if (this.form.aboutImage) fd.append('aboutImage', this.form.aboutImage)
         if (this.form.pdfDocument) fd.append('pdf_file', this.form.pdfDocument)
 
-        // Ponuda
         this.form.offerItems.forEach((item, i) => {
           fd.append(`offerItems[${i}][title]`, item.title)
           fd.append(`offerItems[${i}][image]`, item.image)
@@ -225,11 +229,15 @@ export default {
           headers: { 'Content-Type': 'multipart/form-data' }
         })
 
-        this.successMessage = '✅ Zahtev uspešno poslat!'
+        
+        this.errorMessage = this.$t('proform.errors.general')
+
+        this.successMessage = this.$t('proform.success')
         this.resData = res.data
+
       } catch (err) {
         console.error('❌', err.response || err)
-        this.errorMessage = err.response?.data?.message || '⚠️ Nešto je pošlo po zlu. Pokušajte ponovo.'
+        this.errorMessage = err.response?.data?.message || this.$t('proform.errors.general')
       } finally {
         this.loading = false
       }
@@ -252,7 +260,7 @@ export default {
         this.form.offerTitle = source.offer_title
         this.form.offerItems = source.offer_items.map(item => ({
           title: item.title,
-          image: null // ručno
+          image: null
         }))
         this.form.youtubeLink = source.video_url || ''
         this.form.address_city = (source.address || '').split(',')[1]?.trim() || ''
@@ -265,8 +273,8 @@ export default {
         this.form.template = source.template
 
       } catch (err) {
-        console.error('❌ Greška pri učitavanju podataka iz šablona:', err)
-        this.errorMessage = '⚠️ Nije moguće učitati podatke iz šablona.'
+        console.error('❌', err)
+        this.errorMessage = this.$t('proform.errors.fetch')
       }
     }
   }

@@ -2,118 +2,112 @@
   <header class="absolute w-full z-30">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="flex items-center justify-between h-16 md:h-20">
-
-        <!-- Site branding -->
+        
+        <!-- Logo -->
         <div class="flex-1">
-          <router-link class="inline-flex" to="/" aria-label="Logo">
-            <img class="max-w-none" src="../images/logo_express02.png" width="138" height="138" alt="Logo" />
+          <router-link to="/" aria-label="Logo" class="inline-flex">
+            <img src="../images/logo_express02.png" width="138" height="138" alt="Logo" />
           </router-link>
         </div>
 
-        <!-- Desktop navigation -->
+        <!-- Desktop navigacija -->
         <nav class="hidden md:flex md:grow">
           <ul class="flex grow justify-center flex-wrap items-center">
-            <li>
-              <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5" to="/">{{ $t('header.menu.home') }}</router-link>
-            </li>
-            <li>
-              <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5" to="/about">{{ $t('header.menu.about') }}</router-link>
-            </li>
-            <li>
-              <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5" to="/projects">{{ $t('header.menu.projects') }}</router-link>
-            </li>
-            <li>
-              <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5" to="/pricing">{{ $t('header.menu.pricing') }}</router-link>
-            </li>
-            <li>
-              <router-link class="font-medium text-sm text-slate-300 hover:text-white mx-4 lg:mx-5" to="/contact">{{ $t('header.menu.contact') }}</router-link>
+            <li v-for="link in navLinks" :key="link.to">
+              <router-link :to="link.to" class="font-medium text-sm text-slate-300 hover:text-white mx-2 md:mx-4">
+                {{ $t(link.label) }}
+              </router-link>
             </li>
           </ul>
         </nav>
 
-        <!-- Desktop sign-in links -->
-        <ul class="flex-1 flex justify-end items-center">
-          <li v-if="!user">
-            <router-link class="font-medium text-sm text-slate-300 hover:text-white" to="/signin">{{ $t('header.menu.signin') }}</router-link>
-          </li>
-          <li v-if="!user" class="ml-6">
-            <router-link class="btn-sm text-slate-300 hover:text-white transition duration-150 ease-in-out w-full group [background:linear-gradient(var(--color-slate-900),var(--color-slate-900))_padding-box,conic-gradient(var(--color-slate-400),var(--color-slate-700)_25%,var(--color-slate-700)_75%,var(--color-slate-400)_100%)_border-box] relative before:absolute before:inset-0 before:bg-slate-800/30 before:rounded-full before:pointer-events-none" to="/signup">
-              <span class="relative inline-flex items-center">
-                {{ $t('header.menu.signup') }}<span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 ml-1">→</span>
-              </span>
-            </router-link>
-          </li>
+        <!-- Desktop meni desno -->
+        <div class="flex items-center gap-2">
+          <div v-if="!user">
+            <router-link class="text-sm text-slate-300 hover:text-white" to="/signin">{{ $t('header.menu.signin') }}</router-link>
+            <router-link class="ml-3 text-sm bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded" to="/signup">{{ $t('header.menu.signup') }}</router-link>
+            
+          </div>
 
-          <!-- Moj nalog -->
-          <li v-if="user">
-            <router-link to="/dashboard" class="btn-sm text-slate-300 hover:text-white transition duration-150 ease-in-out w-full group">
-              Moj nalog<span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 ml-1">→</span>
-            </router-link>
-          </li>
+          <div v-if="user" class="flex items-center gap-2">
+            <span class="text-sm text-white font-medium bg-slate-700 px-2 py-1 rounded">
+  👋 {{ user.name }}
+</span>
+            <router-link to="/dashboard" class="text-sm text-slate-300 hover:text-white">{{ $t('header.menu.account') }} →</router-link>
+            <button @click="logout" class="text-sm px-3 py-1 bg-slate-700 hover:bg-slate-600 text-white rounded">{{ $t('header.menu.logout') }}</button>
+            
+          </div>
 
-          <!-- Admin dugme -->
-          <li v-if="isAdmin">
-            <router-link to="/admin/dashboard" class="btn-sm text-slate-300 hover:text-white transition duration-150 ease-in-out w-full group [background:linear-gradient(var(--color-slate-900),var(--color-slate-900))_padding-box,conic-gradient(var(--color-slate-400),var(--color-slate-700)_25%,var(--color-slate-700)_75%,var(--color-slate-400)_100%)_border-box] relative before:absolute before:inset-0 before:bg-slate-800/30 before:rounded-full before:pointer-events-none">
-              Admin panel<span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 ml-1">→</span>
-            </router-link>
-          </li>
-        </ul>
 
-        <!-- Mobile menu -->
+          <div v-if="isAdmin">
+            <router-link to="/admin/dashboard" class="text-sm border border-purple-400 text-purple-400 px-3 py-1 rounded hover:bg-purple-800">
+              {{ $t('header.menu.admin') }} →
+            </router-link>
+          </div>
+
+          <!-- Jezički dropdown -->
+          <div class="relative">
+            <button @click="toggleLangDropdown" class="flex items-center gap-1 text-sm text-slate-300 hover:text-white border border-slate-600 px-2 py-1 rounded">
+              <img :src="currentFlag" class="w-4 h-4" />
+              <span>{{ currentLabel }}</span>
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 11.585l3.71-4.355a.75.75 0 111.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z"/></svg>
+            </button>
+            <div v-if="showLang" class="absolute right-0 mt-1 w-32 rounded bg-slate-800 border border-slate-600 shadow-lg z-50">
+              <button @click="setLanguage('sr')" class="flex items-center w-full px-3 py-2 text-sm text-slate-300 hover:bg-slate-700">
+                <img src="../images/flag-rs.png" class="w-4 h-4 mr-2" /> SR
+              </button>
+              <button @click="setLanguage('en')" class="flex items-center w-full px-3 py-2 text-sm text-slate-300 hover:bg-slate-700">
+                <img src="../images/flag-uk.png" class="w-4 h-4 mr-2" /> EN
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile meni -->
         <div class="md:hidden flex items-center ml-4">
-          <!-- Hamburger -->
           <button
-            class="group inline-flex w-8 h-8 text-slate-300 hover:text-white"
+            class="text-slate-300 hover:text-white"
             ref="hamburger"
-            aria-controls="mobile-nav"
-            :aria-expanded="mobileNavOpen"
-            @click.stop="mobileNavOpen = !mobileNavOpen"
+            @click="mobileNavOpen = !mobileNavOpen"
+            aria-label="Toggle navigation"
           >
-            <span class="sr-only">{{ $t('header.menu.toggle') }}</span>
-            <svg class="w-4 h-4 fill-current pointer-events-none" viewBox="0 0 16 16">
-              <rect y="7" width="16" height="2" rx="1" class="origin-center transition-all duration-300 -translate-y-[5px] group-aria-expanded:rotate-[315deg] group-aria-expanded:translate-y-0"></rect>
-              <rect y="7" width="16" height="2" rx="1" class="origin-center group-aria-expanded:rotate-45 transition-all duration-300"></rect>
-              <rect y="7" width="16" height="2" rx="1" class="origin-center transition-all duration-300 translate-y-[5px] group-aria-expanded:rotate-[135deg] group-aria-expanded:translate-y-0"></rect>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
-
-          <!-- Mobile nav -->
-          <nav
-            id="mobile-nav"
-            class="absolute top-full z-20 left-0 w-full px-4 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out"
-            ref="mobileNav"
-            :style="[mobileNavOpen ? { maxHeight: $refs.mobileNav.scrollHeight + 'px', opacity: 1 } : { maxHeight: 0, opacity: .8 }]"
-            @click.outside="expanded = false"
-            @keydown.escape.window="expanded = false"
-          >
-            <ul class="border rounded-lg px-4 py-1.5 bg-slate-900">
-              <li><router-link class="flex text-slate-300 hover:text-white py-1.5" to="/">{{ $t('header.menu.home') }}</router-link></li>
-              <li><router-link class="flex text-slate-300 hover:text-white py-1.5" to="/about">{{ $t('header.menu.about') }}</router-link></li>
-              <li><router-link class="flex text-slate-300 hover:text-white py-1.5" to="/projects">{{ $t('header.menu.projects') }}</router-link></li>
-              <li><router-link class="flex text-slate-300 hover:text-white py-1.5" to="/pricing">{{ $t('header.menu.pricing') }}</router-link></li>
-              <li><router-link class="flex text-slate-300 hover:text-white py-1.5" to="/contact">{{ $t('header.menu.contact') }}</router-link></li>
-            </ul>
-          </nav>
         </div>
-
-        <!-- Logout i ime korisnika -->
-        <div v-if="user" class="flex items-center gap-3 ml-4">
-          <span class="text-slate-300 text-sm">👋 {{ user.name }}</span>
-          <button
-            @click="logout"
-            class="px-3 py-1 bg-slate-700 hover:bg-slate-600 text-white rounded text-sm"
-          >
-            Odjavi se
-          </button>
-        </div>
-
       </div>
+
+      <!-- Mobile navigacija -->
+      <nav
+        v-if="mobileNavOpen"
+        ref="mobileNav"
+        class="md:hidden mt-2 border rounded bg-slate-900 px-4 py-3 transition-all"
+      >
+        <ul>
+          <li v-for="link in navLinks" :key="link.to" class="py-1">
+            <router-link :to="link.to" class="block text-slate-300 hover:text-white">
+              {{ $t(link.label) }}
+            </router-link>
+          </li>
+          <li class="py-1">
+            <button @click="setLanguage('sr')" class="flex items-center gap-2 text-sm text-slate-300 hover:text-white">
+              <img src="../images/flag-rs.png" class="w-4 h-4" /> SR
+            </button>
+            <button @click="setLanguage('en')" class="flex items-center gap-2 text-sm text-slate-300 hover:text-white">
+              <img src="../images/flag-uk.png" class="w-4 h-4" /> EN
+            </button>
+          </li>
+        </ul>
+      </nav>
     </div>
   </header>
 </template>
 
 <script>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { getCurrentUser, logout as doLogout } from '../utils/auth'
 
 export default {
@@ -122,15 +116,29 @@ export default {
     const mobileNavOpen = ref(false)
     const mobileNav = ref(null)
     const hamburger = ref(null)
+    const showLang = ref(false)
+    const { locale } = useI18n()
 
-    const clickHandler = ({ target }) => {
-      if (!mobileNavOpen.value || mobileNav.value.contains(target) || hamburger.value.contains(target)) return
-      mobileNavOpen.value = false
+    const toggleLangDropdown = () => (showLang.value = !showLang.value)
+    const setLanguage = (lang) => {
+      locale.value = lang
+      localStorage.setItem('locale', lang)
+      showLang.value = false
     }
 
-    const keyHandler = ({ keyCode }) => {
-      if (!mobileNavOpen.value || keyCode !== 27) return
+    const currentFlag = computed(() =>
+      locale.value === 'sr'
+        ? new URL('../images/flag-rs.png', import.meta.url).href
+        : new URL('../images/flag-uk.png', import.meta.url).href
+    )
+    const currentLabel = computed(() => (locale.value === 'sr' ? 'SR' : 'EN'))
+
+    const clickHandler = ({ target }) => {
+      if (!mobileNavOpen.value || mobileNav.value?.contains(target) || hamburger.value?.contains(target)) return
       mobileNavOpen.value = false
+    }
+    const keyHandler = ({ key }) => {
+      if (key === 'Escape') mobileNavOpen.value = false
     }
 
     onMounted(() => {
@@ -147,13 +155,26 @@ export default {
       mobileNavOpen,
       mobileNav,
       hamburger,
+      showLang,
+      toggleLangDropdown,
+      setLanguage,
+      currentFlag,
+      currentLabel,
+      locale
     }
   },
   data() {
     const user = getCurrentUser()
     return {
       user,
-      isAdmin: user && ['admin@example.com', 'radoje@example.com'].includes(user.email)
+      isAdmin: user && ['admin@example.com', 'radoje@example.com'].includes(user.email),
+      navLinks: [
+        { to: '/', label: 'header.menu.home' },
+        { to: '/about', label: 'header.menu.about' },
+        { to: '/projects', label: 'header.menu.projects' },
+        { to: '/pricing', label: 'header.menu.pricing' },
+        { to: '/contact', label: 'header.menu.contact' }
+      ]
     }
   },
   methods: {

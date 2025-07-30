@@ -14,31 +14,46 @@
 
       <div class="pt-32 pb-16 md:pt-52 md:pb-32">
         <div class="max-w-5xl mx-auto">
-          <h1 class="text-3xl font-bold mb-6 text-center">📝 Izmene i unapređenja (Changelog)</h1>
-          <p class="text-slate-400 text-center mb-12">
-            Ovde se nalaze informacije o svim ključnim izmenama, poboljšanjima i novim funkcijama implementiranim na platformi.
-          </p>
+          <h1 class="text-3xl font-bold mb-6 text-center">📝 {{ $t('changelog.title') }}</h1>
+          <p class="text-slate-400 text-center mb-12">{{ $t('changelog.intro') }}</p>
 
-          <ul class="space-y-6">
-            <li
-              v-for="entry in changelog"
-              :key="entry.date"
-              class="border border-slate-700 rounded p-4 bg-slate-800 shadow hover:shadow-lg transition"
-            >
-              <h2 class="text-lg font-semibold text-purple-400">{{ entry.date }} – Verzija {{ entry.version }}</h2>
-              <ul class="list-disc ml-5 mt-2 space-y-1 text-slate-300 text-sm">
-                <li v-for="item in entry.changes" :key="item">{{ item }}</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <!-- ✨ Pozadina sa particles efektom -->
-          <div class="absolute inset-0 -z-10">
-            <Particles class="absolute inset-0" />
-            <div class="absolute left-1/2 -translate-x-1/2 bottom-0">
-              <img src="../../../images/glow-bottom.svg" class="max-w-none" width="546" height="274" alt="Pozadina" />
-            </div>
+          <!-- Verzija 1 -->
+          <div class="border border-slate-700 rounded p-4 bg-slate-800 shadow hover:shadow-lg transition mb-6">
+            <h2 class="text-lg font-semibold text-purple-400">{{ $t('changelog.c1.date') }} – {{ $t('changelog.c1.version') }}</h2>
+            <ul class="list-disc ml-5 mt-2 space-y-1 text-slate-300 text-sm">
+              <li>{{ $t('changelog.c1.i1') }}</li>
+              <li>{{ $t('changelog.c1.i2') }}</li>
+              <li>{{ $t('changelog.c1.i3') }}</li>
+            </ul>
           </div>
+
+          <!-- Verzija 2 -->
+          <div class="border border-slate-700 rounded p-4 bg-slate-800 shadow hover:shadow-lg transition mb-6">
+            <h2 class="text-lg font-semibold text-purple-400">{{ $t('changelog.c2.date') }} – {{ $t('changelog.c2.version') }}</h2>
+            <ul class="list-disc ml-5 mt-2 space-y-1 text-slate-300 text-sm">
+              <li>{{ $t('changelog.c2.i1') }}</li>
+              <li>{{ $t('changelog.c2.i2') }}</li>
+            </ul>
+          </div>
+
+          <!-- Verzija 3 -->
+          <div class="border border-slate-700 rounded p-4 bg-slate-800 shadow hover:shadow-lg transition">
+            <h2 class="text-lg font-semibold text-purple-400">{{ $t('changelog.c3.date') }} – {{ $t('changelog.c3.version') }}</h2>
+            <ul class="list-disc ml-5 mt-2 space-y-1 text-slate-300 text-sm">
+              <li>{{ $t('changelog.c3.i1') }}</li>
+              <li>{{ $t('changelog.c3.i2') }}</li>
+              <li>{{ $t('changelog.c3.i3') }}</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ✨ Donja pozadina -->
+        <div class="absolute inset-0 -z-10">
+          <Particles class="absolute inset-0" />
+          <div class="absolute left-1/2 -translate-x-1/2 bottom-0">
+            <img src="../../../images/glow-bottom.svg" class="max-w-none" width="546" height="274" alt="Pozadina" />
+          </div>
+        </div>
       </div>
 
       <Footer />
@@ -57,38 +72,6 @@ export default {
     Header,
     Footer,
     Particles
-  },
-  data() {
-    return {
-      changelog: [
-        {
-          date: '2025-07-22',
-          version: '1.4.0',
-          changes: [
-            'Dodata stranica "Changelog" za praćenje izmena',
-            'Poboljšan vizuelni prikaz sekcije Funkcionalnosti',
-            'Dodate integracije: Google Analytics i Facebook Pixel'
-          ]
-        },
-        {
-          date: '2025-07-15',
-          version: '1.3.5',
-          changes: [
-            'Omogućeno preuzimanje PRO prezentacija u PDF formatu',
-            'Ispravljen bug vezan za prikaz YouTube video prezentacije'
-          ]
-        },
-        {
-          date: '2025-07-01',
-          version: '1.3.0',
-          changes: [
-            'Dodati novi demo sajtovi u sekciji /demo',
-            'Unapređen sigurnosni sloj backend API-ja',
-            'Uvedene nove korisničke uloge za admin panel'
-          ]
-        }
-      ]
-    }
   }
 }
 </script>

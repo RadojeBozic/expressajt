@@ -13,40 +13,39 @@
 
       <div class="pt-32 pb-16 md:pt-52 md:pb-32">
         <div class="max-w-4xl mx-auto">
-          <h1 class="text-3xl font-bold mb-6 text-center">📜 Uslovi korišćenja</h1>
-          <p class="text-slate-400 text-center mb-12">
-            Molimo vas da pažljivo pročitate sledeće uslove pre korišćenja GBS platforme i Express Sajt usluga.
-          </p>
+          <h1 class="text-3xl font-bold mb-6 text-center">📜 {{ $t('terms_use.title') }}</h1>
+          <p class="text-slate-400 text-center mb-12">{{ $t('terms_use.intro') }}</p>
 
           <div class="space-y-6 bg-slate-800 p-6 rounded-lg shadow text-slate-300 text-sm leading-relaxed">
-            <p><strong>1. Opšte odredbe:</strong> Korišćenjem ove platforme prihvatate sve navedene uslove i obavezujete se da ćete ih poštovati.</p>
-
-            <p><strong>2. Prava i obaveze korisnika:</strong> Korisnik je dužan da unosi tačne podatke i da ne koristi platformu za nezakonite aktivnosti.</p>
-
-            <p><strong>3. Ograničenja odgovornosti:</strong> Agencija Express Sajt ne snosi odgovornost za sadržaj koji unesu korisnici niti za eventualne tehničke prekide rada.</p>
-
-            <p><strong>4. Promene uslova:</strong> Zadržavamo pravo da u bilo kom trenutku izmenimo ove uslove. Korisnici će o tome biti obavešteni.</p>
-
-            <p><strong>5. Primenjivo pravo:</strong> Na sve odnose između korisnika i platforme Agencije Express Sajt primenjuje se pravo Republike Srbije i drugih država u kojima Express Sajt posluje.</p>
-
-            <p><strong>6. Period važenja:</strong> Ovi uslovi korišćenja stupaju na snagu danom objavljivanja na platformi Agencije Express Sajt i važe do opoziva. Poslednji put ažurirani jul 2025.</p>
-
-            <p><strong>7. Kontakt:</strong> Za dodatne informacije možete nas kontaktirati putem <router-link to="/contact" class="text-purple-400 underline hover:text-purple-300">kontakt stranice</router-link>.</p>
+            <p><strong>1. {{ $t('terms_use.p1.title') }}</strong> {{ $t('terms_use.p1.text') }}</p>
+            <p><strong>2. {{ $t('terms_use.p2.title') }}</strong> {{ $t('terms_use.p2.text') }}</p>
+            <p><strong>3. {{ $t('terms_use.p3.title') }}</strong> {{ $t('terms_use.p3.text') }}</p>
+            <p><strong>4. {{ $t('terms_use.p4.title') }}</strong> {{ $t('terms_use.p4.text') }}</p>
+            <p><strong>5. {{ $t('terms_use.p5.title') }}</strong> {{ $t('terms_use.p5.text') }}</p>
+            <p><strong>6. {{ $t('terms_use.p6.title') }}</strong> {{ $t('terms_use.p6.text') }}</p>
+            <p><strong>7. {{ $t('terms_use.p7.title') }}</strong> 
+              {{ $t('terms_use.p7.text') }}
+              <router-link to="/contact" class="text-purple-400 underline hover:text-purple-300">
+                {{ $t('terms_use.p7.link') }}
+              </router-link>.
+            </p>
           </div>
         </div>
-        <!-- ✨ Pozadina sa particles efektom -->
-          <div class="absolute inset-0 -z-10">
-            <Particles class="absolute inset-0" />
-            <div class="absolute left-1/2 -translate-x-1/2 bottom-0">
-              <img src="../../../images/glow-bottom.svg" class="max-w-none" width="546" height="274" alt="Pozadina" />
-            </div>
+
+        <!-- ✨ Donja pozadina -->
+        <div class="absolute inset-0 -z-10">
+          <Particles class="absolute inset-0" />
+          <div class="absolute left-1/2 -translate-x-1/2 bottom-0">
+            <img src="../../../images/glow-bottom.svg" class="max-w-none" width="546" height="274" alt="Pozadina" />
           </div>
+        </div>
       </div>
 
       <Footer />
     </div>
   </section>
 </template>
+
 
 <script>
 import Header from '../../../partials/Header.vue'

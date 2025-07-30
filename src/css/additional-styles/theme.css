@@ -130,4 +130,8 @@
         -webkit-transform: translate3d(14px, 0, 0) scale(1.2);
         transform: translate3d(14px, 0, 0) scale(1.2);
     }
+
+    .input {
+  @apply w-full p-2 rounded bg-slate-700 border border-slate-600;
+}
 }

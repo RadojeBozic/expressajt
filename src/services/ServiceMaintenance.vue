@@ -6,13 +6,13 @@
     <section class="relative pt-32 pb-12 md:pt-40 text-center">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="inline-flex font-medium bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-purple-200 pb-3">
-          🛠️ Održavanje sajtova
+          🛠️ {{ $t('service.maintenance.badge') }}
         </div>
         <h1 class="h1 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-6">
-          Profesionalna podrška, bez brige i stresa
+          {{ $t('service.maintenance.title') }}
         </h1>
         <p class="text-slate-400 max-w-2xl mx-auto text-lg">
-          Ažuriranja, sigurnost, izmene i pomoć u radu sajtova – brzo, pouzdano i dostupno kad god ti zatreba.
+          {{ $t('service.maintenance.subtitle') }}
         </p>
       </div>
 
@@ -24,11 +24,11 @@
 
     <!-- Opis usluga -->
     <section class="relative py-16 px-6 max-w-5xl mx-auto text-slate-400 text-lg space-y-6">
-      <p>🔄 <strong>Ažuriranja sadržaja:</strong> Dodavanje novih sekcija, zamena slika, izmene tekstova i usluga – sve bez tehničkog znanja.</p>
-      <p>🔐 <strong>Sigurnost i zaštita:</strong> Aktivna zaštita sajta, monitoring napada, backup sistema i sigurnosne kopije baze podataka.</p>
-      <p>🚀 <strong>Brzina i optimizacija:</strong> Redovno čišćenje keša, optimizacija učitavanja, kontrola grešaka i analitika performansi.</p>
-      <p>📈 <strong>SEO održavanje:</strong> Provera meta tagova, strukture sajta i vidljivosti na Google-u. Pomoć oko rangiranja i tehničkog SEO-a.</p>
-      <p>📩 <strong>Podrška i savetovanje:</strong> Kontakt putem emaila ili WhatsApp-a. Brz odgovor i rešavanje problema.</p>
+      <p v-for="i in 5" :key="i">
+        <span>{{ $t(`service.maintenance.points.${i}.icon`) }}</span>
+        <strong> {{ $t(`service.maintenance.points.${i}.title`) }} </strong>
+        {{ $t(`service.maintenance.points.${i}.text`) }}
+      </p>
     </section>
 
     <!-- CTA -->
@@ -37,7 +37,7 @@
         to="/contact"
         class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold px-6 py-3 rounded shadow transition"
       >
-        Zatraži održavanje sajta →
+        {{ $t('service.maintenance.cta') }}
       </router-link>
     </section>
 
@@ -45,6 +45,7 @@
     <Footer />
   </div>
 </template>
+
 
 <script>
 import Header from '../partials/Header.vue'

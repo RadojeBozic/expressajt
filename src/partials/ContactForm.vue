@@ -8,7 +8,7 @@
       <!-- Illustration -->
       <div class="absolute inset-0 -z-10 -mx-28 rounded-b-[3rem] pointer-events-none overflow-hidden" aria-hidden="true">
         <div class="absolute left-1/2 -translate-x-1/2 bottom-0 -z-10">
-          <img src="../images/glow-bottom.svg" class="max-w-none" width="1146" height="774" alt="Hero Illustration">
+          <img src="../images/glow-bottom.svg" class="max-w-none" width="446" height="174" alt="Hero Illustration">
         </div>
       </div>
 
@@ -31,7 +31,7 @@
       </div>
 
       <!-- 📬 Kontakt forma -->
-      <form @submit.prevent="submitForm" class="max-w-xl mx-auto space-y-4 relative pt-16 pb-8 md:pt-20 md:pb-16 z-10">
+      <form @submit.prevent="submitForm" class="max-w-xl mx-auto space-y-4 relative pt-16 pb-8 md:pt-4 md:pb-16 z-10">
         <div>
           <label for="name" class="block text-sm text-slate-300 font-medium mb-1">{{ $t('contact.form.name') }}</label>
           <input id="name" v-model="form.name" class="form-input w-full" type="text" required />

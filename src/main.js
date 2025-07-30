@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import router from './router'
 import App from './App.vue'
-import i18n from './i18n/i18n'
+import i18n from './i18n/index.js'
 import axios from 'axios'
 
 import 'aos/dist/aos.css';

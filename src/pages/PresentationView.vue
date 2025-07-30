@@ -6,7 +6,7 @@
       <!-- INFO o paketu -->
       <div class="text-center mb-6 mt-36">
         <h2 class="text-lg text-white font-semibold mb-1 flex items-center justify-center gap-2">
-          📢 Pregled sajta:
+          📢 {{ $t('siteview.previewOf') }}
           <span
             class="text-xs font-bold px-2 py-1 rounded uppercase"
             :class="siteData.type === 'pro' ? 'bg-yellow-500 text-slate-900' : 'bg-green-500 text-white'"
@@ -20,10 +20,11 @@
           v-if="siteData.type === 'pro'"
           class="bg-yellow-100 text-yellow-800 text-sm p-4 rounded mb-4 max-w-xl mx-auto border border-yellow-300"
         >
-          <strong>⚠️ Ovo je PRO prezentacija.</strong><br />
-          Uređivanje će biti omogućeno nakon aktivacije.<br />
-          Imate pitanje?
-          <router-link to="/contact" class="text-blue-600 underline hover:text-blue-800">Kontaktirajte podršku</router-link>.
+          <strong>⚠️ {{ $t('siteview.pro.title') }}</strong><br />
+          {{ $t('siteview.pro.editBlocked') }}<br />
+          <router-link to="/contact" class="text-blue-600 underline hover:text-blue-800">
+            {{ $t('siteview.contactSupport') }}
+          </router-link>.
         </div>
 
         <!-- ✅ FREE poruka -->
@@ -31,8 +32,8 @@
           v-if="siteData.type === 'free'"
           class="bg-green-100 text-green-900 text-sm p-4 rounded mb-4 max-w-xl mx-auto border border-green-300"
         >
-          <strong>🎉 Besplatan sajt je generisan!</strong><br />
-          Ovo je vaš link za deljenje:
+          <strong>🎉 {{ $t('siteview.free.title') }}</strong><br />
+          {{ $t('siteview.free.linkMessage') }}
           <div class="mt-2 flex items-center justify-center gap-2">
             <input
               type="text"
@@ -44,67 +45,60 @@
               @click="copyLink"
               class="bg-green-600 hover:bg-green-700 text-white text-sm px-3 py-1 rounded shadow"
             >
-              📋 Kopiraj
+              📋 {{ $t('siteview.copy') }}
             </button>
           </div>
-          <p v-if="copySuccess" class="text-green-600 text-xs mt-1">Link je kopiran u klipbord ✅</p>
+          <p v-if="copySuccess" class="text-green-600 text-xs mt-1">
+            {{ $t('siteview.copied') }}
+          </p>
 
           <div class="mt-3 text-sm">
-            Niste zadovoljni? <router-link to="/free-site-form" class="text-blue-600 underline hover:text-blue-800">Popunite ponovo formu</router-link>.
+            {{ $t('siteview.notSatisfied') }}
+            <router-link to="/free-site-form" class="text-blue-600 underline hover:text-blue-800">
+              {{ $t('siteview.fillAgain') }}
+            </router-link>.
           </div>
 
-          <!-- 📥 PDF dugme & Preview link – samo ako je FREE -->
-            <div class="mt-4 text-center" v-if="siteData.type === 'free'">
-              <!-- Zakomentarisano PDF dugme -->
-              <!--
-              <button
-                @click="downloadPDF"
-                class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-1 rounded text-sm"
-              >
-                📥 Preuzmi prezentaciju kao PDF
-              </button>
-              -->
+          <!-- 📥 PDF & preview -->
+          <div class="mt-4 text-center">
+            <router-link
+              :to="`/preview/${slug}`"
+              target="_blank"
+              class="bg-slate-500 hover:bg-slate-600 text-white px-4 py-1 rounded text-sm"
+            >
+              🌐 {{ $t('siteview.openPreview') }}
+            </router-link>
 
-              <!-- Dugme za otvaranje samo prezentacije -->
-              <router-link
-                :to="`/preview/${slug}`"
-                target="_blank"
-                class="bg-slate-500 hover:bg-slate-600 text-white px-4 py-1 rounded text-sm"
-              >
-                🌐 Otvori samo prezentaciju
-              </router-link>
-
-              <p class="text-xs text-slate-400 mt-2">
-                Ako želite da sačuvate ovu prezentaciju kao PDF, otvorite je u posebnom prozoru i koristite <strong>CTRL+P → Save as PDF</strong>.
-              </p>
-            </div>
-
+            <p class="text-xs text-slate-400 mt-2">
+              {{ $t('siteview.pdfHint') }}
+            </p>
+          </div>
         </div>
       </div>
 
-      <!-- 🔧 Akcije: Uredi / Obriši -->
+      <!-- 🔧 Akcije -->
       <div v-if="isOwnerOrAdmin" class="flex justify-center gap-4 mb-6">
         <router-link
           :to="`/edit-site/${slug}`"
           class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded shadow"
         >
-          ✏️ Uredi
+          ✏️ {{ $t('siteview.edit') }}
         </router-link>
         <button
           @click="confirmDelete"
           class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-sm rounded shadow"
         >
-          🗑 Obriši
+          🗑 {{ $t('siteview.delete') }}
         </button>
       </div>
 
-      <!-- 👁 Prikaz samo prezentacije (ref za PDF) -->
+      <!-- 👁 Komponenta -->
       <div ref="printArea">
         <component :is="templateComponent" :data="siteData" />
       </div>
     </div>
 
-    <div v-else class="text-white text-center py-20">Učitavanje...</div>
+    <div v-else class="text-white text-center py-20">{{ $t('siteview.loading') }}</div>
 
     <Footer />
   </div>
@@ -185,25 +179,29 @@ export default {
         const res = await axios.get(`http://localhost:8080/api/site-request/${this.slug}`)
         this.siteData = res.data
       } catch (err) {
-        console.error('❌ Greška pri preuzimanju sajta:', err)
+        console.error('❌', err)
+        alert(this.$t('siteview.errors.fetch'))
       }
     },
     async confirmDelete() {
-      if (!confirm('Da li ste sigurni da želite da obrišete ovu prezentaciju?')) return
+      const confirmMsg = this.$t('siteview.confirmDelete')
+      if (!confirm(confirmMsg)) return
+
       try {
         const token = localStorage.getItem('token')
         await axios.delete(`http://localhost:8080/api/site-request/${this.slug}`, {
           headers: { Authorization: `Bearer ${token}` }
         })
-        alert('🗑 Prezentacija je uspešno obrisana.')
-        this.$router.push(
-          this.user?.role === 'admin' || this.user?.role === 'superadmin'
-            ? '/admin/dashboard'
-            : '/dashboard'
-        )
+        alert(this.$t('siteview.deleted'))
+
+        const destination = this.user?.role === 'admin' || this.user?.role === 'superadmin'
+          ? '/admin/dashboard'
+          : '/dashboard'
+
+        this.$router.push(destination)
       } catch (err) {
-        console.error('❌ Greška pri brisanju:', err)
-        alert('⚠️ Nije moguće obrisati. Pokušajte ponovo.')
+        console.error('❌', err)
+        alert(this.$t('siteview.errors.delete'))
       }
     },
     copyLink() {

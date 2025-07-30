@@ -20,7 +20,9 @@
 
         <!-- Section header -->
         <div class="text-center pb-12 md:pb-20">
-          <div class="inline-flex font-medium bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-purple-200 pb-3">{{ $t('pricing_hero.hero.label') }}</div>
+          <div class="inline-flex font-medium bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-purple-200 pb-3">{{ $t('pricing_hero.hero.label') }}
+            
+          </div>
           <h1 class="h1 bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">{{ $t('pricing_hero.hero.title') }}</h1>
           <div class="max-w-3xl mx-auto">
             <p class="text-lg text-slate-400">{{ $t('pricing_hero.hero.description') }}</p>

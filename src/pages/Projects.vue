@@ -1,53 +1,49 @@
 <template>
-
-    <!-- ✨ Pozadinska animacija -->
-    <div class="absolute inset-0 -z-10">
-      <Particles class="absolute inset-0" />
-      <div class="absolute left-1/2 -translate-x-1/2 bottom-0">
-        <img src="../images/glow-top.svg" class="max-w-none" width="2146" height="774" alt="Pozadinska animacija" />
-      </div>
+  <!-- ✨ Pozadinska animacija -->
+  <div class="absolute inset-0 -z-10">
+    <Particles class="absolute inset-0" />
+    <div class="absolute left-1/2 -translate-x-1/2 bottom-0">
+      <img src="../images/glow-top.svg" class="max-w-none" width="2146" height="774" alt="Pozadinska animacija" />
     </div>
+  </div>
 
   <div class="flex flex-col min-h-screen bg-slate-900 text-white">
     <Header />
+
     <main class="grow pt-32 pb-20 px-4 sm:px-6 max-w-6xl mx-auto relative">
-      
       <div class="text-center mb-12">
-        <h1 class="text-3xl font-bold">📁 Naši Express projekti</h1>
+        <h1 class="text-3xl font-bold">📁 {{ $t('projects.title') }}</h1>
         <p class="text-slate-400 max-w-2xl mx-auto mt-4">
-          Pogledajte dostupne sisteme i usluge koje nudimo — svaki projekat je prilagođen realnim potrebama klijenata.
+          {{ $t('projects.intro') }}
         </p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div
-          v-for="project in projects"
-          :key="project.id"
+          v-for="id in 15"
+          :key="id"
           class="bg-slate-800 border border-slate-700 rounded-lg p-6 shadow-lg hover:shadow-purple-700 transition"
         >
-          <h2 class="text-xl font-semibold text-purple-400 mb-1">{{ project.title }}</h2>
-          <p class="text-slate-300 text-sm italic mb-2">{{ project.subtitle }}</p>
+          <h2 class="text-xl font-semibold text-purple-400 mb-1">
+            {{ $t(`projects.items.${id}.title`) }}
+          </h2>
+          <p class="text-slate-300 text-sm italic mb-2">
+            {{ $t(`projects.items.${id}.subtitle`) }}
+          </p>
           <details class="text-slate-400 mt-2 text-sm">
-            <summary class="cursor-pointer hover:underline">📖 Više o projektu</summary>
+            <summary class="cursor-pointer hover:underline">📖 {{ $t('projects.more') }}</summary>
             <div class="mt-3 whitespace-pre-line leading-relaxed">
-              {{ project.description }}
+              {{ $t(`projects.items.${id}.description`) }}
             </div>
           </details>
         </div>
-        <!-- ✨ Pozadina sa particles efektom -->
-          <div class="absolute inset-0 -z-10">
-            <Particles class="absolute inset-0" />
-            <div class="absolute left-1/2 -translate-x-1/2 bottom-0">
-              <img src="../images/glow-bottom.svg" class="max-w-none" width="546" height="274" alt="Pozadina" />
-            </div>
-          </div>
       </div>
-      
     </main>
+
     <Footer />
   </div>
-
 </template>
+
 
 <script>
 import Header from '../partials/Header.vue'
@@ -123,7 +119,50 @@ export default {
           title: 'Express Dizajn',
           subtitle: 'Logo, baneri, društvene mreže – AI + Canva Pro dizajn.',
           description: 'Brzo i kreativno rešenje za brendiranje uz podršku veštačke inteligencije.'
-        }
+        },
+        {
+          id: 11,
+          title: 'Express SEO',
+          subtitle: 'Optimizacija sajta za bolje rangiranje na Google-u.',
+          description: 'Analiza, ključne reči, sadržaj i tehnička optimizacija za bolju vidljivost.'
+        },
+        {
+          id: 12,
+          title: 'Express AI Chatbot',
+          subtitle: 'Automatizujte korisničku podršku uz AI chatbota.',
+          description: 'Brza integracija chatbota za FAQ, podršku i interakciju sa posetiocima.'
+        },
+        {
+          id: 13,
+          title: 'Express Newsletter',
+          subtitle: 'Email marketing rešenje za vašu publiku.',
+          description: 'Kreirajte i šaljite newslettere, pratite analitiku i angažujte korisnike.'
+        },
+        {
+          id: 14,
+          title: 'Express Analytics',
+          subtitle: 'Praćenje poseta i analitika sajta.',
+          description: 'Integracija sa Google Analytics i izveštavanje o performansama sajta.'
+        },
+        {
+          id: 15,
+          title: 'Express Social Media',
+          subtitle: 'Upravljanje društvenim mrežama i kampanjama.',
+          description: 'Planiranje, kreiranje sadržaja i analitika za društvene mreže.'
+        },
+        {
+          id: 15,
+          title: 'Express Marketing',
+          subtitle: 'Sveobuhvatna marketinška strategija za vaš biznis.',
+          description: 'Kreiranje i implementacija marketinških kampanja, SEO, PPC i društvene mreže.'
+        },
+        {
+          id: 15,
+          title: 'Express Prevodi',
+          subtitle: 'Profesionalni prevodi za vašu publiku.',
+          description: 'Kvalitetni prevodi sadržaja, lokalizacija i prilagođavanje za različite jezike.'
+        },
+
       ]
     }
   }

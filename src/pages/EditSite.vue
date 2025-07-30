@@ -1,83 +1,73 @@
 <template>
   <div class="min-h-screen bg-slate-900 text-white p-6">
-    <h1 class="text-3xl font-bold mb-6 text-center">✏️ Uredi prezentaciju</h1>
+    <h1 class="text-3xl font-bold mb-6 text-center">✏️ {{ $t('edit.title') }}</h1>
     <div class="text-center text-sm mb-6">
-      <span class="inline-block px-3 py-1 rounded-full bg-purple-700">FREE verzija</span>
+      <span class="inline-block px-3 py-1 rounded-full bg-purple-700">{{ $t('edit.version') }}</span>
     </div>
 
     <form @submit.prevent="submitForm" class="max-w-3xl mx-auto space-y-8">
       <!-- 📇 OPŠTI PODACI -->
       <fieldset class="space-y-4">
-        <legend class="text-xl font-semibold text-purple-400 mb-2">📇 Opšti podaci</legend>
-        <input v-model="form.name" placeholder="Naziv firme *" required
-          class="w-full p-3 rounded-md bg-slate-800 border border-slate-600" />
-        <textarea v-model="form.description" rows="3" placeholder="Opis delatnosti *" required
-          class="w-full p-3 rounded-md bg-slate-800 border border-slate-600"></textarea>
-        <input v-model="form.email" type="email" placeholder="Email *" required
-          class="w-full p-3 rounded-md bg-slate-800 border border-slate-600" />
-        <input v-model="form.phone" placeholder="Telefon *" required
-          class="w-full p-3 rounded-md bg-slate-800 border border-slate-600" />
-        <input v-model="form.facebook" placeholder="Facebook"
-          class="w-full p-3 rounded-md bg-slate-800 border border-slate-600" />
-        <input v-model="form.instagram" placeholder="Instagram"
-          class="w-full p-3 rounded-md bg-slate-800 border border-slate-600" />
+        <legend class="text-xl font-semibold text-purple-400 mb-2">📇 {{ $t('edit.sections.general') }}</legend>
+        <input v-model="form.name" :placeholder="$t('edit.fields.name')" required class="input" />
+        <textarea v-model="form.description" rows="3" :placeholder="$t('edit.fields.description')" required class="input" />
+        <input v-model="form.email" type="email" :placeholder="$t('edit.fields.email')" required class="input" />
+        <input v-model="form.phone" :placeholder="$t('edit.fields.phone')" required class="input" />
+        <input v-model="form.facebook" :placeholder="$t('edit.fields.facebook')" class="input" />
+        <input v-model="form.instagram" :placeholder="$t('edit.fields.instagram')" class="input" />
         <input type="file" @change="e => handleFile(e, 'logo')" class="block mt-2 text-sm" />
       </fieldset>
 
       <!-- 🎯 HERO -->
       <fieldset class="space-y-4">
-        <legend class="text-xl font-semibold text-purple-400 mb-2">🎯 Hero sekcija</legend>
-        <input v-model="form.heroTitle" placeholder="Naslov *" required
-          class="w-full p-3 rounded-md bg-slate-800 border border-slate-600" />
-        <textarea v-model="form.heroSubtitle" rows="2" placeholder="Podnaslov *" required
-          class="w-full p-3 rounded-md bg-slate-800 border border-slate-600"></textarea>
+        <legend class="text-xl font-semibold text-purple-400 mb-2">🎯 {{ $t('edit.sections.hero') }}</legend>
+        <input v-model="form.heroTitle" :placeholder="$t('edit.fields.heroTitle')" required class="input" />
+        <textarea v-model="form.heroSubtitle" rows="2" :placeholder="$t('edit.fields.heroSubtitle')" required class="input" />
         <input type="file" @change="e => handleFile(e, 'heroImage')" class="block mt-2 text-sm" />
       </fieldset>
 
       <!-- 👥 O NAMA -->
       <fieldset class="space-y-4">
-        <legend class="text-xl font-semibold text-purple-400 mb-2">👥 O nama</legend>
-        <input v-model="form.aboutTitle" placeholder="Naslov sekcije *" required
-          class="w-full p-3 rounded-md bg-slate-800 border border-slate-600" />
-        <textarea v-model="form.aboutText" rows="3" placeholder="Opis firme *" required
-          class="w-full p-3 rounded-md bg-slate-800 border border-slate-600"></textarea>
+        <legend class="text-xl font-semibold text-purple-400 mb-2">👥 {{ $t('edit.sections.about') }}</legend>
+        <input v-model="form.aboutTitle" :placeholder="$t('edit.fields.aboutTitle')" required class="input" />
+        <textarea v-model="form.aboutText" rows="3" :placeholder="$t('edit.fields.aboutText')" required class="input" />
         <input type="file" @change="e => handleFile(e, 'aboutImage')" class="block mt-2 text-sm" />
       </fieldset>
 
       <!-- 🛍️ PONUDA -->
       <fieldset class="space-y-4">
-        <legend class="text-xl font-semibold text-purple-400 mb-2">🛍️ Naša ponuda</legend>
-        <input v-model="form.offerTitle" placeholder="Naslov ponude (npr. Naše usluge)"
-          class="w-full p-3 rounded-md bg-slate-800 border border-slate-600" />
+        <legend class="text-xl font-semibold text-purple-400 mb-2">🛍️ {{ $t('edit.sections.offer') }}</legend>
+        <input v-model="form.offerTitle" :placeholder="$t('edit.fields.offerTitle')" class="input" />
         <div class="space-y-4">
           <div v-for="(item, index) in form.offerItems" :key="index" class="border border-slate-600 p-3 rounded-md space-y-2">
-            <input v-model="item.title" placeholder="Naziv stavke (npr. Web dizajn)"
-              class="w-full p-3 rounded-md bg-slate-700 border border-slate-500" />
+            <input v-model="item.title" :placeholder="$t('edit.fields.offerItemTitle')" class="input bg-slate-700" />
             <input type="file" @change="e => handleOfferImageUpload(e, index)" class="block text-sm" />
-            <button type="button" @click="removeItem(index)" v-if="form.offerItems.length > 1"
-              class="text-red-400 hover:text-red-600 text-sm">✖ Ukloni stavku</button>
+            <button type="button" @click="removeItem(index)" v-if="form.offerItems.length > 1" class="text-red-400 hover:text-red-600 text-sm">
+              {{ $t('edit.fields.remove') }}
+            </button>
           </div>
-          <button type="button" @click="addItem" class="text-sm text-purple-300 hover:text-purple-500">➕ Dodaj stavku</button>
+          <button type="button" @click="addItem" class="text-sm text-purple-300 hover:text-purple-500">
+            {{ $t('edit.fields.addOffer') }}
+          </button>
         </div>
       </fieldset>
 
       <!-- 🎨 ŠABLON -->
       <fieldset class="space-y-4">
-        <legend class="text-xl font-semibold text-purple-400 mb-2">🎨 Izbor šablona</legend>
-        <select v-model="form.template" required class="w-full p-3 rounded-md bg-slate-800 border border-slate-600">
-          <option disabled value="">-- Odaberi šablon --</option>
-          <option value="klasicni">🧾 Klasični</option>
-          <option value="moderni">✨ Moderni</option>
-          <option value="galerija">🖼️ Galerija</option>
-          <option value="biznis">🏢 Biznis</option>
-          <option value="dark">🌙 Dark mode</option>
+        <legend class="text-xl font-semibold text-purple-400 mb-2">🎨 {{ $t('edit.sections.template') }}</legend>
+        <select v-model="form.template" required class="input">
+          <option disabled value="">-- {{ $t('edit.fields.chooseTemplate') }} --</option>
+          <option value="klasicni">🧾 {{ $t('edit.templates.classic') }}</option>
+          <option value="moderni">✨ {{ $t('edit.templates.modern') }}</option>
+          <option value="galerija">🖼️ {{ $t('edit.templates.gallery') }}</option>
+          <option value="biznis">🏢 {{ $t('edit.templates.biznis') }}</option>
+          <option value="dark">🌙 {{ $t('edit.templates.dark') }}</option>
         </select>
       </fieldset>
 
-      <!-- CTA dugme -->
-      <button type="submit" :disabled="loading"
-        class="w-full bg-purple-600 hover:bg-purple-700 py-3 px-4 rounded text-white font-semibold">
-        {{ loading ? '⏳ Čuvanje...' : '💾 Sačuvaj izmene' }}
+      <!-- CTA -->
+      <button type="submit" :disabled="loading" class="w-full bg-purple-600 hover:bg-purple-700 py-3 px-4 rounded text-white font-semibold">
+        {{ loading ? $t('edit.loading') : $t('edit.submit') }}
       </button>
 
       <p v-if="success" class="text-green-400 text-sm">{{ success }}</p>
@@ -85,6 +75,7 @@
     </form>
   </div>
 </template>
+
 
 <script>
 import axios from 'axios'
@@ -101,11 +92,21 @@ export default {
       error: '',
       form: {
         siteType: 'free',
-        name: '', description: '', email: '', phone: '',
-        facebook: '', instagram: '', logo: null,
-        heroTitle: '', heroSubtitle: '', heroImage: null,
-        aboutTitle: '', aboutText: '', aboutImage: null,
-        offerTitle: '', offerItems: [{ title: '', image: null }],
+        name: '',
+        description: '',
+        email: '',
+        phone: '',
+        facebook: '',
+        instagram: '',
+        logo: null,
+        heroTitle: '',
+        heroSubtitle: '',
+        heroImage: null,
+        aboutTitle: '',
+        aboutText: '',
+        aboutImage: null,
+        offerTitle: '',
+        offerItems: [{ title: '', image: null }],
         template: 'klasicni'
       }
     }
@@ -140,8 +141,8 @@ export default {
         })) || [{ title: '', image: null }]
       }
     } catch (err) {
-      this.error = '⚠️ Greška pri učitavanju podataka.'
       console.error(err)
+      this.error = this.$t('edit.errors.load')
     }
   },
   methods: {
@@ -152,7 +153,7 @@ export default {
     handleOfferImageUpload(e, index) {
       const file = e.target.files[0]
       if (file && (!file.type.startsWith('image/') || file.size > 4 * 1024 * 1024)) {
-        this.error = `⚠️ Slika u stavci ${index + 1} nije validna ili je prevelika.`
+        this.error = this.$t('edit.errors.image', { index: index + 1 })
         this.form.offerItems[index].image = null
         return
       }
@@ -182,6 +183,7 @@ export default {
         })
 
         fd.append('offerTitle', this.form.offerTitle)
+
         this.form.offerItems.forEach((item, i) => {
           fd.append(`offerItems[${i}][title]`, item.title)
           if (item.image) {
@@ -189,25 +191,29 @@ export default {
           }
         })
 
-        const response = await axios.post(`http://localhost:8080/api/free-site-request/${this.slug}?_method=PUT`, fd, {
-  headers: {
-    Authorization: `Bearer ${token}`,
-    'Content-Type': 'multipart/form-data'
-  }
-})
+        const response = await axios.post(
+          `http://localhost:8080/api/free-site-request/${this.slug}?_method=PUT`,
+          fd,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+              'Content-Type': 'multipart/form-data'
+            }
+          }
+        )
 
-this.success = '✅ Prezentacija je uspešno sačuvana. Preusmeravanje...'
+        this.success = this.$t('edit.success')
 
-setTimeout(() => {
-  this.$router.push(`/prezentacije/${response.data.slug}`)
-}, 1500)
+        setTimeout(() => {
+          this.$router.push(`/prezentacije/${response.data.slug}`)
+        }, 1500)
       } catch (err) {
         console.error(err)
         if (err.response?.status === 422 && err.response.data?.errors) {
           const errors = Object.values(err.response.data.errors).flat()
           this.error = errors.join(', ')
         } else {
-          this.error = '⚠️ Greška pri čuvanju.'
+          this.error = this.$t('edit.errors.save')
         }
       } finally {
         this.loading = false

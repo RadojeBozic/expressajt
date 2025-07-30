@@ -6,13 +6,13 @@
     <section class="relative pt-32 pb-12 md:pt-40 text-center">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="inline-flex font-medium bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-purple-200 pb-3">
-          🌐 Domen & Hosting usluge
+          🌐 {{ $t('service.domain.badge') }}
         </div>
         <h1 class="h1 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-6">
-          Pomoć pri kupovini domena i hostinga – brzo i bez stresa
+          {{ $t('service.domain.title') }}
         </h1>
         <p class="text-slate-400 max-w-2xl mx-auto text-lg">
-          Ne znaš gde da kupiš domen? Koji hosting da izabereš? Tu smo da ti pomognemo uz najbolje partnere i preporuke.
+          {{ $t('service.domain.subtitle') }}
         </p>
       </div>
 
@@ -24,11 +24,11 @@
 
     <!-- Sadržaj -->
     <section class="relative py-16 px-6 max-w-5xl mx-auto text-slate-400 text-lg space-y-6">
-      <p>🌍 <strong>Pomoć pri izboru domena:</strong> Proverićemo dostupnost .rs, .com, .net i drugih ekstenzija – i predložiti najbolje varijante.</p>
-      <p>📡 <strong>Registracija domena preko nas:</strong> Naši partneri omogućavaju povoljnije cene i administraciju na jednom mestu.</p>
-      <p>💾 <strong>Hosting preporuke:</strong> Deljeni, cloud ili VPS hosting – zavisno od tvog projekta, daćemo preporuku i obezbediti instalaciju.</p>
-      <p>🤝 <strong>Partnerski odnos:</strong> Ako kupiš domen ili hosting preko nas, dobijamo proviziju – ali ti dobijaš podršku, brzinu i sigurnost.</p>
-      <p>🔐 <strong>SSL sertifikat i sigurnost:</strong> Podešavamo HTTPS i automatski backup – da tvoj sajt radi 24/7 bezbedno.</p>
+      <p>🌍 <strong>{{ $t('service.domain.points.1.title') }}</strong> {{ $t('service.domain.points.1.text') }}</p>
+      <p>📡 <strong>{{ $t('service.domain.points.2.title') }}</strong> {{ $t('service.domain.points.2.text') }}</p>
+      <p>💾 <strong>{{ $t('service.domain.points.3.title') }}</strong> {{ $t('service.domain.points.3.text') }}</p>
+      <p>🤝 <strong>{{ $t('service.domain.points.4.title') }}</strong> {{ $t('service.domain.points.4.text') }}</p>
+      <p>🔐 <strong>{{ $t('service.domain.points.5.title') }}</strong> {{ $t('service.domain.points.5.text') }}</p>
     </section>
 
     <!-- CTA -->
@@ -37,7 +37,7 @@
         to="/contact"
         class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold px-6 py-3 rounded shadow transition"
       >
-        Zatraži preporuku za domen/hosting →
+        {{ $t('service.domain.cta') }}
       </router-link>
     </section>
 
@@ -45,6 +45,7 @@
     <Footer />
   </div>
 </template>
+
 
 <script>
 import Header from '../partials/Header.vue'

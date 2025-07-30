@@ -4,40 +4,39 @@
     <!-- Dobrodošlica -->
     <div class="text-center mb-8">
       <h1 class="text-3xl font-bold text-slate-300 dark:text-white pt-8 mt-4">
-        Dobrodošli, {{ user?.name || 'korisniče' }}!
+        {{ $t('dashboard.welcome') }}, {{ user?.name || $t('dashboard.user') }}!
       </h1>
-      <p class="text-slate-400">Uspešno ste registrovani na platformu.</p>
+      <p class="text-slate-400">{{ $t('dashboard.registered') }}</p>
     </div>
 
     <!-- Profil -->
     <div class="bg-slate-800 p-6 rounded-lg max-w-5xl w-full mx-auto text-white mb-8 shadow-lg">
-      <h2 class="text-xl font-semibold mb-4">🧑‍💼 Moj profil</h2>
-      <p><strong>Ime:</strong> {{ user?.name }}</p>
-      <p><strong>Email:</strong> {{ user?.email }}</p>
+      <h2 class="text-xl font-semibold mb-4">🧑‍💼 {{ $t('dashboard.profile.title') }}</h2>
+      <p><strong>{{ $t('dashboard.profile.name') }}</strong> {{ user?.name }}</p>
+      <p><strong>{{ $t('dashboard.profile.email') }}</strong> {{ user?.email }}</p>
 
-      <!-- Dugme za brisanje naloga -->
       <button
         @click="confirmDeleteAccount"
         class="mt-6 bg-red-600 hover:bg-red-700 text-white text-sm px-4 py-2 rounded shadow"
       >
-        🗑 Obriši moj nalog
+        🗑 {{ $t('dashboard.profile.delete') }}
       </button>
     </div>
 
     <!-- Poruke korisnika -->
     <div class="bg-slate-800 p-6 rounded-lg max-w-5xl w-full mx-auto text-white mb-8 shadow-lg">
-      <h2 class="text-xl font-semibold mb-4">📩 Moje poruke</h2>
+      <h2 class="text-xl font-semibold mb-4">📩 {{ $t('dashboard.messages.title') }}</h2>
       <ul>
         <li v-for="(msg, index) in messages" :key="index" class="border-b border-slate-700 pb-2 mb-2">
           {{ msg.message }}
         </li>
-        <li v-if="messages.length === 0">Nemate nijednu poruku.</li>
+        <li v-if="messages.length === 0">{{ $t('dashboard.messages.empty') }}</li>
       </ul>
     </div>
 
-    <!-- Naše usluge -->
+    <!-- Usluge -->
     <div class="bg-slate-800 p-6 rounded-lg max-w-7xl w-full mx-auto text-white mb-12 shadow-lg">
-      <h2 class="text-xl font-semibold mb-6 text-center">🎯 Naše Express usluge</h2>
+      <h2 class="text-xl font-semibold mb-6 text-center">🎯 {{ $t('dashboard.services.title') }}</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div
           v-for="(item, index) in services"
@@ -45,14 +44,14 @@
           class="bg-slate-900 p-4 rounded-lg border border-slate-700 flex flex-col justify-between"
         >
           <div>
-            <h3 class="text-lg font-bold mb-2">{{ item.title }}</h3>
-            <p class="text-sm text-slate-300">{{ item.description }}</p>
+            <h3 class="text-lg font-bold mb-2">{{ $t(`dashboard.services.list.${item.key}.title`) }}</h3>
+            <p class="text-sm text-slate-300">{{ $t(`dashboard.services.list.${item.key}.desc`) }}</p>
           </div>
           <router-link
             :to="item.route"
             class="mt-4 px-3 py-1 bg-purple-600 hover:bg-purple-700 rounded text-sm text-white self-start text-center"
           >
-            Zainteresovan/a sam
+            {{ $t('dashboard.services.interest') }}
           </router-link>
         </div>
       </div>
@@ -60,6 +59,7 @@
   </main>
   <Footer />
 </template>
+
 
 <script>
 import axios from 'axios'
@@ -75,57 +75,20 @@ export default {
       user: getCurrentUser(),
       messages: [],
       services: [
-        {
-          title: 'Express FREE sajt',
-          description: 'Besplatan sajt za 5–10 minuta – jednostavno, brzo, bez programiranja.',
-          route: '/services/freesite'
-        },
-        {
-          title: 'Express PRO sajt',
-          description: 'Napredna prezentacija sa dodatnim sekcijama, PDF, mapom i kontakt formom.',
-          route: '/services/prosite'
-        },
-        {
-          title: 'Express W3 sajt',
-          description: 'Unikatna poslovna prezentacija za jedan dan – koristi W3 šablone i brz dizajn.',
-          route: '/services/w3site'
-        },
-        {
-          title: 'Express CRUIP sajt',
-          description: 'Moderne prezentacije sa Cruip UI dizajnom i efektima. Vreme izrade: 4–5 dana.',
-          route: '/services/cruipsite'
-        },
-        {
-          title: 'Express Original sajt',
-          description: 'Sajt po posebnom zahtevu – kreiranje od nule, unikatno i ekskluzivno.',
-          route: '/services/originalsite'
-        },
-        {
-          title: 'Express Basic Shop',
-          description: 'Online prodavnica sa osnovnim funkcijama – checkout, korpa, SEO.',
-          route: '/services/basicshop'
-        },
-        {
-          title: 'Express UNI Shop',
-          description: 'Višenamenska online prodavnica sa filterima, partnerima, dashboard-om.',
-          route: '/services/unishop'
-        },
-        {
-          title: 'Domen & hosting usluga',
-          description: 'Pomoć u izboru i kupovini hostinga/domena – sa podrškom i provizijom.',
-          route: '/services/domain-hosting'
-        },
-        {
-          title: 'Održavanje sajta',
-          description: 'Pomoć u izmenama, SEO, sigurnosti i backup-u. Mesečno ili po intervenciji.',
-          route: '/services/maintenance'
-        },
-        {
-          title: 'Express Dizajn',
-          description: 'Logo, baneri, društvene mreže – AI + Canva Pro dizajn po tvojoj meri.',
-          route: '/services/design'
-        }
-      ]
+  { key: 'free', route: '/services/freesite' },
+  { key: 'pro', route: '/services/prosite' },
+  { key: 'w3', route: '/services/w3site' },
+  { key: 'cruip', route: '/services/cruipsite' },
+  { key: 'original', route: '/services/originalsite' },
+  { key: 'basicshop', route: '/services/basicshop' },
+  { key: 'unishop', route: '/services/unishop' },
+  { key: 'domain', route: '/services/domain-hosting' },
+  { key: 'maintenance', route: '/services/maintenance' },
+  { key: 'design', route: '/services/design' },
+  { key: 'seo', route: '/services/seo' },
+  { key: 'marketing', route: '/services/marketing' },
+  { key: 'translation', route: '/services/translation' }
+]
     }
   },
   mounted() {

@@ -5,13 +5,13 @@
     <section class="relative pt-32 pb-10 md:pt-40 text-center">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="inline-flex font-medium bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-purple-200 pb-3">
-          💡 Cruip UI + Tailwind efekti
+          💡 {{ $t('service.cruipsite.badge') }}
         </div>
         <h1 class="h1 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-6">
-          Express CRUIP sajt – moderna prezentacija u 5 dana
+          {{ $t('service.cruipsite.title') }}
         </h1>
         <p class="text-slate-400 max-w-2xl mx-auto text-lg">
-          Atraktivan UI, mikro animacije, startap atmosfera – izrađeno korišćenjem Cruip šablona i komponenti.
+          {{ $t('service.cruipsite.subtitle') }}
         </p>
       </div>
 
@@ -22,11 +22,11 @@
 
     <section class="relative py-16 px-6 max-w-5xl mx-auto">
       <div class="text-slate-400 space-y-6 text-lg">
-        <p>⚡ <strong>Brza izrada:</strong> Na osnovu šablona, uz tvoje prilagođene podatke i slike – vreme isporuke 4–5 dana.</p>
-        <p>🎯 <strong>Dizajn usmeren na konverzije:</strong> CTA dugmad, sekcije sa social proof-om, moderne galerije, newsletter forma.</p>
-        <p>🎨 <strong>Preko 20 dostupnih Cruip šablona:</strong> Startup, App, SaaS, Portfolio i više – mi ih prilagođavamo za tvoju svrhu.</p>
-        <p>🔧 <strong>Funkcionalnosti:</strong> Kontakt forma, galerija, prezentacija usluga, blog (opciono), integracije sa Google Maps, Mailchimp, itd.</p>
-        <p>💰 <strong>Cena:</strong> Od 6.990 RSD – zavisi od kompleksnosti i sekcija.</p>
+        <p>⚡ <strong>{{ $t('service.cruipsite.points.1.title') }}</strong> {{ $t('service.cruipsite.points.1.text') }}</p>
+        <p>🎯 <strong>{{ $t('service.cruipsite.points.2.title') }}</strong> {{ $t('service.cruipsite.points.2.text') }}</p>
+        <p>🎨 <strong>{{ $t('service.cruipsite.points.3.title') }}</strong> {{ $t('service.cruipsite.points.3.text') }}</p>
+        <p>🔧 <strong>{{ $t('service.cruipsite.points.4.title') }}</strong> {{ $t('service.cruipsite.points.4.text') }}</p>
+        <p>💰 <strong>{{ $t('service.cruipsite.points.5.title') }}</strong> {{ $t('service.cruipsite.points.5.text') }}</p>
       </div>
     </section>
 
@@ -35,7 +35,7 @@
         to="/contact"
         class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold px-6 py-3 rounded shadow transition"
       >
-        Želim CRUIP sajt →
+        {{ $t('service.cruipsite.cta') }}
       </router-link>
     </section>
 
@@ -43,6 +43,7 @@
     <Footer />
   </div>
 </template>
+
 
 <script>
 import Header from '../partials/Header.vue'

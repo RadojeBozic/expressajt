@@ -252,6 +252,13 @@ const router = createRouter({
       component: () => import('./pages/footer/legals/Brandkit.vue')
     },
 
+    // Nove stranice
+    {
+      path: '/pricing-detailed',
+      name: 'PricingDetailed',
+      component: () => import('@/partials/PricingDetailed.vue')
+    },
+
 
   ]
 })

@@ -8,6 +8,7 @@
     <main class="grow">
 
       <Hero />
+      <PricingDetailed />
       <Features />
       <!-- <Customers /> -->
       <Faqs />
@@ -29,12 +30,14 @@ import Customers from '../partials/Customers.vue'
 import Faqs from '../partials/Faqs.vue'
 import Cta from '../partials/Cta.vue'
 import Footer from '../partials/Footer.vue'
+import PricingDetailed from '../partials/PricingDetailed.vue'
 
 export default {
   name: 'Pricing',
   components: {
     Header,
     Hero,
+    PricingDetailed,
     Features,
     Customers,
     Faqs,
