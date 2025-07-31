@@ -1805,7 +1805,70 @@
     },
     "more": "Detaljnije ⌄",
     "request": "Zatraži ponudu"
+  },
+  "demoPreviews": {
+  "title": "🌍 Demo sajtovi – Realne prezentacije",
+  "subtitle": "Pogledajte gotove primere sajtova izrađenih kroz naš sistem. Kliknite i uverite se kako izgleda profesionalna online prezentacija – bez potrebe za tehničkim znanjem!",
+  "goToDashboard": "🛠 Idi na svoj nalog",
+  "registerAndCreate": "🚀 Registruj se i napravi svoj sajt",
+  "note": "Ne moraš da se registruješ da bi isprobao formu:",
+  "freeSiteButton": "📝 Kreiraj svoju BESPLATNU prezentaciju",
+  "proSiteButton": "🚀 Kreiraj svoju PRO prezentaciju"
+},
+"requestModal": {
+  "title": "📩 Zatraži ponudu",
+  "subtitle": "Popunite formular i dobićete personalizovanu ponudu za uslugu:",
+  "name": "Ime i prezime *",
+  "email": "Email *",
+  "message": "Napomena (opcionalno)",
+  "send": "Pošalji upit",
+  "success": "✅ Poruka uspešno poslata!",
+  "error": "❌ Greška pri slanju poruke. Pokušajte ponovo."
+},
+"businessPreview": {
+  "activityTitle": "📋 Opis delatnosti",
+  "offerTitle": "Naša ponuda",
+  "followUs": "Pratite nas:",
+  "footerText": "Ponosni partner",
+  "footerLink": "Express web platforme"
+},
+"businessPreviewPro": {
+  "nav": {
+    "about": "O nama",
+    "offer": "Ponuda",
+    "contact": "Kontakt"
+  },
+  "activity": "📋 Opis delatnosti",
+  "note": "Ova prezentacija je deo PRO paketa i može se dodatno uređivati nakon uplate (10 € / godišnje).",
+  "video": "🎥 Video prezentacija",
+  "pdf": "📄 Priloženi dokument",
+  "contact": "📞 Kontakt",
+  "social": "Pratite nas:",
+  "backToTop": "Nazad na vrh ↑"
+},
+"classicPreview": {
+    "activityTitle": "📋 Opis delatnosti",
+    "followUs": "Pratite nas na društvenim mrežama:",
+    "footerText": "Ponosni partner",
+    "footerLink": "Express web platforme"
+  },
+  "classicPreviewPro": {
+    "nav": {
+      "about": "O nama",
+      "offer": "Ponuda",
+      "contact": "Kontakt"
+    },
+    "activity": "📋 Opis delatnosti",
+    "note": "Ovo je PRO prezentacija – sadržaj se može uređivati nakon aktivacije (10 € / godišnje).",
+    "video": "🎥 Video",
+    "pdf": "📄 Priloženi dokument",
+    "contact": "📬 Kontakt",
+    "social": "Pratite nas:",
+    "backToTop": "Nazad na vrh ↑"
   }
+
+
+
   
   }
     

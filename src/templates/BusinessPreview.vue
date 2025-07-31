@@ -31,7 +31,7 @@
 
      <!-- Opis delatnosti -->
     <section v-if="data.description" class="mb-10">
-      <h2 class="text-xl font-semibold mb-2 text-purple-300">📋 Opis delatnosti</h2>
+      <h2 class="text-xl font-semibold mb-2 text-purple-300">📋 {{ $t('businessPreview.activityTitle') }}</h2>
       <p class="text-slate-300 text-sm whitespace-pre-line break-words">
         {{ data.description }}
       </p>
@@ -58,7 +58,7 @@
 
     <!-- Naša ponuda -->
     <section>
-      <h2 class="text-2xl font-semibold mb-4 text-blue-800">{{ data.offer_title }}</h2>
+      <h2 class="text-2xl font-semibold mb-4 text-blue-800">{{ data.offer_title || $t('businessPreview.offerTitle') }}</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div
           v-for="(item, index) in data.offer_items"
@@ -79,7 +79,7 @@
 
     <!-- Društvene mreže -->
     <section class="mb-6 text-center">
-      <p class="text-sm mb-2 text-gray-700">Pratite nas:</p>
+      <p class="text-sm mb-2 text-gray-700">{{ $t('businessPreview.followUs') }}:</p>
       <div class="flex justify-center gap-6 text-2xl text-gray-600">
         <a
           :href="isValidUrl(data.facebook) ? data.facebook : fallbackFacebook"
@@ -100,12 +100,12 @@
 
     <footer class="text-center text-sm text-gray-500 pt-4 border-t border-gray-200">
       © {{ new Date().getFullYear() }} {{ data.name || 'Vaša firma' }} —
-      Ponosni partner
+      {{ $t('businessPreview.footerText') }}
       <a
         href="https://gbsplatform.com"
         target="_blank"
         class="text-blue-600 hover:underline"
-      >Express web platforme</a>
+      >{{ $t('businessPreview.footerLink') }}</a>
     </footer>
   </div>
 </template>

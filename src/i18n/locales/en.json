@@ -1797,7 +1797,58 @@
     "note": "The price list reflects our current offer and applies to all new clients. Additional discounts may apply depending on the type and volume of ordered services.",
     "more": "More details \u2304",
     "request": "Request offer"
+  },
+  "demoPreviews": {
+  "title": "🌍 Demo Sites – Real Presentations",
+  "subtitle": "Explore ready-made examples created through our system. Click and see what a professional website looks like – no technical knowledge needed!",
+  "goToDashboard": "🛠 Go to your account",
+  "registerAndCreate": "🚀 Register and create your site",
+  "note": "You don't need to register to test the form:",
+  "freeSiteButton": "📝 Create your FREE presentation",
+  "proSiteButton": "🚀 Create your PRO presentation"
+},
+"requestModal": {
+  "title": "📩 Request an Offer",
+  "subtitle": "Fill out the form to receive a personalized offer for the service:",
+  "name": "Full Name *",
+  "email": "Email *",
+  "message": "Message (optional)",
+  "send": "Send request",
+  "success": "✅ Message sent successfully!",
+  "error": "❌ Error sending the message. Please try again."
+},
+"businessPreview": {
+  "activityTitle": "📋 Business Activity",
+  "offerTitle": "Our Offer",
+  "followUs": "Follow us:",
+  "footerText": "Proud partner of",
+  "footerLink": "Express web platforms"
+},
+"businessPreviewPro": {
+  "nav": {
+    "about": "About Us",
+    "offer": "Offer",
+    "contact": "Contact"
+  },
+  "activity": "📋 Business Activity",
+  "note": "This presentation is part of the PRO package and can be edited after payment (10 € / year).",
+  "video": "🎥 Video Presentation",
+  "pdf": "📄 Attached Document",
+  "contact": "📞 Contact",
+  "social": "Follow us:",
+  "backToTop": "Back to top ↑"
+},
+"classicPreview": {
+    "activityTitle": "\ud83d\udccb Business Activity",
+    "followUs": "Follow us on social media:",
+    "footerText": "Proud partner of",
+    "footerLink": "Express web platform"
   }
+
+
+
+
+
     }
 
 

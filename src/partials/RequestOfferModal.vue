@@ -10,20 +10,25 @@
       >
         &times;
       </button>
-      <h2 class="text-xl font-semibold text-white mb-2">📩 Zatraži ponudu</h2>
-      <p class="text-slate-400 mb-4">Popunite formular i dobićete personalizovanu ponudu za uslugu: <strong class="text-white">{{ selectedService }}</strong></p>
+      <h2 class="text-xl font-semibold text-white mb-2">
+        {{ $t('requestModal.title') }}
+      </h2>
+      <p class="text-slate-400 mb-4">
+        {{ $t('requestModal.subtitle') }}
+        <strong class="text-white">{{ selectedService }}</strong>
+      </p>
 
       <form @submit.prevent="submitRequest" class="space-y-4">
         <div>
-          <label class="block text-sm text-slate-300 mb-1">Ime i prezime *</label>
+          <label class="block text-sm text-slate-300 mb-1">{{ $t('requestModal.name') }}</label>
           <input v-model="form.name" required class="form-input w-full" type="text" />
         </div>
         <div>
-          <label class="block text-sm text-slate-300 mb-1">Email *</label>
+          <label class="block text-sm text-slate-300 mb-1">{{ $t('requestModal.email') }}</label>
           <input v-model="form.email" required class="form-input w-full" type="email" />
         </div>
         <div>
-          <label class="block text-sm text-slate-300 mb-1">Napomena (opcionalno)</label>
+          <label class="block text-sm text-slate-300 mb-1">{{ $t('requestModal.message') }}</label>
           <textarea v-model="form.message" rows="4" class="form-textarea w-full"></textarea>
         </div>
 
@@ -32,7 +37,7 @@
 
         <div class="text-center">
           <button class="btn bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded" type="submit">
-            📤 Pošalji upit
+            📤 {{ $t('requestModal.send') }}
           </button>
         </div>
       </form>
@@ -71,11 +76,11 @@ export default {
 
         await axios.post('http://localhost:8080/api/contact', payload)
 
-        this.success = '✅ Poruka uspešno poslata!'
+        this.success = this.$t('requestModal.success')
         this.error = ''
         this.form = { name: '', email: '', message: '' }
       } catch (err) {
-        this.error = '❌ Greška pri slanju poruke. Pokušajte ponovo.'
+        this.error = this.$t('requestModal.error')
         this.success = ''
         console.error('❌ Kontakt greška:', err)
       }

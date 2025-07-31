@@ -30,15 +30,15 @@
 
     <hr class="my-10 border-t border-dashed opacity-40" />
 
-      <!-- Opis delatnosti -->
+    <!-- Opis delatnosti -->
     <section v-if="data.description" class="mb-10">
-      <h2 class="text-xl font-semibold mb-2 text-purple-300">📋 Opis delatnosti</h2>
+      <h2 class="text-xl font-semibold mb-2 text-purple-300">{{ $t('classicPreview.activityTitle') }}</h2>
       <p class="text-slate-300 text-sm whitespace-pre-line break-words">
         {{ data.description }}
       </p>
     </section>
 
-     <hr class="my-10 border-t border-dashed border-gray-300" />
+    <hr class="my-10 border-t border-dashed border-gray-300" />
 
     <!-- O nama -->
     <section class="mb-10">
@@ -78,8 +78,8 @@
 
     <!-- Društvene mreže -->
     <section class="mb-6 text-center">
+      <p class="text-sm mb-2 text-gray-700">{{ $t('classicPreview.followUs') }}</p>
       <div class="flex justify-center gap-6 text-2xl text-gray-600">
-        Pratite nas na društvenim mrežama:
         <a
           :href="isValidUrl(data.facebook) ? data.facebook : fallbackFacebook"
           target="_blank"
@@ -97,14 +97,17 @@
       </div>
     </section>
 
+    <!-- Footer -->
     <footer class="text-center text-sm text-gray-500 pt-4 border-t border-slate-200">
       © {{ new Date().getFullYear() }} {{ data.name || 'Vaša firma' }} —
-      Ponosni partner
+      {{ $t('classicPreview.footerText') }}
       <a
         href="https://gbsplatform.com"
         target="_blank"
         class="text-purple-500 hover:underline"
-      >GBS Platform</a>
+      >
+        {{ $t('classicPreview.footerLink') }}
+      </a>
     </footer>
   </div>
 </template>
@@ -141,4 +144,3 @@ export default {
   }
 }
 </script>
-
