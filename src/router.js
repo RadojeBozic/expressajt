@@ -38,6 +38,9 @@ import ServiceUniShop from './services/ServiceUniShop.vue'
 import ServiceDomainHosting from './services/ServiceDomainHosting.vue'
 import ServiceMaintenance from './services/ServiceMaintenance.vue'
 import ServiceDesign from './services/ServiceDesign.vue'
+import ServiceSeo from './services/ServiceSeo.vue'
+import ServiceMarketing from './services/ServiceMarketing.vue'
+import ServiceTranslations from './services/ServiceTranslations.vue'
 
 
 import PublicPresentation from './pages/PublicPresentation.vue'
@@ -50,6 +53,7 @@ import FreeSiteForm from './pages/FreeSiteForm.vue'
 import ProSiteForm from './services/ProSiteForm.vue'
 import DemoFree from './services/DemoFree.vue'
 import Preview from './pages/PresentationView.vue'
+//import ServiceTranslations from './services/ServiceTranslations.vue'
 
 
 const router = createRouter({
@@ -107,7 +111,10 @@ const router = createRouter({
     { path: '/services/domain-hosting', name: 'ServiceDomainHosting', component: ServiceDomainHosting, props: { slug: 'domain-hosting' } },
     { path: '/services/maintenance', name: 'ServiceMaintenance', component: ServiceMaintenance, props: { slug: 'maintenance' } },
     { path: '/services/design', name: 'ServiceDesign', component: ServiceDesign, props: { slug: 'design' } },
-    
+    { path: '/services/seo', name: 'ServiceSeo', component: ServiceSeo, props: { slug: 'seo' } },
+    { path: '/services/marketing', name: 'ServiceMarketing', component: ServiceMarketing, props: { slug: 'marketing' } },
+    { path: '/services/translation', name: 'ServiceTranslations', component: ServiceTranslations, props: { slug: 'translations' } },
+
     // 📄 Javne prezentacije
     { 
       path: '/print/:slug', 

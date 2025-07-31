@@ -95,7 +95,7 @@
           "description": "Napredna prezentacija sa dodatnim sekcijama, PDF, mapom i kontakt formom."
         },
         {
-          "title": "Express W3 sajt (od 25 € godišnje)",
+          "title": "Express W3 sajt (od 199 € godišnje)",
           "description": "Unikatna poslovna prezentacija za jedan dan - hosting i domen uključeni."
         }
       ]
@@ -1453,101 +1453,67 @@
         "demo": "Pogledaj demo verziju"
       }
     },
-    "badge": "✔️ Mi gradimo i jedno i drugo – po tvojoj meri",
-      "title": "Moćna online prodavnica ili Multi-vendor platforma?",
-      "sectionTitle": "Ako želiš da pokreneš tržište poput Amazona – imamo rešenje",
-      "features": {
-        "1": {
-          "icon": "🛍️",
-          "title": "Online prodavnica – po tvojoj meri.",
-          "text": "Pokreni sopstvenu e-commerce prodavnicu bez dodatnih alata. Sve što ti je potrebno – od prikaza proizvoda do automatizovanih e-mail obaveštenja – već je uključeno."
-        },
-        "2": {
-          "icon": "🧑‍🤝‍🧑",
-          "title": "Multi-vendor platforme za veće tržište.",
-          "text": "Kao Amazon ili Etsy – svaki vendor ima svoj panel, a ti imaš centralnu kontrolu nad svime."
-        },
-        "3": {
-          "icon": "⚙️",
-          "title": "Skalabilnost bez ograničenja.",
-          "text": "Naš sistem podnosi hiljade proizvoda, kategorija i korisnika. Prilagodljiv tvojim potrebama."
-        },
-        "4": {
-          "icon": "💳",
-          "title": "Direktna i sigurna naplata.",
-          "text": "Stripe i druge metode, bez posrednika. Novac stiže direktno na tvoj račun."
-        },
-        "5": {
-          "icon": "📊",
-          "title": "Napredna analitika i kontrola.",
-          "text": "Dashboard sa statistikama, pregledima konverzije, najposećenijih stranica i još mnogo toga."
-        },
-        "6": {
-          "icon": "📱",
-          "title": "Mobilna podrška i aplikacija.",
-          "text": "Responsive dizajn je standard, a po želji i razvoj Android/iOS aplikacije."
-        }
+    "w3site": {
+    "badge": "🎨 W3Schools Express dizajn",
+    "title": "Unikatni sajt za 1 dan uz W3Schools",
+    "sectionTitle": "Izrada sajta po tvojoj meri za manje od 24h",
+    "points": {
+      "1": "⚡ Brza isporuka i unikatna obrada sadržaja prema zahtevima.",
+      "2": "🎯 W3Schools šabloni prilagođeni potrebama korisnika – vizuelno dopadljivi, SEO friendly, responzivni.",
+      "3": "🧩 Mogućnost dodatnog proširenja – kontakt forme, galerije, reference, Google mapa.",
+      "4": "💡 Odlična opcija za zanatlije, mikro-preduzetnike i hobiste.",
+      "5": "🛠 Cena fiksna, rešenja od 199 € – sve uračunato u ponudu. Plaćanje nakon dostave sajta."
+    },
+    "ctaTitle": "Spreman si za unikatni sajt?",
+    "ctaText": "Pošalji nam sadržaj i želje – mi radimo sve ostalo. Bez čekanja, bez komplikacija.",
+    "ctaButton": "Kontaktiraj nas odmah"
+  },
+  "seo": {
+      "badge": "🔍 Express SEO optimizacija",
+      "title": "Vidljivost na Google-u za samo nekoliko dana",
+      "sectionTitle": "SEO usluge po meri – brzo, precizno i efikasno",
+      "points": {
+        "1": "📈 Optimizacija sajta za brže rangiranje i bolju vidljivost.",
+        "2": "🔗 Izgradnja relevantnih linkova i on-page SEO podešavanja.",
+        "3": "🧠 SEO analiza konkurencije i izbor ključnih reči.",
+        "4": "🛠 Tehnički SEO – brzina sajta, mobilna prilagođenost, indeksiranje.",
+        "5": "📊 Izveštaji i praćenje napretka – mesečni uvid u rezultate."
       },
-      "faq": {
-        "badge": "Najčešća pitanja",
-        "title": "Sve što treba da znate",
-        "items": {
-          "1": {
-            "q": "Da li mogu sam da dodajem proizvode?",
-            "a": "Da. Dobijaš panel gde možeš unositi, uređivati i brisati proizvode, pratiti porudžbine i korisnike."
-          },
-          "2": {
-            "q": "Podržavate više prodavaca?",
-            "a": "Da. Multi-vendor sistem omogućava neograničen broj prodavaca sa sopstvenim pristupom."
-          },
-          "3": {
-            "q": "Kako se vrši naplata?",
-            "a": "Stripe i druge metode, naplata može biti direktno prodavcima ili centralno."
-          },
-          "4": {
-            "q": "Više jezika i valuta?",
-            "a": "Da. Sistem podržava više jezika i valuta sa konverzijom."
-          },
-          "5": {
-            "q": "Brzina pokretanja?",
-            "a": "Samostalna prodavnica – 10–15 dana. Multi-vendor – 15–20 dana sa testiranjem."
-          },
-          "6": {
-            "q": "Dizajn prilagodljiv?",
-            "a": "Da. Možeš koristiti svoje boje, fontove, logotipe – dizajn je potpuno responsive."
-          },
-          "7": {
-            "q": "Akcije i promocije?",
-            "a": "Da. Popusti, kuponi, istaknuti proizvodi, vremenski ograničene ponude."
-          },
-          "8": {
-            "q": "Mobilna aplikacija?",
-            "a": "Po potrebi razvijamo Android/iOS aplikaciju ili PWA verziju sajta."
-          },
-          "9": {
-            "q": "Vlasništvo nad podacima?",
-            "a": "Svi podaci su tvoji – proizvodi, korisnici, porudžbine. Export CSV/JSON."
-          },
-          "10": {
-            "q": "Integracija sa mrežama?",
-            "a": "Facebook Shop, Instagram katalog, Pixel – sve može biti integrisano."
-          },
-          "11": {
-            "q": "B2B prodaja?",
-            "a": "Sistem podržava B2B prodaju i rad kao digitalni shopping mall."
-          },
-          "12": {
-            "q": "Migracija sa drugih platformi?",
-            "a": "Da. Migracija sa Shopify, WooCommerce i drugih bez gubitka podataka."
-          }
-        }
+      "ctaTitle": "Spreman si za bolje pozicije na pretraživačima?",
+      "ctaText": "Kontaktiraj nas i saznaj kako da tvoj sajt bude prvi na Google-u.",
+      "ctaButton": "Zatraži SEO ponudu"
+    },
+    "marketing": {
+      "badge": "📢 Express digitalni marketing",
+      "title": "Promocija koja daje rezultate – brzo i efikasno",
+      "sectionTitle": "Kompletna podrška za tvoj online nastup",
+      "points": {
+        "1": "🎯 Ciljanje prave publike putem Google i Facebook kampanja.",
+        "2": "📱 Kreiranje sadržaja za društvene mreže i vođenje naloga.",
+        "3": "✍️ Pisanje promotivnih tekstova i blogova optimizovanih za SEO.",
+        "4": "📊 Analitika kampanja, konverzije i izveštaji o učinku.",
+        "5": "💼 Idealno za male biznise, startape i lokalne preduzetnike."
       },
-      "cta": {
-        "title": "Želiš da pokreneš svoju online prodavnicu?",
-        "text": "Registruj se i pokreni postupak danas!",
-        "classic": "Primer klasične prodavnice",
-        "marketplace": "Marketplace – veleprodaja i multi-vendor"
-      }
+      "ctaTitle": "Spreman si za digitalni iskorak?",
+      "ctaText": "Kontaktiraj nas i saznaj kako da tvoj brend bude primećen.",
+      "ctaButton": "Zatraži marketing ponudu"
+    },
+    "translations": {
+      "badge": "🗣️ Express usluge prevođenja",
+      "title": "Brzi i pouzdani prevodi za sve potrebe",
+      "sectionTitle": "Profesionalni prevodi na preko 20 jezika",
+      "points": {
+        "1": "🌍 Prevod dokumenata, sajtova i marketinškog sadržaja.",
+        "2": "📝 Prevod svih vrsta tekstova – poslovni, tehnički i promotivni sadržaji.",
+        "3": "🔄 Lokalizacija softvera, aplikacija i tehničkih uputstava.",
+        "4": "🧾 Dostava prevoda u PDF/Word formatu – po zahtevu klijenta.",
+        "5": "⏱️ Isporuka u roku od 24–72h, uz mogućnost hitnog prevoda."
+      },
+      "ctaTitle": "Treba ti profesionalan prevod?",
+      "ctaText": "Pošalji dokument ili link – mi šaljemo prevod u najkraćem roku.",
+      "ctaButton": "Zatraži ponudu za prevod"
+    }
+    
     },
     
  
@@ -1617,9 +1583,233 @@
         "demo": "Pogledaj demo verziju"
       }
     }
+  },
+  "shop": {
+    "hero": {
+      "badge": "✔️ Mi gradimo i jedno i drugo – po tvojoj meri",
+      "title": "Moćna online prodavnica ili Multi-vendor platforma?"
+    },
+    "section": {
+      "title": "Ako želiš da pokreneš tržište poput Amazona – imamo rešenje",
+      "paragraphs": {
+        "1": {
+          "title": "Online prodavnica – po tvojoj meri.",
+          "text": "Pokreni sopstvenu e-commerce prodavnicu bez potrebe za dodatnim alatima. Sve što ti je potrebno – od prikaza proizvoda, korpe, poručivanja, do automatizovanih e-mail obaveštenja – već je uključeno."
+        },
+        "2": {
+          "title": "Multi-vendor platforme za veće tržište.",
+          "text": "Ako želiš da pokreneš sistem kao što je Amazon ili Etsy – razvijamo moćne platforme gde svaki vendor dobija svoj panel."
+        },
+        "3": {
+          "title": "Skalabilnost bez ograničenja.",
+          "text": "Naš sistem podnosi hiljade proizvoda i korisnika, i raste sa tvojim biznisom."
+        },
+        "4": {
+          "title": "Direktna i sigurna naplata.",
+          "text": "Stripe i drugi sistemi omogućavaju naplatu direktno bez provizije."
+        },
+        "5": {
+          "title": "Napredna analitika i kontrola.",
+          "text": "Pregledaj konverzije, statistike, proizvode i prodavce uz vizuelni dashboard."
+        },
+        "6": {
+          "title": "Mobilna podrška i aplikacija.",
+          "text": "Responsive dizajn + opcionalna aplikacija za Android/iOS."
+        }
+      }
+    },
+    "faq": {
+  "title": "Najčešća pitanja",
+  "subtitle": "Sve što treba da znate",
+  "items": {
+    "1": {
+      "q": "Da li mogu sam da dodajem proizvode?",
+      "a": "Da. Dobijaš svoj panel za unos, izmenu i brisanje proizvoda, kao i praćenje porudžbina."
+    },
+    "2": {
+      "q": "Podržavate više prodavaca?",
+      "a": "Da, sistem omogućava više nezavisnih prodavaca sa sopstvenim nalozima i pravima pristupa."
+    },
+    "3": {
+      "q": "Kako se vrši naplata?",
+      "a": "Putem integracije sa Stripe i drugim metodama, novac se uplaćuje direktno prodavcima."
+    },
+    "4": {
+      "q": "Mogu li koristiti više jezika i valuta?",
+      "a": "Naravno. Sistem podržava višejezičnost i automatsku konverziju valuta."
+    },
+    "5": {
+      "q": "Koliko traje implementacija?",
+      "a": "Samostalna prodavnica: 10–15 dana. Multi-vendor rešenje: do 20 dana sa testiranjem."
+    },
+    "6": {
+      "q": "Da li je dizajn fleksibilan?",
+      "a": "Da. Možete birati šablone, boje, fontove ili koristiti sopstveni dizajn."
+    },
+    "7": {
+      "q": "Mogu li praviti popuste i promocije?",
+      "a": "Sistem omogućava kupon kodove, sezonske akcije, istaknute proizvode i kampanje."
+    },
+    "8": {
+      "q": "Postoji li mobilna aplikacija?",
+      "a": "Možemo razviti aplikaciju za Android/iOS ili koristiti PWA verziju sajta."
+    },
+    "9": {
+      "q": "Ko je vlasnik podataka?",
+      "a": "Vi. Imate punu kontrolu i mogućnost izvoza podataka."
+    },
+    "10": {
+      "q": "Da li mogu povezati društvene mreže?",
+      "a": "Da. Facebook Shop, Instagram katalog, deljenje proizvoda i više."
+    },
+    "11": {
+      "q": "Podržavate B2B poslovanje?",
+      "a": "Da. Platforma može raditi kao veleprodajni sistem sa posebnim opcijama."
+    },
+    "12": {
+      "q": "Mogu li migrirati sa Shopify/WooCommerce?",
+      "a": "Da. Nudimo migraciju bez gubitka podataka."
+    }
+  }
+},
+
+    "cta": {
+      "title": "Želiš da pokreneš svoju online prodavnicu?",
+      "text": "Registruj se i pokreni postupak za svoju prodavnicu danas!",
+      "buttons": {
+        "shop": "Primer klasične prodavnice",
+        "market": "Marketplace – veleprodaja i multi-vendor"
+      }
+    }
+  },
+  "pricing_global": {
+    "intro": "Transparentan pregled svih naših usluga i cena",
+    "title": "Detaljan Cenovnik naših usluga",
+    "note": "Cenovnik odražava našu trenutnu ponudu i važi za sve nove korisnike. Dodatni popusti su mogući u zavisnosti od vrste i količine naručenih usluga.",
+    "services": {
+      "1": {
+        "title": "Besplatna prezentacija (Starter)",
+        "price": "0 €",
+        "description": "Idealno za CV, portfolio, jednu stranicu. Prikaz po šablonu, generiše se automatski. Uređivanje putem forme."
+      },
+      "2": {
+        "title": "Poslovna prezentacija (Basic)",
+        "price": "od 10 € godišnje",
+        "description": "Sadrži: kontakt formu, Google mapu, PDF, linkove, dodatne sekcije. Poddomen, domen i hosting cca. 60 € godišnje."
+      },
+      "3": {
+        "title": "Poslovna prezentacija (Pro)",
+        "price": "od 20 € godišnje",
+        "description": "Sadrži: kontakt formu, Google mapu, PDF, linkove, dodatne sekcije. Poddomen, domen i hosting cca. 60 € godišnje."
+      },
+      "4": {
+        "title": "Poslovna prezentacija (Premium)",
+        "price": "od 30 € godišnje",
+        "description": "Sadrži: kontakt formu, Google mapu, PDF, linkove, dodatne sekcije. Poddomen, domen i hosting cca. 60 € godišnje."
+      },
+      "5": {
+        "title": "Poslovna prezentacija (Business)",
+        "price": "od 50 € godišnje",
+        "description": "Sadrži: kontakt formu, Google mapu, PDF, linkove, dodatne sekcije. Poddomen, domen i hosting cca. 60 € godišnje. Mogućnost dodatnih funkcionalnosti."
+      },
+      "6": {
+        "title": "Poslovna prezentacija (W3C)",
+        "price": "od 190 € godišnje",
+        "description": "Prezentacije W3C standarda. Idealni šabloni za poslovne prezentacije. Sadrži: kontakt formu, Google mapu, PDF, linkove, dodatne sekcije. Besplatan domen i hosting prve godine."
+      },
+      "7": {
+        "title": "Biznis unikatne prezentacija (Business)",
+        "price": "od 390 € godišnje",
+        "description": "Unikatna prezentacija po vašoj meri. Sadrži: kontakt formu, Google mapu, PDF, linkove, dodatne sekcije. Besplatan domen *.rs i SSL uključen."
+      },
+      "8": {
+        "title": "Blog (Blog)",
+        "price": "od 30 € mesečno",
+        "description": "Blog sa mogućnošću dodavanja članaka, kategorija, tagova. Uređivanje putem admin panela."
+      },
+      "9": {
+        "title": "Jednostavna prodavnica (Shop)",
+        "price": "od 490 € godišnje",
+        "description": "Jednostavna prodavnica sa podrškom za proizvode, narudžbe i plaćanja. Mogućnost dodatnih funkcionalnosti."
+      },
+      "10": {
+        "title": "Online prodavnica (Shop)",
+        "price": "od 590 € godišnje",
+        "description": "Online prodavnica sa podrškom za proizvode, narudžbe i plaćanja. Mogućnost dodatnih funkcionalnosti."
+      },
+      "11": {
+        "title": "Web aplikacija (App)",
+        "price": "od 990 € godišnje",
+        "description": "Web aplikacija po meri sa svim potrebnim funkcionalnostima. Mogućnost dodatnih funkcionalnosti."
+      },
+      "12": {
+        "title": "Web platforma (Platform)",
+        "price": "od 1990 € godišnje",
+        "description": "Web platforma sa svim potrebnim funkcionalnostima. Mogućnost dodatnih funkcionalnosti."
+      },
+      "13": {
+        "title": "Web portal (Portal)",
+        "price": "od 2990 € godišnje",
+        "description": "Web portal sa svim potrebnim funkcionalnostima. Mogućnost dodatnih funkcionalnosti."
+      },
+      "14": {
+        "title": "Multi-vendor prodavnica (Shop)",
+        "price": "od 890 € godišnje",
+        "description": "Multi-vendor platforma sa podrškom za više prodavaca, upravljanje proizvodima, narudžbama i plaćanjima. Mogućnost dodatnih funkcionalnosti. Ako želiš Amazon ili eBay sajt, ovo je idealno rešenje."
+      },
+      "15": {
+        "title": "Web servis - API osnovno (Service)",
+        "price": "od 3990 € godišnje",
+        "description": "Web servis sa svim potrebnim funkcionalnostima. Mogućnost dodatnih funkcionalnosti."
+      },
+      "16": {
+        "title": "Web sistem (System)",
+        "price": "od 4990 € godišnje",
+        "description": "Web sistem sa svim potrebnim funkcionalnostima. Mogućnost dodatnih funkcionalnosti."
+      },
+      "17": {
+        "title": "Web rešenje (Solution)",
+        "price": "od 5990 € godišnje",
+        "description": "Web rešenje sa svim potrebnim funkcionalnostima. Mogućnost dodatnih funkcionalnosti."
+      },
+      "18": {
+        "title": "Profesionalni logo dizajn",
+        "price": "od 10 €",
+        "description": "Izrada logotipa putem AI + Canva uz konsultaciju. Finalni fajlovi: PNG, SVG, PDF."
+      },
+      "19": {
+        "title": "Tehnička podrška (mesečna)",
+        "price": "od 10 € mesečno",
+        "description": "Ažuriranje sajta, sigurnost, SEO preporuke, dodavanje slika ili sekcija – 1h podrške mesečno."
+      },
+      "20": {
+        "title": "Održavanje sajta (po intervenciji)",
+        "price": "od 25 €/sat",
+        "description": "Jednokratna pomoć: upload sadržaja, izmena teksta, SEO optimizacija, backup sajta itd."
+      },
+      "21": {
+        "title": "Online prevodi (Translations)",
+        "price": "dogovor",
+        "description": "Online prevodi svih vrsta tekstova, sa mogućnošću prilagođavanja specifičnim potrebama klijenata."
+      },
+      "22": {
+        "title": "SEO optimizacija",
+        "price": "od 50 € mesečno",
+        "description": "Optimizacija sajta za pretraživače, analiza ključnih reči, izveštaji i preporuke."
+      },
+      "23": {
+        "title": "Društvene mreže (Social Media)",
+        "price": "od 40 € mesečno",
+        "description": "Upravljanje profilima na društvenim mrežama, kreiranje sadržaja, analitika."
+      }
+    },
+    "more": "Detaljnije ⌄",
+    "request": "Zatraži ponudu"
+  }
+  
   }
     
-  }
+  
   
   
 

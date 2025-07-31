@@ -105,7 +105,7 @@
         href="https://gbsplatform.com"
         target="_blank"
         class="text-blue-600 hover:underline"
-      >ExpressSajt platforme</a>
+      >Express web platforme</a>
     </footer>
   </div>
 </template>
