@@ -1,19 +1,19 @@
 <template>
   <div>
-    <h2 class="text-2xl font-bold mb-6">📩 Admin poruke</h2>
+    <h2 class="text-2xl font-bold mb-6">📩 {{ $t('adminMessages.title') }}</h2>
 
     <!-- ✅ Kontakt poruke -->
     <div class="mb-10">
-      <h3 class="text-xl font-semibold mb-2 text-green-400">Kontakt forma</h3>
+      <h3 class="text-xl font-semibold mb-2 text-green-400">{{ $t('adminMessages.contactForm') }}</h3>
       <table class="table-auto w-full border border-slate-700 text-sm">
         <thead class="bg-slate-800">
           <tr>
-            <th class="border px-3 py-2">Ime</th>
-            <th class="border px-3 py-2">Email</th>
-            <th class="border px-3 py-2">Poruka</th>
-            <th class="border px-3 py-2">Newsletter</th>
-            <th class="border px-3 py-2">Datum</th>
-            <th class="border px-3 py-2">Akcija</th>
+            <th class="border px-3 py-2">{{ $t('adminMessages.name') }}</th>
+            <th class="border px-3 py-2">{{ $t('adminMessages.email') }}</th>
+            <th class="border px-3 py-2">{{ $t('adminMessages.message') }}</th>
+            <th class="border px-3 py-2">{{ $t('adminMessages.newsletter') }}</th>
+            <th class="border px-3 py-2">{{ $t('adminMessages.date') }}</th>
+            <th class="border px-3 py-2">{{ $t('adminMessages.action') }}</th>
           </tr>
         </thead>
         <tbody>
@@ -27,7 +27,7 @@
             </td>
             <td class="border px-3 py-2">{{ formatDate(msg.created_at) }}</td>
             <td class="border px-3 py-2">
-              <button @click="deleteMessage(msg.id, 'messages')" class="px-2 py-1 bg-red-600 text-white rounded text-xs hover:bg-red-700">Obriši</button>
+              <button @click="deleteMessage(msg.id, 'messages')" class="px-2 py-1 bg-red-600 text-white rounded text-xs hover:bg-red-700">{{ $t('adminMessages.delete') }}</button>
             </td>
           </tr>
         </tbody>
@@ -36,15 +36,15 @@
 
     <!-- 🚨 Prijavljene ranjivosti -->
     <div>
-      <h3 class="text-xl font-semibold mb-2 text-yellow-400">🛡 Prijavljene ranjivosti</h3>
+      <h3 class="text-xl font-semibold mb-2 text-yellow-400">🛡 {{ $t('adminMessages.vulnerabilities') }}</h3>
       <table class="table-auto w-full border border-slate-700 text-sm">
         <thead class="bg-slate-800">
           <tr>
-            <th class="border px-3 py-2">Ime</th>
-            <th class="border px-3 py-2">Email</th>
-            <th class="border px-3 py-2">Opis</th>
-            <th class="border px-3 py-2">Datum</th>
-            <th class="border px-3 py-2">Akcija</th>
+            <th class="border px-3 py-2">{{ $t('adminMessages.name') }}</th>
+            <th class="border px-3 py-2">{{ $t('adminMessages.email') }}</th>
+            <th class="border px-3 py-2">{{ $t('adminMessages.message') }}</th>
+            <th class="border px-3 py-2">{{ $t('adminMessages.date') }}</th>
+            <th class="border px-3 py-2">{{ $t('adminMessages.action') }}</th>
           </tr>
         </thead>
         <tbody>
@@ -54,13 +54,12 @@
             <td class="border px-3 py-2">{{ vuln.message }}</td>
             <td class="border px-3 py-2">{{ formatDate(vuln.created_at) }}</td>
             <td class="border px-3 py-2">
-              <button @click="deleteMessage(vuln.id, 'vulnerabilities')" class="px-2 py-1 bg-red-600 text-white rounded text-xs hover:bg-red-700">Obriši</button>
+              <button @click="deleteMessage(vuln.id, 'vulnerabilities')" class="px-2 py-1 bg-red-600 text-white rounded text-xs hover:bg-red-700">{{ $t('adminMessages.delete') }}</button>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
-
   </div>
 </template>
 

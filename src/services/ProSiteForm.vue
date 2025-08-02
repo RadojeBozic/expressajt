@@ -9,14 +9,16 @@
       </p>
 
       <form @submit.prevent="submitForm" class="bg-slate-800 p-6 rounded-lg shadow max-w-3xl w-full space-y-6">
-        
         <!-- 📇 OPŠTI PODACI -->
         <fieldset>
           <legend class="text-xl font-semibold text-purple-400 mb-4">📇 {{ $t('proform.sections.general') }}</legend>
           <div class="space-y-4">
             <input v-model="form.name" required maxlength="255" :placeholder="$t('proform.fields.name')" class="input" />
             <textarea v-model="form.description" required maxlength="1000" :placeholder="$t('proform.fields.description')" rows="3" class="input" />
-            <input type="email" v-model="form.email" required :placeholder="$t('proform.fields.email')" class="input" />
+            <div class="flex gap-2 items-start">
+              <input v-model="form.email" required type="email" :placeholder="$t('proform.fields.email')" class="input" />
+              <AiHelper :prompt="form.description + ' — ' + form.name" />
+            </div>
             <input v-model="form.phone" required maxlength="50" :placeholder="$t('proform.fields.phone')" class="input" />
             <input v-model="form.facebook" maxlength="255" :placeholder="$t('proform.fields.facebook')" class="input" />
             <input v-model="form.instagram" maxlength="255" :placeholder="$t('proform.fields.instagram')" class="input" />
@@ -24,7 +26,6 @@
             <input type="file" accept="image/*" @change="e => handleFile(e, 'logo')" />
           </div>
         </fieldset>
-
         <!-- 🎯 HERO -->
         <fieldset>
           <legend class="text-xl font-semibold text-purple-400 mb-4">🎯 {{ $t('proform.sections.hero') }}</legend>
@@ -33,6 +34,10 @@
             <input type="file" required accept="image/*" @change="e => handleFile(e, 'heroImage')" />
             <input v-model="form.heroTitle" required maxlength="255" :placeholder="$t('proform.fields.heroTitle')" class="input" />
             <textarea v-model="form.heroSubtitle" required maxlength="250" :placeholder="$t('proform.fields.heroSubtitle')" rows="3" class="input" />
+            <input v-model="form.heroTitle" required maxlength="255" :placeholder="$t('proform.fields.heroTitle')" class="input" />
+            <textarea v-model="form.heroSubtitle" required maxlength="250" :placeholder="$t('proform.fields.heroSubtitle')" rows="3" class="input" />
+            <AiHelper v-if="allowAiHero" :prompt="form.heroTitle + ' — ' + form.heroSubtitle" />
+
           </div>
         </fieldset>
 
@@ -44,6 +49,10 @@
             <input type="file" required accept="image/*" @change="e => handleFile(e, 'aboutImage')" />
             <input v-model="form.aboutTitle" required maxlength="255" :placeholder="$t('proform.fields.aboutTitle')" class="input" />
             <textarea v-model="form.aboutText" required maxlength="1000" :placeholder="$t('proform.fields.aboutText')" rows="4" class="input" />
+            <input v-model="form.aboutTitle" required maxlength="255" :placeholder="$t('proform.fields.aboutTitle')" class="input" />
+            <textarea v-model="form.aboutText" required maxlength="1000" :placeholder="$t('proform.fields.aboutText')" rows="4" class="input" />
+            <AiHelper v-if="allowAiAbout" :prompt="form.aboutTitle + ' — ' + form.aboutText" />
+
           </div>
         </fieldset>
 
@@ -74,6 +83,12 @@
             <label>{{ $t('proform.fields.pdfDocument') }}</label>
             <input type="file" accept="application/pdf" @change="e => handleFile(e, 'pdfDocument')" />
             <input v-model="form.youtubeLink" maxlength="255" :placeholder="$t('proform.fields.youtube')" class="input" />
+          
+            <div v-if="allowAiPdf">
+              <h3 class="text-sm font-semibold text-purple-400">📄 {{ $t('aihelper.pdfSuggestion') }}</h3>
+              <AiHelper :prompt="'Generiši primer cenovnika za firmu ' + form.name + ' u oblasti ' + form.description" />
+            </div>
+
           </div>
         </fieldset>
 
@@ -103,6 +118,19 @@
           </select>
         </div>
 
+        <!-- PLAN USLUGE -->
+        <div>
+          <label class="block mb-1">{{ $t('proform.sections.plan') }} *</label>
+          <select v-model="form.plan" required class="input">
+            <option value="starter">{{ $t('proform.plans.starter') }}</option>
+            <option value="basic">{{ $t('proform.plans.basic') }}</option>
+            <option value="pro">{{ $t('proform.plans.pro') }}</option>
+            <option value="premium">{{ $t('proform.plans.premium') }}</option>
+            <option value="business">{{ $t('proform.plans.business') }}</option>
+          </select>
+        </div>
+
+
         <!-- CTA -->
         <button type="submit" :disabled="loading" class="w-full bg-purple-600 hover:bg-purple-700 py-3 px-4 rounded text-white font-semibold">
           {{ loading ? $t('proform.loading') : $t('proform.submit') }}
@@ -127,11 +155,12 @@
 import axios from 'axios'
 import Header from '../partials/Header.vue'
 import Footer from '../partials/Footer.vue'
+import AiHelper from '../partials/AiHelper.vue'
 import { useRoute } from 'vue-router'
 
 export default {
   name: 'ProSiteForm',
-  components: { Header, Footer },
+  components: { Header, Footer, AiHelper},
   data() {
     return {
       loading: false,
@@ -146,7 +175,8 @@ export default {
         pdfDocument: null, youtubeLink: '',
         address_city: '', address_street: '', google_map_link: '',
         phone2: '', phone3: '', email2: '', email3: '',
-        template: localStorage.getItem('selectedTemplate') || 'klasicni-pro'
+        template: localStorage.getItem('selectedTemplate') || 'klasicni-pro',
+  plan: 'starter', // default
       },
       successMessage: '', errorMessage: ''
     }
@@ -207,7 +237,7 @@ export default {
           'name', 'description', 'email', 'phone', 'facebook', 'instagram',
           'heroTitle', 'heroSubtitle', 'aboutTitle', 'aboutText', 'offerTitle',
           'youtubeLink', 'google_map_link', 'address_city', 'address_street',
-          'phone2', 'phone3', 'email2', 'email3', 'template'
+          'phone2', 'phone3', 'email2', 'email3', 'template', 'plan'
         ]
 
         textFields.forEach(field => {
@@ -277,6 +307,17 @@ export default {
         this.errorMessage = this.$t('proform.errors.fetch')
       }
     }
+  },
+  computed: {
+  allowAiHero() {
+    return ['pro', 'premium', 'business'].includes(this.form.plan)
+  },
+  allowAiAbout() {
+    return ['premium', 'business'].includes(this.form.plan)
+  },
+  allowAiPdf() {
+    return this.form.plan === 'business'
   }
+}
 }
 </script>

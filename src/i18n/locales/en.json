@@ -18,7 +18,7 @@
   "title": "Express web – websites and online stores",
   "descriptions": "Boost your business with our solutions. Fast, efficient, affordable, and tailored to your needs.",
   "primary_button": "Free presentations",
-  "secondary_button": "Paid solutions from €10/year"
+  "secondary_button": "Business solutions from €10/year"
 },
   "features_global": {
     "label": "What do we offer?",
@@ -206,12 +206,12 @@
       "role": "Founder of Agro-BiM"
     },
     {
-      "quote": "This system helped me organize my time and resources better. Now I can focus on what really matters. The Express Websites agency is professional and efficient.",
+      "quote": "This system helped me organize my time and resources better. Now I can focus on what really matters. The Express web agency is professional and efficient.",
       "name": "Bojana Popić",
       "role": "Founder of Agro-BiM"
     },
     {
-      "quote": "Express Websites transformed our online presence. Their team is extremely professional and dedicated. All our requirements were met on time and with high quality.",
+      "quote": "Express web transformed our online presence. Their team is extremely professional and dedicated. All our requirements were met on time and with high quality.",
       "name": "Zoran Stojanović",
       "role": "Metox LLC"
     }
@@ -925,71 +925,6 @@
         }
       }
     }
-  },
-  "proform": {
-    "title": "Advanced PRO Presentation",
-    "note": "Fields marked with an asterisk (*) are required. Enter accurate information including images and links.",
-    "submit": "✅ Submit request",
-    "loading": "⏳ Sending...",
-    "success": "✅ Request submitted successfully!",
-    "error": "⚠️ Something went wrong. Please try again.",
-    "preview": "📎 Open presentation:",
-    "sections": {
-      "general": "General Information",
-      "hero": "Hero Section",
-      "about": "About Us",
-      "offer": "Our Offer",
-      "extra": "Additional Content",
-      "contact": "Contact Details",
-      "template": "Select Template"
-    },
-    "fields": {
-      "name": "Company name *",
-      "description": "Business description *",
-      "email": "Email address *",
-      "phone": "Phone *",
-      "facebook": "Facebook link",
-      "instagram": "Instagram link",
-      "logo": "Logo (optional)",
-
-      "heroImage": "Main image (background) *",
-      "heroTitle": "Title *",
-      "heroSubtitle": "Subtitle *",
-
-      "aboutImage": "Company/team image *",
-      "aboutTitle": "Section title *",
-      "aboutText": "Company description *",
-
-      "offerTitle": "Section title *",
-      "offerItemTitle": "Service/product name *",
-      "addOffer": "➕ Add item",
-      "remove": "✖ Remove",
-
-      "pdfDocument": "PDF file (price list, offer)",
-      "youtube": "YouTube link (optional)",
-
-      "city": "City *",
-      "street": "Street & number *",
-      "map": "Google Maps link (optional)",
-      "phone2": "Additional phone",
-      "phone3": "Another phone",
-      "email2": "Additional email",
-      "email3": "Another email"
-    },
-    "templates": {
-      "classic": "🧾 Classic",
-      "modern": "✨ Modern",
-      "gallery": "🖼️ Gallery",
-      "biznis": "🏢 Business",
-      "dark": "🌙 Dark mode"
-    },
-    "errors": {
-    "image": "⚠️ Image must be under 4MB and in valid format.",
-    "pdf": "⚠️ Only PDF files are allowed.",
-    "offerImage": "⚠️ Image in item {{index}} is invalid or too large.",
-    "general": "⚠️ Something went wrong. Please try again.",
-    "fetch": "⚠️ Unable to load data from template."
-  }
   },
   "freesite": {
     "title": "One Click Website Creation",
@@ -1843,7 +1778,213 @@
     "followUs": "Follow us on social media:",
     "footerText": "Proud partner of",
     "footerLink": "Express web platform"
+  },
+  "classicPreviewPro": {
+    "nav": {
+      "about": "About Us",
+      "offer": "Our Offer",
+      "contact": "Contact"
+    },
+    "activity": "📋 Business Activity",
+    "note": "This is a PRO presentation – content can be edited after activation (10 € / year).",
+    "video": "🎥 Video",
+    "pdf": "📄 Attached Document",
+    "contact": "📬 Contact",
+    "social": "Follow us:",
+    "backToTop": "Back to top ↑"
+  },
+  "darkPreview": {
+    "activityTitle": "\ud83d\udccb Business Activity",
+    "offerTitle": "Our Offer",
+    "social": "Follow us:",
+    "footerText": "Proud partner of",
+    "footerLink": "Express web platform"
+  },
+  "darkPreviewPro": {
+    "nav": {
+      "about": "About",
+      "offer": "Offer",
+      "contact": "Contact"
+    },
+    "activity": "\ud83d\udccb Business Activity",
+    "note": "This is a PRO presentation \u2013 further editing is available after payment (10 € / year).",
+    "video": "\ud83c\udfa5 Video Presentation",
+    "pdf": "\ud83d\udcc4 Attached Document",
+    "contact": "\ud83d\udcde Contact",
+    "social": "Follow us:",
+    "backToTop": "Back to top \u2191"
+  },
+  "galleryPreview": {
+    "activityTitle": "\ud83d\udccb Business Activity",
+    "offerTitle": "Our Offer",
+    "social": "Follow us:",
+    "footerText": "Proud partner of",
+    "footerLink": "Express web platform"
+  },
+  "galleryPreviewPro": {
+    "nav": {
+      "about": "About",
+      "offer": "Offer",
+      "contact": "Contact"
+    },
+    "activity": "\ud83d\udccb Business Activity",
+    "note": "This is a PRO presentation \u2013 further editing is available after payment (10 € / year).",
+    "video": "\ud83c\udfa5 Video Presentation",
+    "pdf": "\ud83d\udcc4 Attached Document",
+    "contact": "\ud83d\udcde Contact",
+    "social": "Follow us:",
+    "backToTop": "Back to top \u2191"
+  },
+  "modernPreview": {
+    "activityTitle": "\ud83d\udccb Business Activity",
+    "offerTitle": "Our Offer",
+    "social": "Follow us:",
+    "footerText": "Proud partner of",
+    "footerLink": "Express web platform"
+  },
+  "modernPreviewPro": {
+    "nav": {
+      "about": "About",
+      "offer": "Offer",
+      "contact": "Contact"
+    },
+    "activity": "\ud83d\udccb Business Activity",
+    "note": "This is a PRO presentation \u2013 further editing is available after payment (10 € / year).",
+    "video": "\ud83c\udfa5 Video Presentation",
+    "pdf": "\ud83d\udcc4 Attached Document",
+    "contact": "\ud83d\udcde Contact",
+    "social": "Follow us:",
+    "backToTop": "Back to top \u2191"
+  },
+  "adminMessages": {
+    "title": "Admin Messages",
+    "contactForm": "Contact Form",
+    "vulnerabilities": "Reported Vulnerabilities",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "newsletter": "Newsletter",
+    "date": "Date",
+    "action": "Action",
+    "delete": "Delete"
+  },
+  
+  "proform": {
+    "title": "Advanced PRO Presentation",
+    "note": "Fields marked with an asterisk (*) are required. Enter accurate information including images and links.",
+    "submit": "✅ Submit request",
+    "loading": "⏳ Sending...",
+    "success": "✅ Request submitted successfully!",
+    "error": "⚠️ Something went wrong. Please try again.",
+    "preview": "📎 Open presentation:",
+    "sections": {
+      "general": "General Information",
+      "hero": "Hero Section",
+      "about": "About Us",
+      "offer": "Our Offer",
+      "extra": "Additional Content",
+      "contact": "Contact Details",
+      "template": "Select Template",
+      "plan": "Service plan"
+    },
+    "fields": {
+      "name": "Company name *",
+      "description": "Business description *",
+      "email": "Email address *",
+      "phone": "Phone *",
+      "facebook": "Facebook link",
+      "instagram": "Instagram link",
+      "logo": "Logo (optional)",
+
+      "heroImage": "Main image (background) *",
+      "heroTitle": "Title *",
+      "heroSubtitle": "Subtitle *",
+
+      "aboutImage": "Company/team image *",
+      "aboutTitle": "Section title *",
+      "aboutText": "Company description *",
+
+      "offerTitle": "Section title *",
+      "offerItemTitle": "Service/product name *",
+      "addOffer": "➕ Add item",
+      "remove": "✖ Remove",
+
+      "pdfDocument": "PDF file (price list, offer)",
+      "youtube": "YouTube link (optional)",
+
+      "city": "City *",
+      "street": "Street & number *",
+      "map": "Google Maps link (optional)",
+      "phone2": "Additional phone",
+      "phone3": "Another phone",
+      "email2": "Additional email",
+      "email3": "Another email"
+    },
+    "templates": {
+      "classic": "🧾 Classic",
+      "modern": "✨ Modern",
+      "gallery": "🖼️ Gallery",
+      "biznis": "🏢 Business",
+      "dark": "🌙 Dark mode"
+    },
+    "errors": {
+    "image": "⚠️ Image must be under 4MB and in valid format.",
+    "pdf": "⚠️ Only PDF files are allowed.",
+    "offerImage": "⚠️ Image in item {{index}} is invalid or too large.",
+    "general": "⚠️ Something went wrong. Please try again.",
+    "fetch": "⚠️ Unable to load data from template."
+  },
+  "plans": {
+    "starter": "Free trial",
+    "basic": "Basic (€10/year)",
+    "pro": "Pro (€20/year)",
+    "premium": "Premium (€30/year)",
+    "business": "Business (€50/year)"
   }
+  },
+  "adminSites": {
+    "title": "🌐 Submitted Presentations",
+    "columns": {
+      "name": "Name",
+      "user": "User",
+      "type": "Type",
+      "date": "Date",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "buttons": {
+      "view": "👁 View",
+      "edit": "✏️ Edit",
+      "approve": "✅ Approve",
+      "delete": "🗑 Delete"
+    },
+    "plans": {
+      "starter": "Starter",
+      "pro": "Pro",
+      "premium": "Premium",
+      "business": "Business"
+    },
+    "statuses": {
+      "pending": "Pending",
+      "active": "Active",
+      "rejected": "Rejected"
+    },
+    "empty": "No submitted presentations.",
+    "confirmDelete": "Are you sure you want to delete this presentation?",
+    "approved": "✅ Presentation has been approved.",
+    "deleted": "🗑 Presentation has been deleted.",
+    "errorLoading": "❌ Error loading sites:",
+    "errorApprove": "❌ Error approving presentation:",
+    "errorDelete": "❌ Error deleting presentation:"
+  },
+  "aihelper": {
+    "title": "Suggest content via AI",
+    "request": "Request suggestion",
+    "generating": "Generating...",
+    "error": "Error communicating with AI service.",
+    "limit": "You’ve reached your daily limit. Try again tomorrow."
+}
+
 
 
 

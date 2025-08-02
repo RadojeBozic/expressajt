@@ -16,6 +16,9 @@
       <Features04 />
       <Pricing />
       <Testimonials />
+      <RouterView />
+      <ChatWidget />
+
       <Cta />
 
     </main>
@@ -39,6 +42,7 @@ import Pricing from '../partials/PricingHome.vue'
 import Testimonials from '../partials/Testimonials.vue'
 import Cta from '../partials/Cta.vue'
 import Footer from '../partials/Footer.vue'
+import ChatWidget from '../partials/ChatWidget.vue'
 
 export default {
   name: 'Home',
@@ -54,7 +58,10 @@ export default {
     Pricing,
     Testimonials,
     Cta,
+    ChatWidget,
+    // Include the AI helper component if needed
     Footer,
+    
   },
 }
 </script>

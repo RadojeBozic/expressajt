@@ -15,7 +15,7 @@
                   <img src="../images/logo_express02.png" width="138" height="138" alt="Logo Express" class="max-w-none" />
                 </router-link>
               </div>
-              <div class="text-sm text-slate-300">&copy;Express Sajt<span class="text-slate-500">-</span>{{ $t('footer.copyright') }}</div>
+              <div class="text-sm text-slate-300">&copy;Express web<span class="text-slate-500">-</span>{{ $t('footer.copyright') }}</div>
             </div>
             <!-- Social links -->
             <ul class="flex">

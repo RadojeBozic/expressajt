@@ -13,9 +13,9 @@
         <h1 v-else class="text-xl font-bold">{{ data.name }}</h1>
       </div>
       <nav class="space-x-4 text-sm">
-        <a href="#about" class="hover:underline text-gray-600">O nama</a>
-        <a href="#ponuda" class="hover:underline text-gray-600">Ponuda</a>
-        <a href="#kontakt" class="hover:underline text-gray-600">Kontakt</a>
+        <a href="#about" class="hover:underline text-gray-600">{{ $t('galleryPreviewPro.nav.about') }}</a>
+        <a href="#ponuda" class="hover:underline text-gray-600">{{ $t('galleryPreviewPro.nav.offer') }}</a>
+        <a href="#kontakt" class="hover:underline text-gray-600">{{ $t('galleryPreviewPro.nav.contact') }}</a>
       </nav>
     </header>
 
@@ -32,7 +32,7 @@
 
     <!-- Opis delatnosti -->
     <section v-if="data.description" class="mb-10">
-      <h2 class="text-xl font-semibold mb-2 text-indigo-600">📋 Opis delatnosti</h2>
+      <h2 class="text-xl font-semibold mb-2 text-indigo-600">{{ $t('galleryPreviewPro.activity') }}</h2>
       <p class="text-gray-700 text-sm whitespace-pre-line break-words">
         {{ data.description }}
       </p>
@@ -40,7 +40,7 @@
 
     <!-- Napomena -->
     <div class="bg-purple-100 border border-purple-300 rounded p-4 text-sm text-purple-800 mb-10">
-      * Ova prezentacija je deo PRO paketa i može se dodatno uređivati nakon uplate (1.999 RSD / godišnje).
+      * {{ $t('galleryPreviewPro.note') }}
     </div>
 
     <!-- O nama -->
@@ -61,7 +61,7 @@
     <!-- Ponuda -->
     <section id="ponuda" class="mb-10">
       <h2 class="text-xl font-semibold text-indigo-600 mb-4">
-        {{ data.offer_title || 'Naša ponuda' }}
+        {{ data.offer_title || $t('galleryPreviewPro.offerTitle') }}
       </h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div
@@ -83,7 +83,7 @@
 
     <!-- Video -->
     <section v-if="embedVideoUrl" class="my-10">
-      <h2 class="text-2xl font-semibold mb-4 text-indigo-600">🎥 Video prezentacija</h2>
+      <h2 class="text-2xl font-semibold mb-4 text-indigo-600">{{ $t('galleryPreviewPro.video') }}</h2>
       <div class="aspect-w-16 aspect-h-9">
         <iframe
           :src="embedVideoUrl"
@@ -96,7 +96,7 @@
 
     <!-- PDF -->
     <section v-if="data.pdf_file" class="my-10">
-      <h2 class="text-xl font-semibold text-indigo-600 mb-4">📄 Dodatni dokument</h2>
+      <h2 class="text-xl font-semibold text-indigo-600 mb-4">{{ $t('galleryPreviewPro.pdf') }}</h2>
       <iframe
         :src="getImageUrl(data.pdf_file)"
         width="100%"
@@ -107,7 +107,7 @@
 
     <!-- Kontakt -->
     <section id="kontakt" class="my-10">
-      <h2 class="text-xl font-semibold text-indigo-600 mb-4">📞 Kontakt</h2>
+      <h2 class="text-xl font-semibold text-indigo-600 mb-4">{{ $t('galleryPreviewPro.contact') }}</h2>
       <div class="text-sm space-y-2 text-gray-700">
         <p><strong>Adresa:</strong> {{ data.address || 'Nije uneta' }}</p>
         <p><strong>Telefon:</strong> {{ data.phone }}</p>
@@ -132,13 +132,13 @@
 
     <!-- Footer -->
     <footer class="text-center text-sm text-gray-500 pt-6 border-t border-gray-300 mt-10">
-      <p class="mb-3">Pratite nas:</p>
+      <p class="mb-3">{{ $t('galleryPreviewPro.social') }}</p>
       <div class="flex justify-center gap-6 text-2xl text-gray-600 mb-6">
         <a :href="isValidUrl(data.facebook) ? data.facebook : fallbackFacebook" target="_blank" class="hover:text-blue-600"><i class="fab fa-facebook-square"></i></a>
         <a :href="isValidUrl(data.instagram) ? data.instagram : fallbackInstagram" target="_blank" class="hover:text-pink-600"><i class="fab fa-instagram"></i></a>
       </div>
       © {{ new Date().getFullYear() }} {{ data.name || 'Vaša firma' }} — 
-      <a href="#hero" class="text-purple-600 hover:underline">Nazad na vrh ↑</a>
+      <a href="#hero" class="text-purple-600 hover:underline">{{ $t('galleryPreviewPro.backToTop') }}</a>
     </footer>
 
   </div>

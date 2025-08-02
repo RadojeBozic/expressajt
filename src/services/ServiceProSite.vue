@@ -91,7 +91,7 @@
       <p class="mb-4">{{ $t('service.pro.cta.text') }}</p>
 
       <router-link
-        to="/contact"
+        to="/pro-site-form"
         class="inline-block bg-white text-purple-700 font-bold px-6 py-2 rounded hover:bg-slate-100 transition mb-3"
       >
         <button type="button" class="btn text-sm text-white bg-purple-500 hover:bg-purple-600 w-full shadow-xs group">

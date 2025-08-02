@@ -9,9 +9,9 @@
         <h1 v-else class="text-xl font-bold">{{ data.name }}</h1>
       </div>
       <nav class="space-x-4 text-sm">
-        <a href="#about" class="hover:underline text-slate-300">O nama</a>
-        <a href="#ponuda" class="hover:underline text-slate-300">Ponuda</a>
-        <a href="#kontakt" class="hover:underline text-slate-300">Kontakt</a>
+        <a href="#about" class="hover:underline text-slate-300">{{ $t('darkPreviewPro.nav.about') }}</a>
+        <a href="#ponuda" class="hover:underline text-slate-300">{{ $t('darkPreviewPro.nav.offer') }}</a>
+        <a href="#kontakt" class="hover:underline text-slate-300">{{ $t('darkPreviewPro.nav.contact') }}</a>
       </nav>
     </header>
 
@@ -25,7 +25,7 @@
 
     <!-- Opis delatnosti -->
     <section v-if="data.description" class="mb-10">
-      <h2 class="text-xl font-semibold mb-2 text-purple-300">📋 Opis delatnosti</h2>
+      <h2 class="text-xl font-semibold mb-2 text-purple-300">{{ $t('darkPreviewPro.activity') }}</h2>
       <p class="text-slate-300 text-sm whitespace-pre-line break-words">
         {{ data.description }}
       </p>
@@ -33,7 +33,7 @@
 
     <!-- Napomena -->
     <div class="bg-purple-100 border border-purple-300 rounded p-4 text-sm text-purple-800 mb-10">
-      * Ovo je PRO prezentacija – dodatna izmena je moguća nakon uplate (1.999 RSD / godišnje).
+      * {{ $t('darkPreviewPro.note') }}
     </div>
 
     <!-- O nama -->
@@ -62,7 +62,7 @@
 
     <!-- Video -->
     <section v-if="embedVideoUrl" class="my-10">
-      <h2 class="text-2xl font-semibold mb-4 text-purple-300">🎥 Video prezentacija</h2>
+      <h2 class="text-2xl font-semibold mb-4 text-purple-300">{{ $t('darkPreviewPro.video') }}</h2>
       <div class="aspect-w-16 aspect-h-9">
         <iframe :src="embedVideoUrl" frameborder="0" allowfullscreen class="w-full h-80 rounded"></iframe>
       </div>
@@ -70,7 +70,7 @@
 
     <!-- PDF -->
     <section v-if="data.pdf_file" class="my-10">
-      <h2 class="text-2xl font-semibold mb-4 text-purple-300">📄 Priloženi dokument</h2>
+      <h2 class="text-2xl font-semibold mb-4 text-purple-300">{{ $t('darkPreviewPro.pdf') }}</h2>
       <iframe
         :src="getImageUrl(data.pdf_file)"
         width="100%"
@@ -82,7 +82,7 @@
 
     <!-- Kontakt -->
     <section id="kontakt" class="my-10">
-      <h2 class="text-2xl font-semibold mb-4 text-purple-300">📞 Kontakt</h2>
+      <h2 class="text-2xl font-semibold mb-4 text-purple-300">{{ $t('darkPreviewPro.contact') }}</h2>
       <div class="text-sm space-y-2 text-slate-300">
         <p><strong>Adresa:</strong> {{ data.address || 'Nije uneta' }}</p>
         <p><strong>Telefon:</strong> {{ data.phone }}</p>
@@ -99,7 +99,7 @@
 
     <!-- Društvene mreže -->
     <section class="mb-6 text-center">
-      <p class="text-sm mb-2 text-slate-400">Pratite nas:</p>
+      <p class="text-sm mb-2 text-slate-400">{{ $t('darkPreviewPro.social') }}</p>
       <div class="flex justify-center gap-6 text-2xl text-slate-400">
         <a :href="isValidUrl(data.facebook) ? data.facebook : fallbackFacebook" target="_blank"
            class="hover:text-blue-500 transition"><i class="fab fa-facebook-square"></i></a>
@@ -111,9 +111,8 @@
     <!-- Footer -->
     <footer class="text-center text-sm text-slate-500 pt-4 border-t border-slate-700 mt-10">
       © {{ new Date().getFullYear() }} {{ data.name || 'Vaša firma' }} — 
-      <a href="#hero" class="text-purple-400 hover:underline">Nazad na vrh ↑</a>
+      <a href="#hero" class="text-purple-400 hover:underline">{{ $t('darkPreviewPro.backToTop') }}</a>
     </footer>
-
   </div>
 </template>
 

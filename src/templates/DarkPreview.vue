@@ -29,15 +29,15 @@
 
     <hr class="my-10 border-dashed border-slate-700" />
 
-      <!-- Opis delatnosti -->
+    <!-- Opis delatnosti -->
     <section v-if="data.description" class="mb-10">
-      <h2 class="text-xl font-semibold mb-2 text-purple-300">📋 Opis delatnosti</h2>
+      <h2 class="text-xl font-semibold mb-2 text-purple-300">{{ $t('darkPreview.activityTitle') }}</h2>
       <p class="text-slate-300 text-sm whitespace-pre-line break-words">
         {{ data.description }}
       </p>
     </section>
 
-     <hr class="my-10 border-t border-dashed border-gray-300" />
+    <hr class="my-10 border-t border-dashed border-gray-300" />
 
     <!-- O nama -->
     <section class="mb-10">
@@ -58,7 +58,7 @@
 
     <!-- Naša ponuda -->
     <section>
-      <h2 class="text-xl font-semibold text-purple-400 mb-4">{{ data.offer_title || 'Naša ponuda' }}</h2>
+      <h2 class="text-xl font-semibold text-purple-400 mb-4">{{ data.offer_title || $t('darkPreview.offerTitle') }}</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div
           v-for="(item, index) in data.offer_items"
@@ -79,7 +79,7 @@
 
     <!-- Društvene mreže -->
     <section class="mb-6 text-center">
-      <p class="text-sm mb-2 text-slate-400">Pratite nas:</p>
+      <p class="text-sm mb-2 text-slate-400">{{ $t('darkPreview.social') }}</p>
       <div class="flex justify-center gap-6 text-2xl text-slate-400">
         <a
           :href="isValidUrl(data.facebook) ? data.facebook : fallbackFacebook"
@@ -101,12 +101,12 @@
     <!-- Footer -->
     <footer class="text-center text-sm text-gray-500 pt-4 border-t border-gray-200">
       © {{ new Date().getFullYear() }} {{ data.name || 'Vaša firma' }} —
-      Ponosni partner
+      {{ $t('darkPreview.footerText') }}
       <a
         href="https://gbsplatform.com"
         target="_blank"
         class="text-blue-600 hover:underline"
-      >GBS Platform</a>
+      >{{ $t('darkPreview.footerLink') }}</a>
     </footer>
   </div>
 </template>

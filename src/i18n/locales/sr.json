@@ -18,7 +18,7 @@
   "title": "Express web - sajtovi i online prodavnice",
   "descriptions": "Ojačajte svoje poslovanje uz naša rešenja. Brzo, efikasno, povoljno i prilagođeno vašim potrebama.",
   "primary_button": "Besplatne prezentacije",
-  "secondary_button": "Plaćena rešenja od 10 € godišnje"
+  "secondary_button": "Poslovna rešenja od 10 € godišnje"
 },
 
   "features_global": {
@@ -210,12 +210,12 @@
       "role": "Osnivač Agro-BiM"
     },
     {
-      "quote": "Ovaj sistem mi je pomogao da bolje organizujem svoje vreme i resurse. Sada mogu da se fokusiram na ono što je zaista važno. Agencija Express Sajtovi je profesionalna i efikasna.",
+      "quote": "Ovaj sistem mi je pomogao da bolje organizujem svoje vreme i resurse. Sada mogu da se fokusiram na ono što je zaista važno. Agencija Express web je profesionalna i efikasna.",
       "name": "Bojana Popić",
       "role": "Osnivač Agro-BiM"
     },
     {
-      "quote": "Agencija Express Sajtovi je transformisala naše online prisustvo. Njihov tim je izuzetno profesionalan i posvećen. Svi naši zahtevi su ispunjeni na vreme i sa visokim kvalitetom.",
+      "quote": "Agencija Express web je transformisala naše online prisustvo. Njihov tim je izuzetno profesionalan i posvećen. Svi naši zahtevi su ispunjeni na vreme i sa visokim kvalitetom.",
       "name": "Zoran Stojanović",
       "role": "Metox DOO"
     }
@@ -306,7 +306,7 @@
   "or": "ili",
   "continue_twitter": "Nastavi putem Twitter-a",
   "continue_github": "Nastavi putem GitHub-a",
-  "name_business": "GBS Platforma DOO",
+  "name_business": "Express web DOO",
   "name_manager": "Marko Marković",
   "error": "Greška u validaciji podataka.",
   "success": "Uspešno ste registrovani! Molimo vas da se prijavite."
@@ -935,71 +935,7 @@
       }
     }
   },
-  "proform": {
-    "title": "Napredna PRO prezentacija",
-    "note": "Polja označena zvezdicom (*) su obavezna. Unesite tačne informacije, uključujući slike i linkove.",
-    "submit": "✅ Pošalji zahtev",
-    "loading": "⏳ Slanje...",
-    "success": "✅ Zahtev uspešno poslat!",
-    "error": "⚠️ Nešto je pošlo po zlu. Pokušajte ponovo.",
-    "preview": "📎 Otvori prezentaciju:",
-    "sections": {
-      "general": "Opšti podaci",
-      "hero": "Hero sekcija",
-      "about": "O nama",
-      "offer": "Naša ponuda",
-      "extra": "Dodatni sadržaj",
-      "contact": "Kontakt podaci",
-      "template": "Izaberi šablon"
-    },
-    "fields": {
-      "name": "Naziv firme *",
-      "description": "Opis delatnosti *",
-      "email": "Email adresa *",
-      "phone": "Telefon *",
-      "facebook": "Facebook link",
-      "instagram": "Instagram link",
-      "logo": "Logotip (opciono)",
-
-      "heroImage": "Glavna slika (pozadina) *",
-      "heroTitle": "Naslov *",
-      "heroSubtitle": "Podnaslov *",
-
-      "aboutImage": "Slika firme/tima *",
-      "aboutTitle": "Naslov sekcije *",
-      "aboutText": "Opis firme *",
-
-      "offerTitle": "Naslov sekcije *",
-      "offerItemTitle": "Naziv usluge/proizvoda *",
-      "addOffer": "➕ Dodaj stavku",
-      "remove": "✖ Ukloni",
-
-      "pdfDocument": "PDF dokument (cenovnik, ponuda)",
-      "youtube": "YouTube link (opciono)",
-
-      "city": "Mesto *",
-      "street": "Ulica i broj *",
-      "map": "Google Maps link (opciono)",
-      "phone2": "Dodatni telefon",
-      "phone3": "Još jedan telefon",
-      "email2": "Dodatni email",
-      "email3": "Još jedan email"
-    },
-    "templates": {
-      "classic": "🧾 Klasični",
-      "modern": "✨ Moderni",
-      "gallery": "🖼️ Galerija",
-      "biznis": "🏢 Biznis",
-      "dark": "🌙 Dark mode"
-    },
-    "errors": {
-    "image": "⚠️ Slika mora biti manja od 4MB i validnog formata.",
-    "pdf": "⚠️ Dozvoljen je samo PDF dokument.",
-    "offerImage": "⚠️ Slika u stavci {{index}} nije validna ili je prevelika.",
-    "general": "⚠️ Nešto je pošlo po zlu. Pokušajte ponovo.",
-    "fetch": "⚠️ Nije moguće učitati podatke iz šablona."
-  }
-  },
+  
    "freesite": {
     "title": "Jednim klikom do sajta",
     "note": "Molimo vas da pažljivo popunite sva polja. Svaki unos je obavezan (osim logotipa), kako bismo mogli generisati kompletnu i profesionalnu prezentaciju. Format slika: JPG/PNG/WebP do 4MB. Ukoliko pokušate da otpremite veću sliku, biće odbijena.",
@@ -1865,12 +1801,206 @@
     "contact": "📬 Kontakt",
     "social": "Pratite nas:",
     "backToTop": "Nazad na vrh ↑"
+  },
+   "darkPreview": {
+    "activityTitle": "📋 Opis delatnosti",
+    "offerTitle": "Naša ponuda",
+    "social": "Pratite nas:",
+    "footerText": "Ponosni partner",
+    "footerLink": "Express web platforme"
+  },
+  "darkPreviewPro": {
+    "nav": {
+      "about": "O nama",
+      "offer": "Ponuda",
+      "contact": "Kontakt"
+    },
+    "activity": "📋 Opis delatnosti",
+    "note": "Ovo je PRO prezentacija – dodatna izmena je moguća nakon uplate (10 € / godišnje).",
+    "video": "🎥 Video prezentacija",
+    "pdf": "📄 Priloženi dokument",
+    "contact": "📞 Kontakt",
+    "social": "Pratite nas:",
+    "backToTop": "Nazad na vrh ↑"
+  },
+  "galleryPreview": {
+    "activityTitle": "📋 Opis delatnosti",
+    "offerTitle": "Naša ponuda",
+    "social": "Pratite nas:",
+    "footerText": "Ponosni partner",
+    "footerLink": "Express web platforme"
+  },
+  "galleryPreviewPro": {
+    "nav": {
+      "about": "O nama",
+      "offer": "Ponuda",
+      "contact": "Kontakt"
+    },
+    "activity": "📋 Opis delatnosti",
+    "note": "Ovo je PRO prezentacija – dodatna izmena je moguća nakon uplate (10 € / godišnje).",
+    "video": "🎥 Video prezentacija",
+    "pdf": "📄 Priloženi dokument",
+    "contact": "📞 Kontakt",
+    "social": "Pratite nas:",
+    "backToTop": "Nazad na vrh ↑"
+  },
+  "modernPreview": {
+    "activityTitle": "📋 Opis delatnosti",
+    "offerTitle": "Naša ponuda",
+    "social": "Pratite nas:",
+    "footerText": "Ponosni partner",
+    "footerLink": "Express web platforme"
+  },
+  "modernPreviewPro": {
+    "nav": {
+      "about": "O nama",
+      "offer": "Ponuda",
+      "contact": "Kontakt"
+    },
+    "activity": "📋 Opis delatnosti",
+    "note": "Ovo je PRO prezentacija – dodatna izmena je moguća nakon uplate (10 € / godišnje).",
+    "video": "🎥 Video prezentacija",
+    "pdf": "📄 Priloženi dokument",
+    "contact": "📞 Kontakt",
+    "social": "Pratite nas:",
+    "backToTop": "Nazad na vrh ↑"
+  },
+  "adminMessages": {
+    "title": "Admin poruke 1",
+    "contactForm": "Kontakt forma",
+    "vulnerabilities": "Prijavljene ranjivosti",
+    "name": "Ime",
+    "email": "Email",
+    "message": "Poruka",
+    "newsletter": "Newsletter",
+    "date": "Datum",
+    "action": "Akcija",
+    "delete": "Obriši"
+  },
+  "proform": {
+    "title": "Napredna PRO prezentacija",
+    "note": "Polja označena zvezdicom (*) su obavezna. Unesite tačne informacije, uključujući slike i linkove.",
+    "submit": "✅ Pošalji zahtev",
+    "loading": "⏳ Slanje...",
+    "success": "✅ Zahtev uspešno poslat!",
+    "error": "⚠️ Nešto je pošlo po zlu. Pokušajte ponovo.",
+    "preview": "📎 Otvori prezentaciju:",
+    "sections": {
+      "general": "Opšti podaci",
+      "hero": "Hero sekcija",
+      "about": "O nama",
+      "offer": "Naša ponuda",
+      "extra": "Dodatni sadržaj",
+      "contact": "Kontakt podaci",
+      "template": "Izaberi šablon",
+      "plan": "Paket usluge"
+    },
+    "fields": {
+      "name": "Naziv firme *",
+      "description": "Opis delatnosti *",
+      "email": "Email adresa *",
+      "phone": "Telefon *",
+      "facebook": "Facebook link",
+      "instagram": "Instagram link",
+      "logo": "Logotip (opciono)",
+
+      "heroImage": "Glavna slika (pozadina) *",
+      "heroTitle": "Naslov *",
+      "heroSubtitle": "Podnaslov *",
+
+      "aboutImage": "Slika firme/tima *",
+      "aboutTitle": "Naslov sekcije *",
+      "aboutText": "Opis firme *",
+
+      "offerTitle": "Naslov sekcije *",
+      "offerItemTitle": "Naziv usluge/proizvoda *",
+      "addOffer": "➕ Dodaj stavku",
+      "remove": "✖ Ukloni",
+
+      "pdfDocument": "PDF dokument (cenovnik, ponuda)",
+      "youtube": "YouTube link (opciono)",
+
+      "city": "Mesto *",
+      "street": "Ulica i broj *",
+      "map": "Google Maps link (opciono)",
+      "phone2": "Dodatni telefon",
+      "phone3": "Još jedan telefon",
+      "email2": "Dodatni email",
+      "email3": "Još jedan email"
+    },
+    "templates": {
+      "classic": "🧾 Klasični",
+      "modern": "✨ Moderni",
+      "gallery": "🖼️ Galerija",
+      "biznis": "🏢 Biznis",
+      "dark": "🌙 Dark mode"
+    },
+    "errors": {
+    "image": "⚠️ Slika mora biti manja od 4MB i validnog formata.",
+    "pdf": "⚠️ Dozvoljen je samo PDF dokument.",
+    "offerImage": "⚠️ Slika u stavci {{index}} nije validna ili je prevelika.",
+    "general": "⚠️ Nešto je pošlo po zlu. Pokušajte ponovo.",
+    "fetch": "⚠️ Nije moguće učitati podatke iz šablona."
+  },
+  "plans": {
+    "starter": "Besplatno testiranje",
+    "basic": "Basic (10 € godišnje)",
+    "pro": "Pro (20 € godišnje)",
+    "premium": "Premium (30 € godišnje)",
+    "business": "Business (50 € godišnje)"
   }
+  },
+  "adminSites": {
+    "title": "🌐 Poslate prezentacije",
+    "columns": {
+      "name": "Naziv",
+      "user": "Korisnik",
+      "type": "Tip",
+      "date": "Datum",
+      "plan": "Plan",
+      "status": "Status",
+      "actions": "Akcije"
+    },
+    "buttons": {
+      "view": "👁 Pregled",
+      "edit": "✏️ Uredi",
+      "approve": "✅ Odobri",
+      "delete": "🗑 Obriši"
+    },
+    "plans": {
+      "starter": "Starter",
+      "pro": "Pro",
+      "premium": "Premium",
+      "business": "Business"
+    },
+    "statuses": {
+      "pending": "Na čekanju",
+      "active": "Aktivno",
+      "rejected": "Odbijeno"
+
+    },
+    "empty": "Nema unetih prezentacija.",
+    "confirmDelete": "Da li sigurno želite da obrišete ovu prezentaciju?",
+    "approved": "✅ Prezentacija je aktivirana.",
+    "deleted": "🗑 Prezentacija je obrisana.",
+    "errorLoading": "❌ Greška pri učitavanju sajtova:",
+    "errorApprove": "❌ Greška pri aktivaciji:",
+    "errorDelete": "❌ Greška pri brisanju:"
+  },
+  "aihelper": {
+    "title": "Predloži sadržaj putem AI",
+    "request": "Zatraži predlog",
+    "generating": "Generišem...",
+    "error": "Greška pri komunikaciji sa AI servisom.",
+    "limit": "Dnevni limit je dostignut. Pokušajte sutra ponovo."
+}
+
+}
 
 
 
   
-  }
+  
     
   
   
