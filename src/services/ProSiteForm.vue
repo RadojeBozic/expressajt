@@ -3,39 +3,86 @@
     <Header />
 
     <div class="min-h-screen bg-slate-900 text-white py-10 px-4 flex flex-col items-center">
+
+         
+
       <h1 class="text-3xl font-bold mb-6 text-center mt-8">🚀 {{ $t('proform.title') }}</h1>
       <p class="text-slate-400 mb-8 text-center max-w-2xl text-sm">
         {{ $t('proform.note') }} <span class="text-red-400">*</span>
       </p>
 
       <form @submit.prevent="submitForm" class="bg-slate-800 p-6 rounded-lg shadow max-w-3xl w-full space-y-6">
+
+         <!-- 📘 Tooltip dugme i sekcija pomoći -->
+<div class=" bg-purple-600 hover:bg-purple-700 py-3 px-4 rounded text-white font-semibold items-center ">
+  <button 
+    @click="showHelp = !showHelp"
+    class="mb-4 text-blue-400 hover:text-blue-200 underline-none font-medium transition cursor-pointer"
+  >
+    ❓ {{ $t('proform.help.toggle') }}
+  </button>
+
+  <div
+    v-if="showHelp"
+    class="bg-blue-100 text-blue-800 p-4 rounded-md shadow-md border border-blue-300 relative max-w-2xl mb-6"
+  >
+    <div class="absolute -top-2 left-4 w-4 h-4 bg-blue-100 border-l border-t border-blue-300 rotate-45"></div>
+    <p class="text-sm whitespace-pre-line">
+      {{ $t('proform.help.text') }}
+    </p>
+  </div>
+</div>
+        <!-- ŠABLON -->
+        <div>
+          <label class="block mb-1">{{ $t('proform.sections.template') }} *</label>
+          <select v-model="form.template" required class="input cursor-pointer">
+            <option value="klasicni-pro">{{ $t('proform.templates.classic') }}</option>
+            <option value="moderni-pro">{{ $t('proform.templates.modern') }}</option>
+            <option value="galerija-pro">{{ $t('proform.templates.gallery') }}</option>
+            <option value="biznis-pro">{{ $t('proform.templates.biznis') }}</option>
+            <option value="dark-pro">{{ $t('proform.templates.dark') }}</option>
+          </select>
+        </div>
+
+        <!-- PLAN USLUGE -->
+        <div>
+          <label class="block mb-1">{{ $t('proform.sections.plan') }} *</label>
+          <select v-model="form.plan" required class="input cursor-pointer">
+            <option value="starter">{{ $t('proform.plans.starter') }}</option>
+            <option value="basic">{{ $t('proform.plans.basic') }}</option>
+            <option value="pro">{{ $t('proform.plans.pro') }}</option>
+            <option value="premium">{{ $t('proform.plans.premium') }}</option>
+            <option value="business">{{ $t('proform.plans.business') }}</option>
+          </select>
+        </div>
+
         <!-- 📇 OPŠTI PODACI -->
         <fieldset>
           <legend class="text-xl font-semibold text-purple-400 mb-4">📇 {{ $t('proform.sections.general') }}</legend>
           <div class="space-y-4">
-            <input v-model="form.name" required maxlength="255" :placeholder="$t('proform.fields.name')" class="input" />
-            <textarea v-model="form.description" required maxlength="1000" :placeholder="$t('proform.fields.description')" rows="3" class="input" />
+            <input v-model="form.name" required maxlength="255" :placeholder="$t('proform.fields.name')" class="input cursor-pointer" />
+            <textarea v-model="form.description" required maxlength="1000" :placeholder="$t('proform.fields.description')" rows="3" class="input cursor-pointer" />
             <div class="flex gap-2 items-start">
-              <input v-model="form.email" required type="email" :placeholder="$t('proform.fields.email')" class="input" />
+              <input v-model="form.email" required type="email" :placeholder="$t('proform.fields.email')" class="input cursor-pointer" />
               <AiHelper :prompt="form.description + ' — ' + form.name" />
             </div>
-            <input v-model="form.phone" required maxlength="50" :placeholder="$t('proform.fields.phone')" class="input" />
-            <input v-model="form.facebook" maxlength="255" :placeholder="$t('proform.fields.facebook')" class="input" />
-            <input v-model="form.instagram" maxlength="255" :placeholder="$t('proform.fields.instagram')" class="input" />
-            <label class="block text-sm mb-1">{{ $t('proform.fields.logo') }}</label>
-            <input type="file" accept="image/*" @change="e => handleFile(e, 'logo')" />
+            <input v-model="form.phone" required maxlength="50" :placeholder="$t('proform.fields.phone')" class="input cursor-pointer" />
+            <input v-model="form.facebook" maxlength="255" :placeholder="$t('proform.fields.facebook')" class="input cursor-pointer" />
+            <input v-model="form.instagram" maxlength="255" :placeholder="$t('proform.fields.instagram')" class="input cursor-pointer" />
+            <label class="block text-sm mb-1 cursor-pointer">{{ $t('proform.fields.logo') }}</label>
+            <input type="file" accept="image/*" @change="e => handleFile(e, 'logo')" class="cursor-pointer" />
           </div>
         </fieldset>
         <!-- 🎯 HERO -->
         <fieldset>
           <legend class="text-xl font-semibold text-purple-400 mb-4">🎯 {{ $t('proform.sections.hero') }}</legend>
           <div class="space-y-4">
-            <label>{{ $t('proform.fields.heroImage') }} <span class="text-red-400">*</span></label>
-            <input type="file" required accept="image/*" @change="e => handleFile(e, 'heroImage')" />
-            <input v-model="form.heroTitle" required maxlength="255" :placeholder="$t('proform.fields.heroTitle')" class="input" />
-            <textarea v-model="form.heroSubtitle" required maxlength="250" :placeholder="$t('proform.fields.heroSubtitle')" rows="3" class="input" />
-            <input v-model="form.heroTitle" required maxlength="255" :placeholder="$t('proform.fields.heroTitle')" class="input" />
-            <textarea v-model="form.heroSubtitle" required maxlength="250" :placeholder="$t('proform.fields.heroSubtitle')" rows="3" class="input" />
+            <label>{{ $t('proform.fields.heroImage') }} <span class="text-red-400 cursor-pointer">*</span></label>
+            <input type="file" required accept="image/*" @change="e => handleFile(e, 'heroImage')" class="cursor-pointer"/>
+            <input v-model="form.heroTitle" required maxlength="255" :placeholder="$t('proform.fields.heroTitle')" class="input cursor-pointer" />
+            <textarea v-model="form.heroSubtitle" required maxlength="250" :placeholder="$t('proform.fields.heroSubtitle')" rows="3" class="input cursor-pointer" />
+            <!--<input v-model="form.heroTitle" required maxlength="255" :placeholder="$t('proform.fields.heroTitle')" class="input cursor-pointer" />
+            <textarea v-model="form.heroSubtitle" required maxlength="250" :placeholder="$t('proform.fields.heroSubtitle')" rows="3" class="input cursor-pointer" />-->
             <AiHelper v-if="allowAiHero" :prompt="form.heroTitle + ' — ' + form.heroSubtitle" />
 
           </div>
@@ -45,12 +92,12 @@
         <fieldset>
           <legend class="text-xl font-semibold text-purple-400 mb-4">👥 {{ $t('proform.sections.about') }}</legend>
           <div class="space-y-4">
-            <label>{{ $t('proform.fields.aboutImage') }} <span class="text-red-400">*</span></label>
-            <input type="file" required accept="image/*" @change="e => handleFile(e, 'aboutImage')" />
-            <input v-model="form.aboutTitle" required maxlength="255" :placeholder="$t('proform.fields.aboutTitle')" class="input" />
-            <textarea v-model="form.aboutText" required maxlength="1000" :placeholder="$t('proform.fields.aboutText')" rows="4" class="input" />
-            <input v-model="form.aboutTitle" required maxlength="255" :placeholder="$t('proform.fields.aboutTitle')" class="input" />
-            <textarea v-model="form.aboutText" required maxlength="1000" :placeholder="$t('proform.fields.aboutText')" rows="4" class="input" />
+            <label>{{ $t('proform.fields.aboutImage') }} <span class="text-red-400 cursor-pointer">*</span></label>
+            <input type="file" required accept="image/*" @change="e => handleFile(e, 'aboutImage')" class="cursor-pointer" />
+            <input v-model="form.aboutTitle" required maxlength="255" :placeholder="$t('proform.fields.aboutTitle')" class="input cursor-pointer" />
+            <textarea v-model="form.aboutText" required maxlength="1000" :placeholder="$t('proform.fields.aboutText')" rows="4" class="input cursor-pointer"/>
+            <!-- <input v-model="form.aboutTitle" required maxlength="255" :placeholder="$t('proform.fields.aboutTitle')" class="input cursor-pointer" />
+            <textarea v-model="form.aboutText" required maxlength="1000" :placeholder="$t('proform.fields.aboutText')" rows="4" class="input cursor-pointer" /> -->
             <AiHelper v-if="allowAiAbout" :prompt="form.aboutTitle + ' — ' + form.aboutText" />
 
           </div>
@@ -60,16 +107,16 @@
         <fieldset>
           <legend class="text-xl font-semibold text-purple-400 mb-4">🛍️ {{ $t('proform.sections.offer') }}</legend>
           <div class="space-y-4">
-            <input v-model="form.offerTitle" required maxlength="255" :placeholder="$t('proform.fields.offerTitle')" class="input" />
+            <input v-model="form.offerTitle" required maxlength="255" :placeholder="$t('proform.fields.offerTitle')" class="input cursor-pointer" />
             <div class="space-y-2">
-              <div v-for="(item, index) in form.offerItems" :key="index" class="space-y-2 border border-slate-600 p-3 rounded">
-                <input v-model="item.title" required maxlength="255" :placeholder="$t('proform.fields.offerItemTitle')" class="input" />
-                <input type="file" required accept="image/*" @change="e => handleOfferImageUpload(e, index)" />
-                <button v-if="form.offerItems.length > 1" type="button" @click="removeItem(index)" class="text-red-400 text-sm hover:text-red-600">
+              <div v-for="(item, index) in form.offerItems" :key="index" class="space-y-2 border border-slate-600 p-3 rounded cursor-pointer">
+                <input v-model="item.title" required maxlength="255" :placeholder="$t('proform.fields.offerItemTitle')" class="input cursor-pointer" />
+                <input type="file" required accept="image/*" @change="e => handleOfferImageUpload(e, index)" class="cursor-pointer" />
+                <button v-if="form.offerItems.length > 1" type="button" @click="removeItem(index)" class="text-red-400 text-sm hover:text-red-600 cursor-pointer">
                   {{ $t('proform.fields.remove') }}
                 </button>
               </div>
-              <button type="button" @click="addItem" class="text-sm text-purple-300 hover:text-purple-500">
+              <button type="button" @click="addItem" class="text-sm text-purple-300 hover:text-purple-500 cursor-pointer">
                 {{ $t('proform.fields.addOffer') }}
               </button>
             </div>
@@ -82,8 +129,8 @@
           <div class="space-y-4">
             <label>{{ $t('proform.fields.pdfDocument') }}</label>
             <input type="file" accept="application/pdf" @change="e => handleFile(e, 'pdfDocument')" />
-            <input v-model="form.youtubeLink" maxlength="255" :placeholder="$t('proform.fields.youtube')" class="input" />
-          
+            <input v-model="form.youtubeLink" maxlength="255" :placeholder="$t('proform.fields.youtube')" class="input cursor-pointer" />
+
             <div v-if="allowAiPdf">
               <h3 class="text-sm font-semibold text-purple-400">📄 {{ $t('aihelper.pdfSuggestion') }}</h3>
               <AiHelper :prompt="'Generiši primer cenovnika za firmu ' + form.name + ' u oblasti ' + form.description" />
@@ -96,40 +143,17 @@
         <fieldset>
           <legend class="text-xl font-semibold text-purple-400 mb-4">📬 {{ $t('proform.sections.contact') }}</legend>
           <div class="space-y-4">
-            <input v-model="form.address_city" required maxlength="255" :placeholder="$t('proform.fields.city')" class="input" />
-            <input v-model="form.address_street" required maxlength="255" :placeholder="$t('proform.fields.street')" class="input" />
-            <input v-model="form.google_map_link" maxlength="255" :placeholder="$t('proform.fields.map')" class="input" />
-            <input v-model="form.phone2" maxlength="50" :placeholder="$t('proform.fields.phone2')" class="input" />
-            <input v-model="form.phone3" maxlength="50" :placeholder="$t('proform.fields.phone3')" class="input" />
-            <input v-model="form.email2" maxlength="255" :placeholder="$t('proform.fields.email2')" class="input" />
-            <input v-model="form.email3" maxlength="255" :placeholder="$t('proform.fields.email3')" class="input" />
+            <input v-model="form.address_city" required maxlength="255" :placeholder="$t('proform.fields.city')" class="input cursor-pointer" />
+            <input v-model="form.address_street" required maxlength="255" :placeholder="$t('proform.fields.street')" class="input cursor-pointer" />
+            <input v-model="form.google_map_link" maxlength="255" :placeholder="$t('proform.fields.map')" class="input cursor-pointer" />
+            <input v-model="form.phone2" maxlength="50" :placeholder="$t('proform.fields.phone2')" class="input cursor-pointer" />
+            <input v-model="form.phone3" maxlength="50" :placeholder="$t('proform.fields.phone3')" class="input cursor-pointer" />
+            <input v-model="form.email2" maxlength="255" :placeholder="$t('proform.fields.email2')" class="input cursor-pointer" />
+            <input v-model="form.email3" maxlength="255" :placeholder="$t('proform.fields.email3')" class="input cursor-pointer" />
           </div>
         </fieldset>
 
-        <!-- ŠABLON -->
-        <div>
-          <label class="block mb-1">{{ $t('proform.sections.template') }} *</label>
-          <select v-model="form.template" required class="input">
-            <option value="klasicni-pro">{{ $t('proform.templates.classic') }}</option>
-            <option value="moderni-pro">{{ $t('proform.templates.modern') }}</option>
-            <option value="galerija-pro">{{ $t('proform.templates.gallery') }}</option>
-            <option value="biznis-pro">{{ $t('proform.templates.biznis') }}</option>
-            <option value="dark-pro">{{ $t('proform.templates.dark') }}</option>
-          </select>
-        </div>
-
-        <!-- PLAN USLUGE -->
-        <div>
-          <label class="block mb-1">{{ $t('proform.sections.plan') }} *</label>
-          <select v-model="form.plan" required class="input">
-            <option value="starter">{{ $t('proform.plans.starter') }}</option>
-            <option value="basic">{{ $t('proform.plans.basic') }}</option>
-            <option value="pro">{{ $t('proform.plans.pro') }}</option>
-            <option value="premium">{{ $t('proform.plans.premium') }}</option>
-            <option value="business">{{ $t('proform.plans.business') }}</option>
-          </select>
-        </div>
-
+        
 
         <!-- CTA -->
         <button type="submit" :disabled="loading" class="w-full bg-purple-600 hover:bg-purple-700 py-3 px-4 rounded text-white font-semibold">
@@ -141,7 +165,7 @@
 
         <p v-if="resData?.slug" class="text-blue-400 text-sm mt-2">
           {{ $t('proform.preview') }}
-          <a :href="`/prezentacije/${resData.slug}`" class="underline" target="_blank">{{ resData.slug }}</a>
+          <a :href="`/prezentacije/${resData.slug}`" class="underline cursor-pointer" target="_blank">{{ resData.slug }}</a>
         </p>
       </form>
     </div>
@@ -166,6 +190,7 @@ export default {
       loading: false,
       resData: null,
       route: useRoute(),
+      showHelp: false,
       form: {
         name: '', description: '', email: '', phone: '',
         facebook: '', instagram: '', logo: null,
@@ -176,7 +201,7 @@ export default {
         address_city: '', address_street: '', google_map_link: '',
         phone2: '', phone3: '', email2: '', email3: '',
         template: localStorage.getItem('selectedTemplate') || 'klasicni-pro',
-  plan: 'starter', // default
+        plan: 'starter', // default
       },
       successMessage: '', errorMessage: ''
     }

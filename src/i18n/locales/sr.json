@@ -1878,6 +1878,10 @@
     "delete": "Obriši"
   },
   "proform": {
+    "help": {
+      "toggle": "Želiš pomoć i pojašnjenje?",
+      "text": "📝 U ovoj formi popunjavaš podatke koji će se prikazati na tvojoj poslovnoj prezentaciji. \n\n🔹 Unesi naziv firme i kontakt podatke\n🔹 Dodaj sliku/e i naslov za Hero sekciju i ostale sekcije\n🔹 Opis delatnosti i proizvode\n🔹 Dodatno: video, PDF i mapa\n\nAI pomoć je dostupna za više pakete. Počni sa unosom i sve će ti biti jasno!"
+    },
     "title": "Napredna PRO prezentacija",
     "note": "Polja označena zvezdicom (*) su obavezna. Unesite tačne informacije, uključujući slike i linkove.",
     "submit": "✅ Pošalji zahtev",
@@ -1992,9 +1996,21 @@
     "request": "Zatraži predlog",
     "generating": "Generišem...",
     "error": "Greška pri komunikaciji sa AI servisom.",
-    "limit": "Dnevni limit je dostignut. Pokušajte sutra ponovo."
+    "limit": "Dnevni limit je dostignut. Pokušajte sutra ponovo.",
+    "pdfSuggestion": "Želite li da generišem PDF dokument sa cenovnikom?",
+    "close": "Zatvori predlog"
+},
+"chat": {
+  "title": "🤖 Express Web Pomoćnik",
+  "inputPlaceholder": "Postavi pitanje...",
+  "buttonSend": "➤",
+  "assistantLabel": "Bot",
+  "userLabel": "Vi",
+  "error": "⚠️ Došlo je do greške. Pokušajte ponovo.",
+  "default": "Zdravo! Kako mogu da Vam pomognem?",
+  "fallback": "Nešto je pošlo po zlu.",
+  "tooltip": "Treba pomoć? Pitaj našeg AI pomoćnika!"
 }
-
 }
 
 

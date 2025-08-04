@@ -19,7 +19,7 @@
           <!-- Label -->
           <div class="mb-6" data-aos="fade-down">
             <div class="inline-flex relative before:absolute before:inset-0 before:bg-purple-500 before:blur-md">
-              <a @click.prevent="goToProjects" class="btn-sm py-0.5 text-slate-300 hover:text-white transition duration-150 ease-in-out group relative before:absolute before:inset-0 before:bg-slate-800/50 before:rounded-full before:pointer-events-none shadow-sm">
+              <a @click.prevent="goToProjects" class="btn-sm py-0.5 text-slate-300 hover:text-white transition duration-150 ease-in-out group relative before:absolute before:inset-0 before:bg-slate-800/50 before:rounded-full before:pointer-events-none shadow-sm cursor-pointer">
                 <span class="relative inline-flex items-center">
                   {{ t('hero.label') }}
                   <span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span>
@@ -39,13 +39,13 @@
           <!-- CTA buttons -->
           <div class="max-w-xs mx-auto sm:max-w-none sm:inline-flex sm:justify-center space-y-4 sm:space-y-0 sm:space-x-4" data-aos="fade-down" data-aos-delay="400">
             <div>
-              <a @click.prevent="goDemoPreviews" class="btn text-slate-900 bg-linear-to-r from-white/80 via-white to-white/80 hover:bg-white w-full transition duration-150 ease-in-out group">
+              <a @click.prevent="goDemoPreviews" class="btn text-slate-900 bg-linear-to-r from-white/80 via-white to-white/80 hover:bg-white w-full transition duration-150 ease-in-out group cursor-pointer">
                 {{ t('hero.primary_button') }}
                 <span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span>
               </a>
             </div>
             <div>
-              <a @click.prevent="goToSignUp" class="btn text-slate-200 hover:text-white bg-slate-900/25 hover:bg-slate-900/30 w-full transition duration-150 ease-in-out">
+              <a @click.prevent="goToSignUp" class="btn text-slate-200 hover:text-white bg-slate-900/25 hover:bg-slate-900/30 w-full transition duration-150 ease-in-out group cursor-pointer">
                 <svg class="shrink-0 fill-slate-300 mr-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
                   <path d="m1.999 0 1 2-1 2 2-1 2 1-1-2 1-2-2 1zM11.999 0l1 2-1 2 2-1 2 1-1-2 1-2-2 1zM11.999 10l1 2-1 2 2-1 2 1-1-2 1-2-2 1zM6.292 7.586l2.646-2.647L11.06 7.06 8.413 9.707zM0 13.878l5.586-5.586 2.122 2.121L2.12 16z" />
                 </svg>

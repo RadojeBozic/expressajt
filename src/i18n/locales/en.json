@@ -1870,6 +1870,10 @@
   },
   
   "proform": {
+    "help": {
+      "toggle": "Want help and clarification?",
+      "text": "📝 In this form, you fill in the information that will be displayed in your business presentation. \n\n🔹 Enter the company name and contact details\n🔹 Add image(s) and title for the Hero section and other sections\n🔹 Description of activities and products\n🔹 Additional: video, PDF, and map\n\nAI assistance is available for higher packages. Start entering information, and everything will be clear!"
+    },
     "title": "Advanced PRO Presentation",
     "note": "Fields marked with an asterisk (*) are required. Enter accurate information including images and links.",
     "submit": "✅ Submit request",
@@ -1982,7 +1986,20 @@
     "request": "Request suggestion",
     "generating": "Generating...",
     "error": "Error communicating with AI service.",
-    "limit": "You’ve reached your daily limit. Try again tomorrow."
+    "limit": "You’ve reached your daily limit. Try again tomorrow.",
+    "pdfSuggestion": "Would you like me to generate a PDF document with the price list?",
+    "close": "Close suggestion"
+},
+"chat": {
+  "title": "🤖 Express Web Assistant",
+  "inputPlaceholder": "Ask a question...",
+  "buttonSend": "➤",
+  "assistantLabel": "Bot",
+  "userLabel": "You",
+  "error": "⚠️ An error occurred. Please try again.",
+  "default": "Hello! How can I help you?",
+  "fallback": "Something went wrong.",
+  "tooltip": "Need help? Ask our AI assistant!"
 }
 
 

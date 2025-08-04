@@ -1,8 +1,13 @@
 <template>
-  <div ref="printOnly">
+  <div v-if="siteData" ref="printOnly">
     <component :is="templateComponent" :data="siteData" />
   </div>
+  <div v-else class="text-center text-white py-20">
+    ⚠️ Nije moguće prikazati ovu prezentaciju.<br />
+    Molimo kontaktirajte administraciju ako smatrate da je došlo do greške.
+  </div>
 </template>
+
 
 <script>
 import axios from 'axios'
@@ -56,13 +61,17 @@ export default {
       return map[this.siteData?.template] || 'ClassicPreview'
     }
   },
-  methods: {
+   methods: {
     async fetchSite() {
       try {
-        const res = await axios.get(`http://localhost:8080/api/site-request/${this.slug}`)
+        const token = localStorage.getItem('token')
+        const res = await axios.get(`http://localhost:8080/api/site-request/${this.slug}`, {
+          headers: { Authorization: `Bearer ${token}` }
+        })
         this.siteData = res.data
       } catch (err) {
-        console.error('❌ Greška pri učitavanju sajta (public):', err)
+        console.error('❌ Greška pri učitavanju sajta:', err)
+        this.siteData = null
       }
     }
   },

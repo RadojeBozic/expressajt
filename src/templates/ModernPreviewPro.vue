@@ -40,10 +40,10 @@
       </p>
     </section>
 
-    <!-- Napomena -->
-    <div class="bg-purple-100 border border-purple-300 rounded p-4 text-sm text-purple-800 mb-10">
+    <!-- Napomena notifikacija za naplatu-->
+    <!-- <div class="bg-purple-100 border border-purple-300 rounded p-4 text-sm text-purple-800 mb-10">
       * {{ $t('modernPreviewPro.note') }}
-    </div>
+    </div> -->
 
     <!-- O nama -->
     <section class="mb-12" id="about">

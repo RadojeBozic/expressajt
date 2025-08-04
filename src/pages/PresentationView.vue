@@ -4,77 +4,77 @@
 
     <div v-if="siteData">
       <!-- INFO o paketu -->
-      <div class="text-center mb-6 mt-36">
-        <h2 class="text-lg text-white font-semibold mb-1 flex items-center justify-center gap-2">
-          📢 {{ $t('siteview.previewOf') }}
-          <span
-            class="text-xs font-bold px-2 py-1 rounded uppercase"
-            :class="siteData.type === 'pro' ? 'bg-yellow-500 text-slate-900' : 'bg-green-500 text-white'"
-          >
-            {{ siteData.type === 'pro' ? 'PRO' : 'FREE' }}
-          </span>
-        </h2>
+<div class="text-center mb-6 mt-36">
+  <h2 class="text-lg text-white font-semibold mb-1 flex items-center justify-center gap-2">
+    📢 {{ $t('siteview.previewOf') }}
+    <span
+      class="text-xs font-bold px-2 py-1 rounded uppercase"
+      :class="siteData.type === 'pro' ? 'bg-yellow-500 text-slate-900' : 'bg-green-500 text-white'"
+    >
+      {{ siteData.type === 'pro' ? 'PRO' : 'FREE' }}
+    </span>
+  </h2>
 
-        <!-- 🟡 PRO poruka -->
-        <div
-          v-if="siteData.type === 'pro'"
-          class="bg-yellow-100 text-yellow-800 text-sm p-4 rounded mb-4 max-w-xl mx-auto border border-yellow-300"
+  <!-- Obaveštenje o paketu -->
+  <div
+    :class="siteData.type === 'pro'
+      ? 'bg-yellow-100 text-yellow-800 border-yellow-300'
+      : 'bg-green-100 text-green-900 border-green-300'"
+    class="text-sm p-4 rounded mb-4 max-w-xl mx-auto border"
+  >
+    <template v-if="siteData.type === 'pro'">
+      <strong>⚠️ {{ $t('siteview.pro.title') }}</strong><br />
+      {{ $t('siteview.pro.editBlocked') }}<br />
+      <router-link to="/contact" class="text-blue-600 underline hover:text-blue-800">
+        {{ $t('siteview.contactSupport') }}
+      </router-link>
+    </template>
+
+    <template v-else>
+      <strong>🎉 {{ $t('siteview.free.title') }}</strong><br />
+      {{ $t('siteview.free.linkMessage') }}
+      <div class="mt-2 flex items-center justify-center gap-2">
+        <input
+          type="text"
+          :value="fullLink"
+          readonly
+          class="w-full max-w-md px-3 py-1 rounded border border-slate-300 bg-white text-black text-sm"
+        />
+        <button
+          @click="copyLink"
+          class="bg-green-600 hover:bg-green-700 text-white text-sm px-3 py-1 rounded shadow"
         >
-          <strong>⚠️ {{ $t('siteview.pro.title') }}</strong><br />
-          {{ $t('siteview.pro.editBlocked') }}<br />
-          <router-link to="/contact" class="text-blue-600 underline hover:text-blue-800">
-            {{ $t('siteview.contactSupport') }}
-          </router-link>.
-        </div>
-
-        <!-- ✅ FREE poruka -->
-        <div
-          v-if="siteData.type === 'free'"
-          class="bg-green-100 text-green-900 text-sm p-4 rounded mb-4 max-w-xl mx-auto border border-green-300"
-        >
-          <strong>🎉 {{ $t('siteview.free.title') }}</strong><br />
-          {{ $t('siteview.free.linkMessage') }}
-          <div class="mt-2 flex items-center justify-center gap-2">
-            <input
-              type="text"
-              :value="fullLink"
-              readonly
-              class="w-full max-w-md px-3 py-1 rounded border border-slate-300 bg-white text-black text-sm"
-            />
-            <button
-              @click="copyLink"
-              class="bg-green-600 hover:bg-green-700 text-white text-sm px-3 py-1 rounded shadow"
-            >
-              📋 {{ $t('siteview.copy') }}
-            </button>
-          </div>
-          <p v-if="copySuccess" class="text-green-600 text-xs mt-1">
-            {{ $t('siteview.copied') }}
-          </p>
-
-          <div class="mt-3 text-sm">
-            {{ $t('siteview.notSatisfied') }}
-            <router-link to="/free-site-form" class="text-blue-600 underline hover:text-blue-800">
-              {{ $t('siteview.fillAgain') }}
-            </router-link>.
-          </div>
-
-          <!-- 📥 PDF & preview -->
-          <div class="mt-4 text-center">
-            <router-link
-              :to="`/preview/${slug}`"
-              target="_blank"
-              class="bg-slate-500 hover:bg-slate-600 text-white px-4 py-1 rounded text-sm"
-            >
-              🌐 {{ $t('siteview.openPreview') }}
-            </router-link>
-
-            <p class="text-xs text-slate-400 mt-2">
-              {{ $t('siteview.pdfHint') }}
-            </p>
-          </div>
-        </div>
+          📋 {{ $t('siteview.copy') }}
+        </button>
       </div>
+      <p v-if="copySuccess" class="text-green-600 text-xs mt-1">
+        {{ $t('siteview.copied') }}
+      </p>
+
+      <div class="mt-3 text-sm">
+        {{ $t('siteview.notSatisfied') }}
+        <router-link to="/free-site-form" class="text-blue-600 underline hover:text-blue-800">
+          {{ $t('siteview.fillAgain') }}
+        </router-link>.
+      </div>
+    </template>
+
+    <!-- Dugme za preview -->
+    <div class="mt-4 text-center">
+      <router-link
+        :to="`/preview/${slug}`"
+        target="_blank"
+        class="bg-slate-500 hover:bg-slate-600 text-white px-4 py-1 rounded text-sm"
+      >
+        🌐 {{ $t('siteview.openPreview') }}
+      </router-link>
+      <p class="text-xs text-slate-400 mt-2">
+        {{ $t('siteview.pdfHint') }}
+      </p>
+    </div>
+  </div>
+</div>
+
 
       <!-- 🔧 Akcije -->
       <div v-if="isOwnerOrAdmin" class="flex justify-center gap-4 mb-6">
@@ -176,7 +176,10 @@ export default {
   methods: {
     async fetchSite() {
       try {
-        const res = await axios.get(`http://localhost:8080/api/site-request/${this.slug}`)
+        const token = localStorage.getItem('token')
+        const res = await axios.get(`http://localhost:8080/api/site-request/${this.slug}`, {
+          headers: { Authorization: `Bearer ${token}` }
+        })
         this.siteData = res.data
       } catch (err) {
         console.error('❌', err)

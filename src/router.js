@@ -48,6 +48,7 @@ import PublicPresentation from './pages/PublicPresentation.vue'
 
 
 
+
 // 🔹 Forme i pregledi
 import FreeSiteForm from './pages/FreeSiteForm.vue'
 import ProSiteForm from './services/ProSiteForm.vue'
@@ -128,6 +129,7 @@ const router = createRouter({
       component: () => import('./pages/PublicPresentation.vue'),
       props: true
     },
+    
     // 📝 Forme za sajtove
     { path: '/free-site-form', name: 'FreeSiteForm', component: FreeSiteForm },
     { path: '/pro-site-form', name: 'ProSiteForm', component: ProSiteForm },

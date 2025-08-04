@@ -11,6 +11,13 @@
 
         <div class="grid md:grid-cols-2 gap-6">
           <DemoBox
+            v-for="site in demoSites"
+            :key="site.slug"
+            :title="`🌐 ${site.name}`"
+            :description="site.description"
+            :link="`/preview/${site.slug}`"
+          />
+          <DemoBox
             title="🥖 Autos - Free"
             description="Auto's je porodična firma za prodaju i servis polovnih automobila"
             link="http://localhost:5173/prezentacije/autos-6884e5a9758b0"
@@ -21,9 +28,9 @@
             link="http://localhost:5173/prezentacije/httplocalhost5173-687e89f24047c"
           />
           <DemoBox
-            title="🏡 Zdravo da ste - Pro"
+            title="🏡 Frizer Neša"
             description="Galerija, ponuda, kontakt i video prezentacija – kompletna turistička prezentacija."
-            link="http://localhost:5173/prezentacije/zdravo-da-ste-687e8d00eb94b"
+            link="http://localhost:5173/preview/frizerski-salon-nesa-688eef29dade4"
           />
           <DemoBox
             title="🧼 Zdravo da ste - Pro"
@@ -93,6 +100,11 @@ import Footer from '../partials/Footer.vue'
 
 export default {
   name: 'DemoPreviews',
+  data() {
+  return {
+    demoSites: []
+  }
+},
   components: {
     DemoBox,
     Header,
@@ -102,6 +114,15 @@ export default {
     isAuthenticated() {
       return isAuthenticated()
     }
-  }
+  },
+  mounted() {
+  axios.get('http://localhost:8080/api/demo-sites')
+    .then(res => {
+      this.demoSites = res.data
+    })
+    .catch(err => {
+      console.error('❌ Greška pri učitavanju demo sajtova:', err)
+    })
+}
 }
 </script>
