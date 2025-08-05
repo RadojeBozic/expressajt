@@ -86,6 +86,9 @@
         >
           {{ loading ? $t('freesite.loading') : $t('freesite.submit') }}
         </button>
+        <p class="text-slate-400 text-xs mt-2 text-center">
+          ℹ️{{ $t('freesite.noticeAfterSubmit') }}
+        </p>
 
         <p v-if="successMessage" class="text-green-400 text-sm mt-4">{{ $t('freesite.success') }}</p>
         <p v-if="errorMessage" class="text-red-400 text-sm mt-4">{{ errorMessage }}</p>

@@ -17,48 +17,21 @@
             :description="site.description"
             :link="`/preview/${site.slug}`"
           />
+         
           <DemoBox
-            title="🥖 Autos - Free"
-            description="Auto's je porodična firma za prodaju i servis polovnih automobila"
-            link="http://localhost:5173/prezentacije/autos-6884e5a9758b0"
+            title="🏡 Frizer Neša/pro plaćena varijanta"
+            description="Ovo je primer plaćene verzije i cena može biti od 10 do 50 €, a sve zavisi od nivoa željene podrške: obrade fotografija, uređivanja teksta, izrada logoa, kreiranja cenovnika... Detaljnu specifikaciju dobijate na upit"
+            link="http://localhost:5173/preview/frizerski-salon-nesa-6890d5fbd0285"
           />
-          <DemoBox
-            title="📊 Zdravo da ste - Pro"
-            description="Usluge knjigovodstva sa PDF dokumentacijom i sekcijom 'O nama'."
-            link="http://localhost:5173/prezentacije/httplocalhost5173-687e89f24047c"
+           <DemoBox
+            title="🏡 Frizer Neša - besplatna/modern"
+            description="Ovo je primer besplatne prezentacije koju korisnik može samostalno uređivati bez ikakve nadoknade. Korisnik može kopirati link i koristiti ga neograničeno."
+            link="http://localhost:5173/preview/nesa-frizer-6890cdbf41662"
           />
-          <DemoBox
-            title="🏡 Frizer Neša"
-            description="Galerija, ponuda, kontakt i video prezentacija – kompletna turistička prezentacija."
-            link="http://localhost:5173/preview/frizerski-salon-nesa-688eef29dade4"
-          />
-          <DemoBox
-            title="🧼 Zdravo da ste - Pro"
-            description="Jednostavan i moderan sajt za lokalnu perionicu – kontakt forma, lokacija i radno vreme."
-            link="http://localhost:5173/prezentacije/httplocalhost5173-687e89f24047c#hero"
-          />
-          <DemoBox
-            title="🥖 Pekara Jovanović"
-            description="Tradicionalna pekara sa kontakt sekcijom i lokacijom."
-            link="http://localhost:5173/prezentacije/agro-bim-687c01b9c33bd"
-          />
-          <DemoBox
-            title="📊 Knjigovodstvo Bonus"
-            description="Usluge knjigovodstva sa PDF dokumentacijom i sekcijom 'O nama'."
-            link="http://localhost:5173/prezentacije/agro-bim-687cf97d8b8af"
-          />
-          <DemoBox
-            title="🏡 Etno selo Naša Mera"
-            description="Galerija, ponuda, kontakt i video prezentacija – kompletna turistička prezentacija."
-            link="http://localhost:5173/prezentacije/agro-bim-687bdd11bf2d0"
-          />
-          <DemoBox
-            title="🧼 Auto perionica Speed Wash"
-            description="Jednostavan i moderan sajt za lokalnu perionicu – kontakt forma, lokacija i radno vreme."
-            link="http://localhost:5173/prezentacije/agro-bim-687d6e121769d"
-          />
+          
         </div>
 
+        <!-- CTA dugmad -->
         <div class="text-center mt-12 space-y-4">
           <router-link
             :to="isAuthenticated ? '/dashboard' : '/signup'"
@@ -93,6 +66,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import DemoBox from '../components/DemoBox.vue'
 import { isAuthenticated } from '../utils/auth'
 import Header from '../partials/Header.vue'
@@ -100,15 +74,15 @@ import Footer from '../partials/Footer.vue'
 
 export default {
   name: 'DemoPreviews',
-  data() {
-  return {
-    demoSites: []
-  }
-},
   components: {
     DemoBox,
     Header,
     Footer
+  },
+  data() {
+    return {
+      demoSites: []
+    }
   },
   computed: {
     isAuthenticated() {
@@ -116,13 +90,13 @@ export default {
     }
   },
   mounted() {
-  axios.get('http://localhost:8080/api/demo-sites')
-    .then(res => {
-      this.demoSites = res.data
-    })
-    .catch(err => {
-      console.error('❌ Greška pri učitavanju demo sajtova:', err)
-    })
-}
+    axios.get('http://localhost:8080/api/demo-sites')
+      .then(res => {
+        this.demoSites = res.data
+      })
+      .catch(err => {
+        console.error('❌ Greška pri učitavanju demo sajtova:', err)
+      })
+  }
 }
 </script>

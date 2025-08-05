@@ -17,8 +17,8 @@
   "label": "Latest projects we deliver",
   "title": "Express web – websites and online stores",
   "descriptions": "Boost your business with our solutions. Fast, efficient, affordable, and tailored to your needs.",
-  "primary_button": "Free presentations",
-  "secondary_button": "Business solutions from €10/year"
+  "primary_button": "Express mini site in 5 minutes – free",
+  "secondary_button": "Express site from €10 to €50 per year"
 },
   "features_global": {
     "label": "What do we offer?",
@@ -932,6 +932,7 @@
     "submit": "✅ Submit Request",
     "loading": "⏳ Sending...",
     "success": "✅ Request successfully submitted!",
+    "noticeAfterSubmit": "You will receive the presentation at the email address provided in the form, after administrator approval, and no later than 24 hours.",
     "sections": {
       "general": "General Info",
       "hero": "Hero Section",
@@ -942,7 +943,7 @@
     "fields": {
       "name": "e.g. Jovanović Bakery",
       "description": "Brief business description (max 1000 characters)",
-      "email": "contact@company.com",
+      "email": "Email address",
       "phone": "+381 64 123 4567",
       "facebook": "https://facebook.com/profile",
       "instagram": "https://instagram.com/profile",
@@ -1133,7 +1134,13 @@
         "title": "Express Translations",
         "subtitle": "Professional translations for your audience.",
         "description": "High-quality content translations, localization, and language adaptation."
+      },
+      "18": {
+        "title": "Express Integrations",
+        "subtitle": "Connecting with Stripe, Mailchimp, Google Maps, and other services.",
+        "description": "Automate processes and enhance site functionality through integrations."
       }
+
     }
   },
   "service": {
@@ -1351,7 +1358,7 @@
         "items": {
           "1": {
             "q": "What is the price of the PRO version?",
-            "a": "The annual price is 10 € and includes all PRO features and priority support."
+            "a": "The annual price is from 10 to 50 € and includes all PRO features and priority support."
           },
           "2": {
             "q": "Can I connect my own domain?",
@@ -1371,7 +1378,7 @@
           },
           "6": {
             "q": "Is support included?",
-            "a": "Yes – PRO users receive priority support via email and WhatsApp."
+            "a": "Yes – PRO users receive priority support via email."
           }
         }
       },
@@ -1384,8 +1391,8 @@
     },
     "w3site": {
     "badge": "🎨 W3Schools Express design",
-    "title": "Unique website in 1 day with W3Schools",
-    "sectionTitle": "Custom website delivered in less than 24 hours",
+    "title": "Unique website in 2 - 3 days with W3Schools",
+    "sectionTitle": "Custom website delivered in just over 24 hours",
     "points": {
       "1": "⚡ Fast delivery and unique content based on your request.",
       "2": "🎯 W3Schools templates customized – visually appealing, SEO friendly, responsive.",
@@ -1448,7 +1455,7 @@
     "freesite": {
       "badge": "Create your site completely free",
       "title": "One-click website — free online presentation",
-      "subtitle": "Don’t know where to start? No worries — your site is ready in 10 minutes.",
+      "subtitle": "Don’t know where to start? No worries — your site is ready in 5 minutes.",
 
       "points": {
         "1": {
@@ -1879,6 +1886,7 @@
     "submit": "✅ Submit request",
     "loading": "⏳ Sending...",
     "success": "✅ Request submitted successfully!",
+    "noticeAfterSubmit": "You will receive the presentation at the email address provided in the form, after administrator approval, and no later than 24 hours.",
     "error": "⚠️ Something went wrong. Please try again.",
     "preview": "📎 Open presentation:",
     "sections": {
@@ -1948,6 +1956,7 @@
   },
   "adminSites": {
     "title": "🌐 Submitted Presentations",
+    "no-sites": "No presentations to display.",
     "columns": {
       "name": "Name",
       "user": "User",

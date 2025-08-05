@@ -17,8 +17,8 @@
   "label": "Najnoviji projekti koje donosimo",
   "title": "Express web - sajtovi i online prodavnice",
   "descriptions": "Ojačajte svoje poslovanje uz naša rešenja. Brzo, efikasno, povoljno i prilagođeno vašim potrebama.",
-  "primary_button": "Besplatne prezentacije",
-  "secondary_button": "Poslovna rešenja od 10 € godišnje"
+  "primary_button": "Express mini sajt za 5 minuta - besplatno",
+  "secondary_button": "Express sajt od 10 do 50 € godišnje"
 },
 
   "features_global": {
@@ -942,6 +942,7 @@
     "submit": "✅ Pošalji zahtev",
     "loading": "⏳ Slanje...",
     "success": "✅ Zahtev je uspešno poslat!",
+     "noticeAfterSubmit": "Prezentaciju ćete dobiti na e-mail adresu navedenu u formi, nakon odobrenja administratora, a najkasnije u roku od 24h.",
     "sections": {
       "general": "Opšti podaci",
       "hero": "Hero sekcija",
@@ -952,7 +953,7 @@
     "fields": {
       "name": "Npr. Pekara Jovanović",
       "description": "Kratak opis firme (max 1000 karaktera)",
-      "email": "kontakt@firma.rs",
+      "email": "Email adresa",
       "phone": "+381 64 123 4567",
       "facebook": "https://facebook.com/profil",
       "instagram": "https://instagram.com/profil",
@@ -1143,6 +1144,11 @@
         "title": "Express Prevodi",
         "subtitle": "Profesionalni prevodi za vašu publiku.",
         "description": "Kvalitetni prevodi sadržaja, lokalizacija i prilagođavanje za različite jezike."
+      },
+      "18": {
+        "title": "Express Integracije",
+        "subtitle": "Povezivanje sa Stripe, Mailchimp, Google Maps i drugim servisima.",
+        "description": "Automatizujte procese i poboljšajte funkcionalnost sajta kroz integracije."
       }
     }
   },
@@ -1358,7 +1364,7 @@
         "items": {
           "1": {
             "q": "Koliko košta PRO verzija?",
-            "a": "Cena je 10 € godišnje i uključuje sve dodatne funkcije i podršku."
+            "a": "Cena je od 10 do 50 € godišnje i uključuje sve dodatne funkcije i podršku."
           },
           "2": {
             "q": "Mogu li povezati svoj domen?",
@@ -1378,7 +1384,7 @@
           },
           "6": {
             "q": "Da li dobijam podršku?",
-            "a": "Da – prioritetna podrška za PRO korisnike putem emaila i WhatsApp-a."
+            "a": "Da – prioritetna podrška za PRO korisnike putem emaila."
           }
         }
       },
@@ -1391,8 +1397,8 @@
     },
     "w3site": {
     "badge": "🎨 W3Schools Express dizajn",
-    "title": "Unikatni sajt za 1 dan uz W3Schools",
-    "sectionTitle": "Izrada sajta po tvojoj meri za manje od 24h",
+    "title": "Unikatni sajt za 2 -3 dana uz W3Schools",
+    "sectionTitle": "Izrada sajta po tvojoj meri za nešto više od 24h",
     "points": {
       "1": "⚡ Brza isporuka i unikatna obrada sadržaja prema zahtevima.",
       "2": "🎯 W3Schools šabloni prilagođeni potrebama korisnika – vizuelno dopadljivi, SEO friendly, responzivni.",
@@ -1457,7 +1463,7 @@
     "freesite": {
       "badge": "Potpuno besplatno napravi svoj sajt",
       "title": "Jednim klikom do sajta – besplatna online prezentacija",
-      "subtitle": "Ne znaš gde da počneš? Nema problema — tvoj sajt je spreman za 10 minuta.",
+      "subtitle": "Ne znaš gde da počneš? Nema problema — tvoj sajt je spreman za 5 minuta.",
 
       "points": {
         "1": {
@@ -1887,6 +1893,7 @@
     "submit": "✅ Pošalji zahtev",
     "loading": "⏳ Slanje...",
     "success": "✅ Zahtev uspešno poslat!",
+    "noticeAfterSubmit": "Prezentaciju ćete dobiti na e-mail adresu navedenu u formi, nakon odobrenja administratora, a najkasnije u roku od 24h.",
     "error": "⚠️ Nešto je pošlo po zlu. Pokušajte ponovo.",
     "preview": "📎 Otvori prezentaciju:",
     "sections": {
@@ -1956,6 +1963,7 @@
   },
   "adminSites": {
     "title": "🌐 Poslate prezentacije",
+    "no-sites": "Nema prezentacija za prikaz.",
     "columns": {
       "name": "Naziv",
       "user": "Korisnik",

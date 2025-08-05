@@ -48,6 +48,13 @@
             >
               📩 {{ $t('pricing_global.request') }}
             </button>
+
+            <button
+            @click="handleStripePayment"
+            class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded font-semibold text-sm mt-4"
+          >
+            💳 Testiraj Stripe naplatu
+          </button>
           </div>
         </transition>
       </li>
@@ -62,6 +69,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import Particles from './Particles.vue'
 import RequestOfferModal from './RequestOfferModal.vue'
 
@@ -93,6 +101,28 @@ export default {
     openRequestForm(service) {
       this.selectedService = service.title
       this.showModal = true
+    },
+    async handleStripePayment() {
+      try {
+        const token = 'tok_visa'
+
+        const res = await axios.post('http://localhost:8080/api/stripe/checkout', {
+          amount: 3000,
+          currency: 'eur',
+          description: 'Premium plan test',
+          plan: 'premium',
+          token
+        }, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`
+          }
+        })
+
+        alert('✅ Plaćanje uspešno: ' + res.data.charge.id)
+      } catch (err) {
+        console.error('❌ Stripe greška:', err)
+        alert('❌ Plaćanje nije uspelo.')
+      }
     }
   }
 }

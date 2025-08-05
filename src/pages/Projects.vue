@@ -20,7 +20,7 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div
-          v-for="id in 15"
+          v-for="id in 18"
           :key="id"
           class="bg-slate-800 border border-slate-700 rounded-lg p-6 shadow-lg hover:shadow-purple-700 transition"
         >
@@ -151,17 +151,23 @@ export default {
           description: 'Planiranje, kreiranje sadržaja i analitika za društvene mreže.'
         },
         {
-          id: 15,
+          id: 16,
           title: 'Express Marketing',
           subtitle: 'Sveobuhvatna marketinška strategija za vaš biznis.',
           description: 'Kreiranje i implementacija marketinških kampanja, SEO, PPC i društvene mreže.'
         },
         {
-          id: 15,
+          id: 17,
           title: 'Express Prevodi',
           subtitle: 'Profesionalni prevodi za vašu publiku.',
           description: 'Kvalitetni prevodi sadržaja, lokalizacija i prilagođavanje za različite jezike.'
         },
+        {
+          id: 18,
+          title: 'Express Integracije',
+          subtitle: 'Povezivanje sa Stripe, Mailchimp, Google Maps i drugim servisima.',
+          description: 'Automatizujte procese i poboljšajte funkcionalnost sajta kroz integracije.'
+        }
 
       ]
     }

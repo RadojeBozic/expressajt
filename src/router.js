@@ -48,7 +48,6 @@ import PublicPresentation from './pages/PublicPresentation.vue'
 
 
 
-
 // 🔹 Forme i pregledi
 import FreeSiteForm from './pages/FreeSiteForm.vue'
 import ProSiteForm from './services/ProSiteForm.vue'
@@ -140,6 +139,13 @@ const router = createRouter({
 
     // 🧩 Template izbor
     { path: '/select-template', name: 'SelectTemplate', component: SelectTemplate },
+
+    // Stripe naplata
+    {
+      path: '/stripe-test',
+      name: 'StripeTest',
+      component: () => import('./partials/StripeTest.vue'),
+    },
 
     // ✏️ Izmena sajta
     {

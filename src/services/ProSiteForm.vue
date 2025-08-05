@@ -160,6 +160,10 @@
           {{ loading ? $t('proform.loading') : $t('proform.submit') }}
         </button>
 
+        <p class="text-slate-400 text-xs mt-2 text-center">
+         ℹ️ {{ $t('proform.noticeAfterSubmit') }}
+        </p>
+
         <p v-if="successMessage" class="text-green-400 text-sm mt-4">{{ $t('proform.success') }}</p>
         <p v-if="errorMessage" class="text-red-400 text-sm mt-4">{{ $t('proform.error') }}</p>
 
