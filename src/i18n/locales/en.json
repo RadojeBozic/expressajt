@@ -223,6 +223,13 @@
   "company": "Company",
   "resources": "Resources",
   "legals": "Legal",
+  "legal": {
+    "name": "GBS Platform / Express Web Ltd.",
+    "mb": "Company ID: 68170168",
+    "pib": "VAT ID: 115191597",
+    "account": "Account:",
+    "reports": "Financial Reports"
+  },
   "links": {
     "features": "Features",
     "integrations": "Integrations",
@@ -261,7 +268,8 @@
     "admin": "Admin panel",
     "logout": "Log out",
     "language_sr": "Serbian",
-    "language_en": "English"
+    "language_en": "English",
+    "cart": "Cart"
   }
 }
 ,
@@ -2009,6 +2017,13 @@
   "default": "Hello! How can I help you?",
   "fallback": "Something went wrong.",
   "tooltip": "Need help? Ask our AI assistant!"
+},
+"checkout": {
+  "title": "Cart Overview",
+  "empty": "Your cart is empty.",
+  "total": "Total",
+  "payNow": "Proceed to Payment",
+  "remove": "Remove"
 }
 
 

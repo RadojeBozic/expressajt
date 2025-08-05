@@ -49,6 +49,13 @@
               📩 {{ $t('pricing_global.request') }}
             </button>
 
+            <StripeCheckout />
+            <button
+              @click="addProductToCart(item, index)"
+              class="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2 rounded font-semibold text-sm mt-2"
+            >
+              🛒 Dodaj u korpu
+            </button>
             <button
             @click="handleStripePayment"
             class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded font-semibold text-sm mt-4"
@@ -72,12 +79,16 @@
 import axios from 'axios'
 import Particles from './Particles.vue'
 import RequestOfferModal from './RequestOfferModal.vue'
+import StripeCheckout from './StripeCheckout.vue'
+import { addToCart } from '../utils/CartService'
 
 export default {
   name: 'PricingDetailed',
   components: {
     Particles,
-    RequestOfferModal
+    RequestOfferModal,
+    StripeCheckout
+
   },
   data() {
     return {
@@ -101,6 +112,20 @@ export default {
     openRequestForm(service) {
       this.selectedService = service.title
       this.showModal = true
+    },
+    addProductToCart(item, index) {
+      addToCart({
+        id: index + 1, // ili pravi ID ako postoji
+        name: item.title,
+        price: this.getPriceNumber(item.price),
+        quantity: 1
+      })
+      alert(`Dodato u korpu: ${item.title}`)
+    },
+    getPriceNumber(priceString) {
+      // Pretvara "od 20 € godišnje" u broj (npr. 20 * 100 = 2000 centi)
+      const match = priceString.match(/\d+/)
+      return match ? parseInt(match[0], 10) * 100 : 0
     },
     async handleStripePayment() {
       try {

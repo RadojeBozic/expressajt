@@ -227,6 +227,13 @@
   "company": "Kompanija",
   "resources": "Resursi",
   "legals": "Pravna dokumenta",
+  "legal": {
+    "name": "GBS Platforma / Express Web",
+    "mb": "MB: 68170168",
+    "pib": "PIB: 115191597",
+    "account": "Račun:",
+    "reports": "Finansijski izveštaji"
+  },
   "links": {
     "features": "Funkcionalnosti",
     "integrations": "Integracije",
@@ -265,7 +272,8 @@
     "admin": "Admin panel",
     "logout": "Odjavi se",
     "language_sr": "Srpski",
-    "language_en": "Engleski"
+    "language_en": "Engleski",
+    "cart": "Korpa"
   }
 },
 "auth": {
@@ -2018,6 +2026,13 @@
   "default": "Zdravo! Kako mogu da Vam pomognem?",
   "fallback": "Nešto je pošlo po zlu.",
   "tooltip": "Treba pomoć? Pitaj našeg AI pomoćnika!"
+},
+"checkout": {
+  "title": "Pregled korpe",
+  "empty": "Vaša korpa je prazna.",
+  "total": "Ukupno",
+  "payNow": "Nastavi na plaćanje",
+  "remove": "Ukloni"
 }
 }
 

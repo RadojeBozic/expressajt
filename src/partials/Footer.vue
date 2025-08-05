@@ -219,6 +219,14 @@
       </div>
        
     </div>
+    <div class="border-t border-slate-700 py-4 text-center text-xs text-slate-500">
+    {{ $t('footer.legal.name') }} —
+    {{ $t('footer.legal.mb') }} | {{ $t('footer.legal.pib') }} |
+    {{ $t('footer.legal.account') }} <span class="text-slate-400">160-xxx-xxxxx-xx (RSD)</span> |
+    <router-link to="/footer/company/financials" class="hover:underline text-purple-400">
+      {{ $t('footer.legal.reports') }}
+    </router-link>
+  </div>
   </footer>
 </template>
 

@@ -147,6 +147,13 @@ const router = createRouter({
       component: () => import('./partials/StripeTest.vue'),
     },
 
+    // 🛒 Korpa i naplata
+    {
+      path: '/checkout',
+      name: 'Checkout',
+      component: () => import('./pages/CheckoutPage.vue')
+    },
+
     // ✏️ Izmena sajta
     {
       path: '/edit-site/:slug',
