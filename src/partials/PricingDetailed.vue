@@ -49,19 +49,19 @@
               📩 {{ $t('pricing_global.request') }}
             </button>
 
-            <StripeCheckout />
+            <!-- <StripeCheckout /> -->
             <button
               @click="addProductToCart(item, index)"
-              class="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2 rounded font-semibold text-sm mt-2"
+              class="inline-block px-3 py-1 text-sm bg-purple-600 hover:bg-purple-700 text-white rounded"
             >
               🛒 Dodaj u korpu
             </button>
-            <button
+           <!--  <button
             @click="handleStripePayment"
             class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded font-semibold text-sm mt-4"
           >
             💳 Testiraj Stripe naplatu
-          </button>
+          </button> -->
           </div>
         </transition>
       </li>

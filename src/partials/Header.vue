@@ -22,7 +22,7 @@
         <!-- Desni meni -->
         <div class="flex items-center gap-3">
           <!-- Korpa -->
-          <router-link to="/checkout" class="text-sm text-white hover:text-purple-300">
+          <router-link to="/checkout" class="text-sm text-white hover:text-purple-300 cursor-pointer">
             🛒 {{ $t('header.menu.cart') }} ({{ totalItems() }})
           </router-link>
 

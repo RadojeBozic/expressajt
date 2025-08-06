@@ -224,7 +224,7 @@
   "resources": "Resources",
   "legals": "Legal",
   "legal": {
-    "name": "GBS Platform / Express Web Ltd.",
+    "name": "Radoje Božić pr Computer programming EXPRESS WEB Beograd-Palilula",
     "mb": "Company ID: 68170168",
     "pib": "VAT ID: 115191597",
     "account": "Account:",
@@ -428,12 +428,12 @@
   },
   "info": {
     "address_title": "Our address",
-    "address_line1": "GBS Platform DOO",
-    "address_line2": "Bulevar Vojvode Mišića 17, 11000 Belgrade",
+    "address_line1": "Radoje Božić pr Computer programming EXPRESS WEB Beograd-Palilula",
+    "address_line2": "VITEZOVA KARAĐORĐEVE ZVEZDE 50, 11050 Beograd",
     "email_title": "Contact email",
     "email_value": "contact [at] gbsplatforma.com",
     "phone_title": "Phone",
-    "phone_value": "+381 64 123 4567"
+    "phone_value": "+381 61 217 90 13"
   },
   "social": {
     "title": "Follow us",
@@ -2019,11 +2019,18 @@
   "tooltip": "Need help? Ask our AI assistant!"
 },
 "checkout": {
-  "title": "Cart Overview",
+    "title": " Checkout",
   "empty": "Your cart is empty.",
+  "remove": "Remove",
   "total": "Total",
   "payNow": "Proceed to Payment",
-  "remove": "Remove"
+  "proceed": "Proceed to Payment",
+  "chooseMethod": "Choose payment method:",
+  "payCard": "Card (Stripe)",
+  "invoice": "Proforma Invoice (RSD/EUR)",
+  "paypal": "PayPal (coming soon)",
+  "invoiceOptions": "Choose currency for proforma invoice",
+  "downloadInvoice": "Download proforma invoice"
 }
 
 

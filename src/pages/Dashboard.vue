@@ -33,6 +33,29 @@
         <li v-if="messages.length === 0">{{ $t('dashboard.messages.empty') }}</li>
       </ul>
     </div>
+    <!-- Profakture korisnika -->
+<!-- Profakture korisnika -->
+<div class="bg-slate-800 p-6 rounded-lg max-w-5xl w-full mx-auto text-white mb-8 shadow-lg">
+  <h2 class="text-xl font-semibold mb-4">🧾 Vaše profakture</h2>
+  <ul>
+    <li v-for="invoice in invoices" :key="invoice.id" class="border-b border-slate-700 pb-2 mb-2">
+      {{ invoice.name }} – {{ invoice.currency.toUpperCase() }} – 
+      {{ formatPrice(invoice.amount, invoice.currency) }} – 
+      Status: {{ invoice.status }}
+      <br />
+      <a
+        :href="`http://localhost:8080/api/invoice-request/${invoice.id}/pdf`"
+        target="_blank"
+        class="text-sm text-purple-400 hover:underline"
+      >
+        📄 Preuzmi PDF
+      </a>
+    </li>
+    <li v-if="invoices.length === 0">📭 Nemate aktivnih profaktura.</li>
+  </ul>
+</div>
+
+
 
     <!-- Usluge -->
     <div class="bg-slate-800 p-6 rounded-lg max-w-7xl w-full mx-auto text-white mb-12 shadow-lg">
@@ -74,6 +97,7 @@ export default {
     return {
       user: getCurrentUser(),
       messages: [],
+      invoices: [],
       services: [
   { key: 'free', route: '/services/freesite' },
   { key: 'pro', route: '/services/prosite' },
@@ -96,6 +120,7 @@ export default {
       this.$router.push('/signin')
     } else {
       this.fetchMessages()
+      this.fetchInvoices()
     }
   },
   methods: {
@@ -128,7 +153,25 @@ export default {
         console.error('❌ Greška pri brisanju naloga:', error)
         alert('Greška pri brisanju naloga. Pokušajte ponovo.')
       }
-    }
+    },
+    async fetchInvoices() {
+  try {
+    const token = localStorage.getItem('token')
+    const res = await axios.get('http://localhost:8080/api/my-invoices', {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+    this.invoices = res.data
+  } catch (err) {
+    console.error('❌ Greška pri učitavanju profaktura:', err)
+  }
+},
+formatPrice(value, currency) {
+    const val = currency === 'rsd' ? value * 117.5 : value
+    return new Intl.NumberFormat('sr-RS', {
+      style: 'currency',
+      currency: currency === 'rsd' ? 'RSD' : 'EUR'
+    }).format(val / 100)
+  },
   }
 }
 </script>

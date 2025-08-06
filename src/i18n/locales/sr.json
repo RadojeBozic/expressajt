@@ -228,7 +228,7 @@
   "resources": "Resursi",
   "legals": "Pravna dokumenta",
   "legal": {
-    "name": "GBS Platforma / Express Web",
+    "name": "Radoje Božić pr Računarsko programiranje EXPRESS WEB Beograd-Palilula",
     "mb": "MB: 68170168",
     "pib": "PIB: 115191597",
     "account": "Račun:",
@@ -437,12 +437,12 @@
   },
   "info": {
     "address_title": "Naša adresa",
-    "address_line1": "GBS Platforma DOO",
-    "address_line2": "Bulevar Vojvode Mišića 17, 11000 Beograd",
+    "address_line1": "Radoje Božić pr Računarsko programiranje EXPRESS WEB Beograd-Palilula",
+    "address_line2": "VITEZOVA KARAĐORĐEVE ZVEZDE 50, 11050 Beograd",
     "email_title": "Kontakt email",
     "email_value": "kontakt [at] gbsplatforma.com",
     "phone_title": "Telefon",
-    "phone_value": "+381 64 123 4567"
+    "phone_value": "+381 61 217 90 13"
   },
   "social": {
     "title": "Pratite nas",
@@ -2028,11 +2028,18 @@
   "tooltip": "Treba pomoć? Pitaj našeg AI pomoćnika!"
 },
 "checkout": {
-  "title": "Pregled korpe",
+    "title": "Pregled narudžbine",
   "empty": "Vaša korpa je prazna.",
+  "remove": "Ukloni",
   "total": "Ukupno",
   "payNow": "Nastavi na plaćanje",
-  "remove": "Ukloni"
+  "proceed": "Nastavi na plaćanje",
+  "chooseMethod": "Odaberite način plaćanja:",
+  "payCard": "Kartica (Stripe)",
+  "invoice": "Profaktura (RSD/EUR)",
+  "paypal": "PayPal (uskoro)",
+  "invoiceOptions": "Odaberite valutu za profakturu",
+  "downloadInvoice": "Preuzmi profakturu"
 }
 }
 
