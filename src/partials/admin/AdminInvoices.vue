@@ -22,6 +22,20 @@
           <td class="px-4 py-2">{{ invoice.currency }}</td>
           <td class="px-4 py-2">{{ formatPrice(invoice.amount, invoice.currency) }}</td>
           <td class="px-4 py-2">{{ invoice.status }}</td>
+          <td class="px-4 py-2">
+            <select v-model="invoice.status" class="bg-slate-700 text-white rounded px-2 py-1 text-sm">
+              <option value="pending">⏳ Na čekanju</option>
+              <option value="approved">✅ Odobreno</option>
+              <option value="paid">💵 Plaćeno</option>
+              <option value="cancelled">❌ Otkazano</option>
+            </select>
+            <button
+              @click="updateStatus(invoice)"
+              class="ml-2 text-xs bg-blue-600 hover:bg-blue-700 text-white px-2 py-1 rounded"
+            >
+              💾 Sačuvaj
+            </button>
+          </td>
           <td class="px-4 py-2 space-x-2">
             <a
               :href="`http://localhost:8080/api/invoice-request/${invoice.id}/pdf`"
@@ -55,11 +69,34 @@ onMounted(async () => {
   }
 })
 
-function deleteInvoice(id) {
+async function updateStatus(invoice) {
+  try {
+    await axios.put(`http://localhost:8080/api/invoice-request/${invoice.id}/status`, {
+      status: invoice.status
+    }, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+    alert('✅ Status uspešno ažuriran.')
+  } catch (err) {
+    console.error('❌ Greška pri ažuriranju statusa:', err)
+  }
+}
+
+async function deleteInvoice(id) {
   if (!confirm('Obrisati profakturu?')) return
-  axios.delete(`http://localhost:8080/api/invoice-request/${id}`).then(() => {
+
+  try {
+    await axios.delete(`http://localhost:8080/api/invoice-request/${id}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    })
     invoices.value = invoices.value.filter(i => i.id !== id)
-  })
+  } catch (err) {
+    console.error('❌ Greška pri brisanju profakture:', err)
+  }
 }
 
 function formatPrice(value, currency) {

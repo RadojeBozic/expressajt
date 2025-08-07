@@ -50,6 +50,12 @@
       >
         📄 Preuzmi PDF
       </a>
+      <button
+      @click="deleteInvoice(invoice.id)"
+      class="text-xs text-red-400 hover:text-red-200 mt-1"
+    >
+      🗑️ Obriši
+    </button>
     </li>
     <li v-if="invoices.length === 0">📭 Nemate aktivnih profaktura.</li>
   </ul>
@@ -165,13 +171,28 @@ export default {
     console.error('❌ Greška pri učitavanju profaktura:', err)
   }
 },
-formatPrice(value, currency) {
+  formatPrice(value, currency) {
     const val = currency === 'rsd' ? value * 117.5 : value
     return new Intl.NumberFormat('sr-RS', {
       style: 'currency',
       currency: currency === 'rsd' ? 'RSD' : 'EUR'
     }).format(val / 100)
   },
+  async deleteInvoice(id) {
+  if (!confirm('Da li ste sigurni da želite da obrišete profakturu?')) return
+
+  try {
+    const token = localStorage.getItem('token')
+    await axios.delete(`http://localhost:8080/api/invoice-request/${id}`, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+    this.invoices = this.invoices.filter(i => i.id !== id)
+    alert('✅ Profaktura obrisana.')
+  } catch (err) {
+    console.error('❌ Greška pri brisanju:', err)
+  }
+}
+
   }
 }
 </script>

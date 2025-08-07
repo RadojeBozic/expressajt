@@ -36,13 +36,13 @@
             <p>Adresa: VITEZOVA KARAĐORĐEVE ZVEZDE 50, 11050 Beograd</p>
             <p>MB: 68170168 | PIB: 115191597</p>
             <p>Račun: 160-XXX-XXXXX-XX</p>
-            <a
+            <!-- <a
                 :href="`http://localhost:8080/api/invoice-request/${invoiceId}/pdf`"
                 target="_blank"
                 class="text-sm text-purple-400 hover:underline mt-4 inline-block"
                 >
                 📄 Preuzmi profakturu (PDF)
-            </a>
+            </a> -->
         </div>
     </div>
   </div>
