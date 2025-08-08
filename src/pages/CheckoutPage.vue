@@ -49,7 +49,7 @@
             @click="showInvoiceModal = true"
             class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded"
           >
-            🧾 {{ $t('checkout.invoice') }}
+            🧾 {{ $t('checkout.invoice_request') }}
           </button>
 
           <button disabled class="bg-slate-600 text-white font-semibold py-3 rounded opacity-50">
@@ -80,29 +80,47 @@ import Footer from '@/partials/Footer.vue'
 import InvoiceModal from '@/partials/InvoiceModal.vue'
 import { useCart } from '@/utils/CartService'
 import { useI18n } from 'vue-i18n'
+import { track, trackOnce } from '@/utils/analytics' // Plausible helper
 
-useI18n()
+const { t } = useI18n()
 
 const { cart, removeFromCart, clearCart } = useCart()
 const cartItems = ref([])
 const showInvoiceModal = ref(false)
 
 onMounted(() => {
-  cartItems.value = [...cart.value]
+  // sync iz store-a
+  cartItems.value = [...(cart.value || [])]
+
+  // Plausible: zabeleži ulazak u checkout (jednom po sesiji)
+  trackOnce('checkout_started', () => track('Checkout Started'))
 })
 
 const totalAmount = computed(() =>
-  cartItems.value.reduce((sum, item) => sum + item.price * item.quantity, 0)
+  (cartItems.value || []).reduce((sum, item) => sum + (item.price * item.quantity), 0)
 )
 
-function formatPrice(valueCents) {
-  return new Intl.NumberFormat('sr-RS', { style: 'currency', currency: 'EUR' })
-    .format((valueCents || 0) / 100)
+/**
+ * Prikaz cene; default RSD za UI (po potrebi promeni na 'EUR')
+ * amount je u centima (EUR centi), pa za RSD radimo vizuelnu konverziju.
+ */
+function formatPrice(valueCents, currency = 'RSD') {
+  const rate = 117.5
+  const isRsd = currency.toUpperCase() === 'RSD'
+  const value = isRsd ? (valueCents || 0) * rate : (valueCents || 0)
+  return new Intl.NumberFormat('sr-RS', {
+    style: 'currency',
+    currency: isRsd ? 'RSD' : 'EUR'
+  }).format(value / 100)
 }
 
 function removeItem(id) {
-  removeFromCart(id)
-  cartItems.value = [...cart.value]
+  try {
+    removeFromCart(id)
+    cartItems.value = [...(cart.value || [])]
+  } catch (e) {
+    console.error('Remove item error:', e)
+  }
 }
 
 function emptyCartAfterInvoice() {
@@ -111,24 +129,36 @@ function emptyCartAfterInvoice() {
 }
 
 async function handleStripeCheckout() {
+  if (!totalAmount.value) {
+    alert('❌ ' + (t('checkout.empty') || 'Korpa je prazna.'))
+    return
+  }
+
   try {
     const token = 'tok_visa' // Stripe test token
-    const res = await axios.post(
-      'http://localhost:8080/api/stripe/checkout',
-      {
-        amount: totalAmount.value,
-        currency: 'eur',
-        description: 'ExpressWeb Checkout',
-        token,
-      },
-      { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } }
-    )
-    alert('✅ Plaćanje uspešno: ' + res.data.charge.id)
+
+    // koristi axios.defaults.baseURL iz main.js
+    const res = await axios.post('/stripe/checkout', {
+      amount: totalAmount.value,   // u centima
+      currency: 'eur',
+      description: 'ExpressWeb Checkout',
+      token,
+    }, {
+      headers: { Authorization: `Bearer ${localStorage.getItem('token') || ''}` }
+    })
+
+    alert('✅ ' + (t('checkout.paymentSuccess') || `Plaćanje uspešno: ${res?.data?.charge?.id || ''}`))
+
+    // Plausible event
+    track('Payment Success', { method: 'stripe', amount_cents: totalAmount.value })
+
+    // Prazni korpu
     clearCart()
     cartItems.value = []
+
   } catch (err) {
     console.error('❌ Stripe greška:', err)
-    alert('❌ Plaćanje nije uspelo.')
+    alert('❌ ' + (t('checkout.paymentFailed') || 'Plaćanje nije uspelo.'))
   }
 }
 </script>

@@ -218,6 +218,7 @@
   ]
 },
 "footer": {
+  "cookiePolicy": "Cookie Policy",
   "copyright": "All rights reserved.",
   "products": "Products",
   "company": "Company",
@@ -760,6 +761,38 @@
       "title": "Downloads",
       "text": "Logos will soon be available in PNG, SVG, and AI formats. For now, you can contact us via the ",
       "link": "contact form"
+    }
+  },
+  "cookie": {
+    "title": "Cookie & Analytics Policy",
+    "intro": "We use Plausible Analytics in cookieless mode to understand traffic and improve UX. We do not collect personal data and do not use cookies for analytics.",
+    "1": {
+      "title": "What are cookies?",
+      "text": "Cookies are small files a website stores in the browser to remember certain settings or activity. This policy explains how we measure visits without using cookies."
+    },
+    "2": {
+      "title": "Plausible cookieless analytics",
+      "text": "We use Plausible Analytics (cookieless) for traffic measurement. No analytics cookies are set on your device. Data is aggregated and anonymous and used only for statistical reports (visited pages, traffic sources, countries, device types)."
+    },
+    "3": {
+      "title": "Data we process",
+      "text": "Plausible aggregates anonymous data such as page URL, page title, referrer and an approximate geolocation based on IP without storing IP addresses or identifying visitors.",
+      "li1": "Page views and in‑app route changes",
+      "li2": "Referrers and campaigns (if UTM tags exist)",
+      "li3": "Aggregated information on devices and countries"
+    },
+    "4": {
+      "title": "No profiling, remarketing or sharing",
+      "text": "We do not track individual users, profile them, run remarketing or share data with third parties. Anonymous analytics helps us understand usage and fix issues."
+    },
+    "5": {
+      "title": "Contact & privacy",
+      "text": "For any questions regarding privacy and this policy, please reach out via our",
+      "link": "Contact"
+    },
+    "6": {
+      "title": "Policy changes",
+      "text": "We may update this policy from time to time to meet legal requirements or improve clarity. The updated version will always be published on this page."
     }
   },
   "privacy": {
@@ -1955,10 +1988,10 @@
     "fetch": "⚠️ Unable to load data from template."
   },
   "plans": {
-    "starter": "Free trial",
-    "basic": "Basic (€10/year)",
-    "pro": "Pro (€20/year)",
-    "premium": "Premium (€30/year)",
+    "starter": "Starter (€10/year)",
+    "basic": "Basic (€20/year)",
+    "pro": "Pro (€30/year)",
+    "premium": "Premium (€40/year)",
     "business": "Business (€50/year)"
   }
   },
@@ -2027,11 +2060,47 @@
   "proceed": "Proceed to Payment",
   "chooseMethod": "Choose payment method:",
   "payCard": "Card (Stripe)",
-  "invoice": "Proforma Invoice (RSD/EUR)",
+  "invoice_request": "Proforma Invoice (RSD/EUR)",
   "paypal": "PayPal (coming soon)",
   "invoiceOptions": "Choose currency for proforma invoice",
   "downloadInvoice": "Download proforma invoice"
-}
+},
+"common": {
+    "cancel": "Cancel",
+    "sending": "⏳ Sending..."
+  },
+  "invoice": {
+    "title": "🧾 Request a Proforma Invoice",
+    "form": {
+      "name": "Company / Buyer Name",
+      "email": "Email",
+      "currency": "Currency",
+      "description": "Description / subject (optional)",
+      "descriptionPlaceholder": "E.g. Express PRO package + Logo design"
+    },
+    "currency": {
+      "rsd": "RSD (Serbian dinar)",
+      "eur": "EUR (foreign currency)"
+    },
+    "items": {
+      "title": "Items",
+      "total": "Total"
+    },
+    "amountLabel": "Amount to pay:",
+    "submit": "✅ Submit request",
+    "downloadPdf": "Download proforma (PDF)",
+    "alert": {
+      "success": "Your proforma request has been sent.",
+      "error": "Failed to send the request."
+    },
+    "issuer": {
+      "title": "Issuer:",
+      "name": "Radoje Božić s.p. EXPRESS WEB Belgrade-Palilula",
+      "address": "Address: VITEZOVA KARAĐORĐEVE ZVEZDE 50, 11050 Belgrade",
+      "ids": "Company No: 68170168 | Tax ID: 115191597",
+      "account": "Bank account: 160-XXX-XXXXX-XX"
+    }
+  }
 
 
 

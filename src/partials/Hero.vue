@@ -13,7 +13,7 @@
       </div>
 
       <!-- Content -->
-      <div class="pt-32 pb-16 md:pt-52 md:pb-32">
+      <div class="pt-32 pb-16 md:pt-40 md:pb-32"> <!-- podešavanje margine -->
         <div class="max-w-3xl mx-auto text-center">
 
           <!-- Label -->

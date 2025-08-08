@@ -222,6 +222,7 @@
   ]
 },
 "footer": {
+  "cookiePolicy": "Politika kolačića",
   "copyright": "Sva prava zadržana.",
   "products": "Proizvodi",
   "company": "Kompanija",
@@ -252,6 +253,7 @@
     "terms_conditions": "Uslovi korišćenja",
     "privacy": "Politika privatnosti",
     "brandkit": "Brend komplet"
+    
   }
 },
 "header": {
@@ -769,6 +771,38 @@
       "title": "Preuzimanja",
       "text": "Uskoro će biti dostupni logotipi u PNG, SVG i AI formatu. Za sada nas možete kontaktirati putem ",
       "link": "kontakt forme"
+    }
+  },
+  "cookie": {
+    "title": "Politika kolačića i analitike",
+    "intro": "Koristimo Plausible Analytics u režimu bez kolačića kako bismo razumeli posećenost i unapredili iskustvo. Ne prikupljamo lične podatke i ne koristimo kolačiće za analitiku.",
+    "1": {
+      "title": "Šta su kolačići?",
+      "text": "Kolačići su male datoteke koje sajt može sačuvati u pretraživaču kako bi zapamtio određena podešavanja ili aktivnosti. Ova politika objašnjava kako mi pristupamo merenju posećenosti bez korišćenja kolačića."
+    },
+    "2": {
+      "title": "Plausible bez kolačića",
+      "text": "Za merenje posećenosti koristimo Plausible Analytics (cookieless). To znači da se na vaš uređaj ne postavljaju analitički kolačići. Podaci su agregirani i anonimni i služe isključivo za statističke izveštaje (posećene stranice, izvori saobraćaja, zemlje, tipovi uređaja)."
+    },
+    "3": {
+      "title": "Koje podatke obrađujemo",
+      "text": "Plausible agregira anonimne podatke poput URL‑a stranice, naslova stranice, referera i približne geolokacije zasnovane na IP‑u bez čuvanja IP adresa i bez identifikacije posetilaca.",
+      "li1": "Pregledi stranica i rute unutar aplikacije",
+      "li2": "Referreri i kampanje (ako postoje UTM oznake)",
+      "li3": "Agregirane informacije o uređajima i zemljama"
+    },
+    "4": {
+      "title": "Nema profilisanja, remarketinga ni deljenja",
+      "text": "Ne vršimo praćenje pojedinačnih korisnika, nema profilisanja, remarketinga niti deljenja podataka sa trećim licima. Anonimna analitika nam pomaže da razumemo korišćenje sajta i otklonimo probleme."
+    },
+    "5": {
+      "title": "Kontakt i privatnost",
+      "text": "Za sva pitanja u vezi privatnosti i ove politike možete nas kontaktirati preko stranice",
+      "link": "Kontakt"
+    },
+    "6": {
+      "title": "Izmene politike",
+      "text": "Ovu politiku možemo povremeno izmeniti kako bismo ispunili pravne zahteve ili unapredili jasnoću. Ažurirana verzija će uvek biti objavljena na ovoj stranici."
     }
   },
   "privacy": {
@@ -1962,10 +1996,10 @@
     "fetch": "⚠️ Nije moguće učitati podatke iz šablona."
   },
   "plans": {
-    "starter": "Besplatno testiranje",
-    "basic": "Basic (10 € godišnje)",
-    "pro": "Pro (20 € godišnje)",
-    "premium": "Premium (30 € godišnje)",
+    "starter": "Starter (10 € godišnje)",
+    "basic": "Basic (20 € godišnje)",
+    "pro": "Pro (30 € godišnje)",
+    "premium": "Premium (40 € godišnje)",
     "business": "Business (50 € godišnje)"
   }
   },
@@ -2036,12 +2070,49 @@
   "proceed": "Nastavi na plaćanje",
   "chooseMethod": "Odaberite način plaćanja:",
   "payCard": "Kartica (Stripe)",
-  "invoice": "Profaktura (RSD/EUR)",
+  "invoice_request": "Profaktura (RSD/EUR)",
   "paypal": "PayPal (uskoro)",
   "invoiceOptions": "Odaberite valutu za profakturu",
   "downloadInvoice": "Preuzmi profakturu"
+},
+"common": {
+    "cancel": "Otkaži",
+    "sending": "⏳ Slanje..."
+  },
+  "invoice": {
+    "title": "🧾 Zatraži profakturu",
+    "form": {
+      "name": "Ime firme / Kupca",
+      "email": "Email",
+      "currency": "Valuta",
+      "description": "Opis / predmet profakture (opciono)",
+      "descriptionPlaceholder": "Npr: Express PRO paket + Logo dizajn"
+    },
+    "currency": {
+      "rsd": "RSD (dinar)",
+      "eur": "EUR (devizno)"
+    },
+    "items": {
+      "title": "Stavke",
+      "total": "Ukupno"
+    },
+    "amountLabel": "Iznos za plaćanje:",
+    "submit": "✅ Pošalji zahtev",
+    "downloadPdf": "Preuzmi profakturu (PDF)",
+    "alert": {
+      "success": "Zahtev za profakturu je uspešno poslat.",
+      "error": "Greška prilikom slanja zahteva."
+    },
+    "issuer": {
+      "title": "Fakturiše:",
+      "name": "Radoje Božić pr Računarsko programiranje EXPRESS WEB Beograd-Palilula",
+      "address": "Adresa: VITEZOVA KARAĐORĐEVE ZVEZDE 50, 11050 Beograd",
+      "ids": "MB: 68170168 | PIB: 115191597",
+      "account": "Račun: 160-XXX-XXXXX-XX"
+    }
+  }
 }
-}
+
 
 
 

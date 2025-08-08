@@ -273,6 +273,12 @@ const router = createRouter({
       name: 'BrandkitPage',
       component: () => import('./pages/footer/legals/Brandkit.vue')
     },
+    {
+      path: '/cookie-policy',
+      name: 'cookie.policy',
+      component: () => import('./pages/footer/resources/CookiePolicy.vue'),
+      meta: { public: true }
+    },
 
     // Nove stranice
     {
@@ -285,6 +291,8 @@ const router = createRouter({
   ]
 })
 
+
+
 // 🔐 Middleware zaštita pristupa
 router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth && !isAuthenticated()) {
@@ -292,6 +300,15 @@ router.beforeEach((to, from, next) => {
   }
   next()
 })
+
+// (Opcionalno) global error handler za 401/403
+router.afterEach(() => {
+    setTimeout(() => {
+      if (typeof window.plausible === 'function') {
+        window.plausible('pageview')
+      }
+    }, 0)
+  })
 
 
 export default router
