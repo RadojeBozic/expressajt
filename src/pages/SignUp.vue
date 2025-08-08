@@ -22,7 +22,7 @@
             <div class="mb-5">
               <router-link class="inline-flex" to="/">
                 <div class="relative flex items-center justify-center w-16 h-16 border border-transparent rounded-2xl shadow-2xl bg-slate-900">
-                  <img class="relative" src="../images/logog.png" width="42" height="42" alt="Stellar" />
+                  <img class="relative" src="../images/logo_express01.png" width="42" height="42" alt="Stellar" />
                 </div>
               </router-link>
             </div>

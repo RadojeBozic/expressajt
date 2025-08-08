@@ -119,7 +119,7 @@ const mobileNavOpen = ref(false)
 const showLang = ref(false)
 
 const { locale } = useI18n()
-const { cart, totalItems } = useCart()
+const { cart, totalItems, clearCart } = useCart()   // ⬅ Dodali clearCart()
 
 const toggleLangDropdown = () => showLang.value = !showLang.value
 const setLanguage = (lang) => {
@@ -147,7 +147,13 @@ const navLinks = [
 ]
 
 const logout = () => {
+  // 1. Odjavi korisnika
   doLogout()
+
+  // 2. Isprazni korpu
+  clearCart()
+
+  // 3. Prebaci na login
   window.location.href = '/signin'
 }
 
