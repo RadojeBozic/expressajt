@@ -1,14 +1,14 @@
-# Agencija Express Sajt – Frontend (Vue 3 + Tailwind + Vite)
+# Agencija Express web – Frontend (Vue 3 + Tailwind + Vite)
 
-Dobrodošli u frontend repozitorijum projekta **Agencija Express Sajt**, moderne platforme za brzu izradu poslovnih sajtova i online prodavnica.
+Dobrodošli u frontend repozitorijum projekta **Agencija Express web**, moderne platforme za brzu izradu poslovnih sajtova i online prodavnica.
 
-Ovaj repozitorijum sadrži sve UI/UX komponente, Vue stranice, integracije i logiku za korisničku interakciju. Backend je dostupan u posebnom repozitorijumu [`expressajt-backend`](https://github.com/tvoj-username/expressajt-backend) koji koristi Laravel.
+Ovaj repozitorijum sadrži sve UI/UX komponente, Vue stranice, integracije i logiku za korisničku interakciju. Backend je dostupan u posebnom repozitorijumu [`express-web-backend`](https://github.com/RadojeBozic/expressajt-backend) koji koristi Laravel.
 
 ---
 
-## 🎯 Šta je Express Sajt?
+## 🎯 Šta je Express web?
 
-**Express Sajt** je agencijska usluga koja nudi klijentima brzu i povoljnu izradu prezentacionih sajtova i online prodavnica, po sistemu:
+**Express web** je agencijska usluga koja nudi klijentima brzu i povoljnu izradu prezentacionih sajtova i online prodavnica, po sistemu:
 
 - **Jednim klikom do sajta** – besplatan sajt u 5 minuta
 - **Express Pro** – napredni sajt sa dodatnim sekcijama
@@ -75,9 +75,9 @@ Frontend će biti dostupan na: http://localhost:5173
 Naša agencija želi da omogući svakom korisniku da brzo, povoljno i jednostavno dođe do profesionalnog web sajta – bez potrebe za programerom, kao i uz podršku profesionalaca u izradi i održavanju naprednijih i složenijih rešenja.
 
 📌 Kontakt
-Agencija Express Sajt
-📧 info@expresssajt.rs
-🌐 https://expresssajt.rs (u pripremi)
+Agencija Express web
+📧 info@express-web.express
+🌐 https://express-web.express (u pripremi)
 
 🤝 Licence
-Ovaj projekat je vlasništvo tima Express Sajt. Slobodno koristite ideje za edukaciju, ali distribucija bez dozvole nije dozvoljena.
+Ovaj projekat je vlasništvo tima Express web. Slobodno koristite ideje za edukaciju, ali distribucija bez dozvole nije dozvoljena.
