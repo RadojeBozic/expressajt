@@ -13,22 +13,26 @@
       </div>
 
       <!-- Content -->
-      <div class="pt-32 pb-16 md:pt-40 md:pb-32"> <!-- podešavanje margine -->
+      <div class="pt-32 pb-16 md:pt-20 md:pb-32"> <!-- podešavanje margine -->
         <div class="max-w-3xl mx-auto text-center">
 
           <!-- Label -->
           <div class="mb-6" data-aos="fade-down">
             <div class="inline-flex relative before:absolute before:inset-0 before:bg-purple-500 before:blur-md">
-              <a @click.prevent="goToProjects" class="btn-sm py-0.5 text-slate-300 hover:text-white transition duration-150 ease-in-out group relative before:absolute before:inset-0 before:bg-slate-800/50 before:rounded-full before:pointer-events-none shadow-sm cursor-pointer">
-                <span class="relative inline-flex items-center">
-                  {{ t('hero.label') }}
-                  <span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span>
-                </span>
-              </a>
+              <<a href="https://www.fiverr.com/radoje_bozic/install-and-customize-bagisto-e-commerce-store-with-marketplace-and-stripe" target="_blank" 
+              class="btn-sm py-0.5 text-slate-300 hover:text-white transition duration-150 ease-in-out group relative before:absolute before:inset-0 before:bg-slate-800/50 before:rounded-full before:pointer-events-none shadow-sm cursor-pointer">
+              <span class="relative inline-flex items-center">
+                {{ t('hero.label') }}
+                <span class="tracking-normal text-purple-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span>
+              </span>
+            </a>
             </div>
           </div>
 
           <!-- Title & Description -->
+            <p class="text-lg text-slate-300 mb-8" data-aos="fade-down" data-aos-delay="200">
+            {{ t('hero.description') }}
+          </p>
           <h1 class="h1 bg-clip-text text-transparent bg-linear-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4" data-aos="fade-down">
             {{ t('hero.title') }}
           </h1>
